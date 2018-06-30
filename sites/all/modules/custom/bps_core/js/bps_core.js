@@ -54,7 +54,7 @@
     $('.cantidad').each(function(){
 		var id = $(this).attr('id');
 		var cantidad = $(this).val();
-		alert(id);
+		alert('Prueba');
 	});
   });
 /* Funcion que solo permite ingresar valores numericos */
