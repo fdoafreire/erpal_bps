@@ -72,7 +72,7 @@
         var total_cotizacion = total_cotizacion + total;
 		var id = $(this).attr('id');
 		var cantidad = $(this).val();
-		alert('Prueba');
+		alert('Prueba 2');
 	});
   });
 /* Funcion que solo permite ingresar valores numericos */
