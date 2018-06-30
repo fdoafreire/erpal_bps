@@ -72,6 +72,7 @@
         var total_cotizacion = total_cotizacion + total;
 		var id = $(this).attr('id');
 		var cantidad = $(this).val();
+		alert(cant+' '+valor+' '+dscto+' '+total);
 	});
 	alert(total_cantidad+' '+total_dcto+' '+total_iva+' '+total_cotizacion);
   });
