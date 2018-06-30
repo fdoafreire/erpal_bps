@@ -72,8 +72,8 @@
         var total_cotizacion = total_cotizacion + total;
 		var id = $(this).attr('id');
 		var cantidad = $(this).val();
-		alert('Prueba 2');
 	});
+	alert(total_cantidad+' '+total_dcto+' '+total_iva+' '+total_cotizacion);
   });
 /* Funcion que solo permite ingresar valores numericos */
   $(document).on('keypress','.valor_unitario, .cantidad, .descuento, .porcentaje_impuesto',{}, function(evento){

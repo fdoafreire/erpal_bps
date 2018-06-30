@@ -27,7 +27,6 @@ function bps_core_form_alter(&$form, &$form_state, $form_id) {
        $form['field_referencias']['und'][$key]['field_total']['und'][0]['value']['#attributes'] = array('readonly'=>array('true'));
      } 
    }
-   dpm($form);
    $form['total_cotizacion'] = array(
     '#type' => 'div',
     '#title' => 'div_totales',
