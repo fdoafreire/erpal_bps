@@ -51,6 +51,11 @@
     
     $('#' + id_vlriva).val(valor_iva); 
     $('#' + id_total).val(total); 
+    $('.cantidad').each(function(){
+		var id = $(this).attr('id');
+		var cantidad = $(this).val();
+		alert(id);
+	});
   });
 /* Funcion que solo permite ingresar valores numericos */
   $(document).on('keypress','.valor_unitario, .cantidad, .descuento, .porcentaje_impuesto',{}, function(evento){
