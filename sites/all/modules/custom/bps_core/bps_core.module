@@ -33,7 +33,7 @@ function bps_core_form_alter(&$form, &$form_state, $form_id) {
     '#title' => 'div_totales',
     '#disabled' => TRUE,
     '#size' => 9,
-    '#weight' => 5,
+    '#weight' => 4.5,
     '#attributes' => array('class'=>array('div_totales')), 
    );
 
