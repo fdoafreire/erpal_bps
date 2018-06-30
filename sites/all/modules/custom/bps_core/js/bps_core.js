@@ -51,10 +51,25 @@
     
     $('#' + id_vlriva).val(valor_iva); 
     $('#' + id_total).val(total); 
+    var total_cantidad = 0;
+    var total_dcto = 0;
+    var total_iva = 0;
+    var total_cotizacion = 0;
     $('.cantidad').each(function(){
-		var id = $(this).attr('id');
-		var cantidad = $(this).val();
-		alert(id);
+		var id_cant = $(this).attr('id');
+        var id_valor = id_cant.replace('ref-cantidad', 'valor-unitario');
+		var id_dscto = id_cant.replace('ref-cantidad', 'descuento');
+		var id_iva = id_cant.replace('ref-cantidad', 'porcentaje-impuesto');
+		var id_vlriva = id_cant.replace('ref-cantidad', 'valor-iva');
+		var id_total = id_cant.replace('ref-cantidad', 'total');
+		var cant  = parseFloat($('#' + id_cant).val());
+		var valor = parseFloat($('#' + id_valor).val());
+		var dscto = parseFloat($('#' + id_dscto).val());
+		var iva   = parseFloat($('#' + id_iva).val());
+        var total_cantidad = total_cantidad + cant;
+        var total_dcto = total_dcto + dscto;
+        var total_iva = total_iva + iva;
+        var total_cotizacion = total_cotizacion + total;
 	});
   });
 /* Funcion que solo permite ingresar valores numericos */
