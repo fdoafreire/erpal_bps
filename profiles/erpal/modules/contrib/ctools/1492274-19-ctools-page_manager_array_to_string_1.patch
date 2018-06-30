@@ -1,0 +1,29 @@
+From c5c8e60953a7bcb3aa846a1264d90ad4790a999b Mon Sep 17 00:00:00 2001
+From: Pieter Frenssen <pieter@frenssen.be>
+Date: Fri, 3 Aug 2012 17:51:30 +0200
+Subject: [PATCH] Issue #1492274 by pfrenssen: Fixed notice: array to string
+ conversion in page_manager_render_operations().
+
+---
+ page_manager/page_manager.admin.inc | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+diff --git a/page_manager/page_manager.admin.inc b/page_manager/page_manager.admin.inc
+index 22ecd63..ad967d1 100644
+--- a/page_manager/page_manager.admin.inc
++++ b/page_manager/page_manager.admin.inc
+@@ -1208,7 +1208,10 @@ function page_manager_render_operations(&$page, $operations, $active_trail, $att
+   }
+ 
+   if ($output[$location]) {
+-    $output[$location] = '<ul class="page-manager-operations ' . $attributes['class'] . '">' . $output[$location] . '</ul>';
++    $classes = isset($attributes['class']) && is_array($attributes['class']) ? $attributes['class'] : array();
++    $classes[] = 'page-manager-operations';
++
++    $output[$location] = '<ul class="' . implode(' ', $classes) . '">' . $output[$location] . '</ul>';
+ 
+     if (!empty($attributes['title'])) {
+       $class = '';
+-- 
+1.7.11.4
+

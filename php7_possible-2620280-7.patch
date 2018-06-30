@@ -1,0 +1,52 @@
+diff --git a/includes/message.admin.inc b/includes/message.admin.inc
+index c726c2a..c7ae1d0 100644
+--- a/includes/message.admin.inc
++++ b/includes/message.admin.inc
+@@ -21,7 +21,7 @@ class MessageTypeUIController extends EntityDefaultUIController {
+     form_state_values_clean($form_state);
+     foreach ($form_state['values'] as $key => $value) {
+       if ($key != 'message_type_fields') {
+-        $entity->$key = $value;
++        $entity->{$key} = $value;
+       }
+     }
+     // Invoke all specified builders for copying form values to entity
+diff --git a/includes/message.message_type.inc b/includes/message.message_type.inc
+index 9fec7f1..5e31927 100644
+--- a/includes/message.message_type.inc
++++ b/includes/message.message_type.inc
+@@ -165,7 +165,7 @@ class MessageType extends Entity {
+     }
+ 
+     // Let the metadata wrapper deal with the language.
+-    $property = $property->language($langcode)->$options['field name'];
++    $property = $property->language($langcode)->{$options['field name']};
+ 
+     $delta = $options['partial delta'];
+     $count = $field['cardinality'] == 1 ? 1 : $property->count();
+diff --git a/includes/views/handlers/message_handler_field_message_render.inc b/includes/views/handlers/message_handler_field_message_render.inc
+index f69725c..c50ffe6 100644
+--- a/includes/views/handlers/message_handler_field_message_render.inc
++++ b/includes/views/handlers/message_handler_field_message_render.inc
+@@ -72,7 +72,7 @@ class message_handler_field_message_render extends views_handler_field {
+ 
+   function render($values) {
+     $field_alias = $this->field_alias;
+-    if (!empty($values->$field_alias) && $message = message_load($values->$field_alias)) {
++    if (!empty($values->{$field_alias}) && $message = message_load($values->{$field_alias})) {
+       $options = array(
+         'field name' => $this->options['field_name'],
+         'partials' => $this->options['partials'],
+diff --git a/message.module b/message.module
+index 2bcf0c1..73c5166 100644
+--- a/message.module
++++ b/message.module
+@@ -513,7 +513,7 @@ function _message_delete_messages($field_names, $entity_id, $last_mid = 0, $rang
+         // check each entity.
+         $refrences_count = 0;
+         for ($i = 0; $i < $count; $i++) {
+-          if ($wrapper->$field_name->get($i)->value()) {
++          if ($wrapper->{$field_name}->get($i)->value()) {
+             $refrences_count++;
+           }
+         }

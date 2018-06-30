@@ -1,0 +1,5 @@
+name = BPS core
+description = Funcionalidades de cotizaciones y ajustes de formularios
+version = 1
+core = 7.x
+package = walters

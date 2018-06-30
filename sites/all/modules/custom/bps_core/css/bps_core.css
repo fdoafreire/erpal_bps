@@ -1,0 +1,60 @@
+.totales {
+ display:inline-block;
+}
+#node_ordenes_form_group_datos_el .field-type-text-form {
+    display: inline-block;
+    float: left;
+    width: 20%;
+}
+
+#node_ordenes_form_group_datos_el .field-type-text-form input {
+    width: 90%;
+}
+
+#node_ordenes_form_group_ord_datos_tecnicos .field-type-text-form {
+    display: inline-block;
+    float: left;
+    width: 25%;
+}
+
+#node_ordenes_form_group_ord_datos_tecnicos .field-type-text-form input {
+    width: 90%;
+}
+.container-mediciones fieldset {
+    display: inline-block;
+    float: left;
+    width: 45%;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 148px;
+}
+.container-mediciones .field-type-text-form {
+    float: left;
+    width: 25%;
+}
+#ordenes-node-form .form-type-radio {
+  display:inline;
+}
+#node_ordenes_form_group_ord_tpshoras .field-type-datetime-form {
+ display:inline-block;
+ float:left;
+ width:33.3%;
+}
+#node_ordenes_form_group_ord_tpshoras .field-type-datetime-form div.date-padding {
+ padding:0px;
+}
+#node_ordenes_form_group_ord_tpshoras .field-type-datetime-form div.date-padding input {
+ padding-left:5px;
+}
+#node_ordenes_form_group_ord_par_serv .field-type-text-form {
+display:inline-block;
+float:left;
+width:25%;
+}
+#node_ordenes_form_group_ord_par_serv .field-widget-options-select {
+display:inline-block;
+float:left;
+width:20%;
+}
+
+
