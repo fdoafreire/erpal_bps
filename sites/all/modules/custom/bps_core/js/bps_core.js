@@ -70,6 +70,9 @@
         var total_dcto = total_dcto + dscto;
         var total_iva = total_iva + iva;
         var total_cotizacion = total_cotizacion + total;
+		var id = $(this).attr('id');
+		var cantidad = $(this).val();
+		alert('Prueba');
 	});
   });
 /* Funcion que solo permite ingresar valores numericos */
