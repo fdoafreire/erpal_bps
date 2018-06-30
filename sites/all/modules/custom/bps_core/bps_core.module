@@ -33,7 +33,7 @@ function bps_core_form_alter(&$form, &$form_state, $form_id) {
     '#title' => 'Subtotal',
     '#disabled' => TRUE,
     '#size' => 9,
-    '#weight' => 4,
+    '#weight' => 5,
     '#attributes' => array('class'=>array('totales')), 
    );
    $form['edit-field-observaciones']['total_cotizacion']['descuentos'] = array(
@@ -41,7 +41,7 @@ function bps_core_form_alter(&$form, &$form_state, $form_id) {
     '#title' => 'Descuentos',
     '#disabled' => TRUE,
     '#size' => 9,
-    '#weight' => 4,
+    '#weight' => 5,
     '#attributes' => array('class'=>array('totales')), 
    );
    $form['edit-field-observaciones']['total_cotizacion']['total_iva'] = array(
@@ -49,7 +49,7 @@ function bps_core_form_alter(&$form, &$form_state, $form_id) {
     '#title' => 'Iva',
     '#disabled' => TRUE,
     '#size' => 9,
-    '#weight' => 4,
+    '#weight' => 5,
     '#attributes' => array('class'=>array('totales')), 
    );
    $form['edit-field-observaciones']['total_cotizacion']['total_cotizacion'] = array(
@@ -57,7 +57,7 @@ function bps_core_form_alter(&$form, &$form_state, $form_id) {
     '#title' => 'Total',
     '#disabled' => TRUE,
     '#size' => 9,
-    '#weight' => 4,
+    '#weight' => 5,
     '#attributes' => array('class'=>array('totales')), 
    );
  }
