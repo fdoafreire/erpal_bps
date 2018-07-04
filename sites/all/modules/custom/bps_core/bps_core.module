@@ -109,7 +109,7 @@ function _has_relations($nid) {
   $flag_has_relations = FALSE;
   $query = db_select('field_data_field_ord_cliente', 'o');
   $query->addField('o','entity_id','nid');
-  $query->condition('o.field_ord_cliente_nid',$nid);
+  $query->condition('o.field_ord_cliente_target_id',$nid);
   $ord = $query->execute()->fetchObject();
   if (isset($ord->nid) && !empty($ord->nid) && is_numeric($nid) && $ord->nid > 0) {
     return TRUE;
@@ -117,7 +117,7 @@ function _has_relations($nid) {
   if (!$flag_has_relations) {
     $query = db_select('field_data_field_cliente', 'c');
     $query->addField('c','entity_id','nid');
-    $query->condition('c.field_cliente_nid',$result->nid);
+    $query->condition('c.field_cliente_target_id',$result->nid);
     $cot = $query->execute()->fetchObject();
     if (isset($cot->nid) && !empty($cot->nid) && is_numeric($cot->nid) && $cot->nid > 0) {
       return TRUE;
@@ -126,7 +126,7 @@ function _has_relations($nid) {
   if (!$flag_has_relations) {
     $query = db_select('field_data_field_el_cliente', 'e');
     $query->addField('e','entity_id','nid');
-    $query->condition('e.field_el_cliente_nid',$nid);
+    $query->condition('e.field_el_cliente_target_id',$nid);
     $el = $query->execute()->fetchObject();
     if (isset($el->nid) && !empty($el->nid) && is_numeric($el->nid) && $el->nid > 0) {
       return TRUE;
