@@ -83,6 +83,15 @@ function bps_core_form_alter(&$form, &$form_state, $form_id) {
  * Function validate id unique
  */ 
 function _validate_custom_contact($form, &$form_state) {
-  dpm($form_state['values']);
-  //form_set_error('field_documento_identidad', 'El documento de identidad ya existe en la base de datos');
+  $values = $form_state['values'];
+  dpm($values['field_documento_identidad']);
+  if (isset($values['field_documento_identidad'][0]['value']) && !empy($values['field_documento_identidad'][0]['value'])){
+    $query = db_select('field_data_field_documento_identidad', 'i');
+    $query->addField('i','entity_id','nid');
+    $query->condition('i','field_documento_identidad_value',$values['field_documento_identidad'][0]['value']);
+    $result = $query->execute()->fetchObject();
+    if (isset($result->nid) && !empty($result->nid) && is_numeric($result->nid) && $result->nid > 0) {
+      form_set_error('field_documento_identidad', 'El documento de identidad ya existe en la base de datos');
+    }
+  }
 }
