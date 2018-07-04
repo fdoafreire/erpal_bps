@@ -15,6 +15,7 @@ function bps_core_form_alter(&$form, &$form_state, $form_id) {
     '#options' => $options,
     '#weight' => 3,
    );
+   $form['#group_children']['field_ord_sucursal_item'] = 'group_info_general';
    //dpm($form);
  }
  if ($form_id == 'cotizaciones_node_form') {
