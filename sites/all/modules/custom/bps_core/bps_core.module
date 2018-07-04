@@ -3,7 +3,7 @@
  * Implements hook_form_alter().
  */
 function bps_core_form_alter(&$form, &$form_state, $form_id) {
- //dpm($form_id);
+ dpm($form_id);
  if ($form_id == 'ordenes_node_form') {
    $module_path = drupal_get_path('module', 'bps_core');
    drupal_add_css($module_path . '/css/bps_core.css');
@@ -72,4 +72,6 @@ function bps_core_form_alter(&$form, &$form_state, $form_id) {
  if ($form_id == 'field-collection-item-form'){
    $form['field_ref_cantidad']['und'][0]['value'] = array('class'=>array('cantidad'));
  }
+
+
 }
