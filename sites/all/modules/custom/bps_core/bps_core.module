@@ -98,7 +98,9 @@ function _validate_custom_contact($form, &$form_state) {
   }
   else {
     if (isset($values['op']) && $values['op'] == 'Eliminar') { 
-      
+      if (_has_relations($values['nid'])){
+        form_set_error('field_documento_identidad', 'El documento de identidad tiene ordenes de servicio o cotizaciones relacionadas'); 
+      }
     }
   }
 }
