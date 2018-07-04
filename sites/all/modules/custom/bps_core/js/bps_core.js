@@ -64,15 +64,18 @@
 		var id_total = id_cant.replace('ref-cantidad', 'total');
 		var cant  = parseFloat($('#' + id_cant).val());
 		var valor = parseFloat($('#' + id_valor).val());
-		var dscto = parseFloat($('#' + id_dscto).val());
+		var dscto = parseFloat($('#' + id_dscto).val());						
 		var iva   = parseFloat($('#' + id_iva).val());
+
+	    var subtotal = (cant * valor) - ((cant * valor * dscto) / 100);
+	    var descuento = (cant * valor * dscto) / 100;
+		var valor_iva = (subtotal * iva) / 100;
+		var total = subtotal + valor_iva;
+
         var total_cantidad = total_cantidad + cant;
-        var total_dcto = total_dcto + dscto;
-        var total_iva = total_iva + iva;
+        var total_dcto = total_dcto + descuento;
+        var total_iva = total_iva + valor_iva;
         var total_cotizacion = total_cotizacion + total;
-		var id = $(this).attr('id');
-		var cantidad = $(this).val();
-		alert(cant+' '+valor+' '+dscto+' '+total);
 	});
 	alert(total_cantidad+' '+total_dcto+' '+total_iva+' '+total_cotizacion);
   });
