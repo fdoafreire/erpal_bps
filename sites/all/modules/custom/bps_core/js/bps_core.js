@@ -76,7 +76,7 @@
         var total_dcto = total_dcto + descuento;
         var total_iva = total_iva + valor_iva;
         var total_cotizacion = total_cotizacion + total;
-		alert(total_cantidad+' '+total_dcto+' '+total_iva+' '+total_cotizacion);
+		alert(cant+' '+valor+' '+dscto+' '+subtotal+' '+descuento+' '+valor_iva+' '+total);
 	});
   });
 /* Funcion que solo permite ingresar valores numericos */
