@@ -79,8 +79,10 @@
         total_iva = parseFloat(total_iva) + parseFloat(valor_iva);
         total_cotizacion = parseFloat(total_cotizacion) + parseFloat(total);
 	});
-		alert(total_cantidad+' '+total_dcto+' '+total_iva+' '+total_cotizacion);
 	$('#edit-subtotal').val(subtotal);	
+	$('#edit-descuentos').val(total_dcto);	
+	$('#edit-total-iva').val(total_iva);	
+	$('#edit-total-cotizacion--2').val(total_cotizacion);	
   });
 /* Funcion que solo permite ingresar valores numericos */
   $(document).on('keypress','.valor_unitario, .cantidad, .descuento, .porcentaje_impuesto',{}, function(evento){
