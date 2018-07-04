@@ -72,10 +72,11 @@
 		var valor_iva = (subtotal * iva) / 100;
 		var total = subtotal + valor_iva;
 
-        var total_cantidad += parseFloat(cant);
-        var total_dcto += parseFloat(descuento);
-        var total_iva += parseFloat(valor_iva);
-        var total_cotizacion += parseFloat(total);
+        var total_cantidad = parseFloat(total_cantidad) + parseFloat(cant);
+        alert(total_cantidad);
+        var total_dcto = parseFloat(total_dcto) + parseFloat(descuento);
+        var total_iva = parseFloat(total_iva) + parseFloat(valor_iva);
+        var total_cotizacion = parseFloat(total_cotizacion) + parseFloat(total);
 		alert(cant+' '+valor+' '+dscto+' '+subtotal+' '+descuento+' '+valor_iva+' '+total);
 	});
 		alert(total_cantidad+' '+total_dcto+' '+total_iva+' '+total_cotizacion);
