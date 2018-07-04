@@ -57,4 +57,7 @@ float:left;
 width:20%;
 }
 
-
+.form-item-subtotal .form-item-descuentos .form-item-total-iva .form-item-total-cotizacion{
+float: left;
+margin: 5px 5px 5px 5px;
+}
