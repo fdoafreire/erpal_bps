@@ -83,6 +83,6 @@ function bps_core_form_alter(&$form, &$form_state, $form_id) {
  * Function validate id unique
  */ 
 function _validate_custom_contact($form, &$form_state) {
-  dpm($form_state);
-  form_set_error('title', 'Title cannot be "test"');
+  dpm($form_state['values']);
+  //form_set_error('field_documento_identidad', 'El documento de identidad ya existe en la base de datos');
 }
