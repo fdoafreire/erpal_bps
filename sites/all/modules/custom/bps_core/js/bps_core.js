@@ -79,7 +79,7 @@
         total_iva = parseFloat(total_iva) + parseFloat(valor_iva);
         total_cotizacion = parseFloat(total_cotizacion) + parseFloat(total);
 	});
-	$('#edit-subtotal').val(subtotal);	
+	$('#edit-subtotal').val(subtotal_cot);	
 	$('#edit-descuentos').val(total_dcto);	
 	$('#edit-total-iva').val(total_iva);	
 	$('#edit-total-cotizacion--2').val(total_cotizacion);	
