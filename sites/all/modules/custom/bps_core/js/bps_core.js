@@ -80,7 +80,7 @@
         total_cotizacion = parseFloat(total_cotizacion) + parseFloat(total);
 	});
 		alert(total_cantidad+' '+total_dcto+' '+total_iva+' '+total_cotizacion);
-	$('#subtotal').val(subtotal);	
+	$('#edit-subtotal').val(subtotal);	
   });
 /* Funcion que solo permite ingresar valores numericos */
   $(document).on('keypress','.valor_unitario, .cantidad, .descuento, .porcentaje_impuesto',{}, function(evento){
