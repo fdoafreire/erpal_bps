@@ -51,6 +51,7 @@
     
     $('#' + id_vlriva).val(valor_iva); 
     $('#' + id_total).val(total); 
+    var subtotal_cot = 0;
     var total_cantidad = 0;
     var total_dcto = 0;
     var total_iva = 0;
@@ -73,11 +74,13 @@
 		var total = subtotal + valor_iva;
 
         total_cantidad = parseFloat(total_cantidad) + parseFloat(cant);
+        subtotal_cot = parseFloat(subtotal_cot) + parseFloat(subtotal);
         total_dcto = parseFloat(total_dcto) + parseFloat(descuento);
         total_iva = parseFloat(total_iva) + parseFloat(valor_iva);
         total_cotizacion = parseFloat(total_cotizacion) + parseFloat(total);
 	});
 		alert(total_cantidad+' '+total_dcto+' '+total_iva+' '+total_cotizacion);
+	$('#subtotal').val(subtotal);	
   });
 /* Funcion que solo permite ingresar valores numericos */
   $(document).on('keypress','.valor_unitario, .cantidad, .descuento, .porcentaje_impuesto',{}, function(evento){
