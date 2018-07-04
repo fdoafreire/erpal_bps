@@ -73,5 +73,16 @@ function bps_core_form_alter(&$form, &$form_state, $form_id) {
    $form['field_ref_cantidad']['und'][0]['value'] = array('class'=>array('cantidad'));
  }
 
+ if ($form_id == 'erpal_contact_node_form') {
+   $form['#validate'][] = '_validate_custom_contact';
+ }
 
+
+}
+/**
+ * Function validate id unique
+ */ 
+function _validate_custom_contact($form, &$form_state) {
+  dpm($form_state);
+  form_set_error('title', 'Title cannot be "test"');
 }
