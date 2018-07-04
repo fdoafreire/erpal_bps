@@ -28,8 +28,8 @@ function bps_core_form_alter(&$form, &$form_state, $form_id) {
      } 
    }
    $form['total_cotizacion'] = array(
-    '#type' => 'div',
-    '#title' => 'div_totales',
+    '#type' => 'fieldset',
+    '#title' => 'Totales',
     '#disabled' => TRUE,
     '#size' => 9,
     '#weight' => 4.5,
