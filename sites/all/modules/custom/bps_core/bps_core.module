@@ -7,7 +7,15 @@ function bps_core_form_alter(&$form, &$form_state, $form_id) {
  if ($form_id == 'ordenes_node_form') {
    $module_path = drupal_get_path('module', 'bps_core');
    drupal_add_css($module_path . '/css/bps_core.css');
-   dpm($form);
+   $options = array();
+   $options[] = '- Seleccionar -';
+   $form['field_ord_sucursal'] = array(
+    '#type' => 'select',
+    '#title' => 'Sucursal',
+    '#options' => $options,
+    '#weight' => 3,
+   );
+   //dpm($form);
  }
  if ($form_id == 'cotizaciones_node_form') {
    $size = count($form['field_referencias']['und']);
