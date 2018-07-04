@@ -84,7 +84,7 @@ function bps_core_form_alter(&$form, &$form_state, $form_id) {
  */ 
 function _validate_custom_contact($form, &$form_state) {
   $values = $form_state['values'];
-  dpm($form_state);
+  dpm($values);
   if (isset($values['field_documento_identidad']['und'][0]['value']) && !empty($values['field_documento_identidad']['und'][0]['value'])){
     $query = db_select('field_data_field_documento_identidad', 'i');
     $query->addField('i','entity_id','nid');
