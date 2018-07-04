@@ -33,7 +33,7 @@ function bps_core_form_alter(&$form, &$form_state, $form_id) {
     '#disabled' => TRUE,
     '#size' => 9,
     '#weight' => 4.5,
-    '#attributes' => array('class'=>array('div_totales')), 
+    '#attributes' => array('class'=>array('fliedset_totales')), 
    );
 
    $form['total_cotizacion']['subtotal'] = array(
