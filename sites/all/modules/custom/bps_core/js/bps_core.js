@@ -73,7 +73,7 @@
 		var total = subtotal + valor_iva;
 
         var total_cantidad = parseFloat(total_cantidad) + parseFloat(cant);
-        alert(total_cantidad);
+        alert(total_cantidad+' '+cant);
         var total_dcto = parseFloat(total_dcto) + parseFloat(descuento);
         var total_iva = parseFloat(total_iva) + parseFloat(valor_iva);
         var total_cotizacion = parseFloat(total_cotizacion) + parseFloat(total);
