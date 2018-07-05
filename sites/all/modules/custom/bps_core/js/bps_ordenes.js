@@ -11,7 +11,7 @@
             }
 
             if (nid != 0) {
-                $.getJSON('/guessMarkers/ajax/jornadas/' + competicion, function(data){
+                $.getJSON('/bps/ajax/sucursales/' + nid, function(data){
                     $.each(data, function(index,item) {
                         console.log(item);
                        //$('#field_ord_sucursal_item').append("<option value=" + item.jornada + ">Jornada " + item.jornada + "</option>"); 
