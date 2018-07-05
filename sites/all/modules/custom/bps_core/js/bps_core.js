@@ -32,6 +32,11 @@
 		$('#edit-descuentos').val(total_dcto);	
 		$('#edit-total-iva').val(total_iva);	
 		$('#edit-total-cotizacion--2').val(total_cotizacion);	  
+		$('#node_ordenes_form_group_datos_el').hide();
+		$('#node_ordenes_form_group_ord_datos_tecnicos').hide();
+		$('#node_ordenes_form_group_medicion_entrada').hide();
+		$('#node_ordenes_form_group_medicion_salida').hide();
+		$('#node_ordenes_form_group_ord_par_serv').hide();
   });
   $(document).on('change','.valor_unitario, .cantidad, .porcentaje_impuesto, .descuento', {} ,function(e){
     if ($(e.currentTarget).hasClass('cantidad')){
