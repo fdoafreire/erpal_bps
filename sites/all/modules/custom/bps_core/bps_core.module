@@ -174,7 +174,7 @@ function _get_ajax_sucursales($nid) {
   if (isset($contact->field_addresses)) {
     foreach ($contact->field_addresses['und'] as $key => $item) {
        $address = field_collection_item_load($item['value']);
-       $options[] = $address;
+       $options[$item['value']] = $address->field_address_name['und'][0]['value'] . '-' .$address->field_addition_to_address['und'][0]['value'];
     }
   }
 
