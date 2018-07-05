@@ -9,7 +9,8 @@
 		$('#node_ordenes_form_group_ord_par_serv').hide();
   });
   $(document).on('change','.tipo_orden', {} ,function(e){
-		var tipo = $("#field_ord_tipo[und] option:selected").val();
+		var id_tipo = $(e.currentTarget).attr('id');
+		var tipo = $("#"+id_tipo+" option:selected").val();
 		if (tipo =="1"){
 			alert("Tipo servicio 1");
 		} else if (tipo=="2"){
