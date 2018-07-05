@@ -2,7 +2,7 @@
 
   $(document).ready(function(){
 		//Ocultos en ordenes de trabajo o servicio
-		var tipo = $("#field_ord_tipo[und] option:selected").val();
+		var tipo = $("select[name='field_ord_tipo[und]'").val();
 		alert("tipo "+tipo);
 		if (tipo =="1"){
 			$('#node_ordenes_form_group_ord_datos_tecnicos').hide();
