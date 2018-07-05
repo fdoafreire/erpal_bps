@@ -8,6 +8,15 @@
 		$('#node_ordenes_form_group_medicion_salida').hide();
 		$('#node_ordenes_form_group_ord_par_serv').hide();
   });
+  $(document).on('change','.tipo_orden', {} ,function(e){
+		if ($('#field_ord_tipo[und] :selected').val()=="1"){
+			alert("Tipo servicio 1");
+		} else if ($('#field_ord_tipo[und] :selected').val()=="2"){
+			alert("Tipo servicio 2");
+		} else {
+			alert("Tipo servicio N/A");
+		}
+	});
 
    Drupal.behaviors.ordenes = {
       attach: function (context, settings) {
