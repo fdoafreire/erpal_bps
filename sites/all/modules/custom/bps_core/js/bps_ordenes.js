@@ -2,8 +2,8 @@
 
   $(document).ready(function(){
 		//Ocultos en ordenes de trabajo o servicio
-		var id_tipo = $(e.currentTarget).attr('id');
 		var tipo = $("#field_ord_tipo[und] option:selected").val();
+		alert("tipo "+tipo);
 		if (tipo =="1"){
 			$('#node_ordenes_form_group_ord_datos_tecnicos').hide();
 			$('#node_ordenes_form_group_medicion_entrada').hide();
