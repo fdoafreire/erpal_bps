@@ -6,16 +6,16 @@
             var texto = $(this).val();
             var regExp = /\((.*)\)/;
             var nid = 0;
+            $('#edit-field-ord-sucursal-item').find('option').remove().end().append('<option value="0" selected="selected">- Seleccionar -</option>');
             if (texto.match(regExp)) {
               nid = texto.match(regExp).pop();
             }
-
             if (nid != 0) {
+
                 $.getJSON('/bps/ajax/sucursales/' + nid, function(data){
                     console.log(data);
                     $.each(data, function(index,item) {
-                       console.log(index + '--' + item);
-                       $('#field_ord_sucursal_item').append("<option value=" + index + ">" + item + "</option>"); 
+                       $('#edit-field-ord-sucursal-item').append("<option value=" + index + ">" + item + "</option>"); 
                     });
                 });
             }
