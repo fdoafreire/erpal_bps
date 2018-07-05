@@ -11,9 +11,7 @@
               nid = texto.match(regExp).pop();
             }
             if (nid != 0) {
-
                 $.getJSON('/bps/ajax/sucursales/' + nid, function(data){
-                    console.log(data);
                     $.each(data, function(index,item) {
                        $('#edit-field-ord-sucursal-item').append("<option value=" + index + ">" + item + "</option>"); 
                     });
