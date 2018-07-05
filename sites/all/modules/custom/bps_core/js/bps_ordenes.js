@@ -2,11 +2,29 @@
 
   $(document).ready(function(){
 		//Ocultos en ordenes de trabajo o servicio
-		$('#node_ordenes_form_group_datos_el').hide();
+		var id_tipo = $(e.currentTarget).attr('id');
+		var tipo = $("#field_ord_tipo[und] option:selected").val();
+		if (tipo =="1"){
+			$('#node_ordenes_form_group_ord_datos_tecnicos').hide();
+			$('#node_ordenes_form_group_medicion_entrada').hide();
+			$('#node_ordenes_form_group_medicion_salida').hide();
+			$('#node_ordenes_form_group_ord_par_serv').show();
+		} else if (tipo=="2"){
+			$('#node_ordenes_form_group_ord_datos_tecnicos').show();
+			$('#node_ordenes_form_group_medicion_entrada').show();
+			$('#node_ordenes_form_group_medicion_salida').show();
+			$('#node_ordenes_form_group_ord_par_serv').hide();
+		} else {
+			$('#node_ordenes_form_group_ord_datos_tecnicos').hide();
+			$('#node_ordenes_form_group_medicion_entrada').hide();
+			$('#node_ordenes_form_group_medicion_salida').hide();
+			$('#node_ordenes_form_group_ord_par_serv').hide();
+		}
+		/*$('#node_ordenes_form_group_datos_el').hide();
 		$('#node_ordenes_form_group_ord_datos_tecnicos').hide();
 		$('#node_ordenes_form_group_medicion_entrada').hide();
 		$('#node_ordenes_form_group_medicion_salida').hide();
-		$('#node_ordenes_form_group_ord_par_serv').hide();
+		$('#node_ordenes_form_group_ord_par_serv').hide();*/
   });
   $(document).on('change','.tipo_orden', {} ,function(e){
 		var id_tipo = $(e.currentTarget).attr('id');
