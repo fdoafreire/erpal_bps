@@ -15,7 +15,7 @@
 		} else if (tipo=="2"){
 			alert("Tipo servicio 2");
 		} else {
-			alert("Tipo servicio N/A");
+			alert(tipo+" Tipo servicio N/A");
 		}
 	});
 
