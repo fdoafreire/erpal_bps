@@ -14,6 +14,7 @@
                 $.getJSON('/bps/ajax/sucursales/' + nid, function(data){
                     console.log(data);
                     $.each(data, function(index,item) {
+                       console.log(index + '--' + item);
                        $('#field_ord_sucursal_item').append("<option value=" + index + ">" + item + "</option>"); 
                     });
                 });
