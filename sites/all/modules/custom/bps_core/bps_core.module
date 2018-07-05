@@ -151,9 +151,9 @@ function _has_relations($nid) {
 /**
  * Implements hook_menu().
  */
-function bps_menu() { 
+function bps_core_menu() { 
    $items = array();
-   
+
    $items['bps/ajax/sucursales/%'] = array(
     'title' => 'Sucursales',
     'page callback' => '_get_ajax_sucursales',
