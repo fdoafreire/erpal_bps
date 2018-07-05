@@ -170,6 +170,14 @@ function bps_core_menu() {
  */
 function _get_ajax_sucursales($nid) {
   $contact = node_load($nid);
-  dpm($contact);
+  $options = array();
+  if (isset($contact->field_addresses)) {
+    foreach ($contact->field_addresses['und'] as $key => $item) {
+       $address = field_collection_item_load($item['value']);
+       $options[] = $address;
+    }
+  }
+
+  dpm($options);
   return '<span>hola</span>';
 }
