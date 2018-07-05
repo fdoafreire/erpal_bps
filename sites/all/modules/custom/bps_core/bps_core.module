@@ -20,6 +20,8 @@ function bps_core_form_alter(&$form, &$form_state, $form_id) {
     '#validated' => TRUE,
    );
    $form['#group_children']['field_ord_sucursal_item'] = 'group_info_general';
+   $form['#validate'][] = '_validate_ordenes';
+
    //dpm($form);
  }
  if ($form_id == 'cotizaciones_node_form') {
@@ -181,4 +183,20 @@ function _get_ajax_sucursales($nid) {
   }
 
   return  drupal_json_output($options);
+}
+
+/**
+ * Function that verify branch office  in submit order
+ */
+function _validate_ordenes($form, &$form_state) {
+   $values = $form_state['values'];
+   if (isset($values['field_ord_sucursal_item']) && !empty($values['field_ord_sucursal_item'])) {
+     $address = field_collection_item_load($values['field_ord_sucursal_item']);
+     $form_state['values']['field_ord_sucursal_id']['und'][0]['value'] = $values['field_ord_sucursal_item'];
+     $form_state['values']['field_ord_sucursal_id']['und'][0]['value'] = $address->field_address_name['und'][0]['value'] . ' - ' .$address->field_addition_to_address['und'][0]['value'];       
+   }
+   else {
+    form_set_error('field_ord_sucursal_item', 'Debe seleccionar una sucursal.');
+   }
+
 }
