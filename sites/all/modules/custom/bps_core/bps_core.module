@@ -115,7 +115,9 @@ function _validate_custom_contact($form, &$form_state) {
     }
   }
 }
-
+/**
+ * function that verify if the entity contact has relations
+ */
 function _has_relations($nid) {
   $flag_has_relations = FALSE;
   $query = db_select('field_data_field_ord_cliente', 'o');
@@ -144,4 +146,26 @@ function _has_relations($nid) {
     }
   }
   return FALSE;
+}
+
+/**
+ * Implements hook_menu().
+ */
+function bps_menu() { 
+   $items['bps/ajax/sucursales/%'] = array(
+    'title' => 'Sucursales',
+    'page callback' => '_get_ajax_sucursales',
+    'access callback' => TRUE,
+    'page arguments' => array(3),
+    'type' => MENU_CALLBACK,
+  );
+}
+
+/**
+ * Function that load branch offices of contact
+ */
+function _get_ajax_sucursales($nid) {
+  $contact = node_load($nid);
+  dpm($contact);
+  return '<span>hola</span>';
 }
