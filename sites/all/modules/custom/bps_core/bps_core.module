@@ -9,7 +9,7 @@ function bps_core_form_alter(&$form, &$form_state, $form_id) {
    drupal_add_js($module_path . '/js/bps_ordenes.js');
    //dpm($form);
    //dpm($form_state['values']);
-   dpm($form);
+   //dpm($form);
    $options = array();
    $options[] = '- Seleccionar -';
    $form['field_ord_cliente']['#prefix'] = '<div class="cliente-sucursal">';
@@ -23,7 +23,7 @@ function bps_core_form_alter(&$form, &$form_state, $form_id) {
    );
    $form['#group_children']['field_ord_sucursal_item'] = 'group_info_general';
    $form['#validate'][] = '_validate_ordenes';
-   $form['#field_ord_tipo']['und'] = array('class'=>array('tipo_orden'));
+   $form['field_ord_tipo']['und'] = array('class'=>array('tipo_orden'));
 
    //dpm($form);
  }
