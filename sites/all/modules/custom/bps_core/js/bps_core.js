@@ -21,6 +21,7 @@
 			var descuento = (cant * valor * dscto) / 100;
 			var valor_iva = (subtotal * iva) / 100;
 			var total = subtotal + valor_iva;
+			
 			if (subtotal >0){
 				total_cantidad = parseFloat(total_cantidad) + parseFloat(cant);
 				subtotal_cot = parseFloat(subtotal_cot) + parseFloat(subtotal);
