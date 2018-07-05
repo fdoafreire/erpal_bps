@@ -178,6 +178,5 @@ function _get_ajax_sucursales($nid) {
     }
   }
 
-  dpm($options);
-  return '<span>hola</span>';
+  return  drupal_json_output($options);
 }
