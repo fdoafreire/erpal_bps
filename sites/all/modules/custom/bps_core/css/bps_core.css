@@ -62,3 +62,7 @@ width:20%;
   float: left;
   margin: 5px 5px 5px 5px;
 }
+.cliente-sucursal div {
+    display: inline-block;
+    margin: 0 10px 0 0;
+}
