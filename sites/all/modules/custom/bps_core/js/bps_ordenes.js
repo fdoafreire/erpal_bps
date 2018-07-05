@@ -8,7 +8,7 @@
 		$('#node_ordenes_form_group_medicion_salida').hide();
 		$('#node_ordenes_form_group_ord_par_serv').hide();
   });
-  $(document).on('change','.tipo_orden', {} ,function(e){
+  /*$(document).on('change','.tipo_orden', {} ,function(e){
 		var tipo = $("#field_ord_tipo[und] option:selected").val();
 		if (tipo =="1"){
 			alert("Tipo servicio 1");
@@ -17,7 +17,7 @@
 		} else {
 			alert("Tipo servicio N/A");
 		}
-	});
+	});*/
 
    Drupal.behaviors.ordenes = {
       attach: function (context, settings) {
