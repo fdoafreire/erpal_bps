@@ -9,9 +9,10 @@
 		$('#node_ordenes_form_group_ord_par_serv').hide();
   });
   $(document).on('change','.tipo_orden', {} ,function(e){
-		if ($("select[name='field_ord_tipo[und]':selected").val()=="1"){
+		var tipo = $("#field_ord_tipo[und] option:selected").val();
+		if (tipo =="1"){
 			alert("Tipo servicio 1");
-		} else if ($("select[name='field_ord_tipo[und]':selected").val()=="2"){
+		} else if (tipo=="2"){
 			alert("Tipo servicio 2");
 		} else {
 			alert("Tipo servicio N/A");
