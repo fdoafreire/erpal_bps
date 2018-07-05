@@ -21,12 +21,13 @@
 			var descuento = (cant * valor * dscto) / 100;
 			var valor_iva = (subtotal * iva) / 100;
 			var total = subtotal + valor_iva;
-
-			total_cantidad = parseFloat(total_cantidad) + parseFloat(cant);
-			subtotal_cot = parseFloat(subtotal_cot) + parseFloat(subtotal);
-			total_dcto = parseFloat(total_dcto) + parseFloat(descuento);
-			total_iva = parseFloat(total_iva) + parseFloat(valor_iva);
-			total_cotizacion = parseFloat(total_cotizacion) + parseFloat(total);
+			if (subtotal >0){
+				total_cantidad = parseFloat(total_cantidad) + parseFloat(cant);
+				subtotal_cot = parseFloat(subtotal_cot) + parseFloat(subtotal);
+				total_dcto = parseFloat(total_dcto) + parseFloat(descuento);
+				total_iva = parseFloat(total_iva) + parseFloat(valor_iva);
+				total_cotizacion = parseFloat(total_cotizacion) + parseFloat(total);
+			}
 		});
 		$('#edit-subtotal').val(subtotal_cot);	
 		$('#edit-descuentos').val(total_dcto);	
