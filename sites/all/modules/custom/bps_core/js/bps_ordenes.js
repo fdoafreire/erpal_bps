@@ -12,11 +12,20 @@
 		var id_tipo = $(e.currentTarget).attr('id');
 		var tipo = $("#"+id_tipo+" option:selected").val();
 		if (tipo =="1"){
-			alert("Tipo servicio 1");
+			$('#node_ordenes_form_group_ord_datos_tecnicos').hide();
+			$('#node_ordenes_form_group_medicion_entrada').hide();
+			$('#node_ordenes_form_group_medicion_salida').hide();
+			$('#node_ordenes_form_group_ord_par_serv').show();
 		} else if (tipo=="2"){
-			alert("Tipo servicio 2");
+			$('#node_ordenes_form_group_ord_datos_tecnicos').show();
+			$('#node_ordenes_form_group_medicion_entrada').show();
+			$('#node_ordenes_form_group_medicion_salida').show();
+			$('#node_ordenes_form_group_ord_par_serv').hide();
 		} else {
-			alert(tipo+" Tipo servicio N/A");
+			$('#node_ordenes_form_group_ord_datos_tecnicos').hide();
+			$('#node_ordenes_form_group_medicion_entrada').hide();
+			$('#node_ordenes_form_group_medicion_salida').hide();
+			$('#node_ordenes_form_group_ord_par_serv').hide();
 		}
 	});
 
