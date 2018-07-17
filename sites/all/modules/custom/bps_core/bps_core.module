@@ -203,3 +203,6 @@ function _validate_ordenes($form, &$form_state) {
    }
 
 }
+
+function bps_core_node_view($node, $view_mode, $langcode){
+}
