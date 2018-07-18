@@ -6,9 +6,11 @@
   $(document).ready(function(){
 		var cantidad = 0;
 		var cantfila = new array();
+		var contador = 0;
     $('.field_ref_cantidad .field-item').each(function(){
 			cantidad = cantidad + parseFloat($(this).text().replace(/ /g,''));
-			cantfila[] = parseFloat($(this).text().replace(/ /g,''));
+			cantfila[contador] = parseFloat($(this).text().replace(/ /g,''));
+			contador++;
     });
     cantfila.forEach(function(element) {
 			alert(element);
