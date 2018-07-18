@@ -7,8 +7,8 @@
 		var cantidad = "vacio";
     $('.field_ref_cantidad .field-item').each(function(){
 			cantidad = $(this).text();
+			alert(cantidad);
     });
-		alert(cantidad);
     var subtotal_cot = 0;
     var total_cantidad = 0;
     var total_dcto = 0;
