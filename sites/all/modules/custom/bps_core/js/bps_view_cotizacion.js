@@ -52,6 +52,13 @@
 			contador++;
     });
 
+		var totales = '<tr>'+
+										'<td>'+subtotal+'</td>'+
+										'<td>'+iva+'</td>'+
+										'<td>'+total+'</td>'+
+									'</tr>';
+									
+		$('table.field-collection-view-final tbody').append(totales);
     
     var subtotal_cot = 0;
     var total_cantidad = 0;
