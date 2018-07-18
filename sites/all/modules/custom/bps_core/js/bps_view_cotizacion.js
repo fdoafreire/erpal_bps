@@ -5,7 +5,7 @@
 	*/
   $(document).ready(function(){
 		var cantidad = 0;
-		var cantfila = new array();
+		var cantfila = new Array();
 		var contador = 0;
     $('.field_ref_cantidad .field-item').each(function(){
 			cantidad = cantidad + parseFloat($(this).text().replace(/ /g,''));
