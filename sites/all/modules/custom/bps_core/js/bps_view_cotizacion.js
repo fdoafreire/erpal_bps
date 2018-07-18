@@ -6,7 +6,7 @@
   $(document).ready(function(){
 		var cantidad = 0;
     $('.field_ref_cantidad .field-item').each(function(){
-			cantidad = cantidad + parseFloat($(this).text().replace(/ /g,'')));
+			cantidad = cantidad + parseFloat($(this).text().replace(/ /g,''));
 			var unitario = parseFloat($(this).parent('.field_valor_unitario .field-item').text().replace(/ /g,''));
 			alert(unitario);
     });
