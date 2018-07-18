@@ -25,7 +25,7 @@
 			
 		});
 		var contador = 0;
-    $('.field_subtotal .field-item').each(function(){
+    $('.field_subtotal .empty_field').each(function(){
 			$(this).text(subtotal[contador]);
 			contador++;
     });
