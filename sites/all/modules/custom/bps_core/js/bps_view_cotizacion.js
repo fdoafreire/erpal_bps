@@ -12,8 +12,15 @@
 			cantfila[contador] = parseFloat($(this).text().replace(/ /g,''));
 			contador++;
     });
+		var unitario = new Array();
+		var contador = 0;
+    $('.field_valor_unitario .field-item').each(function(){
+			unitario[contador] = parseFloat($(this).text().replace(/ /g,''));
+			contador++;
+    });
     cantfila.forEach(function(valor,indice) {
-			alert(indice+' '+valor);
+			alert(indice+' '+valor+' '+unitario[indice]);
+			
 		});
     
     var subtotal_cot = 0;
