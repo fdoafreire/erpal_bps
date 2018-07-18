@@ -53,7 +53,24 @@
     });
 
 		var totales = '<tr>'+
-										'<td>'+subtotal+'</td>'+
+										'<td>Totales</td>'+
+										'<td></td>'+
+										'<td></td>'+
+										'<td></td>'+
+										'<td></td>'+
+										'<td></td>'+
+										'<td></td>'+
+										'<td></td>'+
+										'<td></td>'+
+									'</tr>'+
+									'<tr>'+
+										'<td></td>'+
+										'<td></td>'+
+										'<td></td>'+
+										'<td></td>'+
+										'<td>'+sub+'</td>'+
+										'<td></td>'+
+										'<td></td>'+
 										'<td>'+iva+'</td>'+
 										'<td>'+total+'</td>'+
 									'</tr>';
