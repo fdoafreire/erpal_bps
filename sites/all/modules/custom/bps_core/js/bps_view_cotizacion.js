@@ -1,6 +1,14 @@
 (function ($) {
+	/*
+  parseFloat(jQuery('.field_total .field-item').text().replace(/ /g,'')) + 20;
+  jQuery('table.field-collection-view-final tbody').append('<tr><td>soy un totoal</td></tr>');
+	*/
   $(document).ready(function(){
     alert('hi');
+    $(".field_red_cantidad .field_item").each(
+			var cantidad = $(this).text();
+			alert(cantidad);
+    );
     var subtotal_cot = 0;
     var total_cantidad = 0;
     var total_dcto = 0;
