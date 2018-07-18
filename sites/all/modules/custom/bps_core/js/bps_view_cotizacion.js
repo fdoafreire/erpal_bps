@@ -18,10 +18,17 @@
 			unitario[contador] = parseFloat($(this).text().replace(/ /g,''));
 			contador++;
     });
+    var subtotal = new Array();
     cantfila.forEach(function(valor,indice) {
 			alert(indice+' '+valor+' '+unitario[indice]);
+			subtotal[indice] = parseFloat(valor) * parseFloat(unitario[indice]);
 			
 		});
+		var contador = 0;
+    $('.field_subtotal .field-item').each(function(){
+			$(this).text(subtotal[contador]);
+			contador++;
+    });
     
     var subtotal_cot = 0;
     var total_cantidad = 0;
