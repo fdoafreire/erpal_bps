@@ -8,7 +8,7 @@
     $('.field_ref_cantidad .field-item').each(function(){
 			cantidad = cantidad + parseFloat($(this).text().replace(/ /g,''));
 			var unitario = parseFloat($(this).parent('.field_valor_unitario .field-item').text().replace(/ /g,''));
-			alert($(this).parents().parents().parents().parent('.field_valor_unitario .field-item').text());
+			alert($(this).parents('.field_ref_cantidad').parent('.field_valor_unitario .field-item').text());
     });
     var subtotal_cot = 0;
     var total_cantidad = 0;
