@@ -13,7 +13,7 @@
 			contador++;
     });
     cantfila.forEach(function(indice,valor) {
-			alert(element);
+			alert(indice+' '+valor);
 		});
     
     var subtotal_cot = 0;
