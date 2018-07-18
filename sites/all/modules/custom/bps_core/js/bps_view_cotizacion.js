@@ -5,11 +5,15 @@
 	*/
   $(document).ready(function(){
 		var cantidad = 0;
+		var cantfila = new array();
     $('.field_ref_cantidad .field-item').each(function(){
 			cantidad = cantidad + parseFloat($(this).text().replace(/ /g,''));
-			var unitario = parseFloat($(this).parent('.field_valor_unitario .field-item').text().replace(/ /g,''));
-			alert($(this).parents('.field_ref_cantidad').parent('.field_valor_unitario .field-item').text());
+			cantfila[] = parseFloat($(this).text().replace(/ /g,''));
     });
+    cantfila.forEach(function(element) {
+			alert(element);
+		});
+    
     var subtotal_cot = 0;
     var total_cantidad = 0;
     var total_dcto = 0;
