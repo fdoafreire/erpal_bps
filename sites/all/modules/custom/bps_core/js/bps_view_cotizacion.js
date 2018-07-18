@@ -8,8 +8,8 @@
 		var cantfila = new Array();
 		var contador = 0;
     $('.field_ref_cantidad .field-item').each(function(){
-			cantidad = cantidad + parseFloat($(this).text().replace(/ /g,''));
-			cantfila[contador] = parseFloat($(this).text().replace(/ /g,''));
+			cantidad = cantidad + parseFloat($(this).text().replace(/ /g,'')) + 1;
+			cantfila[contador] = parseFloat($(this).text().replace(/ /g,'')) + 1;
 			contador++;
     });
 		var unitario = new Array();
