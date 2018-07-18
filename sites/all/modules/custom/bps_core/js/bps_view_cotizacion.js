@@ -19,9 +19,11 @@
 			$(this).text(parseFloat($(this).text().replace(/ /g,'')));
 			contador++;
     });
+    var sub = 0;
     var subtotal = new Array();
     cantfila.forEach(function(valor,indice) {
 			subtotal[indice] = parseFloat(valor) * parseFloat(unitario[indice]);
+			sub = sub + parseFloat(valor) * parseFloat(unitario[indice]);;
 			
 		});
 		var contador = 0;
@@ -29,6 +31,17 @@
 			$(this).text(subtotal[contador]);
 			contador++;
     });
+
+		var iva = 0;
+		var valoriva = new Array();
+		var contador = 0;
+    $('.field_valor_iva .field-item').each(function(){
+			iva = iva + parseFloat($(this).text().replace(/ /g,''));
+			valoriva[contador] = parseFloat($(this).text().replace(/ /g,''));
+			$(this).text(parseFloat($(this).text().replace(/ /g,'')));
+			contador++;
+    });
+
     
     var subtotal_cot = 0;
     var total_cantidad = 0;
