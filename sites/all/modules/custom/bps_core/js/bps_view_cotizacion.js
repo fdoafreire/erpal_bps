@@ -5,7 +5,7 @@
 	*/
   $(document).ready(function(){
 		var cantidad = "vacio";
-    $('.field_ref_cantidad .field_item').each(function(){
+    $('.field_ref_cantidad .field-item').each(function(){
 			cantidad = $(this).text();
     });
 		alert(cantidad);
