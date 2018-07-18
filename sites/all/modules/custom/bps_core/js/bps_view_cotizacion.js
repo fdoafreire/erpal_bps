@@ -4,10 +4,11 @@
   jQuery('table.field-collection-view-final tbody').append('<tr><td>soy un totoal</td></tr>');
 	*/
   $(document).ready(function(){
-		var cantidad = "vacio";
+		var cantidad = 0;
     $('.field_ref_cantidad .field-item').each(function(){
-			cantidad = $(this).text();
-			alert(cantidad);
+			cantidad = cantidad + parseFloat($(this).text().replace(/ /g,'')));
+			var unitario = parseFloat($('.field_ref_cantidad .field-item').parent('.field_valor_unitario .field-item').text().replace(/ /g,'')));
+			alert(unitario);
     });
     var subtotal_cot = 0;
     var total_cantidad = 0;
