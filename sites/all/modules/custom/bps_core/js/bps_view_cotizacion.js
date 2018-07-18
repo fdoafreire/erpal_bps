@@ -42,6 +42,16 @@
 			contador++;
     });
 
+		var total = 0;
+		var valortotal = new Array();
+		var contador = 0;
+    $('.field_total .field-item').each(function(){
+			total = total + parseFloat($(this).text().replace(/ /g,''));
+			valortotal[contador] = parseFloat($(this).text().replace(/ /g,''));
+			$(this).text(parseFloat($(this).text().replace(/ /g,'')));
+			contador++;
+    });
+
     
     var subtotal_cot = 0;
     var total_cantidad = 0;
