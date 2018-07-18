@@ -5,10 +5,10 @@
 	*/
   $(document).ready(function(){
     alert('hi');
-    $(".field_red_cantidad .field_item").each(
+    $(".field_red_cantidad .field_item").each(function(){
 			var cantidad = $(this).text();
 			alert(cantidad);
-    );
+    });
     var subtotal_cot = 0;
     var total_cantidad = 0;
     var total_dcto = 0;
