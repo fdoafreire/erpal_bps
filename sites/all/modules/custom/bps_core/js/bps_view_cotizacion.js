@@ -12,7 +12,7 @@
 			cantfila[contador] = parseFloat($(this).text().replace(/ /g,''));
 			contador++;
     });
-    cantfila.forEach(function(element) {
+    cantfila.forEach(function(indice,valor) {
 			alert(element);
 		});
     
