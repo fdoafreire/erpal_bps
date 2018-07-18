@@ -8,19 +8,19 @@
 		var cantfila = new Array();
 		var contador = 0;
     $('.field_ref_cantidad .field-item').each(function(){
-			cantidad = cantidad + parseFloat($(this).text().replace(/ /g,'')) + 1;
-			cantfila[contador] = parseFloat($(this).text().replace(/ /g,'')) + 1;
+			cantidad = cantidad + parseFloat($(this).text().replace(/ /g,''));
+			cantfila[contador] = parseFloat($(this).text().replace(/ /g,''));
 			contador++;
     });
 		var unitario = new Array();
 		var contador = 0;
     $('.field_valor_unitario .field-item').each(function(){
 			unitario[contador] = parseFloat($(this).text().replace(/ /g,''));
+			$(this).text(parseFloat($(this).text().replace(/ /g,'')));
 			contador++;
     });
     var subtotal = new Array();
     cantfila.forEach(function(valor,indice) {
-			alert(indice+' '+valor+' '+unitario[indice]);
 			subtotal[indice] = parseFloat(valor) * parseFloat(unitario[indice]);
 			
 		});
