@@ -224,7 +224,7 @@ function _get_ajax_ordenes($nid) {
   $result = $query->execute()->fetchAll();
   foreach ($result as $row) {
     $ord = node_load($row->nid);
-    $options[$row->nid] = $ord->title . '-' . $row->nid;
+    $options[$row->nid] = $ord->title . ' (' . $row->nid . ')';
   }
 
   return  drupal_json_output($options);
