@@ -220,7 +220,7 @@ function _get_ajax_ordenes($nid) {
   $query->addField('o','entity_id','nid');
   $query->condition('o.field_ord_cliente_target_id',$nid);
   // estado en ejecucion = 1
-  $query->condition('o.field_ord_estado_value',1);
+  $query->condition('e.field_ord_estado_value',1);
   $result = $query->execute()->fetchAll();
   foreach ($result as $row) {
     $ord = node_load($row->nid);
