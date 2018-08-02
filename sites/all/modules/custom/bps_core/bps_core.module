@@ -96,8 +96,18 @@ function bps_core_form_alter(&$form, &$form_state, $form_id) {
    $form['#validate'][] = '_validate_custom_contact';
  }
 
- dpm($form_id);
  if ($form_id == 'equipos_laboratorio_node_form') {
+   $options = array();
+   $options[] = '- Seleccionar -';
+   $form['field_orden'] = array(
+    '#type' => 'select',
+    '#title' => 'Orden de servicio',
+    '#options' => $options,
+    '#weight' => 3,
+    '#suffix' => '</div>',
+    '#validated' => TRUE,
+   );
+
    dpm($form);
  }
 
