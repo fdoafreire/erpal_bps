@@ -103,7 +103,7 @@ function bps_core_form_alter(&$form, &$form_state, $form_id) {
     '#type' => 'select',
     '#title' => 'Orden de servicio',
     '#options' => $options,
-    '#weight' => 3,
+    '#weight' => 20,
     '#suffix' => '</div>',
     '#validated' => TRUE,
    );
