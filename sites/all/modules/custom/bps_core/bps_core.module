@@ -95,6 +95,67 @@ function bps_core_form_alter(&$form, &$form_state, $form_id) {
  if ($form_id == 'erpal_contact_node_form') {
    $form['#validate'][] = '_validate_custom_contact';
  }
+ if ($form_id == 'equipos_laboratorio_node_form') {
+   $size = count($form['field_referencias']['und']);
+   $module_path = drupal_get_path('module', 'bps_core');
+   drupal_add_js($module_path . '/js/bps_core.js');
+   drupal_add_css($module_path . '/css/bps_core.css');
+   foreach ($form['field_referencias']['und'] as $key => $value) {
+     if (is_numeric($key)) {
+       $form['field_referencias']['und'][$key]['field_porcentaje_impuesto']['und'][0]['value']['#size']=3;
+       $form['field_referencias']['und'][$key]['field_porcentaje_impuesto']['und'][0]['value']['#attributes']= array('class'=>array('porcentaje_impuesto'));
+       $form['field_referencias']['und'][$key]['field_descuento']['und'][0]['value']['#size']=3;
+       $form['field_referencias']['und'][$key]['field_descuento']['und'][0]['value']['#attributes']= array('class'=>array('descuento'));
+       $form['field_referencias']['und'][$key]['field_ref_cantidad']['und'][0]['value']['#size']=4;
+       $form['field_referencias']['und'][$key]['field_ref_cantidad']['und'][0]['value']['#attributes']= array('class'=>array('cantidad'));
+       $form['field_referencias']['und'][$key]['field_valor_unitario']['und'][0]['value']['#size']=9;
+       $form['field_referencias']['und'][$key]['field_valor_unitario']['und'][0]['value']['#attributes']= array('class'=>array('valor_unitario'));
+       $form['field_referencias']['und'][$key]['field_valor_iva']['und'][0]['value']['#attributes'] = array('readonly'=>array('true'));
+       $form['field_referencias']['und'][$key]['field_total']['und'][0]['value']['#attributes'] = array('readonly'=>array('true'));
+     } 
+   }
+   $form['total_cotizacion'] = array(
+    '#type' => 'fieldset',
+    '#title' => 'Totales',
+    '#disabled' => TRUE,
+    '#size' => 9,
+    '#weight' => 4.5,
+    '#attributes' => array('class'=>array('fliedset_totales')), 
+   );
+
+   $form['total_cotizacion']['subtotal'] = array(
+    '#type' => 'textfield',
+    '#title' => 'Subtotal',
+    '#disabled' => TRUE,
+    '#size' => 9,
+    '#weight' => 5,
+    '#attributes' => array('class'=>array('totales')), 
+   );
+   $form['total_cotizacion']['descuentos'] = array(
+    '#type' => 'textfield',
+    '#title' => 'Descuentos',
+    '#disabled' => TRUE,
+    '#size' => 9,
+    '#weight' => 5,
+    '#attributes' => array('class'=>array('totales')), 
+   );
+   $form['total_cotizacion']['total_iva'] = array(
+    '#type' => 'textfield',
+    '#title' => 'Iva',
+    '#disabled' => TRUE,
+    '#size' => 9,
+    '#weight' => 5,
+    '#attributes' => array('class'=>array('totales')), 
+   );
+   $form['total_cotizacion']['total_cotizacion'] = array(
+    '#type' => 'textfield',
+    '#title' => 'Total',
+    '#disabled' => TRUE,
+    '#size' => 9,
+    '#weight' => 5,
+    '#attributes' => array('class'=>array('totales')), 
+   );
+ }
 
 
 }
