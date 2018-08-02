@@ -107,6 +107,7 @@ function bps_core_form_alter(&$form, &$form_state, $form_id) {
     '#suffix' => '</div>',
     '#validated' => TRUE,
    );
+   drupal_add_js($module_path . '/js/bps_equipo_laboratorio.js');
 
    dpm($form);
  }
@@ -184,6 +185,14 @@ function bps_core_menu() {
     'type' => MENU_CALLBACK,
   );
 
+   $items['bps/ajax/ordenes/%'] = array(
+    'title' => 'Sucursales',
+    'page callback' => '_get_ajax_ordenes',
+    'access callback' => TRUE,
+    'page arguments' => array(3),
+    'type' => MENU_CALLBACK,
+  );
+
    return $items;
 }
 
@@ -198,6 +207,24 @@ function _get_ajax_sucursales($nid) {
        $address = field_collection_item_load($item['value']);
        $options[$item['value']] = $address->field_address_name['und'][0]['value'] . ' - ' .$address->field_addition_to_address['und'][0]['value'];
     }
+  }
+
+  return  drupal_json_output($options);
+}
+/**
+ * Function that load branch offices of contact
+ */
+function _get_ajax_ordenes($nid) {
+  $query = db_select('field_data_field_ord_cliente', 'o');
+  $query->join('field_data_field_ord_estado', 'e', 'e.entity_id=o.entity_id');
+  $query->addField('c','entity_id','nid');
+  $query->condition('o.field_ord_cliente_target_id',$nid);
+  // estado en ejecucion = 1
+  $query->condition('o.field_ord_estado_value',1);
+  $result = $query->execute()->fetchAll();
+  foreach ($result as $row) {
+    $ord = node_load($row->nid);
+    $options[$row->nid] = $ord->title . '-' . $row->nid;
   }
 
   return  drupal_json_output($options);
