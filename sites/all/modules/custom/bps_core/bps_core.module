@@ -217,7 +217,7 @@ function _get_ajax_sucursales($nid) {
 function _get_ajax_ordenes($nid) {
   $query = db_select('field_data_field_ord_cliente', 'o');
   $query->join('field_data_field_ord_estado', 'e', 'e.entity_id=o.entity_id');
-  $query->addField('c','entity_id','nid');
+  $query->addField('o','entity_id','nid');
   $query->condition('o.field_ord_cliente_target_id',$nid);
   // estado en ejecucion = 1
   $query->condition('o.field_ord_estado_value',1);
