@@ -107,6 +107,7 @@ function bps_core_form_alter(&$form, &$form_state, $form_id) {
     '#suffix' => '</div>',
     '#validated' => TRUE,
    );
+   $module_path = drupal_get_path('module', 'bps_core');
    drupal_add_js($module_path . '/js/bps_equipo_laboratorio.js');
 
    dpm($form);
