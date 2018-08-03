@@ -212,7 +212,27 @@ function bps_core_menu() {
     'type' => MENU_CALLBACK,
   );
 
+   $items['bps/pdf/%'] = array(
+    'title' => 'pdf',
+    'page callback' => 'bps_pdf_html',
+    'access callback' => TRUE,
+    'page arguments' => array(2),
+    'type' => MENU_CALLBACK,
+  );
+
+
    return $items;
+}
+/**
+ * Function that load branch offices of contact
+ */
+function bps_pdf_html($nid) {
+  $node = node_load($nid);
+  $html = '';
+  if ($node->type == 'cotizaciones') {
+    $html = '<table><tr><th>id</th><th>nombre</th><th>valor</th></tr><tr><td>id</td><td>nombre</td><td>valor</td></tr></table>';
+  }
+  pdf_using_mpdf_api($html);
 }
 
 /**
