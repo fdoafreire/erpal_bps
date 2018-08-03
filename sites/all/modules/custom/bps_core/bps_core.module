@@ -133,7 +133,7 @@ function _validate_custom_laboratorio($form, &$form_state) {
   if (isset($values['field_orden']) && !empty($values['field_orden'])) {
     $form_state['values']['field_orden'] = array('und' => array('target_id' => $values['field_orden']));
   }
-  dpm($values,'valoreslast');
+  dpm($form_state['values'],'valoreslast');
 }
 
 /**
