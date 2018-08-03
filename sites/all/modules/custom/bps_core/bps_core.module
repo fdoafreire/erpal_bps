@@ -97,6 +97,7 @@ function bps_core_form_alter(&$form, &$form_state, $form_id) {
  }
 
  if ($form_id == 'equipos_laboratorio_node_form') {
+   dpm($form);
    $options = array();
    $options[] = '- Seleccionar -';
    $form['field_orden'] = array(
