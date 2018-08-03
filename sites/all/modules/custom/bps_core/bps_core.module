@@ -104,6 +104,7 @@ function bps_core_form_alter(&$form, &$form_state, $form_id) {
    if (isset($form['#node']->nid) && !empty($form['#node']->nid) && is_numeric($form['#node']->nid) && $form['#node']->nid > 0) {
      if (isset($form['#node']->field_el_cliente['und'][0]['target_id'])) {
        $default_value = $form['#node']->field_el_cliente['und'][0]['target_id'];
+       dpm($default_value);
        $options = _get_ajax_ordenes($default_value, FALSE);  
      }
    }
