@@ -97,15 +97,16 @@ function bps_core_form_alter(&$form, &$form_state, $form_id) {
  }
  
  if ($form_id == 'equipos_laboratorio_node_form') {
-   dpm($form);
    $options = array();
    $default_value = 0;
    $options[] = '- Seleccionar -';
    if (isset($form['#node']->nid) && !empty($form['#node']->nid) && is_numeric($form['#node']->nid) && $form['#node']->nid > 0) {
-     drupal_set_message('esta editando');
      if (isset($form['#node']->field_el_cliente['und'][0]['target_id'])) {
        $default_value = $form['#node']->field_el_cliente['und'][0]['target_id'];
-       $options = _get_ajax_ordenes($default_value, FALSE);  
+       $options_tmp = _get_ajax_ordenes($default_value, FALSE);  
+       if (count($options_tmp) > 0) {
+         $options = $options_tmp;
+       }
      }
    }
    $form['field_orden'] = array(
