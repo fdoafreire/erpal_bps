@@ -105,7 +105,7 @@ function bps_core_form_alter(&$form, &$form_state, $form_id) {
        $default_value = $form['#node']->field_el_cliente['und'][0]['target_id'];
        $options_tmp = _get_ajax_ordenes($default_value, FALSE);  
        if (count($options_tmp) > 0) {
-         $options = $options_tmp;
+         $options += $options_tmp;
        }
      }
    }
@@ -236,8 +236,11 @@ function _get_ajax_sucursales($nid) {
 function _get_ajax_ordenes($nid, $flag_json = TRUE) {
   $query = db_select('field_data_field_ord_cliente', 'o');
   $query->join('field_data_field_ord_estado', 'e', 'e.entity_id=o.entity_id');
+  $query->join('field_data_field_ord_tipo' ,'t', 't.entity_id=0.entity_id');
   $query->addField('o','entity_id','nid');
   $query->condition('o.field_ord_cliente_target_id',$nid);
+  // ordenes de tipo 2 = orden de trabajo
+  $query->condition('t.field_ord_tipo_value',2);
   // estado en ejecucion = 1
   $query->condition('e.field_ord_estado_value',1);
   $result = $query->execute()->fetchAll();
