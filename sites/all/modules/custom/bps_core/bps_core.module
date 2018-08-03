@@ -129,10 +129,11 @@ function bps_core_form_alter(&$form, &$form_state, $form_id) {
 
 function _validate_custom_laboratorio($form, &$form_state) {
   $values = $form_state['values'];
-  dpm($values,'valores');
+  dpm($values,'valoresant');
   if (isset($values['field_orden']) && !empty($values['field_orden'])) {
     $form_state['values']['field_orden'] = array('und' => array('target_id' => $values['field_orden']));
   }
+  dpm($values,'valoreslast');
 }
 
 /**
