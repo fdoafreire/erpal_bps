@@ -236,7 +236,7 @@ function _get_ajax_sucursales($nid) {
 function _get_ajax_ordenes($nid, $flag_json = TRUE) {
   $query = db_select('field_data_field_ord_cliente', 'o');
   $query->join('field_data_field_ord_estado', 'e', 'e.entity_id=o.entity_id');
-  $query->join('field_data_field_ord_tipo' ,'t', 't.entity_id=0.entity_id');
+  $query->join('field_data_field_ord_tipo' ,'t', 't.entity_id=o.entity_id');
   $query->addField('o','entity_id','nid');
   $query->condition('o.field_ord_cliente_target_id',$nid);
   // ordenes de tipo 2 = orden de trabajo
