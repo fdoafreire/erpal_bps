@@ -100,7 +100,6 @@ function bps_core_form_alter(&$form, &$form_state, $form_id) {
    $options = array();
    $default_value = 0;
    $options[] = '- Seleccionar -';
-   dpm($form['#node']);
    if (isset($form['#node']->nid) && !empty($form['#node']->nid) && is_numeric($form['#node']->nid) && $form['#node']->nid > 0) {
      if (isset($form['#node']->field_el_cliente['und'][0]['target_id'])) {
        $default_value = isset($form['#node']->field_orden['und'][0]['target_id']) ? $form['#node']->field_orden['und'][0]['target_id'] : 0;
@@ -129,11 +128,9 @@ function bps_core_form_alter(&$form, &$form_state, $form_id) {
 
 function _validate_custom_laboratorio($form, &$form_state) {
   $values = $form_state['values'];
-  dpm($values,'valoresant');
   if (isset($values['field_orden']) && !empty($values['field_orden'])) {
     $form_state['values']['field_orden'] = array('und' => array(array('target_id' => $values['field_orden'])));
   }
-  dpm($form_state['values'],'valoreslast');
 }
 
 /**
