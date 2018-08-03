@@ -228,11 +228,13 @@ function bps_core_menu() {
  */
 function bps_pdf_html($nid) {
   $node = node_load($nid);
+  dpm($node);
   $html = '';
   if ($node->type == 'cotizaciones') {
     $html = '<table><tr><th>id</th><th>nombre</th><th>valor</th></tr><tr><td>id</td><td>nombre</td><td>valor</td></tr></table>';
   }
-  pdf_using_mpdf_api($html);
+  return $html;
+  //pdf_using_mpdf_api($html);
 }
 
 /**
