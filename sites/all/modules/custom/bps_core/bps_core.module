@@ -95,17 +95,25 @@ function bps_core_form_alter(&$form, &$form_state, $form_id) {
  if ($form_id == 'erpal_contact_node_form') {
    $form['#validate'][] = '_validate_custom_contact';
  }
-
+ 
  if ($form_id == 'equipos_laboratorio_node_form') {
    dpm($form);
    $options = array();
+   $default_value = 0;
    $options[] = '- Seleccionar -';
+   if (isset($form['#node']->nid) && !empty($form['#node']->nid) && is_numeric($form['#node']->nid) && $form['#node']->nid > 0) {
+     if (isset($form['#node']->field_el_cliente['und'][0]['target_id'])) {
+       $default_value = $form['#node']->field_el_cliente['und'][0]['target_id'];
+       $options = _get_ajax_ordenes($default_value, FALSE);  
+     }
+   }
    $form['field_orden'] = array(
     '#type' => 'select',
     '#title' => 'Orden de servicio',
     '#options' => $options,
-    '#weight' => 20,
+    '#weight' => 3,
     '#suffix' => '</div>',
+    '#default_value' => $default_value,
     '#validated' => TRUE,
    );
    $module_path = drupal_get_path('module', 'bps_core');
@@ -223,7 +231,7 @@ function _get_ajax_sucursales($nid) {
 /**
  * Function that load branch offices of contact
  */
-function _get_ajax_ordenes($nid) {
+function _get_ajax_ordenes($nid, $flag_json = TRUE) {
   $query = db_select('field_data_field_ord_cliente', 'o');
   $query->join('field_data_field_ord_estado', 'e', 'e.entity_id=o.entity_id');
   $query->addField('o','entity_id','nid');
@@ -235,8 +243,13 @@ function _get_ajax_ordenes($nid) {
     $ord = node_load($row->nid);
     $options[$row->nid] = $ord->title . ' (' . $row->nid . ')';
   }
-
-  return  drupal_json_output($options);
+  if ($flag_json) {
+    return  drupal_json_output($options);  
+  }
+  else {
+   return $options;   
+  }
+  
 }
 
 /**
