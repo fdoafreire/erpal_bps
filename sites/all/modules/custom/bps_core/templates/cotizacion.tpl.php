@@ -23,7 +23,7 @@
   $iva = 0;
   $total = 0;
   if (isset($node->field_referencias['und']) && count($node->field_referencias['und']) > 0){
-    foreach ($node->field_referencias['und'] as => $ref) {
+    foreach ($node->field_referencias['und'] as $ref) {
     	$item = field_collection_item_load($ref['value']);
     	$references[] = array('ref' => $item->field_ref_referencia['und'][0]['value'],
     		                    'description' => $item->field_descripcion['und'][0]['value'],
