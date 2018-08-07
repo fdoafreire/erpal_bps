@@ -3,6 +3,12 @@
   $logo = $base_url . '/' . drupal_get_path('module', 'bps_core'). '/img/logo.png';
   $img_logo = '<img src="' . $logo . '" style="width: 120px;"/>';
   $node = $variables['node'];
+
+  $fecha = format_date(time(),'long');
+  if (isset($node->created)) {
+  	$fecha = 'Cali,'.format_date($node->created,'custom','j').' de '.format_date($node->created,'custom','F').' del '.format_date($node->created,'custom','Y');
+  }
+
   $cliente = node_load($node->field_cliente['und'][0]['target_id']);
   $city = '';
   $address = '';
@@ -83,7 +89,7 @@
 				<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
 					<thead>
 						<tr>
-								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">FECHA</td>
+								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;"><?php print $fecha?>FECHA</td>
 								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;">6 Agosto 2018</td>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">NUMERO O.T.</td>
 								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;">ID DE LA OS</td>
