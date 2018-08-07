@@ -4,10 +4,12 @@
   $img_logo = '<img src="' . $logo . '" style="width: 120px;"/>';
   $node = $variables['node'];
 
+
   $fecha = format_date(time(),'long');
   if (isset($node->created)) {
-  	$fecha = 'Cali,'.format_date($node->created,'custom','j').' de '.format_date($node->created,'custom','F').' del '.format_date($node->created,'custom','Y');
+  	$fecha = format_date($node->created,'custom','j').' de '.format_date($node->created,'custom','F').' del '.format_date($node->created,'custom','Y');
   }
+  $orden = $node->field_cliente['und'][0];
 
   $cliente = node_load($node->field_cliente['und'][0]['target_id']);
   $city = '';
@@ -92,7 +94,7 @@
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">FECHA</td>
 								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;"><?php print $fecha?></td>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">NUMERO O.T.</td>
-								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;">ID DE LA OS</td>
+								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;"><?php print $node->nid; ?></td>
 						</tr>
 					</thead>
 					<tbody>
