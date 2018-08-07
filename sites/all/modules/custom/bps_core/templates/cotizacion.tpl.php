@@ -126,10 +126,10 @@
 					<td style="width:100px;font-size:13px;font-weight:bold;padding:0;text-align:left;">Asunto</td>
 					<td style="width:800px;font-size:13px;padding:0;text-align:left;">COTIZACION</td>
 				</tr>
-				<tr>
+				<!--tr>
 					<td style="width:100px;font-size:13px;font-weight:bold;padding:0;text-align:left;">Equipo</td>
 					<td style="width:800px;font-size:13px;padding:0;text-align:left;"></td>
-				</tr>
+				</tr-->
 			</tbody>
 		</table>
 		<br>
