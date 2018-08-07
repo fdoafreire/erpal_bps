@@ -11,65 +11,14 @@
   }
 
   $cliente = node_load($node->field_ord_cliente['und'][0]['target_id']);
-  $city = '';
-  $address = '';
-  if (isset($node->field_addresses['und'][0]['value'])) {
-  	$item = field_collection_item_load($item['value']);
-  	if (isset($item->field_city['und'][0]['value'])) {
-  	  $city = $item->field_city['und'][0]['value'];
-  	}
-  	if (isset($item->field_addition_to_address['und'][0]['value'])) {
-  	  $address = $item->field_addition_to_address['und'][0]['value'];
-  	}
-  }
-  $contact = '';
-  if ($node->field_contacto['und'][0]['value']) {
-  	$contact = $node->field_contacto['und'][0]['value'];
-  } 
-  $references = array();
-  $neto = 0;
-  $descuento = 0;
-  $subtotal = 0;
-  $iva = 0;
-  $total = 0;
-  if (isset($node->field_referencias['und']) && count($node->field_referencias['und']) > 0){
-    foreach ($node->field_referencias['und'] as $ref) {
-    	$item = field_collection_item_load($ref['value']);
-    	$references[] = array('ref' => $item->field_ref_referencia['und'][0]['value'],
-    		                    'description' => $item->field_descripcion['und'][0]['value'],
-    		                    'cant' => $item->field_ref_cantidad['und'][0]['value'],
-    		                    'v_unitario' => $item->field_valor_unitario['und'][0]['value'],
-    		                    'v_subtotal' => $item->field_ref_cantidad['und'][0]['value'] * $item->field_valor_unitario['und'][0]['value'],
-    		                    'v_descuento' => $item->field_descuento['und'][0]['value'],
-    		                    'v_impuesto' => $item->field_porcentaje_impuesto['und'][0]['value'],
-    		                    'v_iva' => $item->field_valor_iva['und'][0]['value'],
-    		                    'v_total' => $item->field_total['und'][0]['value']);
-
-    	$neto      += $item->field_ref_cantidad['und'][0]['value'] * $item->field_valor_unitario['und'][0]['value'];
-    	$descuento += $item->field_descuento['und'][0]['value'];
-  		$subtotal   = $neto - $descuento;
-    	$iva       += $item->field_porcentaje_impuesto['und'][0]['value'];
-    	$total     += $item->field_total['und'][0]['value'];
-    }
-  }
-  $type_payment = '';
-  if (isset($node->field_forma_pago['und'][0]['tid'])) {
-  	 $term = taxonomy_term_load($node->field_forma_pago['und'][0]['tid']);
-  	 $type_payment = isset($term->name)? $term->name: '';
-  } 
-  $time = '';
-  if (isset($node->field_tiempo_entrega['und'][0]['value'])) {
-  	$time = $node->field_tiempo_entrega['und'][0]['value'];
-  } 
-  $validity = '';
-  if (isset($node->field_validez_oferta['und'][0]['value'])) {
-  	$validity = $node->field_validez_oferta['und'][0]['value'];
-
-  }
-  $warranty = '';
-  if (isset($node->field_garantia['und'][0]['value'])) {
-  	$warranty = $node->field_garantia['und'][0]['value'];
-  }
+  $equipment = '';
+  if (isset($node->field_ord_equipo['und'][0]['value'])){
+		$equipment = $node->field_ord_equipo['und'][0]['value'];
+	}
+  $description = '';
+  if (isset($node->field_ord_cliente['und'][0]['value'])){
+		$description = $node->field_ord_cliente['und'][0]['value'];
+	}
 	if ($node->field_ord_tipo['und'][0]['value']=="2"){
 ?>
 		<html>
@@ -129,7 +78,7 @@
 					<tbody>
 						<tr>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;padding:0;">EQUIPO</td>
-								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;padding:0;" colspan="2">PC MAC</td>
+								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;padding:0;" colspan="2"><?php print $equipment?></td>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;padding:0;">SERIAL</td>
 								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;padding:0;" colspan="2">1233GFD</td>
 						</tr>
@@ -143,7 +92,7 @@
 						</tr>
 						<tr>
 							<td style="width:650px;text-align:left;padding:0;font-size:13px;vertical-align:top;" colspan="4" rowspan="3">DESCRIPCION DEL SERVICIO</td>
-							<td style="width:250px;text-align:center;border:1px solid;font-size:13px;padding:0;" colspan="2">SERVICIO REALIZADO EN</td>
+							<td style="width:250px;text-align:center;border:1px solid;font-size:13px;padding:0;" colspan="2"><?php print $description?></td>
 						</tr>
 						<tr>
 							<td style="width:150px;text-align:left;border:1px solid;font-size:13px;padding:0;">LABORATORIO</td>
