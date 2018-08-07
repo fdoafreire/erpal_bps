@@ -9,7 +9,7 @@
   if (isset($node->created)) {
   	$fecha = format_date($node->created,'custom','j').' de '.format_date($node->created,'custom','F').' del '.format_date($node->created,'custom','Y');
   }
-  $orden = $node->field_cliente['und'][0];
+  $cliente = $node->field_ord_cliente['und'][0]['description'];
 
   $cliente = node_load($node->field_cliente['und'][0]['target_id']);
   $city = '';
@@ -100,7 +100,7 @@
 					<tbody>
 						<tr>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">CLIENTE</td>
-								<td style="width:250px;text-align:left;border:1px solid">FREIRE</td>
+								<td style="width:250px;text-align:left;border:1px solid"><?php print $cliente ?></td>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">CIUDADSFDSFSFSDD</td>
 								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;">TABOFDGDGFDGO CDSFDS </td>
 						</tr>
