@@ -229,8 +229,13 @@ function bps_core_menu() {
 function bps_pdf_html($nid) {
   $node = node_load($nid);
   $html = '';
-  if ($node->type == 'cotizaciones') {
-    $html = theme('cotizacion_pdf', array('node' => $node));
+  switch ($node->type) {
+    case 'cotizaciones':
+      $html = theme('cotizacion_pdf', array('node' => $node));
+      break;
+    case 'ordenes':
+      $html = theme('orden_pdf', array('node' => $node));
+      break;
   }
   //return $html;
   pdf_using_mpdf_api($html);
@@ -308,6 +313,10 @@ function bps_core_theme() {
         'cotizacion_pdf' => array(
             'variables' => array('node' => NULL),
             'template' => 'templates/cotizacion',
+        ),
+        'orden_pdf' => array(
+            'variables' => array('node' => NULL),
+            'template' => 'templates/orden',
         ),
     );
 }

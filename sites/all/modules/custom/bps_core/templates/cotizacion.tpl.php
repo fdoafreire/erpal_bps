@@ -6,7 +6,7 @@
   $cliente = node_load($node->field_cliente['und'][0]['target_id']);
   $city = '';
   $address = '';
-  if (isset($node->field_addresses['und'][0]['value'])) {
+  if (isset($cliente->field_addresses['und'][0]['value'])) {
   	$item = field_collection_item_load($item['value']);
   	if (isset($item->field_city['und'][0]['value'])) {
   	  $city = $item->field_city['und'][0]['value'];
