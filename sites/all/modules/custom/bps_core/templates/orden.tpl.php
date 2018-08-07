@@ -81,7 +81,7 @@
 				</table>
 				<br>
 				<div style="width:800px;float:left;display:inline;">
-					<div style="width:650px;float:left;text-align:right;display:inline;">Orden de trabajo</div>
+					<div style="width:550px;float:left;text-align:right;display:inline;border:1px solid;">Orden de trabajo</div>
 					<div style="width:150px;float:left;text-align:right;display:inline;">30</div>
 				</div>
 				<br>
