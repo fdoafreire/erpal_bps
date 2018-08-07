@@ -79,20 +79,16 @@
 						</tr>
 					</tbody>
 				</table>
-				<br>
-				<div style="width:800px;float:left;display:inline;">
-					<div style="width:550px;float:left;text-align:right;display:inline;border:1px solid;">Orden de trabajo</div>
-					<div style="width:150px;float:left;text-align:right;display:inline;">30</div>
-				</div>
-				<br>
-				<div style="width:800px;float:left;">
-					<div style="width:650px;float:left;text-align:right">Fecha</div>
-					<div style="width:150px;float:left;text-align:right">2018-05-01</div>
-				</div>
 				<br><br>
 				<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
 					<caption style="border:1px solid;font-size:13px;font-weight:bold;">DATOS DEL CLIENTE</caption>
 					<tbody>
+						<tr>
+								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">FECHA</td>
+								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;">6 Agosto 2018</td>
+								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">NUMERO O.T.</td>
+								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;">ID DE LA OS</td>
+						</tr>
 						<tr>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">RAZON SOCIAL</td>
 								<td style="width:250px;text-align:left;border:1px solid">FREIRE</td>
