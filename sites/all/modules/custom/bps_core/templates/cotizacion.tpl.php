@@ -201,7 +201,13 @@
 		</table>
 		<br>
 		<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
-			<caption style="font-size:13px;font-weight:bold;text-align:left;">CONDICIONES COMERCIALES</caption>
+			<tbody>
+				<tr>
+						<td style="width:900px;text-align:left;font-size:13px;font-weight:bold;">CONDICIONES COMERCIALES</td>
+				</tr>
+			</tbody>
+		</table>
+		<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
 			<tbody>
 				<tr>
 						<td style="width:150px;text-align:left;font-size:13px;">Forma de pago:</td>
