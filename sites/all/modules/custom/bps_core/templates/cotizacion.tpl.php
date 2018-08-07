@@ -65,7 +65,7 @@
   }
   $fecha = format_date(time(),'medium');
   if (isset($node->created)) {
-  	$fecha = format_date($node->create,'medium');
+  	$fecha = format_date($node->created,'medium');
   }
 
 ?>
