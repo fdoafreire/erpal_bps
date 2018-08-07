@@ -12,7 +12,7 @@
   	  $address = $item->field_addition_to_address['und'][0]['value'];
   	}
   }
-  $contact = ''
+  $contact = '';
   if ($node->field_contacto['und'][0]['value']) {
   	$contact = $node->field_contacto['und'][0]['value'];
   } 
