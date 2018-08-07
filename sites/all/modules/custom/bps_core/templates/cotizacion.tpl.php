@@ -143,9 +143,6 @@
 				</tr>
 			</tbody>
 		</table>
-
-
-
 		<br><br>
 		<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
 			<tbody>
@@ -200,6 +197,7 @@
 						<th style="width:100px;text-align:right;font-size:13px;">TOTAL</th>
 						<td style="width:100px;text-align:right;font-size:13px;border-top:1px solid;"><?php print $total;?></td>
 				</tr>
+			</tbody>
 		</table>
 		<br>
 		<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
