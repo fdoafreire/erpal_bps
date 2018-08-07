@@ -10,7 +10,7 @@
   	$fecha = format_date($node->created,'custom','j').' de '.format_date($node->created,'custom','F').' del '.format_date($node->created,'custom','Y');
   }
 
-  $cliente = $node->field_ord_cliente['und'][0]['target_id'];
+  $cliente = $node->field_ord_cliente['und'][0]['target_id']['description'];
   $city = '';
   $address = '';
   if (isset($node->field_addresses['und'][0]['value'])) {
