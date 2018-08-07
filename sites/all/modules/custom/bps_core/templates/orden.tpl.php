@@ -81,14 +81,16 @@
 				</table>
 				<br><br>
 				<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
-					<caption style="border:1px solid;font-size:13px;font-weight:bold;">DATOS DEL CLIENTE</caption>
-					<tbody>
+					<thead>
 						<tr>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">FECHA</td>
 								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;">6 Agosto 2018</td>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">NUMERO O.T.</td>
 								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;">ID DE LA OS</td>
 						</tr>
+					</thead>
+					<caption style="border:1px solid;font-size:13px;font-weight:bold;">DATOS DEL CLIENTE</caption>
+					<tbody>
 						<tr>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">RAZON SOCIAL</td>
 								<td style="width:250px;text-align:left;border:1px solid">FREIRE</td>
