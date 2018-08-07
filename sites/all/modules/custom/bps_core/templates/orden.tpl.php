@@ -63,6 +63,8 @@
   if (isset($node->field_garantia['und'][0]['value'])) {
   	$warranty = $node->field_garantia['und'][0]['value'];
   }
+  print $node->field_ord_tipo['und'];
+  print '<br>';
 	if ($node->field_ord_tipo['und']=="2"){
 ?>
 		<html>
