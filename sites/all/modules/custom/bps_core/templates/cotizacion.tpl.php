@@ -63,9 +63,9 @@
   if (isset($node->field_garantia['und'][0]['value'])) {
   	$warranty = $node->field_garantia['und'][0]['value'];
   }
-  $fecha = format_date(time(),'medium');
+  $fecha = format_date(time(),'long');
   if (isset($node->created)) {
-  	$fecha = format_date($node->created,'medium');
+  	$fecha = format_date($node->created,'long');
   }
 
 ?>
