@@ -76,7 +76,7 @@
 			<tbody>
 				<tr>
 					<td style="width:230px;font-size:20px;padding:0;text-align:center;"><?php print $img_logo;?></td>
-					<td style="width:300px;font-size:20px;font-weight:bold;padding:0;text-align:center;">COTIZACIONES</td>
+					<td style="width:300px;font-size:20px;font-weight:bold;padding:0;text-align:center;">COTIZACION</td>
 				</tr>
 			</tbody>
 		</table>
@@ -103,7 +103,7 @@
 					<td style="width:400px;font-size:13px;font-weight:bold;padding:0;text-align:left;" colspan="2">Señores</td>
 				</tr>
 				<tr>
-					<td style="width:400px;font-size:13px;padding:0;text-align:left;" colspan="2"><?php print $cliente->title; ?></td>
+					<td style="width:400px;font-size:30px;padding:0;text-align:left;" colspan="2"><?php print $cliente->title; ?></td>
 				</tr>
 				<tr>
 					<td style="width:400px;font-size:13px;padding:0;text-align:left;" colspan="2"><?php print $city; ?></td>
