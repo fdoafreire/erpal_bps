@@ -71,11 +71,11 @@
 				<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
 					<tbody>
 						<tr>
-							<td style="width:300px;border:1px solid;font-size:13px;padding:0;text-align:center;" rowspan="2"><?php print $img_logo;?></td>
-							<td style="width:300px;border:1px solid;font-size:13px;padding:0;text-align:center;">SISTEMA GESTION DE CALIDAD</td>
+							<td style="width:300pxfont-size:13px;padding:0;text-align:center;" rowspan="2"><?php print $img_logo;?></td>
+							<td style="width:300pxfont-size:13px;padding:0;text-align:center;">SISTEMA GESTION DE CALIDAD</td>
 						</tr>
 						<tr>
-							<td style="width:300px;border:1px solid;font-size:13px;padding:0;text-align:center;">ORDEN DE TRABAJO</td>
+							<td style="width:300px;font-size:13px;padding:0;text-align:center;">ORDEN DE TRABAJO</td>
 						</tr>
 					</tbody>
 				</table>
