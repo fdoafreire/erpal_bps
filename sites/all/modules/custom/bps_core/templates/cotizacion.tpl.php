@@ -203,19 +203,19 @@
 		<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
 			<tbody>
 				<tr>
-						<td style="width:200px;text-align:left;font-size:13px;border:1px solid;">Forma de pago:</td>
+						<td style="width:100px;text-align:left;font-size:13px;border:1px solid;">Forma de pago:</td>
 						<td style="width:700px;text-align:left;font-size:13px;border:1px solid;"><?php print $type_payment; ?></td>
 				</tr>
 				<tr>
-						<td style="width:200px;text-align:left;font-size:13px;border:1px solid;">Tiempo de entrega:</td>
+						<td style="width:100px;text-align:left;font-size:13px;border:1px solid;">Tiempo de entrega:</td>
 						<td style="width:700px;text-align:left;font-size:13px;border:1px solid;"><?php print $time; ?></td>
 				</tr>
 				<tr>
-						<td style="width:200px;text-align:left;font-size:13px;border:1px solid;">Validez de la oferta:</td>
+						<td style="width:100px;text-align:left;font-size:13px;border:1px solid;">Validez de la oferta:</td>
 						<td style="width:700px;text-align:left;font-size:13px;border:1px solid;"><?php print $validity; ?></td>
 				</tr>
 				<tr>
-						<td style="width:200px;text-align:left;font-size:13px;border:1px solid;">Garantia:</td>
+						<td style="width:100px;text-align:left;font-size:13px;border:1px solid;">Garantia:</td>
 						<td style="width:700px;text-align:left;font-size:13px;border:1px solid;"><?php print $warranty; ?></td>
 				</tr>
 			</tbody>
