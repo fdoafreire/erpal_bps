@@ -1,7 +1,7 @@
 <?php 
   global $base_url;
   $logo = $base_url . '/' . drupal_get_path('module', 'bps_core'). '/img/logo.png';
-  $img_logo = '<img src="' . $logo . '" />';
+  $img_logo = '<img src="' . $logo . '" style="width: 120px;"/>';
   $node = $variables['node'];
   $cliente = node_load($node->field_cliente['und'][0]['target_id']);
   $city = '';
