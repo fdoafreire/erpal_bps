@@ -100,16 +100,20 @@
 		<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
 			<tbody>
 				<tr>
-					<td style="width:400px;font-size:13px;font-weight:bold;padding:0;text-align:left;" colspan="2">Señores</td>
+					<td style="width:900px;font-size:13px;font-weight:bold;padding:0;text-align:left;" colspan="2">Señores</td>
 				</tr>
 				<tr>
-					<td style="width:400px;font-size:13px;padding:0;text-align:left;" colspan="2"><?php print $cliente->title; ?></td>
+					<td style="width:900px;font-size:13px;padding:0;text-align:left;" colspan="2"><?php print $cliente->title; ?></td>
+				</tr>
+			</tbody>
+		</table>
+		<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
+			<tbody>
+				<tr>
+					<td style="width:300px;font-size:13px;padding:0;text-align:left;" colspan="2"><?php print $city; ?></td>
 				</tr>
 				<tr>
-					<td style="width:400px;font-size:13px;padding:0;text-align:left;" colspan="2"><?php print $city; ?></td>
-				</tr>
-				<tr>
-					<td style="width:400px;font-size:13px;padding:0;text-align:left;" colspan="2"><?php print $address; ?></td>
+					<td style="width:300px;font-size:13px;padding:0;text-align:left;" colspan="2"><?php print $address; ?></td>
 				</tr>
 				<tr>
 					<td style="height:20px;font-size:13px;padding:0;text-align:left;" colspan="2"></td>
@@ -199,7 +203,7 @@
 		</table>
 		<br>
 		<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
-			<caption style="font-size:13px;font-weight:bold;text-align:left;">CONDICIONES COMERCIALES</caption>
+			<caption style="width:900px;font-size:13px;font-weight:bold;text-align:left;">CONDICIONES COMERCIALES</caption>
 			<tbody>
 				<tr>
 						<th style="width:200px;text-align:left;font-size:13px;">Forma de pago:</th>
