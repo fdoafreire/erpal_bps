@@ -66,6 +66,7 @@
   $fecha = format_date(time(),'long');
   if (isset($node->created)) {
   	$fecha = format_date($node->created,'long');
+  	$fecha = format_date($node->created,'custom','j');
   }
 
 ?>
