@@ -10,7 +10,7 @@
   	$fecha = format_date($node->created,'custom','j').' de '.format_date($node->created,'custom','F').' del '.format_date($node->created,'custom','Y');
   }
 
-  $cliente = $node->field_ord_cliente['und'][0]['target_id']['description'];
+  $cliente = noad_load($node->field_ord_cliente['und'][0]['target_id']);
   $city = '';
   $address = '';
   if (isset($node->field_addresses['und'][0]['value'])) {
@@ -99,7 +99,7 @@
 					<tbody>
 						<tr>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">CLIENTE</td>
-								<td style="width:250px;text-align:left;border:1px solid"><?php print $cliente ?></td>
+								<td style="width:250px;text-align:left;border:1px solid"><?php print $cliente->title ?></td>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">CIUDAD</td>
 								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;">TABOFDGDGFDGO CDSFDS </td>
 						</tr>
