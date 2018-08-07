@@ -80,12 +80,12 @@
 					</tbody>
 				</table>
 				<br>
-				<div style="width:900px;float:left;">
+				<div style="width:800px;float:left;">
 					<div style="width:650px;float:left;text-align:right">Orden de trabajo</div>
 					<div style="width:150px;float:left;text-align:right">30</div>
 				</div>
 				<br>
-				<div style="width:900px;float:left;">
+				<div style="width:800px;float:left;">
 					<div style="width:650px;float:left;text-align:right">Fecha</div>
 					<div style="width:150px;float:left;text-align:right">2018-05-01</div>
 				</div>
