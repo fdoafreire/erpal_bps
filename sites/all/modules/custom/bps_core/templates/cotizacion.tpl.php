@@ -66,7 +66,7 @@
   $fecha = format_date(time(),'long');
   if (isset($node->created)) {
   	$fecha = format_date($node->created,'long');
-  	$fecha = format_date($node->created,'custom','j F Y');
+  	$fecha = 'Cali,',format_date($node->created,'custom','j').' de '.format_date($node->created,'custom','F').' del '.format_date($node->created,'custom','Y');
   }
 
 ?>
