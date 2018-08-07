@@ -103,7 +103,7 @@
 					<td style="width:400px;font-size:13px;font-weight:bold;padding:0;text-align:left;" colspan="2">Señores</td>
 				</tr>
 				<tr>
-					<td style="width:400px;font-size:30px;padding:0;text-align:left;" colspan="2"><?php print $cliente->title; ?></td>
+					<td style="width:400px;font-size:13px;padding:0;text-align:left;" colspan="2"><?php print $cliente->title; ?></td>
 				</tr>
 				<tr>
 					<td style="width:400px;font-size:13px;padding:0;text-align:left;" colspan="2"><?php print $city; ?></td>
@@ -202,19 +202,19 @@
 			<caption style="font-size:13px;font-weight:bold;text-align:left;">CONDICIONES COMERCIALES</caption>
 			<tbody>
 				<tr>
-						<th style="width:120px;text-align:left;font-size:13px;">Forma de pago:</th>
+						<th style="width:140px;text-align:left;font-size:13px;">Forma de pago:</th>
 						<td style="width:200px;text-align:left;font-size:13px;"><?php print $type_payment; ?></td>
 				</tr>
 				<tr>
-						<th style="width:120px;text-align:left;font-size:13px;">Tiempo de entrega:</th>
+						<th style="width:140px;text-align:left;font-size:13px;">Tiempo de entrega:</th>
 						<td style="width:200px;text-align:left;font-size:13px;"><?php print $time; ?></td>
 				</tr>
 				<tr>
-						<th style="width:120px;text-align:left;font-size:13px;">Validez de la oferta:</th>
+						<th style="width:140px;text-align:left;font-size:13px;">Validez de la oferta:</th>
 						<td style="width:200px;text-align:left;font-size:13px;"><?php print $validity; ?></td>
 				</tr>
 				<tr>
-						<th style="width:120px;text-align:left;font-size:13px;">Garantia:</th>
+						<th style="width:140px;text-align:left;font-size:13px;">Garantia:</th>
 						<td style="width:200px;text-align:left;font-size:13px;"><?php print $warranty; ?></td>
 				</tr>
 		</table>
@@ -224,19 +224,19 @@
 			<caption style="font-size:13px;font-weight:bold;text-align:left;">Cordialmente</caption>
 			<tbody>
 				<tr>
-						<td style="width:200px;text-align:left;font-size:13px;">FABIAN ANDRES GUERRERO</td>
+						<td style="width:900px;text-align:left;font-size:13px;">FABIAN ANDRES GUERRERO</td>
 				</tr>
 				<tr>
-						<td style="width:200px;text-align:left;font-size:13px;">COMERCIAL</td>
+						<td style="width:900px;text-align:left;font-size:13px;">COMERCIAL</td>
 				</tr>
 				<tr>
-						<th style="width:200px;text-align:left;font-size:13px;">BPS</th>
+						<th style="width:900px;text-align:left;font-size:13px;">BPS</th>
 				</tr>
 				<tr>
-						<td style="width:120px;text-align:left;font-size:13px;">6681142 EXT 105</td>
+						<td style="width:900px;text-align:left;font-size:13px;">6681142 EXT 105</td>
 				</tr>
 				<tr>
-						<td style="width:120px;text-align:left;font-size:13px;">almacen@ps.com.co</td>
+						<td style="width:900px;text-align:left;font-size:13px;">almacen@ps.com.co</td>
 				</tr>
 		</table>
 	</body>
