@@ -288,7 +288,7 @@
 					<tbody>
 						<tr>
 							<td style="width:300px;border:1px solid;font-size:13px;padding:0;text-align:center;" rowspan="2"><?php print $img_logo;?></td>
-							<td style="width:300px;border:1px solid;font-size:13px;padding:0;text-align:center;">SISTEMA GESTION DE CALIDAD<?php   print $node->field_ord_tipo['und'];  print '<br>';?></td>
+							<td style="width:300px;border:1px solid;font-size:13px;padding:0;text-align:center;">SISTEMA GESTION DE CALIDAD<?php   print $node->field_ord_tipo['und']['value'];  print '<br>';?></td>
 						</tr>
 						<tr>
 							<td style="width:300px;border:1px solid;font-size:13px;padding:0;text-align:center;">ORDEN DE SERVICIO REDES</td>
