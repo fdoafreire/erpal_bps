@@ -71,7 +71,7 @@
 				<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
 					<tbody>
 						<tr>
-							<td style="width:300pxfont-size:13px;padding:0;text-align:center;" rowspan="2"><?php print $img_logo;?></td>
+							<td style="width:200pxfont-size:13px;padding:0;text-align:center;" rowspan="2"><?php print $img_logo;?></td>
 							<td style="width:300pxfont-size:13px;padding:0;text-align:center;">SISTEMA GESTION DE CALIDAD</td>
 						</tr>
 						<tr>
@@ -81,12 +81,12 @@
 				</table>
 				<br>
 				<div style="width:900px;float:left;">
-					<div style="width:750px;float:left;text-align:right">Orden de trabajo</div>
+					<div style="width:650px;float:left;text-align:right">Orden de trabajo</div>
 					<div style="width:150px;float:left;text-align:right">30</div>
 				</div>
 				<br>
 				<div style="width:900px;float:left;">
-					<div style="width:750px;float:left;text-align:right">Fecha</div>
+					<div style="width:650px;float:left;text-align:right">Fecha</div>
 					<div style="width:150px;float:left;text-align:right">2018-05-01</div>
 				</div>
 				<br><br>
