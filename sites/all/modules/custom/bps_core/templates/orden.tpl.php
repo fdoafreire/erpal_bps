@@ -63,8 +63,6 @@
   if (isset($node->field_garantia['und'][0]['value'])) {
   	$warranty = $node->field_garantia['und'][0]['value'];
   }
-  print $node->field_ord_tipo['und'];
-  print '<br>';
 	if ($node->field_ord_tipo['und']=="2"){
 ?>
 		<html>
@@ -283,7 +281,7 @@
 	} else {
 ?>
 		<html>
-			<head></head>
+			<head><?php   print $node->field_ord_tipo['und'];  print '<br>';?></head>
 			<body style="font-size:4px;">
 				<font size="2">
 				<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
