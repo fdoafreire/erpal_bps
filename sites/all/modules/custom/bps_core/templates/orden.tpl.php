@@ -16,8 +16,8 @@
 		$equipment = $node->field_ord_equipo['und'][0]['value'];
 	}
   $description = '';
-  if (isset($node->field_ord_cliente['und'][0]['value'])){
-		$description = $node->field_ord_cliente['und'][0]['value'];
+  if (isset($node->field_ord_descripcion['und'][0]['value'])){
+		$description = $node->field_ord_descripcion['und'][0]['value'];
 	}
 	if ($node->field_ord_tipo['und'][0]['value']=="2"){
 ?>
