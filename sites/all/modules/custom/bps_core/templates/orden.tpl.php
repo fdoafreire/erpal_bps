@@ -80,7 +80,7 @@
 					</tbody>
 				</table>
 				<br>
-				<div style="width:800px;float:left;">
+				<div style="width:800px;float:left;display:inline;">
 					<div style="width:650px;float:left;text-align:right">Orden de trabajo</div>
 					<div style="width:150px;float:left;text-align:right">30</div>
 				</div>
