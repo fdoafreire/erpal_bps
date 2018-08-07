@@ -228,8 +228,6 @@ function bps_core_menu() {
  */
 function bps_pdf_html($nid) {
   $node = node_load($nid);
-  dpm($node);
-
   $html = '';
   if ($node->type == 'cotizaciones') {
     $html = theme('cotizacion_pdf', array('node' => $node));
