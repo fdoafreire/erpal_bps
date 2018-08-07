@@ -86,12 +86,12 @@
 		<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
 			<tbody>
 				<tr>
-					<td style="width:300px;font-size:15px;padding:0;text-align:left;" rowspan="2"><?php print $fecha;?></td>
-					<td style="width:550px;font-size:15px;font-weight:bold;padding:0;text-align:right;">Cotizacion No:</td>
-					<td style="width:50px;font-size:15px;font-weight:bold;padding:0;text-align:right;"><?php print $node->nid; ?></td>
+					<td style="width:300px;font-size:13px;padding:0;text-align:left;" rowspan="2"><?php print $fecha;?></td>
+					<td style="width:550px;font-size:13px;font-weight:bold;padding:0;text-align:right;">Cotizacion No:</td>
+					<td style="width:50px;font-size:13px;font-weight:bold;padding:0;text-align:right;"><?php print $node->nid; ?></td>
 				</tr>
 				<tr>
-					<td style="width:550px;font-size:15px;font-weight:bold;padding:0;text-align:right;">Version</td>
+					<td style="width:550px;font-size:13px;font-weight:bold;padding:0;text-align:right;">Version</td>
 					<td style="width:50px;font-size:13px;font-weight:bold;padding:0;text-align:right;">1</td>
 				</tr>
 			</tbody>
@@ -100,31 +100,31 @@
 		<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
 			<tbody>
 				<tr>
-					<td style="width:400px;font-size:15px;font-weight:bold;padding:0;text-align:left;" colspan="2">Señores</td>
+					<td style="width:400px;font-size:13px;font-weight:bold;padding:0;text-align:left;" colspan="2">Señores</td>
 				</tr>
 				<tr>
-					<td style="width:400px;font-size:15px;padding:0;text-align:left;" colspan="2"><?php print $cliente->title; ?></td>
+					<td style="width:400px;font-size:13px;padding:0;text-align:left;" colspan="2"><?php print $cliente->title; ?></td>
 				</tr>
 				<tr>
-					<td style="width:400px;font-size:15px;padding:0;text-align:left;" colspan="2"><?php print $city; ?></td>
+					<td style="width:400px;font-size:13px;padding:0;text-align:left;" colspan="2"><?php print $city; ?></td>
 				</tr>
 				<tr>
-					<td style="width:400px;font-size:15px;padding:0;text-align:left;" colspan="2"><?php print $address; ?></td>
+					<td style="width:400px;font-size:13px;padding:0;text-align:left;" colspan="2"><?php print $address; ?></td>
 				</tr>
 				<tr>
-					<td style="height:20px;font-size:15px;padding:0;text-align:left;" colspan="2"></td>
+					<td style="height:20px;font-size:13px;padding:0;text-align:left;" colspan="2"></td>
 				</tr>
 				<tr>
-					<td style="width:100px;font-size:15px;font-weight:bold;padding:0;text-align:left;">Atención</td>
-					<td style="width:300px;font-size:15px;padding:0;text-align:left;"><?php print $contact; ?></td>
+					<td style="width:100px;font-size:13px;font-weight:bold;padding:0;text-align:left;">Atención</td>
+					<td style="width:300px;font-size:13px;padding:0;text-align:left;"><?php print $contact; ?></td>
 				</tr>
 				<tr>
-					<td style="width:100px;font-size:15px;font-weight:bold;padding:0;text-align:left;">Asunto</td>
-					<td style="width:300px;font-size:15px;padding:0;text-align:left;">COTIZACION</td>
+					<td style="width:100px;font-size:13px;font-weight:bold;padding:0;text-align:left;">Asunto</td>
+					<td style="width:300px;font-size:13px;padding:0;text-align:left;">COTIZACION</td>
 				</tr>
 				<tr>
-					<td style="width:100px;font-size:15px;font-weight:bold;padding:0;text-align:left;">Equipo</td>
-					<td style="width:300px;font-size:15px;padding:0;text-align:left;"></td>
+					<td style="width:100px;font-size:13px;font-weight:bold;padding:0;text-align:left;">Equipo</td>
+					<td style="width:300px;font-size:13px;padding:0;text-align:left;"></td>
 				</tr>
 			</tbody>
 		</table>
@@ -132,10 +132,10 @@
 		<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
 			<tbody>
 				<tr>
-					<td style="width:900px;font-size:15px;font-weight:bold;padding:0;text-align:left;">Cordial saludo</td>
+					<td style="width:900px;font-size:13px;font-weight:bold;padding:0;text-align:left;">Cordial saludo</td>
 				</tr>
 				<tr>
-					<td style="width:900px;font-size:15px;padding:0;text-align:left;">De acuerdo a su solicitud, a continuación se presenta oferta comercial para su estudio y aprobación</td>
+					<td style="width:900px;font-size:13px;padding:0;text-align:left;">De acuerdo a su solicitud, a continuación se presenta oferta comercial para su estudio y aprobación</td>
 				</tr>
 			</tbody>
 		</table>
