@@ -202,19 +202,19 @@
 			<caption style="font-size:13px;font-weight:bold;text-align:left;">CONDICIONES COMERCIALES</caption>
 			<tbody>
 				<tr>
-						<th style="width:140px;text-align:left;font-size:13px;">Forma de pago:</th>
+						<th style="width:200px;text-align:left;font-size:13px;">Forma de pago:</th>
 						<td style="width:200px;text-align:left;font-size:13px;"><?php print $type_payment; ?></td>
 				</tr>
 				<tr>
-						<th style="width:140px;text-align:left;font-size:13px;">Tiempo de entrega:</th>
+						<th style="width:200px;text-align:left;font-size:13px;">Tiempo de entrega:</th>
 						<td style="width:200px;text-align:left;font-size:13px;"><?php print $time; ?></td>
 				</tr>
 				<tr>
-						<th style="width:140px;text-align:left;font-size:13px;">Validez de la oferta:</th>
+						<th style="width:200px;text-align:left;font-size:13px;">Validez de la oferta:</th>
 						<td style="width:200px;text-align:left;font-size:13px;"><?php print $validity; ?></td>
 				</tr>
 				<tr>
-						<th style="width:140px;text-align:left;font-size:13px;">Garantia:</th>
+						<th style="width:200px;text-align:left;font-size:13px;">Garantia:</th>
 						<td style="width:200px;text-align:left;font-size:13px;"><?php print $warranty; ?></td>
 				</tr>
 		</table>
