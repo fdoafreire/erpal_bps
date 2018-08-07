@@ -100,15 +100,12 @@
 		<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
 			<tbody>
 				<tr>
-					<td style="width:900px;font-size:13px;font-weight:bold;padding:0;text-align:left;" colspan="2">Señores</td>
+					<td style="width:900px;font-size:13px;font-weight:bold;padding:0;text-align:left;">Señores</td>
 				</tr>
 				<tr>
-					<td style="width:900px;font-size:13px;padding:0;text-align:left;" colspan="2"><?php print $cliente->title; ?></td>
+					<td style="width:900px;font-size:13px;padding:0;text-align:left;"><?php print $cliente->title; ?></td>
 				</tr>
 			</tbody>
-		</table>
-		<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
-			<tbody>
 				<tr>
 					<td style="width:300px;font-size:13px;padding:0;text-align:left;" colspan="2"><?php print $city; ?></td>
 				</tr>
@@ -118,6 +115,9 @@
 				<tr>
 					<td style="height:20px;font-size:13px;padding:0;text-align:left;" colspan="2"></td>
 				</tr>
+		</table>
+		<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
+			<tbody>
 				<tr>
 					<td style="width:100px;font-size:13px;font-weight:bold;padding:0;text-align:left;">Atención</td>
 					<td style="width:300px;font-size:13px;padding:0;text-align:left;"><?php print $contact; ?></td>
