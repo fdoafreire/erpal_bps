@@ -76,7 +76,7 @@
 			<tbody>
 				<tr>
 					<td style="width:230px;font-size:20px;padding:0;text-align:center;"><?php print $img_logo;?></td>
-					<td style="width:300px;font-size:20px;font-weight:bold;padding:0;text-align:center;">COTIZACION</td>
+					<td style="width:300px;font-size:20px;font-weight:bold;padding:0;text-align:center;">COTIZACIONES</td>
 				</tr>
 			</tbody>
 		</table>
