@@ -203,7 +203,7 @@
 		</table>
 		<br>
 		<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
-			<!--caption style="width:900px;font-size:13px;font-weight:bold;text-align:left;">CONDICIONES COMERCIALES</caption-->
+			<caption style="width:900px;font-size:13px;font-weight:bold;text-align:left;">CONDICIONES COMERCIALES</caption>
 			<tbody>
 				<tr>
 						<td style="width:200px;text-align:left;font-size:13px;border:1px solid;">Forma de pago:</td>
@@ -218,9 +218,10 @@
 						<td style="width:400px;text-align:left;font-size:13px;"><?php print $validity; ?></td>
 				</tr>
 				<tr>
-						<th style="width:200px;text-align:left;font-size:13px;">Garantia:</td>
+						<td style="width:200px;text-align:left;font-size:13px;">Garantia:</td>
 						<td style="width:400px;text-align:left;font-size:13px;"><?php print $warranty; ?></td>
 				</tr>
+			</tbody>
 		</table>
 		<br>
 		<br>
