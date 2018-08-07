@@ -332,9 +332,7 @@
 					<caption style="border:1px solid;font-size:13px;font-weight:bold;">DESCRIPCION DEL SERVICIO</caption>
 					<tbody>
 						<tr>
-								<td style="width:600px;text-align:left;border:1px solid;font-size:13px;padding:0;" rowspan="4">ReviSion circuito de iluminacion en piso 35.</td>
-						</tr>
-						<tr>
+								<td style="width:600px;text-align:left;border:1px solid;font-size:13px;padding:0;" rowspan="3">ReviSion circuito de iluminacion en piso 35.</td>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;padding:0;">CONTRATO</td>
 								<td style="width:100px;text-align:left;border:1px solid;font-size:13px;padding:0;">X</td>
 						</tr>
