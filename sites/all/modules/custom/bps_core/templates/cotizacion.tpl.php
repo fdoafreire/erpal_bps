@@ -1,6 +1,6 @@
 <?php 
   global $base_url;
-  $logo = $base_url . '/' . drupal_get_path('module', 'bps_core'). '/img/log.png';
+  $logo = $base_url . '/' . drupal_get_path('module', 'bps_core'). '/img/logo.png';
   $img_logo = '<img src="' . $logo . '" />';
   $node = $variables['node'];
   $cliente = node_load($node->field_cliente['und'][0]['target_id']);
