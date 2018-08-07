@@ -63,6 +63,10 @@
   if (isset($node->field_garantia['und'][0]['value'])) {
   	$warranty = $node->field_garantia['und'][0]['value'];
   }
+  $fecha = format_date(time(),'medium');
+  if (isset($node->create)) {
+  	$fecha = format_date($node->create,'medium');
+  }
 
 ?>
 <html>
@@ -82,7 +86,7 @@
 		<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
 			<tbody>
 				<tr>
-					<td style="width:300px;font-size:15px;padding:0;text-align:left;" rowspan="2"><?php print format_date($node->create,'long')?></td>
+					<td style="width:300px;font-size:15px;padding:0;text-align:left;" rowspan="2"><?php print $fecha;?></td>
 					<td style="width:550px;font-size:15px;font-weight:bold;padding:0;text-align:right;">Cotizacion No:</td>
 					<td style="width:50px;font-size:15px;font-weight:bold;padding:0;text-align:right;"><?php print $node->nid; ?></td>
 				</tr>
