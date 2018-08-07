@@ -68,7 +68,7 @@ function bps_core_form_alter(&$form, &$form_state, $form_id) {
     '#title' => 'Descuentos',
     '#disabled' => TRUE,
     '#size' => 9,
-    '#weight' => 5,
+    '#weight' => 6,
     '#attributes' => array('class'=>array('totales')), 
    );
    $form['total_cotizacion']['total_iva'] = array(
@@ -76,7 +76,7 @@ function bps_core_form_alter(&$form, &$form_state, $form_id) {
     '#title' => 'Iva',
     '#disabled' => TRUE,
     '#size' => 9,
-    '#weight' => 5,
+    '#weight' => 7,
     '#attributes' => array('class'=>array('totales')), 
    );
    $form['total_cotizacion']['total_cotizacion'] = array(
@@ -84,7 +84,7 @@ function bps_core_form_alter(&$form, &$form_state, $form_id) {
     '#title' => 'Total',
     '#disabled' => TRUE,
     '#size' => 9,
-    '#weight' => 5,
+    '#weight' => 8,
     '#attributes' => array('class'=>array('totales')), 
    );
  }
