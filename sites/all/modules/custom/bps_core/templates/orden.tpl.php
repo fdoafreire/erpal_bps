@@ -11,7 +11,7 @@
   }
   $cliente = $node->field_ord_cliente['und'][0]['description'];
 
-  //$cliente = node_load($node->field_cliente['und'][0]['target_id']);
+  $cliente = node_load($node->field_ord_cliente['und'][0]['target_id']);
   $city = '';
   $address = '';
   if (isset($node->field_addresses['und'][0]['value'])) {
