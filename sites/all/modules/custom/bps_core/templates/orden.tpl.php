@@ -89,8 +89,8 @@
 				<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
 					<thead>
 						<tr>
-								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;"><?php print $fecha?>FECHA</td>
-								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;">6 Agosto 2018</td>
+								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">FECHA</td>
+								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;"><?php print $fecha?></td>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">NUMERO O.T.</td>
 								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;">ID DE LA OS</td>
 						</tr>
@@ -303,7 +303,7 @@
 					<tbody>
 						<tr>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">FECHA</td>
-								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;">6 Agosto 2018</td>
+								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;"><?php print $fecha?></td>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">NUMERO O.S.</td>
 								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;">ID DE LA OS</td>
 						</tr>
