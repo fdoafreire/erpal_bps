@@ -137,18 +137,18 @@
 
 		<br><br>
 		<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
-			<thead>
-					<th style="width:20px;text-align:left;border:1px solid;font-size:13px;"></th>
-					<th style="width:100px;text-align:left;border:1px solid;font-size:13px;">Referencia</th>
-					<th style="width:180px;text-align:left;border:1px solid;font-size:13px;">Descripcion</th>
-					<th style="width:100px;text-align:left;border:1px solid;font-size:13px;">Cantidad</th>
-					<th style="width:100px;text-align:left;border:1px solid;font-size:13px;">Valor Unitario</th>
-					<th style="width:100px;text-align:left;border:1px solid;font-size:13px;">Subtotal</th>
-					<th style="width:100px;text-align:left;border:1px solid;font-size:13px;">Descuento</th>
-					<th style="width:100px;text-align:left;border:1px solid;font-size:13px;">Iva</th>
-					<th style="width:100px;text-align:left;border:1px solid;font-size:13px;">Total</th>
-			</thead>
 			<tbody>
+				<tr>
+						<th style="width:20px;text-align:left;border:1px solid;font-size:13px;"></th>
+						<th style="width:100px;text-align:left;border:1px solid;font-size:13px;">Referencia</th>
+						<th style="width:180px;text-align:left;border:1px solid;font-size:13px;">Descripcion</th>
+						<th style="width:100px;text-align:left;border:1px solid;font-size:13px;">Cantidad</th>
+						<th style="width:100px;text-align:left;border:1px solid;font-size:13px;">Valor Unitario</th>
+						<th style="width:100px;text-align:left;border:1px solid;font-size:13px;">Subtotal</th>
+						<th style="width:100px;text-align:left;border:1px solid;font-size:13px;">Descuento</th>
+						<th style="width:100px;text-align:left;border:1px solid;font-size:13px;">Iva</th>
+						<th style="width:100px;text-align:left;border:1px solid;font-size:13px;">Total</th>
+				</tr>
     			<?php foreach ($references as $key => $ref): ?>
 						<tr>
 								<td style="width:20px;text-align:left;border:1px solid;font-size:13px;"><?php print $key + 1;?></td>
