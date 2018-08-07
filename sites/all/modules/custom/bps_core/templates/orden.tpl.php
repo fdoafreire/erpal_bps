@@ -89,10 +89,9 @@
 								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;">ID DE LA OS</td>
 						</tr>
 					</thead>
-					<caption style="border:1px solid;font-size:13px;font-weight:bold;">DATOS DEL CLIENTE</caption>
 					<tbody>
 						<tr>
-								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">RAZON SOCIAL</td>
+								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">CLIENTE</td>
 								<td style="width:250px;text-align:left;border:1px solid">FREIRE</td>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">CIUDADSFDSFSFSDD</td>
 								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;">TABOFDGDGFDGO CDSFDS </td>
