@@ -232,8 +232,8 @@ function bps_pdf_html($nid) {
   if ($node->type == 'cotizaciones') {
     $html = theme('cotizacion_pdf', array('node' => $node));
   }
-  return $html;
-  //pdf_using_mpdf_api($html);
+  //return $html;
+  pdf_using_mpdf_api($html);
 }
 
 /**
