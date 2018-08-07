@@ -228,15 +228,11 @@ function bps_core_menu() {
  */
 function bps_pdf_html($nid) {
   $node = node_load($nid);
-  $cliente = node_load($node->field_cliente['und'][0]['target_id']);
-  $usuario = user_load($node->uid);
-  dpm($cliente);
   dpm($node);
-  dpm($usuario);
 
   $html = '';
   if ($node->type == 'cotizaciones') {
-    $html = '<table><tr><th>id</th><th>nombre</th><th>valor</th></tr><tr><td>id</td><td>nombre</td><td>valor</td></tr></table>';
+    $html = theme('elastic_avisos_sugeridos', array('node' => $node));
   }
   //return $html;
   pdf_using_mpdf_api($html);
