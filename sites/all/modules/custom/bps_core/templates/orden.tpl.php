@@ -291,19 +291,19 @@
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">CONTACTO</td>
 								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;">LA FERCHO</td>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">SUCURSAL</td>
-								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;">TABOGO 2FGDGD FGDGDF</td>
+								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;"><?php print $branch_office;?></td>
 						</tr>
 						<tr>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">DIRECCION</td>
 								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;"><?php print $address;?></td>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">TEL.FIJO</td>
-								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;">(1) 3222555</td>
+								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;"><?php print $phone;?></td>
 						</tr>
 						<tr>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">EMAIL</td>
 								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;">lafreire@gmail</td>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">CELULAR</td>
-								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;">3000000</td>
+								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;"><?php print $mobile;?></td>
 						</tr>
 					</tbody>
 				</table>
