@@ -9,7 +9,31 @@
   if (isset($node->created)) {
   	$fecha = format_date($node->created,'custom','j').' de '.format_date($node->created,'custom','F').' del '.format_date($node->created,'custom','Y');
   }
+  $city = '';
+  $address = '';
+  $phone = '';
+  $mobile = '';
+  $branch_office = '';
+  if (isset($node->field_ord_sucursal_id['und'][0]['value'])) {
+  	$item = field_collection_item_load($item['value']);
+  	if (isset($item->field_city['und'][0]['value'])) {
+  	  $city = $item->field_city['und'][0]['value'];
+  	}
+  	if (isset($item->field_addition_to_address['und'][0]['value'])) {
+  	  $address = $item->field_addition_to_address['und'][0]['value'];
+  	}
+  	if (isset($item->field_address_telefono['und'][0]['value'])) {
+  	  $phone = $item->field_address_telefono['und'][0]['value'];
+  	}
+  	if (isset($item->field_address_celular['und'][0]['value'])) {
+  	  $mobile = $item->field_address_celular['und'][0]['value'];
+  	}
+  	if (isset($item->field_address_name['und'][0]['value'])) {
+  	  $branch_office = $item->field_address_name['und'][0]['value'];
+  	}
+  }
 
+  
   $cliente = node_load($node->field_ord_cliente['und'][0]['target_id']);
   $equipment = '';
   if (isset($node->field_ord_equipo['und'][0]['value'])){
@@ -56,19 +80,19 @@
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">CONTACTO</td>
 								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;">LA FERCHO</td>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">SUCURSAL</td>
-								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;">TABOGO 2FGDGD FGDGDF</td>
+								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;"><?php print $branch_office;?></td>
 						</tr>
 						<tr>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">DIRECCION</td>
-								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;">EL CARTUCHO</td>
+								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;"><?php print $address;?></td>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">TEL.FIJO</td>
-								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;">(1) 3222555</td>
+								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;"><?php print $phone;?></td>
 						</tr>
 						<tr>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">EMAIL</td>
 								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;">lafreire@gmail</td>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">CELULAR</td>
-								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;">3000000</td>
+								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;"><?php print $mobile;?></td>
 						</tr>
 					</tbody>
 				</table>
@@ -271,7 +295,7 @@
 						</tr>
 						<tr>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">DIRECCION</td>
-								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;">EL CARTUCHO</td>
+								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;"><?php print $address;?></td>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">TEL.FIJO</td>
 								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;">(1) 3222555</td>
 						</tr>
