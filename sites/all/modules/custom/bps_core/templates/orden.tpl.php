@@ -15,7 +15,7 @@
   $mobile = '';
   $branch_office = '';
   if (isset($node->field_ord_sucursal_id['und'][0]['value'])) {
-  	$item = field_collection_item_load($item['value']);
+  	$item = field_collection_item_load($node->field_ord_sucursal_id['und'][0]['value']);
   	if (isset($item->field_city['und'][0]['value'])) {
   	  $city = $item->field_city['und'][0]['value'];
   	}
