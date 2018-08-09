@@ -74,7 +74,7 @@
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">CLIENTE</td>
 								<td style="width:250px;text-align:left;border:1px solid"><?php print $cliente->title ?></td>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">CIUDAD</td>
-								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;">TABOFDGDGFDGO CDSFDS </td>
+								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;"><?php print $branch_office;?></td>
 						</tr>
 						<tr>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">CONTACTO</td>
@@ -264,11 +264,11 @@
 				<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
 					<tbody>
 						<tr>
-							<td style="width:300px;border:1px solid;font-size:13px;padding:0;text-align:center;" rowspan="2"><?php print $img_logo;?></td>
-							<td style="width:300px;border:1px solid;font-size:13px;padding:0;text-align:center;">SISTEMA GESTION DE CALIDAD<?php   print $node->field_ord_tipo['und'][0]['value'];  print '<br>';?></td>
+							<td style="width:200px;font-size:13px;padding:0;text-align:center;" rowspan="2"><?php print $img_logo;?></td>
+							<td style="width:300px;font-size:13px;padding:0;text-align:center;">SISTEMA GESTION DE CALIDAD</td>
 						</tr>
 						<tr>
-							<td style="width:300px;border:1px solid;font-size:13px;padding:0;text-align:center;">ORDEN DE SERVICIO REDES</td>
+							<td style="width:300px;font-size:13px;padding:0;text-align:center;">ORDEN DE SERVICIO REDES</td>
 						</tr>
 					</tbody>
 				</table>
