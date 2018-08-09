@@ -43,7 +43,7 @@
   if (isset($node->field_ord_descripcion['und'][0]['value'])){
 		$description = $node->field_ord_descripcion['und'][0]['value'];
 	}
-	
+	dpm($form);
 	$orden_servicio_contrato = '';
 	$orden_servicio_garantia = '';
 	$orden_servicio_facturable = '';
@@ -325,7 +325,7 @@
 					<caption style="border:1px solid;font-size:13px;font-weight:bold;">DESCRIPCION DEL SERVICIO</caption>
 					<tbody>
 						<tr>
-								<td style="width:600px;text-align:left;border:1px solid;font-size:13px;padding:0;vertical-align:top;" rowspan="3"><?php $node->	field_ord_descripcion?></td>
+								<td style="width:600px;text-align:left;border:1px solid;font-size:13px;padding:0;vertical-align:top;" rowspan="3"><?php $node->field_ord_descripcion?></td>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;padding:0;">CONTRATO</td>
 								<td style="width:100px;text-align:left;border:1px solid;font-size:13px;padding:0;"><?php $orden_servicio_contrato?></td>
 						</tr>
