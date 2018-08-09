@@ -275,17 +275,19 @@
 				<br><br>
 				<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
 					<tbody>
-						<tr>
+					<thead>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">FECHA</td>
 								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;"><?php print $fecha?></td>
-								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">NUMERO O.S.</td>
-								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;">ID DE LA OS</td>
+								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">NUMERO O.T.</td>
+								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;"><?php print $node->nid; ?></td>
 						</tr>
+					</thead>
+					<tbody>
 						<tr>
-								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">RAZON SOCIAL</td>
-								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;">FREIRE</td>
-								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">CIUDADSFDSFSFSDD</td>
-								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;">TABOFDGDGFDGO CDSFDS </td>
+								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">CLIENTE</td>
+								<td style="width:250px;text-align:left;border:1px solid"><?php print $cliente->title ?></td>
+								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">CIUDAD</td>
+								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;"><?php print $branch_office;?></td>
 						</tr>
 						<tr>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">CONTACTO</td>
@@ -312,7 +314,7 @@
 					<caption style="border:1px solid;font-size:13px;font-weight:bold;">DESCRIPCION DEL SERVICIO</caption>
 					<tbody>
 						<tr>
-								<td style="width:600px;text-align:left;border:1px solid;font-size:13px;padding:0;vertical-align:top;" rowspan="3">ReviSion circuito de iluminacion en piso 35.</td>
+								<td style="width:600px;text-align:left;border:1px solid;font-size:13px;padding:0;vertical-align:top;" rowspan="3"><?php $node->field_ord_descripcion?></td>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;padding:0;">CONTRATO</td>
 								<td style="width:100px;text-align:left;border:1px solid;font-size:13px;padding:0;">X</td>
 						</tr>
