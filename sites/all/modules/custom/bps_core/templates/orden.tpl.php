@@ -43,7 +43,7 @@
   if (isset($node->field_ord_descripcion['und'][0]['value'])){
 		$description = $node->field_ord_descripcion['und'][0]['value'];
 	}
-	dpm($form);
+	dpm($form['values']);
 	$orden_servicio_contrato = '';
 	$orden_servicio_garantia = '';
 	$orden_servicio_facturable = '';
