@@ -43,15 +43,14 @@
   if (isset($node->field_ord_descripcion['und'][0]['value'])){
 		$description = $node->field_ord_descripcion['und'][0]['value'];
 	}
-	dpm($form['values']);
 	$orden_servicio_contrato = '';
 	$orden_servicio_garantia = '';
 	$orden_servicio_facturable = '';
-	if ($node->field_ord_servicio==1){
+	if ($node->field_ord_servicio['und'][0]['value']==1){
 		$orden_servicio_contrato = "X";
-	} else if ($node->field_ord_servicio==2){
+	} else if ($node->field_ord_servicio['und'][0]['value']==2){
 		$orden_servicio_garantia = "X";
-	} else if ($node->field_ord_servicio==2){
+	} else if ($node->field_ord_servicio['und'][0]['value']==2){
 		$orden_servicio_facturable = "X";
 	}
 	if ($node->field_ord_tipo['und'][0]['value']=="2"){
@@ -325,7 +324,7 @@
 					<caption style="border:1px solid;font-size:13px;font-weight:bold;">DESCRIPCION DEL SERVICIO</caption>
 					<tbody>
 						<tr>
-								<td style="width:600px;text-align:left;border:1px solid;font-size:13px;padding:0;vertical-align:top;" rowspan="3"><?php $node->field_ord_descripcion?></td>
+								<td style="width:600px;text-align:left;border:1px solid;font-size:13px;padding:0;vertical-align:top;" rowspan="3"><?php $description?></td>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;padding:0;">CONTRATO</td>
 								<td style="width:100px;text-align:left;border:1px solid;font-size:13px;padding:0;"><?php $orden_servicio_contrato?></td>
 						</tr>
