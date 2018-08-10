@@ -47,14 +47,14 @@
 	$orden_servicio_garantia = '';
 	$orden_servicio_facturable = '';
 	
-	if ($node->field_ord_servicio['und']==1){
+	if ($node->field_ord_servicio['und'][0]['value']==1){
 		$orden_servicio_contrato = "X";
-	} else if ($node->field_ord_servicio['und']==2){
+	} else if ($node->field_ord_servicio['und'][0]['value']==2){
 		$orden_servicio_garantia = "X";
-	} else if ($node->field_ord_servicio['und']==3){
+	} else if ($node->field_ord_servicio['und'][0]['value']==3){
 		$orden_servicio_facturable = "X";
 	}
-	if ($node->field_ord_tipo['und'][0]['value']=="2"){
+	if ($node->field_ord_tipo['und'][0]['value'][0]['value']=="2"){
 ?>
 		<html>
 			<head></head>
@@ -325,17 +325,17 @@
 					<caption style="border:1px solid;font-size:13px;font-weight:bold;">DESCRIPCION DEL SERVICIO</caption>
 					<tbody>
 						<tr>
-								<td style="width:600px;text-align:left;border:1px solid;font-size:13px;padding:0;vertical-align:top;" rowspan="3"><?php $descripcion?></td>
+								<td style="width:600px;text-align:left;border:1px solid;font-size:13px;padding:0;vertical-align:top;" rowspan="3"><?php print $descripcion;?></td>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;padding:0;">CONTRATO</td>
-								<td style="width:100px;text-align:left;border:1px solid;font-size:13px;padding:0;"><?php $orden_servicio_contrato?></td>
+								<td style="width:100px;text-align:left;border:1px solid;font-size:13px;padding:0;"><?php print $orden_servicio_contrato;?></td>
 						</tr>
 						<tr>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;padding:0;">GARANTIA</td>
-								<td style="width:100px;text-align:left;border:1px solid;font-size:13px;padding:0;"><?php $orden_servicio_garantia?></td>
+								<td style="width:100px;text-align:left;border:1px solid;font-size:13px;padding:0;"><?php print $orden_servicio_garantia;?></td>
 						</tr>
 						<tr>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;padding:0;">FACTURABLE</td>
-								<td style="width:100px;text-align:left;border:1px solid;font-size:13px;padding:0;"><?php $orden_servicio_facturable?></td>
+								<td style="width:100px;text-align:left;border:1px solid;font-size:13px;padding:0;"><?php print $orden_servicio_facturable;?></td>
 						</tr>
 					</tbody>
 				</table>
