@@ -47,7 +47,7 @@
 	$orden_servicio_garantia = '';
 	$orden_servicio_facturable = '';
 	echo var_dump($node->field_ord_servicio['und'][0]);
-	if ($node->field_ord_servicio['und'][0]['value']==1){
+	if ($node->field_ord_servicio['und'][0]['option']['value']==1){
 		$orden_servicio_contrato = "X";
 	} else if ($node->field_ord_servicio['und'][0]['value']==2){
 		$orden_servicio_garantia = "X";
