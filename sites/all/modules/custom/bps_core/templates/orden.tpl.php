@@ -39,9 +39,9 @@
   if (isset($node->field_ord_equipo['und'][0]['value'])){
 		$equipment = $node->field_ord_equipo['und'][0]['value'];
 	}
-  $description = '';
+  $descripcion = '';
   if (isset($node->field_ord_descripcion['und'][0]['value'])){
-		$description = $node->field_ord_descripcion['und'][0]['value'];
+		$descripcion = $node->field_ord_descripcion['und'][0]['value'];
 	}
 	$orden_servicio_contrato = '';
 	$orden_servicio_garantia = '';
@@ -126,7 +126,7 @@
 								<td style="width:100px;text-align:left;border:1px solid;font-size:13px;padding:0;">123</td>
 						</tr>
 						<tr>
-							<td style="width:650px;text-align:left;padding:0;font-size:13px;vertical-align:top;" colspan="4" rowspan="3">DESCRIPCION DEL SERVICIO<br><?php print $description?></td>
+							<td style="width:650px;text-align:left;padding:0;font-size:13px;vertical-align:top;" colspan="4" rowspan="3">DESCRIPCION DEL SERVICIO<br><?php print $descripcion?></td>
 							<td style="width:250px;text-align:center;border:1px solid;font-size:13px;padding:0;" colspan="2">SERVICIO REALIZADO EN</td>
 						</tr>
 						<tr>
@@ -325,7 +325,7 @@
 					<caption style="border:1px solid;font-size:13px;font-weight:bold;">DESCRIPCION DEL SERVICIO</caption>
 					<tbody>
 						<tr>
-								<td style="width:600px;text-align:left;border:1px solid;font-size:13px;padding:0;vertical-align:top;" rowspan="3"><?php $description?></td>
+								<td style="width:600px;text-align:left;border:1px solid;font-size:13px;padding:0;vertical-align:top;" rowspan="3"><?php $descripcion?></td>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;padding:0;">CONTRATO</td>
 								<td style="width:100px;text-align:left;border:1px solid;font-size:13px;padding:0;"><?php $orden_servicio_contrato?></td>
 						</tr>
