@@ -295,7 +295,7 @@
 					<tbody>
 						<tr>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">CLIENTE</td>
-								<td style="width:250px;text-align:left;border:1px solid"><?php print $cliente->title ?></td>
+								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;"><?php print $cliente->title ?></td>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">CIUDAD</td>
 								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;"><?php print $branch_office;?></td>
 						</tr>
