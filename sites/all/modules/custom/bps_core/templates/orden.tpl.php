@@ -47,11 +47,11 @@
 	$orden_servicio_garantia = '';
 	$orden_servicio_facturable = '';
 	
-	if ($node->field_ord_servicio['und'][0]['value']==1){
+	if ($node->field_ord_servicio['und']==1){
 		$orden_servicio_contrato = "X";
-	} else if ($node->field_ord_servicio['und'][0]['value']==2){
+	} else if ($node->field_ord_servicio['und']==2){
 		$orden_servicio_garantia = "X";
-	} else if ($node->field_ord_servicio['und'][0]['value']==3){
+	} else if ($node->field_ord_servicio['und']==3){
 		$orden_servicio_facturable = "X";
 	}
 	if ($node->field_ord_tipo['und'][0]['value']=="2"){
@@ -279,7 +279,7 @@
 							<td style="width:300px;font-size:13px;padding:0;text-align:center;">SISTEMA GESTION DE CALIDAD</td>
 						</tr>
 						<tr>
-							<td style="width:300px;font-size:13px;padding:0;text-align:center;">ORDEN DE SERVICIO REDES <?php $node->field_ord_servicio['und']['value']?></td>
+							<td style="width:300px;font-size:13px;padding:0;text-align:center;">ORDEN DE SERVICIO REDES <?php $node->field_ord_servicio['und']?></td>
 						</tr>
 					</tbody>
 				</table>
