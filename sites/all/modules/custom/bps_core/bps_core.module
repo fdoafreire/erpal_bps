@@ -8,7 +8,8 @@ function bps_core_form_alter(&$form, &$form_state, $form_id) {
    drupal_add_css($module_path . '/css/bps_core.css');
    drupal_add_js($module_path . '/js/bps_ordenes.js');
    //dpm($form);
-   $options = array();
+	 dpm($form_state['values']);
+	 $options = array();
    $options[] = '- Seleccionar -';
    $form['field_ord_cliente']['#prefix'] = '<div class="cliente-sucursal">';
    $form['field_ord_sucursal_item'] = array(
