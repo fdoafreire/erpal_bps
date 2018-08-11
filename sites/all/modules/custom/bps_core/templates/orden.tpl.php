@@ -57,51 +57,51 @@
 	
 	$campo = '';
 	$laboratorio = '';
-	if ($node->fiel_ord_realizado['und'][0]['value']=="1"){
+	if ($node->field_ord_realizado['und'][0]['value']=="1"){
 		$laboratorio = 'X';
-	} else if ($node->fiel_ord_realizado['und'][0]['value']=="2"){
+	} else if ($node->field_ord_realizado['und'][0]['value']=="2"){
 		$campo = 'X';
 	}
 
 	$linea = '';
 	$bypass = '';
 	$fueralinea = '';
-	if ($node->fiel_ord_datos_tecnicos['und'][0]['value']=="1"){
+	if ($node->field_ord_datos_tecnicos['und'][0]['value']=="1"){
 		$linea = 'X';
-	} else if ($node->fiel_ord_datos_tecnicos['und'][0]['value']=="2"){
+	} else if ($node->field_ord_datos_tecnicos['und'][0]['value']=="2"){
 		$bypass = 'X';
-	} else if ($node->fiel_ord_datos_tecnicos['und'][0]['value']=="3"){
+	} else if ($node->field_ord_datos_tecnicos['und'][0]['value']=="3"){
 		$fueralinea = 'X';
 	}
 
-	$voltaje = $node->fiel_ord_voltaje_bateria['und'][0]['value'];
-	$corriente = $node->fiel_ord_corriente_bateria['und'][0]['value'];
-	$marca = $node->fiel_ord_marca_bateria['und'][0]['value'];
-	$cantidad = $node->fiel_ord_cantidad_bateria['und'][0]['value'];
-	$metf1n = $node->fiel_ord_met_f1_n['und'][0]['value'];
-	$metf2n = $node->fiel_ord_met_f2_n['und'][0]['value'];
-	$metf3n = $node->fiel_ord_met_f3_n['und'][0]['value'];
-	$metfnt = $node->fiel_ord_met_n_t['und'][0]['value'];
-	$metf1f2 = $node->fiel_ord_met_f1_f2['und'][0]['value'];
-	$metf1f3 = $node->fiel_ord_met_f1_f3['und'][0]['value'];
-	$metf2f3 = $node->fiel_ord_met_f2_f3['und'][0]['value'];
-	$metfrec = $node->fiel_ord_met_frec['und'][0]['value'];
-	$mecf1 = $node->fiel_ord_mec_f1['und'][0]['value'];
-	$mecf2 = $node->fiel_ord_mec_f2['und'][0]['value'];
-	$mecf3 = $node->fiel_ord_mec_f2['und'][0]['value'];
-	$mecn = $node->fiel_ord_mec_n['und'][0]['value'];
-	$mstf1n = $node->fiel_ord_mst_f1_n['und'][0]['value'];
-	$mstf2n = $node->fiel_ord_mst_f2_n['und'][0]['value'];
-	$mstf3n = $node->fiel_ord_mst_f3_['und'][0]['value'];
-	$mstnt = $node->fiel_ord_mst_n_t['und'][0]['value'];
-	$mstf1f2 = $node->fiel_ord_mst_f1_f2['und'][0]['value'];
-	$mstf1f3 = $node->fiel_ord_mst_f2_f3['und'][0]['value'];
-	$mstf2f3 = $node->fiel_ord_mst_f1_f3['und'][0]['value'];
-	$mstfrec = $node->fiel_ord_mst_frec['und'][0]['value'];
-	$mscf1 = $node->fiel_ord_msc_f1['und'][0]['value'];
-	$mscf2 = $node->fiel_ord_msc_f2['und'][0]['value'];
-	$mscf3 = $node->fiel_ord_msc_f3['und'][0]['value'];
-	$mscn = $node->fiel_ord_msc_n['und'][0]['value'];
+	$voltaje = $node->field_ord_voltaje_bateria['und'][0]['value'];
+	$corriente = $node->field_ord_corriente_bateria['und'][0]['value'];
+	$marca = $node->field_ord_marca_bateria['und'][0]['value'];
+	$cantidad = $node->field_ord_cantidad_bateria['und'][0]['value'];
+	$metf1n = $node->field_ord_met_f1_n['und'][0]['value'];
+	$metf2n = $node->field_ord_met_f2_n['und'][0]['value'];
+	$metf3n = $node->field_ord_met_f3_n['und'][0]['value'];
+	$metfnt = $node->field_ord_met_n_t['und'][0]['value'];
+	$metf1f2 = $node->field_ord_met_f1_f2['und'][0]['value'];
+	$metf1f3 = $node->field_ord_met_f1_f3['und'][0]['value'];
+	$metf2f3 = $node->field_ord_met_f2_f3['und'][0]['value'];
+	$metfrec = $node->field_ord_met_frec['und'][0]['value'];
+	$mecf1 = $node->field_ord_mec_f1['und'][0]['value'];
+	$mecf2 = $node->field_ord_mec_f2['und'][0]['value'];
+	$mecf3 = $node->field_ord_mec_f2['und'][0]['value'];
+	$mecn = $node->field_ord_mec_n['und'][0]['value'];
+	$mstf1n = $node->field_ord_mst_f1_n['und'][0]['value'];
+	$mstf2n = $node->field_ord_mst_f2_n['und'][0]['value'];
+	$mstf3n = $node->field_ord_mst_f3_['und'][0]['value'];
+	$mstnt = $node->field_ord_mst_n_t['und'][0]['value'];
+	$mstf1f2 = $node->field_ord_mst_f1_f2['und'][0]['value'];
+	$mstf1f3 = $node->field_ord_mst_f2_f3['und'][0]['value'];
+	$mstf2f3 = $node->field_ord_mst_f1_f3['und'][0]['value'];
+	$mstfrec = $node->field_ord_mst_frec['und'][0]['value'];
+	$mscf1 = $node->field_ord_msc_f1['und'][0]['value'];
+	$mscf2 = $node->field_ord_msc_f2['und'][0]['value'];
+	$mscf3 = $node->field_ord_msc_f3['und'][0]['value'];
+	$mscn = $node->field_ord_msc_n['und'][0]['value'];
 
 	if ($node->field_ord_tipo['und'][0]['value'][0]['value']=="2"){
 ?>
