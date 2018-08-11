@@ -73,13 +73,14 @@
 	} else if ($node->fiel_ord_datos_tecnicos['und'][0]['value']=="3"){
 		$fueralinea = 'X';
 	}
+
 	$voltaje = $node->fiel_ord_voltaje_bateria['und'][0]['value'];
 	$corriente = $node->fiel_ord_corriente_bateria['und'][0]['value'];
 	$marca = $node->fiel_ord_marca_bateria['und'][0]['value'];
 	$cantidad = $node->fiel_ord_cantidad_bateria['und'][0]['value'];
 	$metf1n = $node->fiel_ord_met_f1_n['und'][0]['value'];
 	$metf2n = $node->fiel_ord_met_f2_n['und'][0]['value'];
-	$metf3n = $node->fiel_ord_met_f3_n['und'][0]['value'];
+	$metf3n = $node->fiel_ord_met_f3_['und'][0]['value'];
 	$metfnt = $node->fiel_ord_met_n_t['und'][0]['value'];
 	$metf1f2 = $node->fiel_ord_met_f1_f2['und'][0]['value'];
 	$metf1f3 = $node->fiel_ord_met_f1_f3['und'][0]['value'];
