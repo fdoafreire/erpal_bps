@@ -336,19 +336,20 @@ function _validate_ordenes($form, &$form_state) {
    $values = $form_state['values'];
    if (isset($values['field_ord_sucursal_item']) && !empty($values['field_ord_sucursal_item'])) {
      $address = field_collection_item_load($values['field_ord_sucursal_item']);
-     $form_state['values']['field_ord_sucursal_id']['und'][0]['value'] = $values['field_ord_sucursal_item'];
-     $form_state['values']['field_ord_sucursal']['und'][0]['value'] = $address->field_address_name['und'][0]['value'] . ' - ' .$address->field_addition_to_address['und'][0]['value'];
+     $form_state['values']['field_ord_sucursal_id'] = array('und' =>array(array('value' => $values['field_ord_sucursal_item']));
+     $name_branch_office = $address->field_address_name['und'][0]['value'] . ' - ' .$address->field_addition_to_address['und'][0]['value'];
+     $form_state['values']['field_ord_sucursal'] = array('und' =>array(array('value' => $name_branch_office));
    }
    else {
     form_set_error('field_ord_sucursal_item', 'Debe seleccionar una sucursal.');
    }
    if (isset($values['field_ord_cliente_id']) && !empty($values['field_ord_cliente_id'])) {
-     $form_state['values']['field_ord_cliente']['und'][0]['target_id'] = $values['field_ord_cliente_id'];
+     $form_state['values']['field_ord_cliente'] = array('und' =>array(array('target_id' => $values['field_ord_cliente_id']));
    }
    else {
     form_set_error('field_ord_cliente', 'Debe seleccionar un cliente.');
    }
-
+   dpm($values);
 }
 /**
  * Implements hook node view
