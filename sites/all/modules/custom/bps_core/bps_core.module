@@ -18,7 +18,12 @@ function bps_core_form_alter(&$form, &$form_state, $form_id) {
    if (isset($form['#node']->field_ord_cliente['und'][0]['target_id']) && !empty($form['#node']->field_ord_cliente['und'][0]['target_id'])) {
      $cliente = bps_autocomplete('erpal_contact', '', $form['#node']->field_ord_cliente['und'][0]['target_id']);
      $default = isset($cliente['description']) ? $cliente['description']: '';
-     dpm($cliente);
+     if (isset($cliente['id']) && !empty($cliente['id'])) {
+       $options_tmp = _get_ajax_ordenes($form['#node']->field_el_cliente['und'][0]['target_id'], FALSE); 
+       if (count($options_tmp) > 0) {
+         $options += $options_tmp;
+       }
+     }
    }
 
   $form['field_ord_cliente'] = array(
@@ -29,12 +34,17 @@ function bps_core_form_alter(&$form, &$form_state, $form_id) {
     '#default_value'=> $default,
     '#prefix' => '<div class="cliente-sucursal">',
   );
+   $default = '';
+   if (isset($form['#node']->field_ord_sucursal_id['und'][0]['value']) && !empty($form['#node']->field_ord_sucursal_id['und'][0]['value'])) {
+      $default = $form['#node']->field_ord_sucursal_id['und'][0]['value'];
+   }
 
    $form['field_ord_sucursal_item'] = array(
     '#type' => 'select',
     '#title' => 'Sucursal',
     '#options' => $options,
     '#weight' => 3,
+    '#default_value'=> $default,
     '#suffix' => '</div>',
     '#validated' => TRUE,
    );
@@ -271,7 +281,7 @@ function bps_pdf_html($nid) {
 /**
  * Function that load branch offices of contact
  */
-function _get_ajax_sucursales($nid) {
+function _get_ajax_sucursales($nid, $flag_json = TRUE) {
   $contact = node_load($nid);
   $options = array();
   if (isset($contact->field_addresses)) {
@@ -280,8 +290,12 @@ function _get_ajax_sucursales($nid) {
        $options[$item['value']] = $address->field_address_name['und'][0]['value'] . ' - ' .$address->field_addition_to_address['und'][0]['value'];
     }
   }
-
-  return  drupal_json_output($options);
+  if ($flag_json) {
+    return  drupal_json_output($options);  
+  }
+  else {
+   return $options;   
+  }
 }
 /**
  * Function that load branch offices of contact
