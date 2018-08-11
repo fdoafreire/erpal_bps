@@ -93,6 +93,14 @@
 	$mstf2n = $node->fiel_ord_mst_f2_n['und'][0]['value'];
 	$mstf3n = $node->fiel_ord_mst_f3_n['und'][0]['value'];
 	$mstnt = $node->fiel_ord_mst_n_t['und'][0]['value'];
+	$mstf1f2 = $node->fiel_ord_mst_f1_f2['und'][0]['value'];
+	$mstf1f3 = $node->fiel_ord_mst_f2_f3['und'][0]['value'];
+	$mstf2f3 = $node->fiel_ord_mst_f1_f3['und'][0]['value'];
+	$mstfrec = $node->fiel_ord_mst_frec['und'][0]['value'];
+	$mscf1 = $node->fiel_ord_msc_f1['und'][0]['value'];
+	$mscf2 = $node->fiel_ord_msc_f2['und'][0]['value'];
+	$mscf3 = $node->fiel_ord_msc_f3['und'][0]['value'];
+	$mscn = $node->fiel_ord_msc_n['und'][0]['value'];
 
 	if ($node->field_ord_tipo['und'][0]['value'][0]['value']=="2"){
 ?>
