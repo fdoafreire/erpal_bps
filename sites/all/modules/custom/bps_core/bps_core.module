@@ -231,7 +231,7 @@ function bps_core_menu() {
     'type' => MENU_CALLBACK,
   );
 
-  $items['ee/autocompletar/%/%'] = array(
+  $items['bps/autocompletar/%/%'] = array(
     'title' => '', 
     'page callback' => 'bps_autocomplete', 
     'access arguments' => array('access content'), 
