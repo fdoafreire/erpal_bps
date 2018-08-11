@@ -57,30 +57,30 @@
 	
 	$campo = '';
 	$laboratorio = '';
-	if ($node->fiel_ord_realizado==['und'][0]['value']=="1"){
+	if ($node->fiel_ord_realizado['und'][0]['value']=="1"){
 		$laboratorio = 'X';
-	} else if ($node->fiel_ord_realizado==['und'][0]['value']=="2"){
+	} else if ($node->fiel_ord_realizado['und'][0]['value']=="2"){
 		$campo = 'X';
 	}
 
 	$linea = '';
 	$bypass = '';
 	$fueralinea = '';
-	if ($node->fiel_ord_datos_tecnicos==['und'][0]['value']=="1"){
+	if ($node->fiel_ord_datos_tecnicos['und'][0]['value']=="1"){
 		$linea = 'X';
-	} else if ($node->fiel_ord_datos_tecnicos==['und'][0]['value']=="2"){
+	} else if ($node->fiel_ord_datos_tecnicos['und'][0]['value']=="2"){
 		$bypass = 'X';
-	} else if ($node->fiel_ord_datos_tecnicos==['und'][0]['value']=="3"){
+	} else if ($node->fiel_ord_datos_tecnicos['und'][0]['value']=="3"){
 		$fueralinea = 'X';
 	}
-	$voltaje = $node->fiel_ord_voltaje_bateria==['und'][0]['value'];
-	$corriente = $node->fiel_ord_corriente_bateria==['und'][0]['value'];
-	$marca = $node->fiel_ord_marca_bateria==['und'][0]['value'];
-	$cantidad = $node->fiel_ord_cantidad_bateria==['und'][0]['value'];
-	$metf1n = $node->fiel_ord_met_f1_n==['und'][0]['value'];
-	$metf2n = $node->fiel_ord_met_f2_n==['und'][0]['value'];
-	$metf3n = $node->fiel_ord_met_f3_n==['und'][0]['value'];
-	$metfnt = $node->fiel_ord_met_n_t==['und'][0]['value'];
+	$voltaje = $node->fiel_ord_voltaje_bateria['und'][0]['value'];
+	$corriente = $node->fiel_ord_corriente_bateria['und'][0]['value'];
+	$marca = $node->fiel_ord_marca_bateria['und'][0]['value'];
+	$cantidad = $node->fiel_ord_cantidad_bateria['und'][0]['value'];
+	$metf1n = $node->fiel_ord_met_f1_n['und'][0]['value'];
+	$metf2n = $node->fiel_ord_met_f2_n['und'][0]['value'];
+	$metf3n = $node->fiel_ord_met_f3_n['und'][0]['value'];
+	$metfnt = $node->fiel_ord_met_n_t['und'][0]['value'];
 
 	if ($node->field_ord_tipo['und'][0]['value'][0]['value']=="2"){
 ?>
