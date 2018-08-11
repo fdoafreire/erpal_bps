@@ -179,7 +179,7 @@ function bps_core_form_alter(&$form, &$form_state, $form_id) {
    //     }
    //   }
    // }
-  $default_value = ''
+  $default_value = '';
   if (isset($form['#node']->field_orden['und'][0]['target_id'])) {
     $default_value = $form['#node']->field_orden['und'][0]['target_id'];      
   }
