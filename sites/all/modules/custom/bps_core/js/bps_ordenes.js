@@ -48,6 +48,7 @@
 	});
 
 	populate_sucursal = function( event, ui,id_element,id_selected ) {
+		$('#field_ord_cliente_id').val(id_selected);
 		$("#" + id_element).find('option').remove().end().append('<option value="0" selected="selected">- Seleccionar -</option>');
 		$.getJSON('/bps/ajax/sucursales/' + id_selected, function(data){
 			$.each(data, function(index,item) {
