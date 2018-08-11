@@ -132,18 +132,49 @@ function bps_core_form_alter(&$form, &$form_state, $form_id) {
  }
  
  if ($form_id == 'equipos_laboratorio_node_form') {
+
    $options = array();
-   $default_value = 0;
-   $options[] = '- Seleccionar -';
-   if (isset($form['#node']->nid) && !empty($form['#node']->nid) && is_numeric($form['#node']->nid) && $form['#node']->nid > 0) {
-     if (isset($form['#node']->field_el_cliente['und'][0]['target_id'])) {
-       $default_value = isset($form['#node']->field_orden['und'][0]['target_id']) ? $form['#node']->field_orden['und'][0]['target_id'] : 0;
-       $options_tmp = _get_ajax_ordenes($form['#node']->field_el_cliente['und'][0]['target_id'], FALSE);  
+   $default = '';
+   $nid = '';
+   if (isset($form['#node']->field_el_cliente['und'][0]['target_id']) && !empty($form['#node']->field_el_cliente['und'][0]['target_id'])) {
+     $cliente = bps_autocomplete('erpal_contact', '', $form['#node']->field_el_cliente['und'][0]['target_id']);
+     $default = isset($cliente['description']) ? $cliente['description']: '';
+     if (isset($cliente['id']) && !empty($cliente['id'])) {
+       $nid = $cliente['id'];
+       $options_tmp = _get_ajax_ordenes($cliente['id'], FALSE);  
        if (count($options_tmp) > 0) {
          $options += $options_tmp;
        }
      }
    }
+
+  $form['field_el_cliente'] = array(
+    '#type'=>'textfield',
+    '#title'=>'Cliente',
+    '#tree' => TRUE,
+    '#attributes'=>array('class'=>array('ee-autocomplete'),'autocomplete' => 'off','data-type'=>'erpal_contact','data-select'=>'populate_ordenes','data-id-element'=>'edit-field-ord-sucursal-item'),
+    '#default_value'=> $default,
+    '#prefix' => '<div class="cliente-sucursal">',
+  );
+
+  $form['field_el_cliente_id'] = array(
+    '#type'=> 'hidden',
+    '#value'=> $nid,
+    '#attributes'=>array('id'=>'field_el_cliente_id'),   
+    '#default_value' => $nid
+  );
+
+   // $default_value = 0;
+   // $options[] = '- Seleccionar -';
+   // if (isset($form['#node']->nid) && !empty($form['#node']->nid) && is_numeric($form['#node']->nid) && $form['#node']->nid > 0) {
+   //   if (isset($form['#node']->field_el_cliente['und'][0]['target_id'])) {
+   //     $default_value = isset($form['#node']->field_orden['und'][0]['target_id']) ? $form['#node']->field_orden['und'][0]['target_id'] : 0;
+   //     $options_tmp = _get_ajax_ordenes($form['#node']->field_el_cliente['und'][0]['target_id'], FALSE);  
+   //     if (count($options_tmp) > 0) {
+   //       $options += $options_tmp;
+   //     }
+   //   }
+   // }
    $form['field_orden'] = array(
     '#type' => 'select',
     '#title' => 'Orden de servicio',
@@ -153,8 +184,12 @@ function bps_core_form_alter(&$form, &$form_state, $form_id) {
     '#default_value' => $default_value,
     '#validated' => TRUE,
    );
+   
+   drupal_add_library('system', 'ui.autocomplete');
    $module_path = drupal_get_path('module', 'bps_core');
+   drupal_add_js($module_path . '/js/bps_core.js');
    drupal_add_js($module_path . '/js/bps_equipo_laboratorio.js');
+
    $form['#validate'][] = '_validate_custom_laboratorio';
  }
 
@@ -350,7 +385,6 @@ function _validate_ordenes($form, &$form_state) {
    else {
     form_set_error('field_ord_cliente', 'Debe seleccionar un cliente.');
    }
-   dpm($form_state['values']);
 }
 /**
  * Implements hook node view
