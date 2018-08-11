@@ -303,21 +303,25 @@
 					<caption style="border:1px solid;font-size:13px;font-weight:bold;">RECOMENDACIONES</caption>
 					<tbody>
 						<tr>
-							<td style="width:900px;height:100px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $recomendaciones;?></td>
+							<td style="width:900px;height:100px;text-align:left;border:1px solid;font-size:13px;padding:0;vertical-align:top;"><?php print $recomendaciones;?></td>
 						</tr>
 					</tbody>
 				</table>
 				<br>
 				<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;" >
 					<caption style="border:1px solid;font-size:13px;font-weight:bold;">TIEMPO PRESTACION DE SERVICIO (EN HORAS)</caption>
-					<td style="width:112px;text-align:center;border:1px solid;font-size:13px;padding:0;">LLEGADA</td>
-					<td style="width:112px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $llegadafecha." ".$llegadahora;?></td>
-					<td style="width:112px;text-align:center;border:1px solid;font-size:13px;padding:0;">INICIO</td>
-					<td style="width:112px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $iniciofecha." ".$iniciohora;?></td>
-					<td style="width:112px;text-align:center;border:1px solid;font-size:13px;padding:0;">FIN</td>
-					<td style="width:112px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $finfecha." ".$finhora;?></td>
-					<td style="width:110px;text-align:center;border:1px solid;font-size:13px;padding:0;">TOTAL</td>
-					<td style="width:110px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $total;?></td>
+					<tbody>
+						<tr>
+							<td style="width:112px;text-align:left;border:1px solid;font-size:13px;padding:0;">LLEGADA</td>
+							<td style="width:112px;text-align:left;border:1px solid;font-size:13px;padding:0;"><?php print $llegadafecha." ".$llegadahora;?></td>
+							<td style="width:112px;text-align:left;border:1px solid;font-size:13px;padding:0;">INICIO</td>
+							<td style="width:112px;text-align:left;border:1px solid;font-size:13px;padding:0;"><?php print $iniciofecha." ".$iniciohora;?></td>
+							<td style="width:112px;text-align:left;border:1px solid;font-size:13px;padding:0;">FIN</td>
+							<td style="width:112px;text-align:left;border:1px solid;font-size:13px;padding:0;"><?php print $finfecha." ".$finhora;?></td>
+							<td style="width:110px;text-align:left;border:1px solid;font-size:13px;padding:0;">TOTAL</td>
+							<td style="width:110px;text-align:left;border:1px solid;font-size:13px;padding:0;"><?php print $total;?></td>
+						</tr>
+					</tbody>
 				</table>
 				<br><br><br><br><br><br>
 				<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
