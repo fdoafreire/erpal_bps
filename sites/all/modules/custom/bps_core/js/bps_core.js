@@ -134,6 +134,9 @@
     var select_function   = $(e.currentTarget).attr('data-select');
     var filters           = $(e.currentTarget).attr('data-filter');
     var id_element        = $(e.currentTarget).attr('data-id-element');     
+    if (id_element !== undefined && id_element !== null) {
+      $("#" + id_element + '.form-select').find('option').remove().end().append('<option value="0" selected="selected">- Seleccionar -</option>');  
+    }
     if (filters === undefined || filters === null){
         var aditional_filters = '';
     }
