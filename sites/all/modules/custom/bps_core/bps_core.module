@@ -155,7 +155,7 @@ function bps_core_form_alter(&$form, &$form_state, $form_id) {
     '#type'=>'textfield',
     '#title'=>'Cliente',
     '#tree' => TRUE,
-    '#attributes'=>array('class'=>array('ee-autocomplete'),'autocomplete' => 'off','data-type'=>'erpal_contact','data-select'=>'populate_ordenes','data-id-element'=>'edit-field-ord-sucursal-item'),
+    '#attributes'=>array('class'=>array('ee-autocomplete'),'autocomplete' => 'off','data-type'=>'erpal_contact','data-select'=>'populate_ordenes','data-id-element'=>'edit-field-orden'),
     '#default_value'=> $default,
     '#prefix' => '<div class="cliente-sucursal">',
   );
