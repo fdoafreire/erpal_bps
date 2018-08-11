@@ -223,7 +223,7 @@
 						</tr>
 						<tr>
 							<td style="width:30px;text-align:center;border:1px solid;font-size:13px;padding:0;">F1-N</td>
-							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $metf1n; ?></td>
+							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $metf1n;?></td>
 							<td style="width:30px;text-align:center;border:1px solid;font-size:13px;padding:0;">F1-F2</td>
 							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"></td>
 							<td style="width:30px;text-align:center;border:1px solid;font-size:13px;padding:0;">F1</td>
@@ -304,11 +304,11 @@
 				<br><br><br><br><br><br>
 				<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
 					<tr>
-						<td style="width:200px;border-top:1px solid;">Firma y Sello: BPS</td>
+						<td style="width:200px;border-top:1px solid;font-size:13px;">Firma y Sello: BPS</td>
 						<td style="width:150px;"></td>
-						<td style="width:200px;border-top:1px solid;">Vo. Bo. BPS</td>
+						<td style="width:200px;border-top:1px solid;font-size:13px;">Vo. Bo. BPS</td>
 						<td style="width:150px;"></td>
-						<td style="width:200px;border-top:1px solid;">Firma y Sello: Cliente</td>
+						<td style="width:200px;border-top:1px solid;font-size:13px;">Firma y Sello: Cliente</td>
 					</tr>
 				</table>
 			</body>
