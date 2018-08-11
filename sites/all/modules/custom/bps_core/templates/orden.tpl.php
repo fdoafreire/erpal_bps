@@ -81,7 +81,7 @@
 	$metf1n = $node->field_ord_met_f1_n['und'][0]['value'];
 	$metf2n = $node->field_ord_met_f2_n['und'][0]['value'];
 	$metf3n = $node->field_ord_met_f3_n['und'][0]['value'];
-	$metfnt = $node->field_ord_met_n_t['und'][0]['value'];
+	$metnt = $node->field_ord_met_n_t['und'][0]['value'];
 	$metf1f2 = $node->field_ord_met_f1_f2['und'][0]['value'];
 	$metf1f3 = $node->field_ord_met_f1_f3['und'][0]['value'];
 	$metf2f3 = $node->field_ord_met_f2_f3['und'][0]['value'];
