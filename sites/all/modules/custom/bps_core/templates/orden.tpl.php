@@ -230,11 +230,11 @@
 							<td style="width:30px;text-align:center;border:1px solid;font-size:13px;padding:0;">F1</td>
 							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $mecf1;?></td>
 							<td style="width:30px;text-align:center;border:1px solid;font-size:13px;padding:0;">F1-N</td>
-							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"></td>
+							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $mstf1n;?></td>
 							<td style="width:30px;text-align:center;border:1px solid;font-size:13px;padding:0;">F1-F2</td>
-							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"></td>
+							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $mstf1f2;?></td>
 							<td style="width:30px;text-align:center;border:1px solid;font-size:13px;padding:0;">F1</td>
-							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"></td>
+							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $mscf1;?></td>
 						</tr>
 						<tr>
 							<td style="width:30px;text-align:center;border:1px solid;font-size:13px;padding:0;">F2-N</td>
@@ -244,11 +244,11 @@
 							<td style="width:30px;text-align:center;border:1px solid;font-size:13px;padding:0;">F2</td>
 							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $mecf2;?></td>
 							<td style="width:30px;text-align:center;border:1px solid;font-size:13px;padding:0;">F2-N</td>
-							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"></td>
+							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $mstf2n;?></td>
 							<td style="width:30px;text-align:center;border:1px solid;font-size:13px;padding:0;">F1-F3</td>
-							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"></td>
+							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $mstf1f3;?></td>
 							<td style="width:30px;text-align:center;border:1px solid;font-size:13px;padding:0;">F2</td>
-							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"></td>
+							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $mscf2;?></td>
 						</tr>
 						<tr>
 							<td style="width:30px;text-align:center;border:1px solid;font-size:13px;padding:0;">F3-N</td>
@@ -258,11 +258,11 @@
 							<td style="width:30px;text-align:center;border:1px solid;font-size:13px;padding:0;">F3</td>
 							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $mecf3;?></td>
 							<td style="width:30px;text-align:center;border:1px solid;font-size:13px;padding:0;">F3-N</td>
-							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"></td>
+							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $mstf3n;?></td>
 							<td style="width:30px;text-align:center;border:1px solid;font-size:13px;padding:0;">F2-F3</td>
-							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"></td>
+							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $mstf2f3;?></td>
 							<td style="width:30px;text-align:center;border:1px solid;font-size:13px;padding:0;">F3</td>
-							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"></td>
+							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $mscf3;?></td>
 						</tr>
 						<tr>
 							<td style="width:30px;text-align:center;border:1px solid;font-size:13px;padding:0;">N-T</td>
@@ -272,11 +272,11 @@
 							<td style="width:30px;text-align:center;border:1px solid;font-size:13px;padding:0;">N</td>
 							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $mecn;?></td>
 							<td style="width:30px;text-align:center;border:1px solid;font-size:13px;padding:0;">N-T</td>
-							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"></td>
+							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $mstnt;?></td>
 							<td style="width:30px;text-align:center;border:1px solid;font-size:13px;padding:0;">FREC</td>
-							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"></td>
+							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $mstfrec;?></td>
 							<td style="width:30px;text-align:center;border:1px solid;font-size:13px;padding:0;">N</td>
-							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"></td>
+							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $mscn;?></td>
 						</tr>
 					</tbody>
 				</table>
