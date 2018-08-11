@@ -25,8 +25,8 @@ function bps_core_form_alter(&$form, &$form_state, $form_id) {
        }
      }
    }
-   dpm($form);
-   dpm($form_state['values']);
+   //dpm($form);
+   //dpm($form_state['values']);
 
   $form['field_ord_cliente'] = array(
     '#type'=>'textfield',
