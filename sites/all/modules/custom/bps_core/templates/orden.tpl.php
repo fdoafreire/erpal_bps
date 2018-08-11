@@ -292,7 +292,9 @@
 				<br>
 				<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;" >
 					<caption style="border:1px solid;font-size:13px;font-weight:bold;">INFORME TECNICO</caption>
-					<td style="width:900px;height:100px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $informet;?></td>
+					<tbody>
+						<td style="width:900px;height:100px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $informet;?></td>
+					</tbody>
 				</table>
 				<br>
 				<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;" >
