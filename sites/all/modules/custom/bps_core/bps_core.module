@@ -32,6 +32,8 @@ function bps_core_form_alter(&$form, &$form_state, $form_id) {
    $form['#group_children']['field_ord_sucursal_item'] = 'group_info_general';
    $form['#validate'][] = '_validate_ordenes';
    $form['field_ord_tipo']['und']['#attributes'] = array('class'=>array('tipo_orden'));
+   drupal_add_library('system', 'ui.autocomplete');
+
 
    //dpm($form);
  }
