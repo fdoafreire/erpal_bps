@@ -389,7 +389,7 @@ function ee_autocomplete($type, $text, $nid = NULL, $filters = NULL) {
   else {
     $query->condition('n.nid', $nid, '=');
   }
-
+  dpq($query);
   $result  = $query->execute()->fetchAll();
   $options = array();
   foreach ($result as $row) {
