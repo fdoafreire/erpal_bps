@@ -37,6 +37,7 @@ function bps_core_form_alter(&$form, &$form_state, $form_id) {
   $form['field_ord_cliente_id'] = array(
     '#type'=> 'hidden',
     '#value'=> $nid,
+    '#attributes'=>array('id'=>'field_ord_cliente_id'),   
     '#default_value' => $nid
   );
    $default = '';
