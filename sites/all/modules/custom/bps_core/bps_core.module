@@ -349,7 +349,7 @@ function _validate_ordenes($form, &$form_state) {
    else {
     form_set_error('field_ord_cliente', 'Debe seleccionar un cliente.');
    }
-   dpm($values);
+   dpm($form_state['values']);
 }
 /**
  * Implements hook node view
