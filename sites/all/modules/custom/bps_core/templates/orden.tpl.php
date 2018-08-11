@@ -102,6 +102,15 @@
 	$mscf2 = $node->field_ord_msc_f2['und'][0]['value'];
 	$mscf3 = $node->field_ord_msc_f3['und'][0]['value'];
 	$mscn = $node->field_ord_msc_n['und'][0]['value'];
+	$informet = $node->field_ord_informe_tecnico['und'][0]['value'];
+	$recomendaciones = $node->field_ord_recomendaciones['und'][0]['value'];
+	$llegadafecha = $node->field_ord_llegada['und'][0]['value']['date'];
+	$llegadahora = $node->field_ord_llegada['und'][0]['value']['hora'];
+	$iniciofecha = $node->field_ord_inicio['und'][0]['value']['date'];
+	$iniciohora = $node->field_ord_inicio['und'][0]['value']['hora'];
+	$finfecha = $node->field_ord_inicio['und'][0]['value']['date'];
+	$finhora = $node->field_ord_inicio['und'][0]['value']['hora'];
+	$total = $node->field_ord_total['und'][0]['value'];
 
 	if ($node->field_ord_tipo['und'][0]['value'][0]['value']=="2"){
 ?>
@@ -283,24 +292,24 @@
 				<br>
 				<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;" >
 					<caption style="border:1px solid;font-size:13px;font-weight:bold;">INFORME TECNICO</caption>
-					<td style="width:900px;height:100px;text-align:center;border:1px solid;font-size:13px;padding:0;"></td>
+					<td style="width:900px;height:100px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $informet;?></td>
 				</table>
 				<br>
 				<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;" >
 					<caption style="border:1px solid;font-size:13px;font-weight:bold;">RECOMENDACIONES</caption>
-					<td style="width:900px;height:100px;text-align:center;border:1px solid;font-size:13px;padding:0;"></td>
+					<td style="width:900px;height:100px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $recomendaciones;?></td>
 				</table>
 				<br>
 				<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;" >
 					<caption style="border:1px solid;font-size:13px;font-weight:bold;">TIEMPO PRESTACION DE SERVICIO (EN HORAS)</caption>
 					<td style="width:112px;text-align:center;border:1px solid;font-size:13px;padding:0;">LLEGADA</td>
-					<td style="width:112px;text-align:center;border:1px solid;font-size:13px;padding:0;"></td>
+					<td style="width:112px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $llegadafecha." ".$llegadahora;?></td>
 					<td style="width:112px;text-align:center;border:1px solid;font-size:13px;padding:0;">INICIO</td>
-					<td style="width:112px;text-align:center;border:1px solid;font-size:13px;padding:0;"></td>
+					<td style="width:112px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $iniciofecha." ".$iniciohora;?></td>
 					<td style="width:112px;text-align:center;border:1px solid;font-size:13px;padding:0;">FIN</td>
-					<td style="width:112px;text-align:center;border:1px solid;font-size:13px;padding:0;"></td>
+					<td style="width:112px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $finfecha." ".$finhora;?></td>
 					<td style="width:110px;text-align:center;border:1px solid;font-size:13px;padding:0;">TOTAL</td>
-					<td style="width:110px;text-align:center;border:1px solid;font-size:13px;padding:0;"></td>
+					<td style="width:110px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $total;?></td>
 				</table>
 				<br><br><br><br><br><br>
 				<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
