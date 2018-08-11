@@ -2,6 +2,8 @@
 
   $(document).ready(function(){
 		//Ocultos en ordenes de trabajo o servicio
+				$("#edit-field-ord-sucursal-item").find('option').remove().end().append('<option value="0" selected="selected">- Seleccionar -</option>');
+
 		var tipo = $("select[name='field_ord_tipo[und]'").val();
 		if (tipo =="1"){
 			$('#node_ordenes_form_group_datos_el').hide()
@@ -46,7 +48,7 @@
 			$('#node_ordenes_form_group_ord_par_serv').hide();
 		}
 	});
-	
+
 	populate_sucursal = function( event, ui,id_element,id_selected ) {
 		$("#" + id_element).find('option').remove().end().append('<option value="0" selected="selected">- Seleccionar -</option>');
 		$.getJSON('/bps/ajax/sucursales/' + id_selected, function(data){

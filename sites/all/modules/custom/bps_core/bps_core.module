@@ -17,6 +17,7 @@ function bps_core_form_alter(&$form, &$form_state, $form_id) {
   $form['field_ord_cliente']['und'][0]['target_id'] = array(
     '#type'=>'textfield',
     '#title'=>'Cliente',
+    '#tree' => TRUE,
     '#attributes'=>array('class'=>array('ee-autocomplete'),'autocomplete' => 'off','data-type'=>'erpal_contact','data-select'=>'populate_sucursal','data-id-element'=>'edit-field-ord-sucursal-item'),
     '#default_value'=>'',
     '#prefix' => '<div class="cliente-sucursal">',

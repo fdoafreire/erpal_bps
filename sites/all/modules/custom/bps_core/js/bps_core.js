@@ -142,7 +142,7 @@
     }
     $(e.currentTarget).autocomplete({
       delay: 500,
-      minLength: 5,
+      minLength: 3,
       source: function(request, response) {
         $.getJSON("/bps/autocompletar/"+type+"/"+request.term+aditional_filters,
         function(data) {
