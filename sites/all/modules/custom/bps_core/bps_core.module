@@ -14,7 +14,7 @@ function bps_core_form_alter(&$form, &$form_state, $form_id) {
    $form['field_ord_cliente']['#prefix'] = '<div class="cliente-sucursal">';
    $tmp_element = $form['field_ord_cliente'];
    $form['field_ord_cliente'] = array();
-  $form['field_ord_cliente']['und'][0]['target_id'] = array(
+  $form['field_ord_cliente'] = array(
     '#type'=>'textfield',
     '#title'=>'Cliente',
     '#tree' => TRUE,
