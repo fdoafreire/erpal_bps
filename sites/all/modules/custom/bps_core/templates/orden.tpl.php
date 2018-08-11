@@ -80,7 +80,7 @@
 	$cantidad = $node->fiel_ord_cantidad_bateria['und'][0]['value'];
 	$metf1n = $node->fiel_ord_met_f1_n['und'][0]['value'];
 	$metf2n = $node->fiel_ord_met_f2_n['und'][0]['value'];
-	$metf3n = $node->fiel_ord_met_f3_['und'][0]['value'];
+	$metf3n = $node->fiel_ord_met_f3_n['und'][0]['value'];
 	$metfnt = $node->fiel_ord_met_n_t['und'][0]['value'];
 	$metf1f2 = $node->fiel_ord_met_f1_f2['und'][0]['value'];
 	$metf1f3 = $node->fiel_ord_met_f1_f3['und'][0]['value'];
@@ -92,7 +92,7 @@
 	$mecn = $node->fiel_ord_mec_n['und'][0]['value'];
 	$mstf1n = $node->fiel_ord_mst_f1_n['und'][0]['value'];
 	$mstf2n = $node->fiel_ord_mst_f2_n['und'][0]['value'];
-	$mstf3n = $node->fiel_ord_mst_f3_n['und'][0]['value'];
+	$mstf3n = $node->fiel_ord_mst_f3_['und'][0]['value'];
 	$mstnt = $node->fiel_ord_mst_n_t['und'][0]['value'];
 	$mstf1f2 = $node->fiel_ord_mst_f1_f2['und'][0]['value'];
 	$mstf1f3 = $node->fiel_ord_mst_f2_f3['und'][0]['value'];
