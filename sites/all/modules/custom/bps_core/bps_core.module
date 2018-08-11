@@ -137,6 +137,7 @@ function bps_core_form_alter(&$form, &$form_state, $form_id) {
  if ($form_id == 'equipos_laboratorio_node_form') {
 
    $options = array();
+   $options[] = '- Seleccionar -';
    $default = '';
    $nid = '';
    if (isset($form['#node']->field_el_cliente['und'][0]['target_id']) && !empty($form['#node']->field_el_cliente['und'][0]['target_id'])) {
