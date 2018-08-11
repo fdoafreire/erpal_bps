@@ -228,7 +228,7 @@
 							<td style="width:30px;text-align:center;border:1px solid;font-size:13px;padding:0;">F1-F2</td>
 							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $metf1f2;?></td>
 							<td style="width:30px;text-align:center;border:1px solid;font-size:13px;padding:0;">F1</td>
-							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"></td>
+							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $mecf1;?></td>
 							<td style="width:30px;text-align:center;border:1px solid;font-size:13px;padding:0;">F1-N</td>
 							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"></td>
 							<td style="width:30px;text-align:center;border:1px solid;font-size:13px;padding:0;">F1-F2</td>
