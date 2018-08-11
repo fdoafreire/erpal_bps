@@ -1,22 +1,17 @@
 (function ($) {
-   Drupal.behaviors.equipo_laboratorio = {
-      attach: function (context, settings) {
-        $('#edit-field-el-cliente-und-0-target-id').keyup(function(){
-            var texto = $(this).val();
-            var regExp = /\((.*)\)/;
-            var nid = 0;
-            $('#edit-field-orden').find('option').remove().end().append('<option value="0" selected="selected">- Seleccionar -</option>');
-            if (texto.match(regExp)) {
-              nid = texto.match(regExp).pop();
-            }
-            if (nid != 0) {
-                $.getJSON('/bps/ajax/ordenes/' + nid, function(data){
-                    $.each(data, function(index,item) {
-                       $('#edit-field-orden').append("<option value=" + index + ">" + item + "</option>"); 
-                    });
-                });
-            }
-        });
-      }
-    };
+
+  populate_ordenes = function( event, ui,id_element,id_selected ) {
+    $('#field_el_cliente_id').val(id_selected);
+    console.log(id_element + '-' + id_element);
+    $("#" + id_element).find('option').remove().end().append('<option value="0" selected="selected">- Seleccionar -</option>');
+   
+    $.getJSON('/bps/ajax/ordenes/' + id_selected, function(data){
+        console.log(data);
+
+      $.each(data, function(index,item) {
+         $("#" + id_element).append("<option value=" + index + ">" + item + "</option>"); 
+      });
+    });
+  };
+
 })(jQuery);
