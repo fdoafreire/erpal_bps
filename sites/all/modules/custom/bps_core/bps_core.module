@@ -337,7 +337,7 @@ function _get_ajax_ordenes($nid, $flag_json = TRUE) {
  * Function that verify branch office  in submit order
  */
 function _validate_ordenes($form, &$form_state) {
-   $values = $form_state['values'];
+   $values = $form_state['input'];
    if (isset($values['field_ord_sucursal_item']) && !empty($values['field_ord_sucursal_item'])) {
      $address = field_collection_item_load($values['field_ord_sucursal_item']);
      $form_state['values']['field_ord_sucursal_id'] = array('und' =>array(array('value' => $values['field_ord_sucursal_item'])));
