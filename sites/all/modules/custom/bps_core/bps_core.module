@@ -12,10 +12,12 @@ function bps_core_form_alter(&$form, &$form_state, $form_id) {
    $options[] = '- Seleccionar -';
    $form['field_ord_cliente'] = array();
    $default = '';
+   $nid = '';
    if (isset($form['#node']->field_ord_cliente['und'][0]['target_id']) && !empty($form['#node']->field_ord_cliente['und'][0]['target_id'])) {
      $cliente = bps_autocomplete('erpal_contact', '', $form['#node']->field_ord_cliente['und'][0]['target_id']);
      $default = isset($cliente['description']) ? $cliente['description']: '';
      if (isset($cliente['id']) && !empty($cliente['id'])) {
+       $nid = $cliente['id'];
        $options_tmp = _get_ajax_sucursales($form['#node']->field_ord_cliente['und'][0]['target_id'], FALSE); 
        if (count($options_tmp) > 0) {
          $options += $options_tmp;
@@ -23,13 +25,18 @@ function bps_core_form_alter(&$form, &$form_state, $form_id) {
      }
    }
 
-  $form['field_ord_cliente'] = array(
+  $form['field_ord_cliente_item'] = array(
     '#type'=>'textfield',
     '#title'=>'Cliente',
     '#tree' => TRUE,
-    '#attributes'=>array('class'=>array('ee-autocomplete'),'autocomplete' => 'off','data-type'=>'erpal_contact','data-select'=>'populate_sucursal','data-id-element'=>'edit-field-ord-sucursal-item'),
+    '#attributes'=>array('class'=>array('ee-autocomplete'),'autocomplete' => 'off','data-type'=>'erpal_contact','data-select'=>'populate_sucursal','data-id-element'=>'edit-field-ord-sucursal-item', 'data-id-copy' => ''),
     '#default_value'=> $default,
     '#prefix' => '<div class="cliente-sucursal">',
+  );
+  $form['field_ord_cliente_id'] = array(
+    '#type'=> 'hidden',
+    '#value'=> $nid,
+    '#default_value' => $nid
   );
    $default = '';
    if (isset($form['#node']->field_ord_sucursal_id['und'][0]['value']) && !empty($form['#node']->field_ord_sucursal_id['und'][0]['value'])) {
@@ -326,7 +333,6 @@ function _get_ajax_ordenes($nid, $flag_json = TRUE) {
  */
 function _validate_ordenes($form, &$form_state) {
    $values = $form_state['values'];
-   dpm($values);
    if (isset($values['field_ord_sucursal_item']) && !empty($values['field_ord_sucursal_item'])) {
      $address = field_collection_item_load($values['field_ord_sucursal_item']);
      $form_state['values']['field_ord_sucursal_id']['und'][0]['value'] = $values['field_ord_sucursal_item'];
@@ -334,6 +340,12 @@ function _validate_ordenes($form, &$form_state) {
    }
    else {
     form_set_error('field_ord_sucursal_item', 'Debe seleccionar una sucursal.');
+   }
+   if (isset($values['field_ord_cliente_id']) && !empty($values['field_ord_cliente_id'])) {
+     $form_state['values']['field_ord_cliente']['und'][0]['target_id'] = $values['field_ord_cliente_id'];
+   }
+   else {
+    form_set_error('field_ord_cliente', 'Debe seleccionar un cliente.');
    }
 
 }
