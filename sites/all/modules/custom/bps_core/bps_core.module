@@ -14,12 +14,19 @@ function bps_core_form_alter(&$form, &$form_state, $form_id) {
    $form['field_ord_cliente']['#prefix'] = '<div class="cliente-sucursal">';
    $tmp_element = $form['field_ord_cliente'];
    $form['field_ord_cliente'] = array();
+   $default = '';
+   if (isset($form['#node']->field_ord_cliente['und'][0]['target_id']) && !empty($form['#node']->field_ord_cliente['und'][0]['target_id'])) {
+     $cliente = bps_autocomplete('erpal_contact', '', $form['#node']->field_ord_cliente['und'][0]['target_id']);
+     $default = isset($cliente['description']) ? $cliente['description']: '';
+     dpm($cliente);
+   }
+
   $form['field_ord_cliente'] = array(
     '#type'=>'textfield',
     '#title'=>'Cliente',
     '#tree' => TRUE,
     '#attributes'=>array('class'=>array('ee-autocomplete'),'autocomplete' => 'off','data-type'=>'erpal_contact','data-select'=>'populate_sucursal','data-id-element'=>'edit-field-ord-sucursal-item'),
-    '#default_value'=>'',
+    '#default_value'=> $default,
     '#prefix' => '<div class="cliente-sucursal">',
   );
 
@@ -390,7 +397,6 @@ function bps_autocomplete($type, $text, $nid = NULL, $filters = NULL) {
   else {
     $query->condition('n.nid', $nid, '=');
   }
-  dpq($query);
   $result  = $query->execute()->fetchAll();
   $options = array();
   foreach ($result as $row) {
@@ -398,15 +404,14 @@ function bps_autocomplete($type, $text, $nid = NULL, $filters = NULL) {
       $options[] = array('description' => $row->title . ' (' . $row->nid . ')', 'id' => $row->nid);
     }
     else {
-      $data_node = node_load($row->nid);
-      $options[] = array('description' => $row->title . ' (' . $row->nid, 'id' .')' => $row->nid, "data" => json_encode($data_node));
+      $options[] = array('description' => $row->title . ' (' . $row->nid . ')', 'id' => $row->nid);
     }
   }
   if (is_null($nid) || $nid == 'autocomplete') {
     drupal_json_output($options);
   }
   else {
-    return $options[0]['description'];
+    return $options[0];
   }
 }
 
