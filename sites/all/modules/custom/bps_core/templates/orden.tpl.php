@@ -294,7 +294,7 @@
 					<caption style="border:1px solid;font-size:13px;font-weight:bold;">INFORME TECNICO</caption>
 					<tbody>
 						<tr>
-							<td style="width:900px;height:100px;text-align:center;border:1px solid;font-size:13px;padding:0;">INFORME<?php print $informet;?></td>
+							<td style="width:900px;height:100px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $informet;?></td>
 						</tr>
 					</tbody>
 				</table>
