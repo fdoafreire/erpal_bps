@@ -2,9 +2,6 @@
 
   $(document).ready(function(){
 		//Ocultos en ordenes de trabajo o servicio
-    $('#edit-field-ord-cliente').keypress(function(){
-    	$("#edit-field-ord-sucursal-item").find('option').remove().end().append('<option value="0" selected="selected">- Seleccionar -</option>');
-    });
 		var tipo = $("select[name='field_ord_tipo[und]'").val();
 		if (tipo =="1"){
 			$('#node_ordenes_form_group_datos_el').hide()

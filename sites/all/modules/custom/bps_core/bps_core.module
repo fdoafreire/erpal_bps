@@ -8,11 +8,8 @@ function bps_core_form_alter(&$form, &$form_state, $form_id) {
    drupal_add_css($module_path . '/css/bps_core.css');
    drupal_add_js($module_path . '/js/bps_core.js');
    drupal_add_js($module_path . '/js/bps_ordenes.js');
-   dpm($form['field_ord_cliente']);
 	 $options = array();
    $options[] = '- Seleccionar -';
-   $form['field_ord_cliente']['#prefix'] = '<div class="cliente-sucursal">';
-   $tmp_element = $form['field_ord_cliente'];
    $form['field_ord_cliente'] = array();
    $default = '';
    if (isset($form['#node']->field_ord_cliente['und'][0]['target_id']) && !empty($form['#node']->field_ord_cliente['und'][0]['target_id'])) {
@@ -329,6 +326,7 @@ function _get_ajax_ordenes($nid, $flag_json = TRUE) {
  */
 function _validate_ordenes($form, &$form_state) {
    $values = $form_state['values'];
+   dpm($values);
    if (isset($values['field_ord_sucursal_item']) && !empty($values['field_ord_sucursal_item'])) {
      $address = field_collection_item_load($values['field_ord_sucursal_item']);
      $form_state['values']['field_ord_sucursal_id']['und'][0]['value'] = $values['field_ord_sucursal_item'];
