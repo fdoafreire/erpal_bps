@@ -16,8 +16,9 @@ function bps_core_form_alter(&$form, &$form_state, $form_id) {
   $form['field_ord_cliente']['und'][0]['target_id'] = array(
     '#type'=>'textfield',
     '#title'=>'Cliente',
-    '#attributes'=>array('class'=>array('ee-autocomplete'),'autocomplete' => 'off','data-type'=>'agencia'),
+    '#attributes'=>array('class'=>array('ee-autocomplete'),'autocomplete' => 'off','data-type'=>'cliente'),
     '#default_value'=>'',
+    '#prefix' => '<div class="cliente-sucursal">',
   );
 
    $form['field_ord_sucursal_item'] = array(
