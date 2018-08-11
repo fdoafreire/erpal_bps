@@ -19,7 +19,7 @@ function bps_core_form_alter(&$form, &$form_state, $form_id) {
      $cliente = bps_autocomplete('erpal_contact', '', $form['#node']->field_ord_cliente['und'][0]['target_id']);
      $default = isset($cliente['description']) ? $cliente['description']: '';
      if (isset($cliente['id']) && !empty($cliente['id'])) {
-       $options_tmp = _get_ajax_sucursales($form['#node']->field_el_cliente['und'][0]['target_id'], FALSE); 
+       $options_tmp = _get_ajax_sucursales($form['#node']->field_ord_cliente['und'][0]['target_id'], FALSE); 
        if (count($options_tmp) > 0) {
          $options += $options_tmp;
        }
