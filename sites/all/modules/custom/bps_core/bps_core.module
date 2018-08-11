@@ -201,10 +201,19 @@ function bps_core_form_alter(&$form, &$form_state, $form_id) {
 }
 
 function _validate_custom_laboratorio($form, &$form_state) {
-  $values = $form_state['values'];
-  if (isset($values['field_orden']) && !empty($values['field_orden'])) {
+   $values = $form_state['input'];
+   if (isset($values['field_orden']) && !empty($values['field_orden'])) {
     $form_state['values']['field_orden'] = array('und' => array(array('target_id' => $values['field_orden'])));
-  }
+   }
+   else {
+    form_set_error('field_orden', 'Debe seleccionar una orde de  trabajo.');
+   }
+   if (isset($values['field_el_cliente_id']) && !empty($values['field_el_cliente_id'])) {
+     $form_state['values']['field_el_cliente'] = array('und' => array(array('target_id' => $values['field_el_cliente_id'])));
+   }
+   else {
+    form_set_error('field_el_cliente', 'Debe seleccionar un cliente.');
+   }
 }
 
 /**
@@ -355,7 +364,6 @@ function _get_ajax_ordenes($nid, $flag_json = TRUE) {
   $query->condition('t.field_ord_tipo_value',2);
   // estado en ejecucion = 1
   $query->condition('e.field_ord_estado_value',1);
-  dpq($query);
   $result = $query->execute()->fetchAll();
   $options = array();
   foreach ($result as $row) {
