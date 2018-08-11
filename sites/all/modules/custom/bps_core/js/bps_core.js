@@ -129,11 +129,38 @@
     return (valor <= 13 || (valor >= 48 && valor <=57) || valor == 46 || valor==45); 
   });
 
-  /*Drupal.behaviors.bps_core = {
-    attach: function (context, settings) {
-      $(".cantidad").change(function() {
-       	 alert($(this).attr('id'));
-      });
+  $(document).on('keydown.autocomplete','.ee-autocomplete', {} ,function(e){
+    var type              = $(e.currentTarget).attr('data-type');
+    var select_function   = $(e.currentTarget).attr('data-select');
+    var filters           = $(e.currentTarget).attr('data-filter');
+    var id_element        = $(e.currentTarget).attr('data-id-element');     
+    if (filters === undefined || filters === null){
+        var aditional_filters = '';
     }
-  };*/
+    else {
+      var aditional_filters = '?filters='+filters;
+    }
+    $(e.currentTarget).autocomplete({
+      delay: 500,
+      minLength: 5,
+      source: function(request, response) {
+        $.getJSON("/bps/autocompletar/"+type+"/"+request.term+aditional_filters,
+        function(data) {
+          var array = data.error ? [] : $.map(data, function(t) {
+            return {
+              label: t.description,
+              id: t.id              
+            };
+          });
+          response(array);
+        });
+      },
+       select: function( event, ui ){
+           if (typeof window[select_function] === 'function'){
+                formok = window[select_function](event,ui,id_element,ui.item.id);
+                e.preventDefault();
+           } 
+      },
+    });  
+  });
 }(jQuery));

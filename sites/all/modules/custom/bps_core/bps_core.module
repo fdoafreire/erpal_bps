@@ -16,7 +16,7 @@ function bps_core_form_alter(&$form, &$form_state, $form_id) {
   $form['field_ord_cliente']['und'][0]['target_id'] = array(
     '#type'=>'textfield',
     '#title'=>'Cliente',
-    '#attributes'=>array('class'=>array('ee-autocomplete'),'autocomplete' => 'off','data-type'=>'cliente'),
+    '#attributes'=>array('class'=>array('ee-autocomplete'),'autocomplete' => 'off','data-type'=>'cliente','data-select'=>'populate_sucursal','data-id-element'=>'edit-field-ord-sucursal-item'),
     '#default_value'=>'',
     '#prefix' => '<div class="cliente-sucursal">',
   );
@@ -228,6 +228,14 @@ function bps_core_menu() {
     'type' => MENU_CALLBACK,
   );
 
+  $items['ee/autocompletar/%/%'] = array(
+    'title' => '', 
+    'page callback' => 'bps_autocomplete', 
+    'access arguments' => array('access content'), 
+    'page arguments' => array(2,3),
+    'type' => MENU_CALLBACK,
+  );  
+
 
    return $items;
 }
@@ -328,5 +336,75 @@ function bps_core_theme() {
         ),
     );
 }
+
+function ee_autocomplete($type, $text, $nid = NULL, $filters = NULL) {
+  $query = db_select('node', 'n');
+  $query->fields('n', array('title', 'nid'));
+  if (isset($_GET['filters'])) {
+    $parameters = json_decode(base64_decode($_GET['filters']));
+    $filters = array();
+    foreach ($parameters as $key => $value) {
+      if (isset($value->or)) {
+
+      }
+      $filters[] = (array) $value;
+    }
+  }
+  if (!is_null($filters)) {
+    foreach ($filters as $key => $filter) {
+      if (isset($filter['field'])) {
+        $query->join('field_data_' . $filter['field'], $filter['field'], $filter['field'] . '.entity_id = n.nid');
+        $query->condition($filter['field'] . '.' . $filter['field'] . '_' . $filter['type'], $filter['value'], $filter['operator']);
+      }
+      else {
+        $or = db_or();
+        foreach ($filter as $keyOr => $valueOr) {
+          $filter_or = (array) $valueOr;
+          if (isset($filter_or['multiple']) && $filter_or['multiple']) {
+            $andJoin = ' and ' . $filter_or['field'] . '.' . $filter_or['field'] . '_' . $filter_or['type'] . '=' . $filter_or['value'];
+            $query->leftJoin('field_data_' . $filter_or['field'], $filter_or['field'], $filter_or['field'] . '.entity_id = n.nid' . $andJoin);
+          }
+          else {
+            $query->join('field_data_' . $filter_or['field'], $filter_or['field'], $filter_or['field'] . '.entity_id = n.nid');
+          }
+          $or->condition($filter_or['field'] . '.' . $filter_or['field'] . '_' . $filter_or['type'], $filter_or['value'], $filter_or['operator']);
+        }
+        $query->condition($or);
+      }
+    }
+  }
+  $query->orderBy('n.title', 'ASC');
+  $query->condition('n.type', $type, '=');
+  if ($nid == "autocomplete") {
+    $query->condition('n.nid', $text, '=');
+  }
+  elseif (is_null($nid)) {
+    if (!empty($text)) {
+      $query->condition('n.title', '%' . $text . '%', 'LIKE');
+    }
+  }
+  else {
+    $query->condition('n.nid', $nid, '=');
+  }
+
+  $result  = $query->execute()->fetchAll();
+  $options = array();
+  foreach ($result as $row) {
+    if ($type == 'cliente') {
+      $options[] = array('description' => $row->title . ' (' . $row->nid . ')', 'id' => $row->nid);
+    }
+    else {
+      $data_node = node_load($row->nid);
+      $options[] = array('description' => $row->title . ' (' . $row->nid, 'id' .')' => $row->nid, "data" => json_encode($data_node));
+    }
+  }
+  if (is_null($nid) || $nid == 'autocomplete') {
+    drupal_json_output($options);
+  }
+  else {
+    return $options[0]['description'];
+  }
+}
+
 
 
