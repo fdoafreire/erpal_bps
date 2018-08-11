@@ -54,6 +54,55 @@
 	} else if ($node->field_ord_servicio['und'][0]['value']==3){
 		$orden_servicio_facturable = "X";
 	}
+	
+	$campo = '';
+	$laboratorio = '';
+	if ($node->field_ord_realizado['und'][0]['value']=="1"){
+		$laboratorio = 'X';
+	} else if ($node->field_ord_realizado['und'][0]['value']=="2"){
+		$campo = 'X';
+	}
+
+	$linea = '';
+	$bypass = '';
+	$fueralinea = '';
+	if ($node->field_ord_datos_tecnicos['und'][0]['value']=="1"){
+		$linea = 'X';
+	} else if ($node->field_ord_datos_tecnicos['und'][0]['value']=="2"){
+		$bypass = 'X';
+	} else if ($node->field_ord_datos_tecnicos['und'][0]['value']=="3"){
+		$fueralinea = 'X';
+	}
+
+	$voltaje = $node->field_ord_voltaje_bateria['und'][0]['value'];
+	$corriente = $node->field_ord_corriente_bateria['und'][0]['value'];
+	$marca = $node->field_ord_marca_bateria['und'][0]['value'];
+	$cantidad = $node->field_ord_cantidad_bateria['und'][0]['value'];
+	$metf1n = $node->field_ord_met_f1_n['und'][0]['value'];
+	$metf2n = $node->field_ord_met_f2_n['und'][0]['value'];
+	$metf3n = $node->field_ord_met_f3_n['und'][0]['value'];
+	$metfnt = $node->field_ord_met_n_t['und'][0]['value'];
+	$metf1f2 = $node->field_ord_met_f1_f2['und'][0]['value'];
+	$metf1f3 = $node->field_ord_met_f1_f3['und'][0]['value'];
+	$metf2f3 = $node->field_ord_met_f2_f3['und'][0]['value'];
+	$metfrec = $node->field_ord_met_frec['und'][0]['value'];
+	$mecf1 = $node->field_ord_mec_f1['und'][0]['value'];
+	$mecf2 = $node->field_ord_mec_f2['und'][0]['value'];
+	$mecf3 = $node->field_ord_mec_f2['und'][0]['value'];
+	$mecn = $node->field_ord_mec_n['und'][0]['value'];
+	$mstf1n = $node->field_ord_mst_f1_n['und'][0]['value'];
+	$mstf2n = $node->field_ord_mst_f2_n['und'][0]['value'];
+	$mstf3n = $node->field_ord_mst_f3_['und'][0]['value'];
+	$mstnt = $node->field_ord_mst_n_t['und'][0]['value'];
+	$mstf1f2 = $node->field_ord_mst_f1_f2['und'][0]['value'];
+	$mstf1f3 = $node->field_ord_mst_f2_f3['und'][0]['value'];
+	$mstf2f3 = $node->field_ord_mst_f1_f3['und'][0]['value'];
+	$mstfrec = $node->field_ord_mst_frec['und'][0]['value'];
+	$mscf1 = $node->field_ord_msc_f1['und'][0]['value'];
+	$mscf2 = $node->field_ord_msc_f2['und'][0]['value'];
+	$mscf3 = $node->field_ord_msc_f3['und'][0]['value'];
+	$mscn = $node->field_ord_msc_n['und'][0]['value'];
+
 	if ($node->field_ord_tipo['und'][0]['value'][0]['value']=="2"){
 ?>
 		<html>
@@ -101,7 +150,7 @@
 						</tr>
 						<tr>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">EMAIL</td>
-								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;">lafreire@gmail</td>
+								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;">crear correo en base de datos</td>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">CELULAR</td>
 								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;"><?php print $mobile;?></td>
 						</tr>
@@ -130,8 +179,8 @@
 							<td style="width:250px;text-align:center;border:1px solid;font-size:13px;padding:0;" colspan="2">SERVICIO REALIZADO EN</td>
 						</tr>
 						<tr>
-							<td style="width:150px;text-align:left;border:1px solid;font-size:13px;padding:0;">LABORATORIO</td>
-							<td style="width:100px;text-align:left;border:1px solid;font-size:13px;padding:0;">CAMPO</td>
+							<td style="width:150px;text-align:left;border:1px solid;font-size:13px;padding:0;"><?php print $labotatorio;?></td>
+							<td style="width:100px;text-align:left;border:1px solid;font-size:13px;padding:0;"><?php print $campo;?></td>
 						</tr>
 						<tr>
 							<td style="width:150px;text-align:left;border:1px solid;font-size:13px;padding:0;">X</td>
@@ -145,23 +194,23 @@
 					<tbody>
 						<tr>
 								<td style="width:180px;text-align:left;border:1px solid;font-size:13px;padding:0;" colspan="3">EN LINEA</td>
-								<td style="width:80px;text-align:left;border:1px solid;font-size:13px;padding:0;">X</td>
+								<td style="width:80px;text-align:left;border:1px solid;font-size:13px;padding:0;"><?php print $linea;?></td>
 								<td style="width:190px;text-align:left;border:1px solid;font-size:13px;padding:0;" colspan="2">EN BYPASS</td>
-								<td style="width:180px;text-align:left;border:1px solid;font-size:13px;padding:0;" colspan="3"></td>
+								<td style="width:180px;text-align:left;border:1px solid;font-size:13px;padding:0;" colspan="3"><?php print $bypass;?></td>
 								<td style="width:120px;text-align:left;border:1px solid;font-size:13px;padding:0;">FUERA LINEA</td>
-								<td style="width:150px;text-align:left;border:1px solid;font-size:13px;padding:0;" colspan="2"></td>
+								<td style="width:150px;text-align:left;border:1px solid;font-size:13px;padding:0;" colspan="2"><?php print $fueralinea;?></td>
 						</tr>
 						<tr>
 							<td style="width:180px;text-align:left;border:1px solid;font-size:13px;padding:0;" colspan="3">VOLTAJE BATERIA</td>
-							<td style="width:270px;text-align:left;border:1px solid;font-size:13px;padding:0;" colspan="3">12v</td>
+							<td style="width:270px;text-align:left;border:1px solid;font-size:13px;padding:0;" colspan="3"><?php print $voltaje;?></td>
 							<td style="width:180px;text-align:left;border:1px solid;font-size:13px;padding:0;" colspan="3">MARCA BATERIA</td>
-							<td style="width:270px;text-align:left;border:1px solid;font-size:13px;padding:0;" colspan="3">MAC</td>
+							<td style="width:270px;text-align:left;border:1px solid;font-size:13px;padding:0;" colspan="3"><?php print $marca;?></td>
 						</tr>
 						<tr>
 							<td style="width:180px;text-align:left;border:1px solid;font-size:13px;padding:0;" colspan="3">CORRIENTE BATERIA</td>
-							<td style="width:270px;text-align:left;border:1px solid;font-size:13px;padding:0;" colspan="3">12A</td>
+							<td style="width:270px;text-align:left;border:1px solid;font-size:13px;padding:0;" colspan="3"><?php print $corriente;?></td>
 							<td style="width:180px;text-align:left;border:1px solid;font-size:13px;padding:0;" colspan="3">CANTIDAD BATERIAS</td>
-							<td style="width:270px;text-align:left;border:1px solid;font-size:13px;padding:0;" colspan="3">2</td>
+							<td style="width:270px;text-align:left;border:1px solid;font-size:13px;padding:0;" colspan="3"><?php print $cantidad;?></td>
 						</tr>
 						<tr>
 							<td style="width:450px;text-align:center;border:1px solid;font-size:13px;padding:0;font-weight:bold;" colspan="6">MEDICIONES A LA ENTRADA</td>
@@ -175,7 +224,7 @@
 						</tr>
 						<tr>
 							<td style="width:30px;text-align:center;border:1px solid;font-size:13px;padding:0;">F1-N</td>
-							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"></td>
+							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $metf1n;?></td>
 							<td style="width:30px;text-align:center;border:1px solid;font-size:13px;padding:0;">F1-F2</td>
 							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"></td>
 							<td style="width:30px;text-align:center;border:1px solid;font-size:13px;padding:0;">F1</td>
@@ -189,7 +238,7 @@
 						</tr>
 						<tr>
 							<td style="width:30px;text-align:center;border:1px solid;font-size:13px;padding:0;">F2-N</td>
-							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"></td>
+							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $metf2n; ?></td>
 							<td style="width:30px;text-align:center;border:1px solid;font-size:13px;padding:0;">F1-F3</td>
 							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"></td>
 							<td style="width:30px;text-align:center;border:1px solid;font-size:13px;padding:0;">F2</td>
@@ -203,7 +252,7 @@
 						</tr>
 						<tr>
 							<td style="width:30px;text-align:center;border:1px solid;font-size:13px;padding:0;">F3-N</td>
-							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"></td>
+							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $metf3n; ?></td>
 							<td style="width:30px;text-align:center;border:1px solid;font-size:13px;padding:0;">F2-F3</td>
 							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"></td>
 							<td style="width:30px;text-align:center;border:1px solid;font-size:13px;padding:0;">F3</td>
@@ -256,11 +305,11 @@
 				<br><br><br><br><br><br>
 				<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
 					<tr>
-						<td style="width:200px;border-top:1px solid;">Firma y Sello: BPS</td>
+						<td style="width:200px;border-top:1px solid;font-size:13px;">Firma y Sello: BPS</td>
 						<td style="width:150px;"></td>
-						<td style="width:200px;border-top:1px solid;">Vo. Bo. BPS</td>
+						<td style="width:200px;border-top:1px solid;font-size:13px;">Vo. Bo. BPS</td>
 						<td style="width:150px;"></td>
-						<td style="width:200px;border-top:1px solid;">Firma y Sello: Cliente</td>
+						<td style="width:200px;border-top:1px solid;font-size:13px;">Firma y Sello: Cliente</td>
 					</tr>
 				</table>
 			</body>
