@@ -355,6 +355,7 @@ function _get_ajax_ordenes($nid, $flag_json = TRUE) {
   $query->condition('t.field_ord_tipo_value',2);
   // estado en ejecucion = 1
   $query->condition('e.field_ord_estado_value',1);
+  dpq($query);
   $result = $query->execute()->fetchAll();
   foreach ($result as $row) {
     $ord = node_load($row->nid);
