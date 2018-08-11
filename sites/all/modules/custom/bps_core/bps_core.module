@@ -340,7 +340,7 @@ function bps_core_theme() {
     );
 }
 
-function ee_autocomplete($type, $text, $nid = NULL, $filters = NULL) {
+function bps_autocomplete($type, $text, $nid = NULL, $filters = NULL) {
   $query = db_select('node', 'n');
   $query->fields('n', array('title', 'nid'));
   if (isset($_GET['filters'])) {
