@@ -76,26 +76,23 @@ width:20%;
     display: inline-block;
 }
 
-.view-mode-full .group-entrada-v .field-group-fieldset {
+.view-mode-full .mediciones .field-group-fieldset {
     width: 45%;
     display: inline-block;
     float: left;
 }
-.view-mode-full .group-entrada-v .group-medicion-ev {
+.view-mode-full .mediciones .medicion-v {
     margin-right: 5px;
 }
-.view-mode-full .group-entrada-v .group-medicion-ev  .field {
-    width: 25%;
-    display: inline-block;
-}
-.view-mode-full .group-entrada-v .group-medicion-ea {
+.view-mode-full .mediciones .medicion-a {
     margin-left: 5px;
     height: 119px;
 }
-.view-mode-full .group-entrada-v .group-medicion-ea  .field {
+.view-mode-full .mediciones .field {
     width: 25%;
     display: inline-block;
-} 
+}
+
 .view-mode-full section.field-name-field-ord-cliente {
     width: 50%;
     display: inline-block;
