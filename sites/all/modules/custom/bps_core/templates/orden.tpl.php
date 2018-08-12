@@ -409,7 +409,7 @@
 						</tr>
 						<tr>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">EMAIL</td>
-								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;">lafreire@gmail</td>
+								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;">colocar correo en la sucursal del cliente</td>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">CELULAR</td>
 								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;"><?php print $mobile;?></td>
 						</tr>
