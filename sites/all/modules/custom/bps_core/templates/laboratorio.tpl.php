@@ -42,7 +42,8 @@
   }*/
   
   $cliente = node_load($node->field_el_cliente['und'][0]['target_id']);
-  $fecha_ingreso = format_date($node->field_el_fecha_ingreso['und'][0]['value'],'custom','Y-m-d');
+  $fecha_ingreso = date_create($node->field_el_fecha_ingreso['und'][0]['value']);
+  $fecha_ingreso = date_format($fecha_ingreso,'Y-m-d');
 
 ?>
 <html>
@@ -65,7 +66,7 @@
 					<td style="width:100px;font-size:15px;font-weight:bold;padding:0;text-align:left;">CLIENTE:</td>
 					<td style="width:500px;font-size:15px;padding:0;text-align:left;"><?php print $cliente->title;?></td>
 					<td style="width:100px;font-size:15px;font-weight:bold;padding:0;text-align:left;">FECHA:</td>
-					<td style="width:200px;font-size:15px;padding:0;text-align:left;"><?php print $node->created;?></td>
+					<td style="width:200px;font-size:15px;padding:0;text-align:left;"><?php print $fecha_ingreso;?></td>
 				</tr>
 				<tr>
 					<td style="width:100px;font-size:15px;font-weight:bold;padding:0;text-align:left;">SUCURSAL:</td>
