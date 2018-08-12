@@ -526,11 +526,11 @@
 				<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
 					<tbody>
 						<tr>
-							<td style="width:200px;border-top:1px solid;">Firma y Sello: BPS</td>
+							<td style="width:200px;border-top:1px solid;font-size:13px;padding:0;">Firma y Sello: BPS</td>
 							<td style="width:150px;"></td>
-							<td style="width:200px;border-top:1px solid;">Vo. Bo. BPS</td>
+							<td style="width:200px;border-top:1px solid;font-size:13px;padding:0;">Vo. Bo. BPS</td>
 							<td style="width:150px;"></td>
-							<td style="width:200px;border-top:1px solid;">Firma y Sello: Cliente</td>
+							<td style="width:200px;border-top:1px solid;font-size:13px;padding:0;">Firma y Sello: Cliente</td>
 						</tr>
 					</tbody>
 				</table>
