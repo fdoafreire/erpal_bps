@@ -375,7 +375,7 @@
 ?>
 		<html>
 			<head></head>
-			<body style="font-size:4px;">
+			<body>
 				<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
 					<tbody>
 						<tr>
