@@ -433,7 +433,7 @@
 					<tbody>
 						<tr>
 							<td style="width:350px;border:1px solid;font-size:13px;padding:0;">CONDICIONES TABLEROS ELECTRICOS</td>
-							<td style="width:100px;border:1px solid;font-size:13px;padding:0;"><?php print $cte_condicion;?></td>
+							<td style="width:100px;border:1px solid;font-size:13px;padding:0;"><?php print $node->field_ord_cdtableroelectrico['und'][0]['value']; print $cte_condicion;?></td>
 							<td style="width:350px;border:1px solid;font-size:13px;padding:0;">CONDICIONES RACK, CABLEADO</td>
 							<td style="width:100px;border:1px solid;font-size:13px;padding:0;"></td>
 						</tr>
