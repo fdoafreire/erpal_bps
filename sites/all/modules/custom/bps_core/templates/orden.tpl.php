@@ -524,13 +524,15 @@
 				</table>
 				<br><br><br><br><br><br>
 				<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
-					<tr>
-						<td style="width:200px;border-top:1px solid;">Firma y Sello: BPS</td>
-						<td style="width:150px;"></td>
-						<td style="width:200px;border-top:1px solid;">Vo. Bo. BPS</td>
-						<td style="width:150px;"></td>
-						<td style="width:200px;border-top:1px solid;">Firma y Sello: Cliente</td>
-					</tr>
+					<tbody>
+						<tr>
+							<td style="width:200px;border-top:1px solid;">Firma y Sello: BPS</td>
+							<td style="width:150px;"></td>
+							<td style="width:200px;border-top:1px solid;">Vo. Bo. BPS</td>
+							<td style="width:150px;"></td>
+							<td style="width:200px;border-top:1px solid;">Firma y Sello: Cliente</td>
+						</tr>
+					</tbody>
 				</table>
 				</font>
 			</body>
