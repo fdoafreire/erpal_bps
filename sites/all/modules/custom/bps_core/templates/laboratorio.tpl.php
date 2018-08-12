@@ -58,7 +58,7 @@
 			<tbody>
 				<tr>
 					<td style="width:200px;font-size:20px;padding:0;text-align:center;" rowspan="2"><?php print $img_logo;?></td>
-					<td style="width:400px;font-size:20px;font-weight:bold;padding:0;text-align:center;">INGRESO DE EQUIPOS A LABORATORIO</td>
+					<td style="width:600px;font-size:20px;font-weight:bold;padding:0;text-align:center;">INGRESO DE EQUIPOS A LABORATORIO</td>
 				</tr>
 			</tbody>
 		</table>
