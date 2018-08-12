@@ -126,7 +126,7 @@
 					<td style="width:200px;font-size:15px;padding:0;text-align:center;border:1px solid;">FIRMA CLIENTE</td>
 				</tr>
 				<tr>
-					<td style="width:200px;font-size:15px;padding:0;text-align:left;border:1px solid;">colocar la decripcion de la tabla</td>
+					<td style="width:200px;font-size:15px;padding:0;text-align:left;border:1px solid;"><?php print $dpto;?></td>
 					<td style="width:200px;height:130px;font-size:15px;padding:0;text-align:left;border:1px solid;">colocar la referncia del equipo</td>
 				</tr>
 			</tbody>
