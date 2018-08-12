@@ -95,19 +95,19 @@ width:20%;
 
 .view-mode-full section.field-name-field-ord-cliente {
     width: 40%;
-    display: inline-block;
+    float: left;
 }
 .view-mode-full section.field-name-field-ord-sucursal {
     width: 30%;
-    display: inline-block;
+    float: left;
 }
 .view-mode-full section.field-name-field-ord-estado {
     width: 15%;
-    display: inline-block;
+    float: left;
 }
 .view-mode-full section.field-name-field-ord-tipo {
     width: 15%;
-    display: inline-block;
+    float: left;
 }
 .group-parametros-sv .field {
     width: 20%;
