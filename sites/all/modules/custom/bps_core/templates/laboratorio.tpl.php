@@ -25,7 +25,7 @@
   $email = '';
 
   $orden = node_load($node->field_el_orden['und'][0]['target_id']);
-  echo var_dump($orden);
+  print_r($orden);
   //$orden_equipo = $orden->nid;
 
 
