@@ -79,6 +79,7 @@ width:20%;
 .view-mode-full .group-entrada-v .field-group-fieldset {
     width: 45%;
     display: inline-block;
+    float: left;
 }
 .view-mode-full .group-entrada-v .group-medicion-ev {
     margin-right: 5px;
