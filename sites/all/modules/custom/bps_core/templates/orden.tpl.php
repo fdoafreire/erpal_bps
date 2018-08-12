@@ -111,6 +111,15 @@
 	$finfecha = $node->field_ord_inicio['und'][0]['value']['date'];
 	$finhora = $node->field_ord_inicio['und'][0]['value']['hora'];
 	$total = $node->field_ord_total['und'][0]['value'];
+	
+	$condiciones = array(
+		"1" => "B",
+		"2" => "R",
+		"3" => "D",
+		"4" => "",		
+	);
+	
+	$cte_condicion = $condiciones[$node->field_ord_cdtableroelectrico['und'][0]['value']];
 
 	if ($node->field_ord_tipo['und'][0]['value'][0]['value']=="2"){
 ?>
@@ -424,7 +433,7 @@
 					<tbody>
 						<tr>
 							<td style="width:350px;border:1px solid;font-size:13px;padding:0;">CONDICIONES TABLEROS ELECTRICOS</td>
-							<td style="width:100px;border:1px solid;font-size:13px;padding:0;"></td>
+							<td style="width:100px;border:1px solid;font-size:13px;padding:0;"><?php print $cte_condicion;?></td>
 							<td style="width:350px;border:1px solid;font-size:13px;padding:0;">CONDICIONES RACK, CABLEADO</td>
 							<td style="width:100px;border:1px solid;font-size:13px;padding:0;"></td>
 						</tr>
@@ -504,175 +513,3 @@
 <?php
 	}
 ?>
-<!--html>
-	<head></head>
-	<body>
-		<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
-			<tbody>
-				<tr>
-					<td style="width:230px;font-size:20px;padding:0;text-align:center;"><?php print $img_logo;?></td>
-					<td style="width:300px;font-size:20px;font-weight:bold;padding:0;text-align:center;">COTIZACION</td>
-				</tr>
-			</tbody>
-		</table>
-		<br>
-		<br>
-		<br>
-		<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
-			<tbody>
-				<tr>
-					<td style="width:300px;font-size:15px;padding:0;text-align:left;" rowspan="2"><?php print format_date($node->create,'long')?></td>
-					<td style="width:550px;font-size:15px;font-weight:bold;padding:0;text-align:right;">Cotizacion No:</td>
-					<td style="width:50px;font-size:15px;font-weight:bold;padding:0;text-align:right;"><?php print $node->nid; ?></td>
-				</tr>
-				<tr>
-					<td style="width:550px;font-size:15px;font-weight:bold;padding:0;text-align:right;">Version</td>
-					<td style="width:50px;font-size:13px;font-weight:bold;padding:0;text-align:right;">1</td>
-				</tr>
-			</tbody>
-		</table>
-		<br>
-		<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
-			<tbody>
-				<tr>
-					<td style="width:400px;font-size:15px;font-weight:bold;padding:0;text-align:left;" colspan="2">Señores</td>
-				</tr>
-				<tr>
-					<td style="width:400px;font-size:15px;padding:0;text-align:left;" colspan="2"><?php print $cliente->title; ?></td>
-				</tr>
-				<tr>
-					<td style="width:400px;font-size:15px;padding:0;text-align:left;" colspan="2"><?php print $city; ?></td>
-				</tr>
-				<tr>
-					<td style="width:400px;font-size:15px;padding:0;text-align:left;" colspan="2"><?php print $address; ?></td>
-				</tr>
-				<tr>
-					<td style="height:20px;font-size:15px;padding:0;text-align:left;" colspan="2"></td>
-				</tr>
-				<tr>
-					<td style="width:100px;font-size:15px;font-weight:bold;padding:0;text-align:left;">Atención</td>
-					<td style="width:300px;font-size:15px;padding:0;text-align:left;"><?php print $contact; ?></td>
-				</tr>
-				<tr>
-					<td style="width:100px;font-size:15px;font-weight:bold;padding:0;text-align:left;">Asunto</td>
-					<td style="width:300px;font-size:15px;padding:0;text-align:left;">COTIZACION</td>
-				</tr>
-				<tr>
-					<td style="width:100px;font-size:15px;font-weight:bold;padding:0;text-align:left;">Equipo</td>
-					<td style="width:300px;font-size:15px;padding:0;text-align:left;"></td>
-				</tr>
-			</tbody>
-		</table>
-		<br>
-		<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
-			<tbody>
-				<tr>
-					<td style="width:900px;font-size:15px;font-weight:bold;padding:0;text-align:left;">Cordial saludo</td>
-				</tr>
-				<tr>
-					<td style="width:900px;font-size:15px;padding:0;text-align:left;">De acuerdo a su solicitud, a continuación se presenta oferta comercial para su estudio y aprobación</td>
-				</tr>
-			</tbody>
-		</table>
-
-
-
-		<br><br>
-		<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
-			<tbody>
-				<tr>
-						<th style="width:20px;text-align:left;border:1px solid;font-size:13px;"></th>
-						<th style="width:100px;text-align:left;border:1px solid;font-size:13px;">Referencia</th>
-						<th style="width:180px;text-align:left;border:1px solid;font-size:13px;">Descripcion</th>
-						<th style="width:100px;text-align:left;border:1px solid;font-size:13px;">Cantidad</th>
-						<th style="width:100px;text-align:left;border:1px solid;font-size:13px;">Valor Unitario</th>
-						<th style="width:100px;text-align:left;border:1px solid;font-size:13px;">Subtotal</th>
-						<th style="width:100px;text-align:left;border:1px solid;font-size:13px;">Descuento</th>
-						<th style="width:100px;text-align:left;border:1px solid;font-size:13px;">Iva</th>
-						<th style="width:100px;text-align:left;border:1px solid;font-size:13px;">Total</th>
-				</tr>
-    			<?php foreach ($references as $key => $ref): ?>
-						<tr>
-								<td style="width:20px;text-align:left;border:1px solid;font-size:13px;"><?php print $key + 1;?></td>
-								<td style="width:100px;text-align:left;border:1px solid;font-size:13px;"><?php print $ref['ref'];?></td>
-								<td style="width:180px;text-align:left;border:1px solid;font-size:13px;"><?php print $ref['description'];?></td>
-								<td style="width:100px;text-align:right;border:1px solid;font-size:13px;"><?php print $ref['cant'];?></td>
-								<td style="width:100px;text-align:right;border:1px solid;font-size:13px;"><?php print $ref['v_unitario'];?></td>
-								<td style="width:100px;text-align:right;border:1px solid;font-size:13px;"><?php print $ref['v_subtotal'];?></td>
-								<td style="width:100px;text-align:right;border:1px solid;font-size:13px;"><?php print $ref['v_descuento'];?></td>
-								<td style="width:100px;text-align:right;border:1px solid;font-size:13px;"><?php print $ref['v_impuesto'];?></td>
-								<td style="width:100px;text-align:right;border:1px solid;font-size:13px;"><?php print $ref['v_total'];?></td>
-						</tr>
-				<?php endforeach; ?>
-			</tbody>
-		</table>
-		<br><br>
-		<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
-			<tbody>
-				<tr>
-						<th style="width:700px;text-align:left;font-size:13px;">OBSERVACIONES</th>
-						<th style="width:100px;text-align:right;font-size:13px;">NETO</th>
-						<td style="width:100px;text-align:right;font-size:13px;"><?php print $neto;?></td>
-				</tr>
-				<tr>
-						<td style="width:700px;text-align:left;font-size:13px;vertical-align:top;" rowspan="4">Los mantenimientos seran bajo coordinación con el cliente y en horario 5x8</td>
-						<th style="width:100px;text-align:right;font-size:13px;">DESCUENTO</th>
-						<td style="width:100px;text-align:right;font-size:13px;"><?php print $descuento;?></td>
-				</tr>
-				<tr>
-						<th style="width:100px;text-align:right;font-size:13px;">SUBTOTAL</th>
-						<td style="width:100px;text-align:right;font-size:13px;"><?php print $subtotal;?></td>
-				</tr>
-				<tr>
-						<th style="width:100px;text-align:right;font-size:13px;">IVA</th>
-						<td style="width:100px;text-align:right;font-size:13px;"><?php print $iva;?></td>
-				</tr>
-				<tr>
-						<th style="width:100px;text-align:right;font-size:13px;">TOTAL</th>
-						<td style="width:100px;text-align:right;font-size:13px;border-top:1px solid;"><?php print $total;?></td>
-				</tr>
-		</table>
-		<br>
-		<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
-			<caption style="font-size:13px;font-weight:bold;text-align:left;">CONDICIONES COMERCIALES</caption>
-			<tbody>
-				<tr>
-						<th style="width:120px;text-align:left;font-size:13px;">Forma de pago:</th>
-						<td style="width:200px;text-align:left;font-size:13px;"><?php print $type_payment; ?></td>
-				</tr>
-				<tr>
-						<th style="width:120px;text-align:left;font-size:13px;">Tiempo de entrega:</th>
-						<td style="width:200px;text-align:left;font-size:13px;"><?php print $time; ?></td>
-				</tr>
-				<tr>
-						<th style="width:120px;text-align:left;font-size:13px;">Validez de la oferta:</th>
-						<td style="width:200px;text-align:left;font-size:13px;"><?php print $validity; ?></td>
-				</tr>
-				<tr>
-						<th style="width:120px;text-align:left;font-size:13px;">Garantia:</th>
-						<td style="width:200px;text-align:left;font-size:13px;"><?php print $warranty; ?></td>
-				</tr>
-		</table>
-		<br>
-		<br>
-		<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
-			<caption style="font-size:13px;font-weight:bold;text-align:left;">Cordialmente</caption>
-			<tbody>
-				<tr>
-						<td style="width:200px;text-align:left;font-size:13px;">FABIAN ANDRES GUERRERO</td>
-				</tr>
-				<tr>
-						<td style="width:200px;text-align:left;font-size:13px;">COMERCIAL</td>
-				</tr>
-				<tr>
-						<th style="width:200px;text-align:left;font-size:13px;">BPS</th>
-				</tr>
-				<tr>
-						<td style="width:120px;text-align:left;font-size:13px;">6681142 EXT 105</td>
-				</tr>
-				<tr>
-						<td style="width:120px;text-align:left;font-size:13px;">almacen@ps.com.co</td>
-				</tr>
-		</table>
-	</body>
-</html-->
