@@ -413,6 +413,12 @@ function bps_core_node_view($node, $view_mode) {
     $module_path = drupal_get_path('module', 'bps_core');
     drupal_add_js($module_path . '/js/bps_view_cotizacion.js'); 
   }
+  if ($node->type == 'ordenes') {
+    $module_path = drupal_get_path('module', 'bps_core');
+    drupal_add_css($module_path . '/css/bps_core.css'); 
+  }
+
+
 }
 
 function bps_core_theme() {
