@@ -114,6 +114,8 @@
 	$finfecha = $node->field_ord_inicio['und'][0]['value']['date'];
 	$finhora = $node->field_ord_inicio['und'][0]['value']['hora'];
 	$total = $node->field_ord_total['und'][0]['value'];
+
+  $llegada = format_date($node->field_ord_llegada['und'][0]['value'],'custom','j').' de '.format_date($node->field_ord_llegada['und'][0]['value'],'custom','F').' del '.format_date($node->field_ord_llegada['und'][0]['value'],'custom','Y');
 	
 	$condiciones = array(
 		"1" => "B",
