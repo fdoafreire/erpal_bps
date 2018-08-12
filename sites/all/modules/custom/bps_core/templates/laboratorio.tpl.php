@@ -17,6 +17,7 @@
   $nit_cc = $node->field_el_nit_cc_proveedor['und'][0]['value'];
   $concepto = $node->field_el_concepto['und'][0]['value'];
   $observaciones = $node->field_el_obs_ing['und'][0]['value'];
+  $dpto = $node->field_el_depto_tec['und'][0]['value'];
 
   $address = '';
   $phone = '';
@@ -120,7 +121,7 @@
 		<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
 			<tbody>
 				<tr>
-					<td style="width:500px;font-size:15px;padding:0;text-align:left;border:1px solid;vertical-align:top;" rowspan="2">OBSERVACIONES:<?php print $observaciones;?>></th>
+					<td style="width:500px;font-size:15px;padding:0;text-align:left;border:1px solid;vertical-align:top;" rowspan="2">OBSERVACIONES:<?php print $observaciones;?></th>
 					<td style="width:200px;font-size:15px;padding:0;text-align:center;border:1px solid;">DPTO TECNICO</td>
 					<td style="width:200px;font-size:15px;padding:0;text-align:center;border:1px solid;">FIRMA CLIENTE</td>
 				</tr>
