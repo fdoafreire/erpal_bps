@@ -9,13 +9,22 @@
   if (isset($node->created)) {
   	$fecha = format_date($node->created,'custom','j').' de '.format_date($node->created,'custom','F').' del '.format_date($node->created,'custom','Y');
   }
-  /*$city = '';
+  $cliente = node_load($node->field_el_cliente['und'][0]['target_id']);
+  $fecha_ingreso = date_create($node->field_el_fecha_ingreso['und'][0]['value']);
+  $fecha_ingreso = date_format($fecha_ingreso,'Y-m-d');
+  $proveedor = $node->field_el_proveedor['und'][0]['value'];
+  $proveedor = $node->field_el_proveedor['und'][0]['value'];
+  $nit_cc = $node->field_el_nit_cc_proveedor['und'][0]['value'];
+  $concepto = $node->field_el_concepto['und'][0]['value'];
+
   $address = '';
   $phone = '';
   $mobile = '';
   $branch_office = '';
   $contact = '';
   $email = '';
+
+  $orden = node_load($node->field_el_orden['und'][0]['target_id']);
   if (isset($node->field_ord_sucursal_id['und'][0]['value'])) {
   	$item = field_collection_item_load($node->field_ord_sucursal_id['und'][0]['value']);
   	if (isset($item->field_city['und'][0]['value'])) {
@@ -39,11 +48,7 @@
   	if (isset($item->field_address_correo['und'][0]['value'])) {
   	  $email = $item->field_address_correo['und'][0]['value'];
   	}
-  }*/
-  
-  $cliente = node_load($node->field_el_cliente['und'][0]['target_id']);
-  $fecha_ingreso = date_create($node->field_el_fecha_ingreso['und'][0]['value']);
-  $fecha_ingreso = date_format($fecha_ingreso,'Y-m-d');
+  }
 
 ?>
 <html>
@@ -72,19 +77,19 @@
 					<td style="width:100px;font-size:15px;font-weight:bold;padding:0;text-align:left;">SUCURSAL:</td>
 					<td style="width:500px;font-size:15px;padding:0;text-align:left;">LA FERCHO BOGOTA</td>
 					<td style="width:100px;font-size:15px;font-weight:bold;padding:0;text-align:left;">PROVEEDOR:</td>
-					<td style="width:200px;font-size:15px;padding:0;text-align:left;">UPS Y REDES</td>
+					<td style="width:200px;font-size:15px;padding:0;text-align:left;"><?php print $proveedor;?></td>
 				</tr>
 				<tr>
 					<td style="width:100px;font-size:15px;font-weight:bold;padding:0;text-align:left;">CONTACTO:</td>
 					<td style="width:500px;font-size:15px;padding:0;text-align:left;">SURICATO</td>
 					<td style="width:100px;font-size:15px;font-weight:bold;padding:0;text-align:left;">NIT/CC</td>
-					<td style="width:200px;font-size:15px;padding:0;text-align:left;">800.800.800-5</td>
+					<td style="width:200px;font-size:15px;padding:0;text-align:left;"><?php print $nit_cc;?></td>
 				</tr>
 				<tr>
 					<td style="width:100px;font-size:15px;font-weight:bold;padding:0;text-align:left;">DIRECCION:</td>
 					<td style="width:500px;font-size:15px;padding:0;text-align:left;">TABOGO</td>
 					<td style="width:100px;font-size:15px;font-weight:bold;padding:0;text-align:left;">CONCEPTO</td>
-					<td style="width:200px;font-size:15px;padding:0;text-align:left;"></td>
+					<td style="width:200px;font-size:15px;padding:0;text-align:left;"><?php print $concepto;?></td>
 				</tr>
 				<tr>
 					<td style="width:100px;font-size:15px;font-weight:bold;padding:0;text-align:left;">TELEFONO:</td>
