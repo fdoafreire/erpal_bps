@@ -397,7 +397,7 @@ function _get_ajax_ordenes($nid, $flag_json = TRUE) {
   $query = db_select('field_data_field_ord_cliente', 'o');
   $query->join('field_data_field_ord_estado', 'e', 'e.entity_id=o.entity_id');
   $query->join('field_data_field_ord_tipo' ,'t', 't.entity_id=o.entity_id');
-  $query->join('field_data_field_consecutivo_doc' ,'n', 'n.entity_id=o.entity_id');
+  $query->leftJoin('field_data_field_consecutivo_doc' ,'n', 'n.entity_id=o.entity_id');
   $query->addField('o','entity_id','nid');
   $query->addField('n','field_consecutivo_doc_value','doc');
   $query->condition('o.field_ord_cliente_target_id',$nid);
@@ -409,7 +409,7 @@ function _get_ajax_ordenes($nid, $flag_json = TRUE) {
   $options = array();
   foreach ($result as $row) {
     $ord = node_load($row->nid);
-    $options[$row->nid] = $ord->title . '-' . $ord->doc .' (' . $row->nid . ')';
+    $options[$row->nid] = $ord->title . '-' . $row->doc .' (' . $row->nid . ')';
   }
   if ($flag_json) {
     return  drupal_json_output($options);  
