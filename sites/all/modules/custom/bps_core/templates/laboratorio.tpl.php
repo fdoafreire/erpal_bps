@@ -24,11 +24,8 @@
   $contact = '';
   $email = '';
 
-  $orden = node_load($node->field_el_orden['und'][0]['target_id']);
-  print_r($orden);
-  //$orden_equipo = $orden->nid;
-
-
+	$item = field_collection_item_load($node->field_el_orden['und'][0]['value']);
+	$orden = $item;
   if (isset($node->field_ord_sucursal_id['und'][0]['value'])) {
   	$item_orden = field_collection_item_load($node->field_ord_sucursal_id['und'][0]['value']);
   	if (isset($item->field_city['und'][0]['value'])) {
