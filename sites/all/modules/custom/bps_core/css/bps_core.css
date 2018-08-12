@@ -112,9 +112,11 @@ width:20%;
 .group-parametros-sv .field {
     width: 20%;
     float: left;
+    height: 80px;
 }
 .group-parametros-sv .field-name-field-ord-servicio {
     width: 100%;
+    height: auto;
 }
 .group-tiempo-v .field-type-datetime {
     width: 33.33%;
