@@ -31,6 +31,9 @@
   	if (isset($item->field_address_name['und'][0]['value'])) {
   	  $branch_office = $item->field_address_name['und'][0]['value'];
   	}
+  	if (isset($item->field_address_name['und'][0]['value'])) {
+  	  $branch_office = $item->field_address_name['und'][0]['value'];
+  	}
   }
 
   
@@ -390,11 +393,11 @@
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">CLIENTE</td>
 								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;"><?php print $cliente->title ?></td>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">CIUDAD</td>
-								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;"><?php print $branch_office;?></td>
+								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;"><?php print $city;?></td>
 						</tr>
 						<tr>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">CONTACTO</td>
-								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;">LA FERCHO</td>
+								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;"><?php print $branch_office;?></td>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">SUCURSAL</td>
 								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;"><?php print $branch_office;?></td>
 						</tr>
