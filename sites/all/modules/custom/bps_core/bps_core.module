@@ -397,7 +397,9 @@ function _get_ajax_ordenes($nid, $flag_json = TRUE) {
   $query = db_select('field_data_field_ord_cliente', 'o');
   $query->join('field_data_field_ord_estado', 'e', 'e.entity_id=o.entity_id');
   $query->join('field_data_field_ord_tipo' ,'t', 't.entity_id=o.entity_id');
+  $query->join('field_data_field_consecutivo_doc' ,'n', 'n.entity_id=o.entity_id');
   $query->addField('o','entity_id','nid');
+  $query->addField('n','field_consecutivo_doc_value','doc');
   $query->condition('o.field_ord_cliente_target_id',$nid);
   // ordenes de tipo 2 = orden de trabajo
   $query->condition('t.field_ord_tipo_value',2);
@@ -407,7 +409,7 @@ function _get_ajax_ordenes($nid, $flag_json = TRUE) {
   $options = array();
   foreach ($result as $row) {
     $ord = node_load($row->nid);
-    $options[$row->nid] = $ord->title . ' (' . $row->nid . ')';
+    $options[$row->nid] = $ord->title . '-' . $ord->doc .' (' . $row->nid . ')';
   }
   if ($flag_json) {
     return  drupal_json_output($options);  
@@ -542,7 +544,6 @@ function bps_autocomplete($type, $text, $nid = NULL, $filters = NULL) {
 function bps_core_node_presave($node) {
   if (empty($node->nid) || !isset($node->nid) || $node->nid == 0) { 
     $types = array('ordenes','cotizaciones','equipos_laboratorio');
-    dpm($node);
    if (in_array($node->type, $types)) {
      $consecutivo = variable_get('bps_consec_' . $node->type,NULL);
      if (!is_null($consecutivo)) {
@@ -553,7 +554,6 @@ function bps_core_node_presave($node) {
          $query->addField('c', 'entity_id','nid');
          $query->condition('c.field_consecutivo_doc_value', $numero);
          $query->condition('c.bundle', $node->type);
-         dpq($query);
          $result = $query->execute()->fetchObject();
          if (isset($result->nid) && !empty($result->nid) && is_numeric($result->nid) && $result->nid > 0) {
            $numero++;
