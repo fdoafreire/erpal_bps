@@ -25,6 +25,7 @@ function bps_consecutivos_form_main($form, &$form_state) {
     '#default_value' => t('Grabar'),
     '#required' => TRUE,
   );
+  return $form;
 
 }
 
