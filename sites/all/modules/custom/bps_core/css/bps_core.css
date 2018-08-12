@@ -66,32 +66,44 @@ width:20%;
     display: inline-block;
     margin: 0 10px 0 0;
 }
-
-.group-dato-equipo-v .field {
+/* estilos consulta ordenes */
+.view-mode-full .group-dato-equipo-v .field {
     width: 20%;
     display: inline-block;
 }
-.group-datos-tecnicos-v .field {
+.view-mode-full .group-datos-tecnicos-v .field {
     width: 25%;
     display: inline-block;
 }
 
-.group-entrada-v .field-group-fieldset {
+.view-mode-full .group-entrada-v .field-group-fieldset {
     width: 45%;
     display: inline-block;
 }
-.group-entrada-v .group-medicion-ev {
+.view-mode-full .group-entrada-v .group-medicion-ev {
     margin-right: 5px;
 }
-.group-entrada-v .group-medicion-ev  .field {
+.view-mode-full .group-entrada-v .group-medicion-ev  .field {
     width: 25%;
     display: inline-block;
 }
-.group-entrada-v .group-medicion-ea {
+.view-mode-full .group-entrada-v .group-medicion-ea {
     margin-left: 5px;
     height: 119px;
 }
-.group-entrada-v .group-medicion-ea  .field {
+.view-mode-full .group-entrada-v .group-medicion-ea  .field {
     width: 25%;
+    display: inline-block;
+} 
+.view-mode-full section.field-name-field-ord-cliente {
+    width: 50%;
+    display: inline-block;
+}
+.view-mode-full section.field-name-field-ord-sucursal {
+    width: 30%;
+    display: inline-block;
+}
+.view-mode-full section.field-name-field-ord-estado {
+    width: 20%;
     display: inline-block;
 }
