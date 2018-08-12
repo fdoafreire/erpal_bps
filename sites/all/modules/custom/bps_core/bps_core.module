@@ -332,6 +332,9 @@ function bps_pdf_html($nid) {
     case 'ordenes':
       $html = theme('orden_pdf', array('node' => $node));
       break;
+    case 'laboratorio':
+      $html = theme('laboratorio_pdf', array('node' => $node));
+      break;
   }
   //return $html;
   pdf_using_mpdf_api($html);
@@ -430,6 +433,10 @@ function bps_core_theme() {
         'orden_pdf' => array(
             'variables' => array('node' => NULL),
             'template' => 'templates/orden',
+        ),
+        'laboratorio_pdf' => array(
+            'variables' => array('node' => NULL),
+            'template' => 'templates/laboratorio',
         ),
     );
 }
