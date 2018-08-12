@@ -107,6 +107,7 @@
 	</body>
 </html>
 <?php
+	
 	if ($node->field_el_salida['und'][0]['value'] == '1'){
 		$fecha_salida = date_create($node->field_el_fecha_salida['und'][0]['value']);
 		$fecha_salida = date_format($fecha_ingreso,'Y-m-d');
