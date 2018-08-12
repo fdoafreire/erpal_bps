@@ -120,6 +120,19 @@
 	);
 	
 	$cte_condicion = $condiciones[$node->field_ord_cdtableroelectrico['und'][0]['value']];
+	$cce_condicion = $condiciones[$node->field_ord_cdcircuitoelectrico['und'][0]['value']];
+	$vnt_condicion = $condiciones[$node->field_ord_vtneutrotierra['und'][0]['value']];
+	$vnb_condicion = $condiciones[$node->field_ord_vtneutrobase['und'][0]['value']];
+	$sel_condicion = $condiciones[$node->field_ord_seelectrica['und'][0]['value']];
+	$ven_condicion = $condiciones[$node->field_ord_ventilacion['und'][0]['value']];
+	$tem_condicion = $condiciones[$node->field_ord_temperatura['und'][0]['value']];
+	$cra_condicion = $condiciones[$node->field_ord_cdrackcableado['und'][0]['value']];
+	$mcc_condicion = $condiciones[$node->field_ord_mcidecableado['und'][0]['value']];
+	$esc_condicion = $condiciones[$node->field_ord_escanaleta['und'][0]['value']];
+	$mrcableado = $condiciones[$node->field_ord_mrcableado['und'][0]['value']];
+	$cacableado = $condiciones[$node->field_ord_cacableado['und'][0]['value']];
+	$cnpuntosdatos = $condiciones[$node->field_ord_cnpuntosdatos['und'][0]['value']];	
+	$cnpuntosvoz = $condiciones[$node->field_ord_cnpuntosvoz['und'][0]['value']];	
 
 	if ($node->field_ord_tipo['und'][0]['value'][0]['value']=="2"){
 ?>
@@ -433,13 +446,13 @@
 					<tbody>
 						<tr>
 							<td style="width:350px;border:1px solid;font-size:13px;padding:0;">CONDICIONES TABLEROS ELECTRICOS</td>
-							<td style="width:100px;border:1px solid;font-size:13px;padding:0;"><?php print $node->field_ord_cdtableroelectrico['und'][0]['value']; print $cte_condicion;?></td>
+							<td style="width:100px;border:1px solid;font-size:13px;padding:0;"><?php print $cte_condicion;?></td>
 							<td style="width:350px;border:1px solid;font-size:13px;padding:0;">CONDICIONES RACK, CABLEADO</td>
-							<td style="width:100px;border:1px solid;font-size:13px;padding:0;"></td>
+							<td style="width:100px;border:1px solid;font-size:13px;padding:0;"><?php print $cra_condicion;?></td>
 						</tr>
 						<tr>
 							<td style="width:350px;border:1px solid;font-size:13px;padding:0;">CONDICIONES CIRCUITOS ELECTRICOS</td>
-							<td style="width:100px;border:1px solid;font-size:13px;padding:0;"></td>
+							<td style="width:100px;border:1px solid;font-size:13px;padding:0;"><?php print $cce_condicion;?></td>
 							<td style="width:350px;border:1px solid;font-size:13px;padding:0;">MARCA CABLEADO</td>
 							<td style="width:100px;border:1px solid;font-size:13px;padding:0;"></td>
 						</tr>
