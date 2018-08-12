@@ -458,57 +458,69 @@
 						</tr>
 						<tr>
 							<td style="width:350px;border:1px solid;font-size:13px;padding:0;">VOLTAJE NEUTRO - TIERRA</td>
-							<td style="width:100px;border:1px solid;font-size:13px;padding:0;"></td>
+							<td style="width:100px;border:1px solid;font-size:13px;padding:0;"><?php print $vnt_condicion;?></td>
 							<td style="width:350px;border:1px solid;font-size:13px;padding:0;">CATEGORIA CABLEADO</td>
-							<td style="width:100px;border:1px solid;font-size:13px;padding:0;"></td>
+							<td style="width:100px;border:1px solid;font-size:13px;padding:0;"><?php print $cacableado;?></td>
 						</tr>
 						<tr>
-							<td style="width:350px;border:1px solid;font-size:13px;padding:0;">VOLTAJE NEUTRO - FASE</td>
-							<td style="width:100px;border:1px solid;font-size:13px;padding:0;"></td>
+							<td style="width:350px;border:1px solid;font-size:13px;padding:0;">VOLTAJE NEUTRO - BASE</td>
+							<td style="width:100px;border:1px solid;font-size:13px;padding:0;"><?php print $vnb_condicion;?></td>
 							<td style="width:350px;border:1px solid;font-size:13px;padding:0;">MARCACION E IDENTIFICACION CABLEADO</td>
-							<td style="width:100px;border:1px solid;font-size:13px;padding:0;"></td>
+							<td style="width:100px;border:1px solid;font-size:13px;padding:0;"><?php print $mrcableado;?></td>
 						</tr>
 						<tr>
 							<td style="width:350px;border:1px solid;font-size:13px;padding:0;">SEGURIDAD ELECTRICA</td>
-							<td style="width:100px;border:1px solid;font-size:13px;padding:0;"></td>
+							<td style="width:100px;border:1px solid;font-size:13px;padding:0;"><?php print $sel_condicion;?></td>
 							<td style="width:350px;border:1px solid;font-size:13px;padding:0;">ESTADO CANALETAS</td>
-							<td style="width:100px;border:1px solid;font-size:13px;padding:0;"></td>
+							<td style="width:100px;border:1px solid;font-size:13px;padding:0;"><?php print $esc_condicion;?></td>
 						</tr>
 						<tr>
 							<td style="width:350px;border:1px solid;font-size:13px;padding:0;">VENTILACION</td>
-							<td style="width:100px;border:1px solid;font-size:13px;padding:0;"></td>
+							<td style="width:100px;border:1px solid;font-size:13px;padding:0;"><?php print $ven_condicion;?></td>
 							<td style="width:350px;border:1px solid;font-size:13px;padding:0;">CANTIDAD PUNTOS DATOS</td>
-							<td style="width:100px;border:1px solid;font-size:13px;padding:0;"></td>
+							<td style="width:100px;border:1px solid;font-size:13px;padding:0;"><?php print $cnpuntosdatos;?></td>
 						</tr>
 						<tr>
 							<td style="width:350px;border:1px solid;font-size:13px;padding:0;">TEMPERATURA</td>
-							<td style="width:100px;border:1px solid;font-size:13px;padding:0;"></td>
+							<td style="width:100px;border:1px solid;font-size:13px;padding:0;"><?php print $tem_condicion;?></td>
 							<td style="width:350px;border:1px solid;font-size:13px;padding:0;">CANTIDAD PUNTOS VOZ</td>
-							<td style="width:100px;border:1px solid;font-size:13px;padding:0;"></td>
+							<td style="width:100px;border:1px solid;font-size:13px;padding:0;"><?php print $cnpuntosvoz;?></td>
 						</tr>
 					</tbody>
 				</table>
 				<br>
 				<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;" >
 					<caption style="border:1px solid;font-size:13px;font-weight:bold;">INFORME TECNICO</caption>
-					<td style="width:900px;height:100px;text-align:center;border:1px solid;font-size:13px;padding:0;"></td>
+					<tbody>
+						<tr>
+							<td style="width:900px;height:100px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $informet;?></td>
+						</tr>
+					</tbody>
 				</table>
 				<br>
 				<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;" >
 					<caption style="border:1px solid;font-size:13px;font-weight:bold;">RECOMENDACIONES</caption>
-					<td style="width:900px;height:100px;text-align:center;border:1px solid;font-size:13px;padding:0;"></td>
+					<tbody>
+						<tr>
+							<td style="width:900px;height:100px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $recomendaciones;?></td>
+						</tr>
+					</tbody>
 				</table>
 				<br>
 				<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;" >
 					<caption style="border:1px solid;font-size:13px;font-weight:bold;">TIEMPO PRESTACION DE SERVICIO (EN HORAS)</caption>
-					<td style="width:112px;text-align:center;border:1px solid;font-size:13px;padding:0;">LLEGADA</td>
-					<td style="width:112px;text-align:center;border:1px solid;font-size:13px;padding:0;"></td>
-					<td style="width:112px;text-align:center;border:1px solid;font-size:13px;padding:0;">INICIO</td>
-					<td style="width:112px;text-align:center;border:1px solid;font-size:13px;padding:0;"></td>
-					<td style="width:112px;text-align:center;border:1px solid;font-size:13px;padding:0;">FIN</td>
-					<td style="width:112px;text-align:center;border:1px solid;font-size:13px;padding:0;"></td>
-					<td style="width:110px;text-align:center;border:1px solid;font-size:13px;padding:0;">TOTAL</td>
-					<td style="width:110px;text-align:center;border:1px solid;font-size:13px;padding:0;"></td>
+					<tbody>
+						<tr>
+							<td style="width:112px;text-align:left;border:1px solid;font-size:13px;padding:0;">LLEGADA</td>
+							<td style="width:112px;text-align:left;border:1px solid;font-size:13px;padding:0;"><?php print $llegadafecha." ".$llegadahora;?></td>
+							<td style="width:112px;text-align:left;border:1px solid;font-size:13px;padding:0;">INICIO</td>
+							<td style="width:112px;text-align:left;border:1px solid;font-size:13px;padding:0;"><?php print $iniciofecha." ".$iniciohora;?></td>
+							<td style="width:112px;text-align:left;border:1px solid;font-size:13px;padding:0;">FIN</td>
+							<td style="width:112px;text-align:left;border:1px solid;font-size:13px;padding:0;"><?php print $finfecha." ".$finhora;?></td>
+							<td style="width:110px;text-align:left;border:1px solid;font-size:13px;padding:0;">TOTAL</td>
+							<td style="width:110px;text-align:left;border:1px solid;font-size:13px;padding:0;"><?php print $total;?></td>
+						</tr>
+					</tbody>
 				</table>
 				<br><br><br><br><br><br>
 				<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
