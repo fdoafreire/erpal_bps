@@ -41,7 +41,7 @@
   	}
   }*/
   
-  //$cliente = node_load($node->field_el_cliente['und'][0]['target_id']);
+  $cliente = node_load($node->field_el_cliente['und'][0]['target_id']);
 
 ?>
 <html>
@@ -62,7 +62,7 @@
 			<tbody>
 				<tr>
 					<td style="width:100px;font-size:15px;font-weight:bold;padding:0;text-align:left;">CLIENTE:</td>
-					<td style="width:500px;font-size:15px;padding:0;text-align:left;"><?php printf($node->field_el_cliente['und'][0]);?></td>
+					<td style="width:500px;font-size:15px;padding:0;text-align:left;"><?php print $cliente->title;?></td>
 					<td style="width:100px;font-size:15px;font-weight:bold;padding:0;text-align:left;">FECHA:</td>
 					<td style="width:200px;font-size:15px;padding:0;text-align:left;">2018-08-10</td>
 				</tr>
