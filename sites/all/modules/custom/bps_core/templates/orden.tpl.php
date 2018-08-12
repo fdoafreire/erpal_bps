@@ -454,7 +454,7 @@
 							<td style="width:350px;border:1px solid;font-size:13px;padding:0;">CONDICIONES CIRCUITOS ELECTRICOS</td>
 							<td style="width:100px;border:1px solid;font-size:13px;padding:0;"><?php print $cce_condicion;?></td>
 							<td style="width:350px;border:1px solid;font-size:13px;padding:0;">MARCA CABLEADO</td>
-							<td style="width:100px;border:1px solid;font-size:13px;padding:0;"></td>
+							<td style="width:100px;border:1px solid;font-size:13px;padding:0;"><?php print $mcc_condicion;?></td>
 						</tr>
 						<tr>
 							<td style="width:350px;border:1px solid;font-size:13px;padding:0;">VOLTAJE NEUTRO - TIERRA</td>
