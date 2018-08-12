@@ -316,6 +316,37 @@ function bps_core_menu() {
     'type' => MENU_CALLBACK,
   );  
 
+  $items['admin/config/bps'] = array(
+    'title' => 'Bps',
+    'description' => 'Configure bps.',
+    'position' => 'left',
+    'weight' => -20,
+    'page callback' => 'system_admin_menu_block_page',
+    'access arguments' => array('access administration pages'),
+    'file' => 'system.admin.inc',
+    'file path' => drupal_get_path('module', 'system'),
+  );
+
+  $items['admin/config/bps/consecutivos'] = array(
+    'title' => 'Administración de consecutivos',
+    'description' => 'Aqui podrá configurar los consecutivos.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('bps_consecutivos_form_main'),
+    'access arguments' => array('administer settings'),
+    'file' => 'bps_core.admin.inc',
+    'access callback' => TRUE,
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  $items['admin/config/bps/consecutivos/settings'] = array(
+    'title' => 'Configuración',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('bps_consecutivos_form_main'),
+    'access arguments' => array('administer settings'),
+    'file' => 'bps_core.admin.inc',
+    'weight' => 1,
+    'type' => MENU_DEFAULT_LOCAL_TASK,
+  );
 
    return $items;
 }
