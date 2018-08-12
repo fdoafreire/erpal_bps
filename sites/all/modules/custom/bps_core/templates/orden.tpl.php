@@ -129,10 +129,10 @@
 	$cra_condicion = $condiciones[$node->field_ord_cdrackcableado['und'][0]['value']];
 	$mcc_condicion = $condiciones[$node->field_ord_mcidecableado['und'][0]['value']];
 	$esc_condicion = $condiciones[$node->field_ord_escanaleta['und'][0]['value']];
-	$mrcableado = $condiciones[$node->field_ord_mrcableado['und'][0]['value']];
-	$cacableado = $condiciones[$node->field_ord_cacableado['und'][0]['value']];
-	$cnpuntosdatos = $condiciones[$node->field_ord_cnpuntosdatos['und'][0]['value']];	
-	$cnpuntosvoz = $condiciones[$node->field_ord_cnpuntosvoz['und'][0]['value']];	
+	$mrcableado = $node->field_ord_mrcableado['und'][0]['value'];
+	$cacableado = $node->field_ord_cacableado['und'][0]['value'];
+	$cnpuntosdatos = $node->field_ord_cnpuntosdatos['und'][0]['value'];	
+	$cnpuntosvoz = $node->field_ord_cnpuntosvoz['und'][0]['value'];	
 
 	if ($node->field_ord_tipo['und'][0]['value'][0]['value']=="2"){
 ?>
