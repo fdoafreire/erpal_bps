@@ -94,7 +94,7 @@ width:20%;
 }
 
 .view-mode-full section.field-name-field-ord-cliente {
-    width: 50%;
+    width: 40%;
     display: inline-block;
 }
 .view-mode-full section.field-name-field-ord-sucursal {
@@ -102,7 +102,11 @@ width:20%;
     display: inline-block;
 }
 .view-mode-full section.field-name-field-ord-estado {
-    width: 20%;
+    width: 15%;
+    display: inline-block;
+}
+.view-mode-full section.field-name-field-ord-tipo {
+    width: 15%;
     display: inline-block;
 }
 .group-tiempo-v .field-type-datetime {
