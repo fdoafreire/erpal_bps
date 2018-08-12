@@ -116,7 +116,8 @@
 	$total = $node->field_ord_total['und'][0]['value'];
 
   $llegada = $node->field_ord_llegada['und'][0]['value'];
-  $llegada = format_date($llegada,'custom','j').' de '.format_date($llegada,'custom','F').' del '.format_date($llegada,'custom','Y');
+  $inicio = $node->field_ord_inicio['und'][0]['value'];
+  $fin = $node->field_ord_fin['und'][0]['value'];
 
 	
 	$condiciones = array(
@@ -342,11 +343,11 @@
 					<tbody>
 						<tr>
 							<td style="width:112px;text-align:left;border:1px solid;font-size:13px;padding:0;">LLEGADA</td>
-							<td style="width:112px;text-align:left;border:1px solid;font-size:13px;padding:0;"><?php print $llegada." - ";print $llegadafecha." ".$llegadahora;?></td>
+							<td style="width:112px;text-align:left;border:1px solid;font-size:13px;padding:0;"><?php print $llegada;?></td>
 							<td style="width:112px;text-align:left;border:1px solid;font-size:13px;padding:0;">INICIO</td>
-							<td style="width:112px;text-align:left;border:1px solid;font-size:13px;padding:0;"><?php print $iniciofecha." ".$iniciohora;?></td>
+							<td style="width:112px;text-align:left;border:1px solid;font-size:13px;padding:0;"><?php print $inicio;?></td>
 							<td style="width:112px;text-align:left;border:1px solid;font-size:13px;padding:0;">FIN</td>
-							<td style="width:112px;text-align:left;border:1px solid;font-size:13px;padding:0;"><?php print $finfecha." ".$finhora;?></td>
+							<td style="width:112px;text-align:left;border:1px solid;font-size:13px;padding:0;"><?php print $fin;?></td>
 							<td style="width:110px;text-align:left;border:1px solid;font-size:13px;padding:0;">TOTAL</td>
 							<td style="width:110px;text-align:left;border:1px solid;font-size:13px;padding:0;"><?php print $total;?></td>
 						</tr>
