@@ -113,10 +113,10 @@ width:20%;
     width: 20%;
     display: inline-block;
 }
+.group-parametros-sv .field-name-field-ord-servicio {
+    width: 100%;
+}
 .group-tiempo-v .field-type-datetime {
     width: 33.33%;
     display: inline-block;
-}
-.group-tiempo-v .field-name-field-ord-servicio {
-    width: 100%;
 }
