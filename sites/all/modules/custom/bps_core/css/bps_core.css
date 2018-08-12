@@ -71,3 +71,7 @@ width:20%;
     width: 20%;
     display: inline-block;
 }
+.group-datos-tecnicos-v .field {
+    width: 25%;
+    display: inline-block;
+}
