@@ -111,7 +111,7 @@ width:20%;
 }
 .group-parametros-sv .field {
     width: 20%;
-    display: inline-block;
+    float: left;
 }
 .group-parametros-sv .field-name-field-ord-servicio {
     width: 100%;
