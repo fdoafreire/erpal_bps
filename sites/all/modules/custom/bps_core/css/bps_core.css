@@ -84,11 +84,12 @@ width:20%;
     margin-right: 5px;
 }
 .group-entrada-v .group-medicion-ev  .field {
-    width: 33.33%;
+    width: 25%;
     display: inline-block;
 }
 .group-entrada-v .group-medicion-ea {
     margin-left: 5px;
+    height: 119px;
 }
 .group-entrada-v .group-medicion-ea  .field {
     width: 25%;
