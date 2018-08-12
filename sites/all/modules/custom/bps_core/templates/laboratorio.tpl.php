@@ -69,26 +69,26 @@
 			<tbody>
 				<tr>
 					<td style="width:100px;font-size:15px;font-weight:bold;padding:0;text-align:left;">CLIENTE:</td>
-					<td style="width:500px;font-size:15px;padding:0;text-align:left;"><?php print $cliente->title;?></td>
-					<td style="width:100px;font-size:15px;font-weight:bold;padding:0;text-align:left;">FECHA:</td>
+					<td style="width:450px;font-size:15px;padding:0;text-align:left;"><?php print $cliente->title;?></td>
+					<td style="width:150px;font-size:15px;font-weight:bold;padding:0;text-align:left;">FECHA:</td>
 					<td style="width:200px;font-size:15px;padding:0;text-align:left;"><?php print $fecha_ingreso;?></td>
 				</tr>
 				<tr>
 					<td style="width:100px;font-size:15px;font-weight:bold;padding:0;text-align:left;">SUCURSAL:</td>
-					<td style="width:500px;font-size:15px;padding:0;text-align:left;">LA FERCHO BOGOTA</td>
-					<td style="width:100px;font-size:15px;font-weight:bold;padding:0;text-align:left;">PROVEEDOR:</td>
+					<td style="width:450px;font-size:15px;padding:0;text-align:left;">LA FERCHO BOGOTA</td>
+					<td style="width:150px;font-size:15px;font-weight:bold;padding:0;text-align:left;">PROVEEDOR:</td>
 					<td style="width:200px;font-size:15px;padding:0;text-align:left;"><?php print $proveedor;?></td>
 				</tr>
 				<tr>
 					<td style="width:100px;font-size:15px;font-weight:bold;padding:0;text-align:left;">CONTACTO:</td>
-					<td style="width:500px;font-size:15px;padding:0;text-align:left;">SURICATO</td>
-					<td style="width:100px;font-size:15px;font-weight:bold;padding:0;text-align:left;">NIT/CC</td>
+					<td style="width:450px;font-size:15px;padding:0;text-align:left;">SURICATO</td>
+					<td style="width:150px;font-size:15px;font-weight:bold;padding:0;text-align:left;">NIT/CC</td>
 					<td style="width:200px;font-size:15px;padding:0;text-align:left;"><?php print $nit_cc;?></td>
 				</tr>
 				<tr>
 					<td style="width:100px;font-size:15px;font-weight:bold;padding:0;text-align:left;">DIRECCION:</td>
-					<td style="width:500px;font-size:15px;padding:0;text-align:left;">TABOGO</td>
-					<td style="width:100px;font-size:15px;font-weight:bold;padding:0;text-align:left;">CONCEPTO</td>
+					<td style="width:450px;font-size:15px;padding:0;text-align:left;">TABOGO</td>
+					<td style="width:150px;font-size:15px;font-weight:bold;padding:0;text-align:left;">CONCEPTO</td>
 					<td style="width:200px;font-size:15px;padding:0;text-align:left;"><?php print $concepto;?></td>
 				</tr>
 				<tr>
