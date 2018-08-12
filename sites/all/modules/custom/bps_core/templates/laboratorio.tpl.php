@@ -24,7 +24,7 @@
   $contact = '';
   $email = '';
 
-	$item = field_collection_item_load($node->field_el_orden['und'][0]['value']);
+	$item = field_collection_item_load($node->field_el_orden['und'][0]['target_id']);
 	$orden = $item;
   if (isset($node->field_ord_sucursal_id['und'][0]['value'])) {
   	$item_orden = field_collection_item_load($node->field_ord_sucursal_id['und'][0]['value']);
@@ -108,7 +108,7 @@
 					<th style="width:225px;font-size:15px;padding:0;text-align:center;border:1px solid;">SERIAL</th>
 				</tr>
 				<tr style="height:130px;">
-					<td style="width:225px;font-size:15px;padding:0;text-align:left;border:1px solid;"><?php print_r($orden);?></td>
+					<td style="width:225px;font-size:15px;padding:0;text-align:left;border:1px solid;"><?php print $node->field_el_orden['und'][0]['target_id'];?></td>
 					<td style="width:225px;font-size:15px;padding:0;text-align:left;border:1px solid;">colocar la referncia del equipo</td>
 					<td style="width:225px;font-size:15px;padding:0;text-align:left;border:1px solid;">colocar marca del equipo</td>
 					<td style="width:225px;font-size:15px;padding:0;text-align:left;border:1px solid;">colocar serial del equipo</td>
