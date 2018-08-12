@@ -1,5 +1,5 @@
 <?php
-function tct_elastic_form_main($form, &$form_state) {
+function bps_consecutivos_form_main($form, &$form_state) {
   $form = array();
   $form['bps_consec_cotizaciones'] = array(
     '#type' => 'textfield',
@@ -28,7 +28,7 @@ function tct_elastic_form_main($form, &$form_state) {
 
 }
 
-function tct_elastic_form_main_submit($form, &$form_state) {
+function bps_consecutivos_form_main_submit($form, &$form_state) {
   $values = $form_state['values'];
   variable_set('bps_consec_cotizaciones', $values['bps_consec_cotizaciones']);
   variable_set('bps_consec_ordenes', $values['bps_consec_ordenes']);
