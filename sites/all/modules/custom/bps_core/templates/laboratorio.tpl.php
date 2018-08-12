@@ -25,7 +25,7 @@
   $email = '';
 
   $orden = node_load($node->field_el_orden['und'][0]['target_id']);
-  $orden_equipo = $node->field_el_orden['und'][0]['target_id'];
+  $orden_equipo = $orden->nid;
 
 
   if (isset($node->field_ord_sucursal_id['und'][0]['value'])) {
