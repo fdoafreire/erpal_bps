@@ -40,7 +40,6 @@
   	  $email = $item->field_address_correo['und'][0]['value'];
   	}
   }*/
-
   
   $cliente = node_load($node->field_el_cliente['und'][0]['target_id']);
 
