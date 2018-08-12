@@ -332,7 +332,7 @@ function bps_pdf_html($nid) {
     case 'ordenes':
       $html = theme('orden_pdf', array('node' => $node));
       break;
-    case 'laboratorio':
+    case 'equipos_laboratorio':
       $html = theme('laboratorio_pdf', array('node' => $node));
       break;
   }
