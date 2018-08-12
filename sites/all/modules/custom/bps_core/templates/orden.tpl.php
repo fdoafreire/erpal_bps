@@ -384,7 +384,7 @@
 							<td style="width:300px;font-size:13px;padding:0;text-align:center;">SISTEMA GESTION DE CALIDAD</td>
 						</tr>
 						<tr>
-							<td style="width:300px;font-size:13px;padding:0;text-align:center;">ORDEN DE TRABAJO<?php $node->field_ord_servicio['und']?></td>
+							<td style="width:300px;font-size:13px;padding:0;text-align:center;">ORDEN DE SERVICIO REDES></td>
 						</tr>
 					</tbody>
 				</table>
