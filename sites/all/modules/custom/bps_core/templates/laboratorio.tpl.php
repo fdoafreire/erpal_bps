@@ -9,7 +9,7 @@
   if (isset($node->created)) {
   	$fecha = format_date($node->created,'custom','j').' de '.format_date($node->created,'custom','F').' del '.format_date($node->created,'custom','Y');
   }
-  $fecha_ingreso = format_date($node->field_el_fecha_ingreso,'long');
+  $fecha_ingreso = format_date($node->field_el_fecha_ingreso['und'][0]['value'],'long');
   $city = '';
   $address = '';
   $phone = '';
