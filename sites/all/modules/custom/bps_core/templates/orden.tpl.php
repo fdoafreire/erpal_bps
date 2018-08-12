@@ -340,7 +340,7 @@
 					<tbody>
 						<tr>
 							<td style="width:112px;text-align:left;border:1px solid;font-size:13px;padding:0;">LLEGADA</td>
-							<td style="width:112px;text-align:left;border:1px solid;font-size:13px;padding:0;"><?php print $llegadafecha." ".$llegadahora;?></td>
+							<td style="width:112px;text-align:left;border:1px solid;font-size:13px;padding:0;"><?php print $llegada." - ";print $llegadafecha." ".$llegadahora;?></td>
 							<td style="width:112px;text-align:left;border:1px solid;font-size:13px;padding:0;">INICIO</td>
 							<td style="width:112px;text-align:left;border:1px solid;font-size:13px;padding:0;"><?php print $iniciofecha." ".$iniciohora;?></td>
 							<td style="width:112px;text-align:left;border:1px solid;font-size:13px;padding:0;">FIN</td>
