@@ -14,6 +14,8 @@
   $phone = '';
   $mobile = '';
   $branch_office = '';
+  $contact = '';
+  $email = '';
   if (isset($node->field_ord_sucursal_id['und'][0]['value'])) {
   	$item = field_collection_item_load($node->field_ord_sucursal_id['und'][0]['value']);
   	if (isset($item->field_city['und'][0]['value'])) {
@@ -31,8 +33,11 @@
   	if (isset($item->field_address_name['und'][0]['value'])) {
   	  $branch_office = $item->field_address_name['und'][0]['value'];
   	}
-  	if (isset($item->field_address_name['und'][0]['value'])) {
-  	  $branch_office = $item->field_address_name['und'][0]['value'];
+  	if (isset($item->field_address_contacto['und'][0]['value'])) {
+  	  $contact = $item->field_address_contacto['und'][0]['value'];
+  	}
+  	if (isset($item->field_address_correo['und'][0]['value'])) {
+  	  $email = $item->field_address_correo['und'][0]['value'];
   	}
   }
 
@@ -173,11 +178,11 @@
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">CLIENTE</td>
 								<td style="width:250px;text-align:left;border:1px solid"><?php print $cliente->title ?></td>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">CIUDAD</td>
-								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;"><?php print $branch_office;?></td>
+								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;"><?php print $city;?></td>
 						</tr>
 						<tr>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">CONTACTO</td>
-								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;">LA FERCHO</td>
+								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;"><?php print $contact;?></td>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">SUCURSAL</td>
 								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;"><?php print $branch_office;?></td>
 						</tr>
@@ -189,7 +194,7 @@
 						</tr>
 						<tr>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">EMAIL</td>
-								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;">crear correo en base de datos</td>
+								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;"><?php print $email;?></td>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">CELULAR</td>
 								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;"><?php print $mobile;?></td>
 						</tr>
@@ -379,7 +384,7 @@
 							<td style="width:300px;font-size:13px;padding:0;text-align:center;">SISTEMA GESTION DE CALIDAD</td>
 						</tr>
 						<tr>
-							<td style="width:300px;font-size:13px;padding:0;text-align:center;">ORDEN DE SERVICIO REDES <?php $node->field_ord_servicio['und']?></td>
+							<td style="width:300px;font-size:13px;padding:0;text-align:center;">ORDEN DE TRABAJO<?php $node->field_ord_servicio['und']?></td>
 						</tr>
 					</tbody>
 				</table>
@@ -387,22 +392,22 @@
 				<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
 					<thead>
 						<tr>
-							<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">FECHA</td>
-							<td style="width:250px;text-align:left;border:1px solid;font-size:13px;"><?php print $fecha?></td>
-							<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">NUMERO O.S.</td>
-							<td style="width:250px;text-align:left;border:1px solid;font-size:13px;"><?php print $node->nid; ?></td>
+								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">FECHA</td>
+								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;"><?php print $fecha?></td>
+								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">NUMERO O.S.</td>
+								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;"><?php print $node->nid; ?></td>
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">CLIENTE</td>
-								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;"><?php print $cliente->title ?></td>
+								<td style="width:250px;text-align:left;border:1px solid"><?php print $cliente->title ?></td>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">CIUDAD</td>
 								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;"><?php print $city;?></td>
 						</tr>
 						<tr>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">CONTACTO</td>
-								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;"><?php print $branch_office;?></td>
+								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;"><?php print $contact;?></td>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">SUCURSAL</td>
 								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;"><?php print $branch_office;?></td>
 						</tr>
@@ -414,7 +419,7 @@
 						</tr>
 						<tr>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">EMAIL</td>
-								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;">colocar correo en la sucursal del cliente</td>
+								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;"><?php print $email;?></td>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">CELULAR</td>
 								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;"><?php print $mobile;?></td>
 						</tr>
