@@ -26,10 +26,10 @@
   $contact = '';
   $email = '';
 
-	$item = node_load($node->field_el_orden['und'][0]['target_id']);
+	$item = $node->field_el_orden['und'][0]['target_id'];
 	
   if (isset($node->field_ord_sucursal_id['und'][0]['value'])) {
-  	$item_orden = field_collection_item_load($node->field_ord_sucursal_id['und'][0]['value']);
+  	$item = field_collection_item_load($node->field_ord_sucursal_id['und'][0]['value']);
   	if (isset($item->field_city['und'][0]['value'])) {
   	  $city = $item->field_city['und'][0]['value'];
   	}
