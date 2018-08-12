@@ -344,12 +344,12 @@
 						<tr>
 							<td style="width:80px;text-align:left;border:1px solid;font-size:13px;padding:0;">LLEGADA</td>
 							<td style="width:143px;text-align:left;border:1px solid;font-size:13px;padding:0;"><?php print $llegada;?></td>
-							<td style="width:40px;text-align:left;border:1px solid;font-size:13px;padding:0;">INICIO</td>
+							<td style="width:80px;text-align:left;border:1px solid;font-size:13px;padding:0;">INICIO</td>
 							<td style="width:142px;text-align:left;border:1px solid;font-size:13px;padding:0;"><?php print $inicio;?></td>
 							<td style="width:80px;text-align:left;border:1px solid;font-size:13px;padding:0;">FIN</td>
 							<td style="width:142px;text-align:left;border:1px solid;font-size:13px;padding:0;"><?php print $fin;?></td>
-							<td style="width:100px;text-align:left;border:1px solid;font-size:13px;padding:0;">TOTAL</td>
-							<td style="width:122px;text-align:left;border:1px solid;font-size:13px;padding:0;"><?php print $total;?></td>
+							<td style="width:80px;text-align:left;border:1px solid;font-size:13px;padding:0;">TOTAL</td>
+							<td style="width:142px;text-align:left;border:1px solid;font-size:13px;padding:0;"><?php print $total;?></td>
 						</tr>
 					</tbody>
 				</table>
@@ -521,12 +521,12 @@
 						<tr>
 							<td style="width:80px;text-align:left;border:1px solid;font-size:13px;padding:0;">LLEGADA</td>
 							<td style="width:143px;text-align:left;border:1px solid;font-size:13px;padding:0;"><?php print $llegada;?></td>
-							<td style="width:40px;text-align:left;border:1px solid;font-size:13px;padding:0;">INICIO</td>
+							<td style="width:80px;text-align:left;border:1px solid;font-size:13px;padding:0;">INICIO</td>
 							<td style="width:142px;text-align:left;border:1px solid;font-size:13px;padding:0;"><?php print $inicio;?></td>
 							<td style="width:80px;text-align:left;border:1px solid;font-size:13px;padding:0;">FIN</td>
 							<td style="width:142px;text-align:left;border:1px solid;font-size:13px;padding:0;"><?php print $fin;?></td>
-							<td style="width:100px;text-align:left;border:1px solid;font-size:13px;padding:0;">TOTAL</td>
-							<td style="width:122px;text-align:left;border:1px solid;font-size:13px;padding:0;"><?php print $total;?></td>
+							<td style="width:80px;text-align:left;border:1px solid;font-size:13px;padding:0;">TOTAL</td>
+							<td style="width:142px;text-align:left;border:1px solid;font-size:13px;padding:0;"><?php print $total;?></td>
 						</tr>
 					</tbody>
 				</table>
