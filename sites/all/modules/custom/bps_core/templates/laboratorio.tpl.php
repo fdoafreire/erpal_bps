@@ -5,10 +5,11 @@
   $node = $variables['node'];
 
 
-  /*$fecha = format_date(time(),'long');
+  $fecha = format_date(time(),'long');
   if (isset($node->created)) {
   	$fecha = format_date($node->created,'custom','j').' de '.format_date($node->created,'custom','F').' del '.format_date($node->created,'custom','Y');
   }
+  $fecha_ingreso = format_date($node->field_el_fecha_ingreso,'long');
   $city = '';
   $address = '';
   $phone = '';
@@ -64,7 +65,7 @@
 					<td style="width:100px;font-size:15px;font-weight:bold;padding:0;text-align:left;">CLIENTE:</td>
 					<td style="width:500px;font-size:15px;padding:0;text-align:left;"><?php print $cliente->title;?></td>
 					<td style="width:100px;font-size:15px;font-weight:bold;padding:0;text-align:left;">FECHA:</td>
-					<td style="width:200px;font-size:15px;padding:0;text-align:left;">2018-08-10</td>
+					<td style="width:200px;font-size:15px;padding:0;text-align:left;"><?php print $fecha_ingreso;?></td>
 				</tr>
 				<tr>
 					<td style="width:100px;font-size:15px;font-weight:bold;padding:0;text-align:left;">SUCURSAL:</td>
