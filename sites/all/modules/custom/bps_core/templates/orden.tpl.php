@@ -116,7 +116,7 @@
 	$total = $node->field_ord_total['und'][0]['value'];
 
   $llegada = format_date($node->field_ord_llegada['und'][0]['value'],'custom','j').' de '.format_date($node->field_ord_llegada['und'][0]['value'],'custom','F').' del '.format_date($node->field_ord_llegada['und'][0]['value'],'custom','Y');
-  $llegada = format_date($node->field_ord_llegada['und'][0]['value'],'long');
+  $llegada = $node->field_ord_llegada['und'][0]['value'];
 
 	
 	$condiciones = array(
