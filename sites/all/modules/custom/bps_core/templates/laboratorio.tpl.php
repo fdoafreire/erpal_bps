@@ -26,7 +26,11 @@
   $contact = '';
   $email = '';
 
-	$item = node_load($node->field_el_orden['und'][0]['target_id']);
+	$item = node_load($node->field_orden['und'][0]['target_id']);
+	$orden_equipo = $item->field_ord_equipo['und'][0]['value'];
+	$orden_modelo = $item->field_ord_modelo['und'][0]['value'];
+	$orden_marca =  $item->field_ord_marca['und'][0]['value'];
+	$orden_serial = $item->field_ord_serial['und'][0]['value'];
 	
   if (isset($node->field_ord_sucursal_id['und'][0]['value'])) {
   	$item = field_collection_item_load($node->field_ord_sucursal_id['und'][0]['value']);
@@ -111,9 +115,9 @@
 				</tr>
 				<tr style="height:130px;">
 					<td style="width:225px;font-size:15px;padding:0;text-align:left;border:1px solid;"><?php print $item->field_ord_equipo['und'][0]['value'];?></td>
-					<td style="width:225px;font-size:15px;padding:0;text-align:left;border:1px solid;">colocar la referncia del equipo</td>
-					<td style="width:225px;font-size:15px;padding:0;text-align:left;border:1px solid;"><?php print $item->field_ord_equipo;?></td>
-					<td style="width:225px;font-size:15px;padding:0;text-align:left;border:1px solid;"><?php print $item->field_ord_equipo;?></td>
+					<td style="width:225px;font-size:15px;padding:0;text-align:left;border:1px solid;"><?php print $item->field_ord_modelo['und'][0]['value'];?></td>
+					<td style="width:225px;font-size:15px;padding:0;text-align:left;border:1px solid;"><?php print $item->field_ord_marca['und'][0]['value'];?></td>
+					<td style="width:225px;font-size:15px;padding:0;text-align:left;border:1px solid;"><?php print $item->field_ord_serial['und'][0]['value'];?></td>
 				</tr>
 			</tbody>
 		</table>
