@@ -90,3 +90,7 @@ width:20%;
 .group-entrada-v .group-medicion-ea {
     margin-left: 5px;
 }
+.group-entrada-v .group-medicion-ea  .field {
+    width: 25%;
+    display: inline-block;
+}
