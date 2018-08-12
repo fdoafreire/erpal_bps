@@ -541,7 +541,8 @@ function bps_autocomplete($type, $text, $nid = NULL, $filters = NULL) {
 
 function bps_core_node_presave($node) {
   if (empty($node->nid) || !isset($node->nid) || $node->nid == 0) { 
-    $types = array('ordenes','contizaciones','equipos_laboratorio');
+    $types = array('ordenes','cotizaciones','equipos_laboratorio');
+    dpm($node);
    if (in_array($node->type, $types)) {
      $consecutivo = variable_get('bps_consec_' . $node->type,NULL);
      if (!is_null($consecutivo)) {
@@ -549,9 +550,10 @@ function bps_core_node_presave($node) {
        $numero = $consecutivo + 1;
        while ($flag_noencontro) {
          $query = db_select('field_data_field_consecutivo_doc', 'c');
-         $query->addField('c' ,'entity_id','nid');
+         $query->addField('c', 'entity_id','nid');
          $query->condition('c.field_consecutivo_doc_value', $numero);
          $query->condition('c.bundle', $node->type);
+         dpq($query);
          $result = $query->execute()->fetchObject();
          if (isset($result->nid) && !empty($result->nid) && is_numeric($result->nid) && $result->nid > 0) {
            $numero++;
