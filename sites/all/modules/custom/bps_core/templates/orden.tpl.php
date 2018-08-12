@@ -342,7 +342,7 @@
 					<caption style="border:1px solid;font-size:13px;font-weight:bold;">TIEMPO PRESTACION DE SERVICIO (EN HORAS)</caption>
 					<tbody>
 						<tr>
-							<td style="width:80px; height:30px;text-align:left;border:1px solid;font-size:13px;padding:0;">LLEGADA</td>
+							<td style="width:80px; height:20px;text-align:left;border:1px solid;font-size:13px;padding:0;">LLEGADA</td>
 							<td style="width:145px;text-align:left;border:1px solid;font-size:13px;padding:0;"><?php print $llegada;?></td>
 							<td style="width:80px;text-align:left;border:1px solid;font-size:13px;padding:0;">INICIO</td>
 							<td style="width:145px;text-align:left;border:1px solid;font-size:13px;padding:0;"><?php print $inicio;?></td>
