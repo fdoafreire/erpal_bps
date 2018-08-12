@@ -230,7 +230,7 @@ function _validate_custom_contact($form, &$form_state) {
   if (isset($values['op']) && $values['op'] == 'Guardar') {
     if (isset($values['field_documento_identidad']['und'][0]['value']) && !empty($values['field_documento_identidad']['und'][0]['value'])) {
       if (isset($values['nid']) && !empty($values['nid']) && is_numeric($values['nid']) && $values['nid'] > 0) {
-        if (_has_relations($values['nid']) &&){
+        if (_has_relations($values['nid'])){
           form_set_error('field_documento_identidad', 'El documento de identidad tiene ordenes de servicio o cotizaciones relacionadas'); 
         }
       } 
