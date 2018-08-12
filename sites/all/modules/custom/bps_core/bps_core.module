@@ -540,29 +540,30 @@ function bps_autocomplete($type, $text, $nid = NULL, $filters = NULL) {
 }
 
 function bps_core_node_presave($node) {
- $types = array('ordenes','contizaciones','equipos_laboratorio');
- if (in_array($node->type, $types)) {
-   $consecutivo = variable_get('bps_consec_' . $node->type,NULL);
-   if (!is_null($consecutivo)) {
-     $flag_noencontro = TRUE;
-     $numero = $consecutivo + 1;
-     while ($flag_noencontro) {
-       $query = db_select('field_data_field_consecutivo_doc', 'c');
-       $query->addField(('c' ,'entity_id','nid');
-       $query->condition('c.field_consecutivo_doc_value', $numero);
-       $query->condition('c.bundle', $node->type);
-       $result = $query->execute()->fetchObject();
-       if (isset($result->nid) && !empty($result->nid) && is_numeric($result->nid) && $result->nid > 0) {
-         $numero++;
+  $types = array('ordenes','contizaciones','equipos_laboratorio');
+  if (empty($node->nid) || !isset($node->nid) || $node->nid == 0) { 
+   if (in_array($node->type, $types)) {
+     $consecutivo = variable_get('bps_consec_' . $node->type,NULL);
+     if (!is_null($consecutivo)) {
+       $flag_noencontro = TRUE;
+       $numero = $consecutivo + 1;
+       while ($flag_noencontro) {
+         $query = db_select('field_data_field_consecutivo_doc', 'c');
+         $query->addField(('c' ,'entity_id','nid');
+         $query->condition('c.field_consecutivo_doc_value', $numero);
+         $query->condition('c.bundle', $node->type);
+         $result = $query->execute()->fetchObject();
+         if (isset($result->nid) && !empty($result->nid) && is_numeric($result->nid) && $result->nid > 0) {
+           $numero++;
+         }
+         else {
+           $flag_noencontro = FALSE;
+           variable_set('bps_consec_' . $node->type, $numero);
+         }
        }
-       else {
-         $flag_noencontro = FALSE;
-         variable_set('bps_consec_' . $node->type, $numero);
-       }
+       $node->field_consecutivo_doc['und'][0]['value'] = $numero;
      }
-     $node->field_consecutivo_doc['und'][0]['value'] = $numero;
    }
- }
-
+  }
 }
 
