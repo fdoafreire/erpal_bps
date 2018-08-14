@@ -106,10 +106,10 @@
 					<th style="width:225px;font-size:15px;padding:0;text-align:center;border:1px solid;">SERIAL</th>
 				</tr>
 				<tr style="height:130px;">
-					<td style="width:225px;font-size:15px;padding:0;text-align:left;border:1px solid;"><?php print $orden_equipo;?></td>
-					<td style="width:225px;font-size:15px;padding:0;text-align:left;border:1px solid;"><?php print $orden_modelo;?></td>
-					<td style="width:225px;font-size:15px;padding:0;text-align:left;border:1px solid;"><?php print $orden_marca;?></td>
-					<td style="width:225px;font-size:15px;padding:0;text-align:left;border:1px solid;"><?php print $orden_serial;?></td>
+					<td style="width:225px;height:130px;font-size:15px;padding:0;text-align:left;border:1px solid;"><?php print $orden_equipo;?></td>
+					<td style="width:225px;height:130px;font-size:15px;padding:0;text-align:left;border:1px solid;"><?php print $orden_modelo;?></td>
+					<td style="width:225px;height:130px;font-size:15px;padding:0;text-align:left;border:1px solid;"><?php print $orden_marca;?></td>
+					<td style="width:225px;height:130px;font-size:15px;padding:0;text-align:left;border:1px solid;"><?php print $orden_serial;?></td>
 				</tr>
 			</tbody>
 		</table>
@@ -192,10 +192,10 @@
 							<th style="width:225px;font-size:15px;padding:0;text-align:center;border:1px solid;">SERIAL</th>
 						</tr>
 						<tr style="height:130px;">
-							<td style="width:225px;font-size:15px;padding:0;text-align:left;border:1px solid;"><?php print $orden_equipo;?></td>
-							<td style="width:225px;font-size:15px;padding:0;text-align:left;border:1px solid;"><?php print $orden_modelo;?></td>
-							<td style="width:225px;font-size:15px;padding:0;text-align:left;border:1px solid;"><?php print $orden_marca;?></td>
-							<td style="width:225px;font-size:15px;padding:0;text-align:left;border:1px solid;"><?php print $orden_serial;?></td>
+							<td style="width:225px;height:130px;font-size:15px;padding:0;text-align:left;border:1px solid;"><?php print $orden_equipo;?></td>
+							<td style="width:225px;height:130px;font-size:15px;padding:0;text-align:left;border:1px solid;"><?php print $orden_modelo;?></td>
+							<td style="width:225px;height:130px;font-size:15px;padding:0;text-align:left;border:1px solid;"><?php print $orden_marca;?></td>
+							<td style="width:225px;height:130px;font-size:15px;padding:0;text-align:left;border:1px solid;"><?php print $orden_serial;?></td>
 						</tr>
 					</tbody>
 				</table>
