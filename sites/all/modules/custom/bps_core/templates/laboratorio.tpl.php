@@ -25,7 +25,7 @@
 	$orden_marca =  $item->field_ord_marca['und'][0]['value'];
 	$orden_serial = $item->field_ord_serial['und'][0]['value'];	
   if (isset($item->field_ord_sucursal_id['und'][0]['value'])) {
-  	$item_sucursal = field_collection_item_load($node->field_ord_sucursal_id['und'][0]['value']);
+  	$item_sucursal = field_collection_item_load($item->field_ord_sucursal_id['und'][0]['value']);
   	if (isset($item_sucursal->field_city['und'][0]['value'])) {
   	  $city = $item_sucursal->field_city['und'][0]['value'];
   	}
