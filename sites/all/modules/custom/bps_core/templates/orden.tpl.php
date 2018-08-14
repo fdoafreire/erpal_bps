@@ -450,6 +450,8 @@
 					<tbody>
 						<tr>
 							<td style="width:900px;text-aligng:center;border:1px solid;font-size:13px;padding:0;text-align:center;">SELECCIONE COMO BUENO(B) REGULAR(R) DEFICIENTE(D) CUANDO APLIQUE</td>
+						</tr>
+						<tr>
 							<td style="width:900px;height:10px;text-aligng:center;font-size:13px;padding:0;text-align:center;"></td>
 						</tr>
 					</tbody>
