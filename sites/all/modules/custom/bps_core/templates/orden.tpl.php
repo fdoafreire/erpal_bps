@@ -47,6 +47,22 @@
   if (isset($node->field_ord_equipo['und'][0]['value'])){
 		$equipment = $node->field_ord_equipo['und'][0]['value'];
 	}
+	$serial = '';
+  if (isset($node->field_ord_serial['und'][0]['value'])){
+		$serial = $node->field_ord_serial['und'][0]['value'];
+	}
+	$marca = '';
+  if (isset($node->field_ord_marca['und'][0]['value'])){
+		$marca = $node->field_ord_marca['und'][0]['value'];
+	}
+	$modelo = '';
+  if (isset($node->field_ord_modelo['und'][0]['value'])){
+		$modelo = $node->field_ord_modelo['und'][0]['value'];
+	}
+	$capacidad = '';
+  if (isset($node->field_ord_capacidad['und'][0]['value'])){
+		$capacidad = $node->field_ord_capacidad['und'][0]['value'];
+	}
   $descripcion = '';
   if (isset($node->field_ord_descripcion['und'][0]['value'])){
 		$descripcion = $node->field_ord_descripcion['und'][0]['value'];
@@ -209,15 +225,15 @@
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;padding:0;">EQUIPO</td>
 								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;padding:0;" colspan="2"><?php print $equipment?></td>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;padding:0;">SERIAL</td>
-								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;padding:0;" colspan="2">1233GFD</td>
+								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;padding:0;" colspan="2"><?php print $serial;?></td>
 						</tr>
 						<tr>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;padding:0;">MARCA</td>
-								<td style="width:100px;text-align:left;border:1px solid;font-size:13px;padding:0;">MAC</td>
+								<td style="width:100px;text-align:left;border:1px solid;font-size:13px;padding:0;"><?php print $marca;?></td>
 								<td style="width:150px;text-align:left;border:1px solid;font-size:13px;padding:0;">MODELO</td>
-								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;padding:0;">2015-2016</td>
+								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;padding:0;"><?php print $modelo;?></td>
 								<td style="width:150px;text-align:left;border:1px solid;font-size:13px;padding:0;">CAPACIDAD</td>
-								<td style="width:100px;text-align:left;border:1px solid;font-size:13px;padding:0;">123</td>
+								<td style="width:100px;text-align:left;border:1px solid;font-size:13px;padding:0;"><?php print $capacidad;?></td>
 						</tr>
 						<tr>
 							<td style="width:650px;text-align:left;padding:0;font-size:13px;vertical-align:top;" colspan="4" rowspan="3">DESCRIPCION DEL SERVICIO<br><?php print $descripcion?></td>
