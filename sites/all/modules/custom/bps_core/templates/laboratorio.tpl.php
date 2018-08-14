@@ -68,7 +68,7 @@
 			<tbody>
 				<tr>
 					<td style="width:100px;font-size:15px;font-weight:bold;padding:0;text-align:left;">CLIENTE:</td>
-					<td style="width:350px;font-size:15px;padding:0;text-align:left;"><?php print $cliente->title;?></td>
+					<td style="width:350px;font-size:15px;padding:0;text-align:left;"><?php print $cliente->title;print " ".$node->field_el_salida['und'][0]['value']?></td>
 					<td style="width:150px;font-size:15px;font-weight:bold;padding:0;text-align:left;">FECHA:</td>
 					<td style="width:300px;font-size:15px;padding:0;text-align:left;"><?php print $fecha_ingreso;?></td>
 				</tr>
@@ -105,11 +105,11 @@
 					<th style="width:225px;font-size:15px;padding:0;text-align:center;border:1px solid;">MARCA</th>
 					<th style="width:225px;font-size:15px;padding:0;text-align:center;border:1px solid;">SERIAL</th>
 				</tr>
-				<tr style="height:130px;">
-					<td style="width:225px;height:130px;font-size:15px;padding:0;text-align:left;border:1px solid;vertical-align:top;"><?php print $orden_equipo;?></td>
-					<td style="width:225px;height:130px;font-size:15px;padding:0;text-align:left;border:1px solid;vertical-align:top;"><?php print $orden_modelo;?></td>
-					<td style="width:225px;height:130px;font-size:15px;padding:0;text-align:left;border:1px solid;vertical-align:top;"><?php print $orden_marca;?></td>
-					<td style="width:225px;height:130px;font-size:15px;padding:0;text-align:left;border:1px solid;vertical-align:top;"><?php print $orden_serial;?></td>
+				<tr style="height:115px;">
+					<td style="width:225px;height:115px;font-size:15px;padding:0;text-align:left;border:1px solid;vertical-align:top;"><?php print $orden_equipo;?></td>
+					<td style="width:225px;height:115px;font-size:15px;padding:0;text-align:left;border:1px solid;vertical-align:top;"><?php print $orden_modelo;?></td>
+					<td style="width:225px;height:115px;font-size:15px;padding:0;text-align:left;border:1px solid;vertical-align:top;"><?php print $orden_marca;?></td>
+					<td style="width:225px;height:115px;font-size:15px;padding:0;text-align:left;border:1px solid;vertical-align:top;"><?php print $orden_serial;?></td>
 				</tr>
 			</tbody>
 		</table>
@@ -123,7 +123,7 @@
 				</tr>
 				<tr>
 					<td style="width:200px;font-size:15px;padding:0;text-align:left;border:1px solid;"><?php print $dpto;?></td>
-					<td style="width:200px;height:130px;font-size:15px;padding:0;text-align:left;border:1px solid;"></td>
+					<td style="width:200px;height:115px;font-size:15px;padding:0;text-align:left;border:1px solid;"></td>
 				</tr>
 			</tbody>
 		</table>
@@ -191,11 +191,11 @@
 							<th style="width:225px;font-size:15px;padding:0;text-align:center;border:1px solid;">MARCA</th>
 							<th style="width:225px;font-size:15px;padding:0;text-align:center;border:1px solid;">SERIAL</th>
 						</tr>
-						<tr style="height:130px;">
-							<td style="width:225px;height:130px;font-size:15px;padding:0;text-align:left;border:1px solid;vertical-align:top;"><?php print $orden_equipo;?></td>
-							<td style="width:225px;height:130px;font-size:15px;padding:0;text-align:left;border:1px solid;vertical-align:top;"><?php print $orden_modelo;?></td>
-							<td style="width:225px;height:130px;font-size:15px;padding:0;text-align:left;border:1px solid;vertical-align:top;"><?php print $orden_marca;?></td>
-							<td style="width:225px;height:130px;font-size:15px;padding:0;text-align:left;border:1px solid;vertical-align:top;"><?php print $orden_serial;?></td>
+						<tr style="height:115px;">
+							<td style="width:225px;height:115px;font-size:15px;padding:0;text-align:left;border:1px solid;vertical-align:top;"><?php print $orden_equipo;?></td>
+							<td style="width:225px;height:115px;font-size:15px;padding:0;text-align:left;border:1px solid;vertical-align:top;"><?php print $orden_modelo;?></td>
+							<td style="width:225px;height:115px;font-size:15px;padding:0;text-align:left;border:1px solid;vertical-align:top;"><?php print $orden_marca;?></td>
+							<td style="width:225px;height:115px;font-size:15px;padding:0;text-align:left;border:1px solid;vertical-align:top;"><?php print $orden_serial;?></td>
 						</tr>
 					</tbody>
 				</table>
@@ -209,7 +209,7 @@
 						</tr>
 						<tr>
 							<td style="width:200px;font-size:15px;padding:0;text-align:left;border:1px solid;"><?php print $dpto;?></td>
-							<td style="width:200px;height:130px;font-size:15px;padding:0;text-align:left;border:1px solid;"></td>
+							<td style="width:200px;height:115px;font-size:15px;padding:0;text-align:left;border:1px solid;"></td>
 						</tr>
 					</tbody>
 				</table>
