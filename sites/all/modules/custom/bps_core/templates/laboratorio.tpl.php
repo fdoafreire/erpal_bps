@@ -68,7 +68,7 @@
 			<tbody>
 				<tr>
 					<td style="width:100px;font-size:15px;font-weight:bold;padding:0;text-align:left;">CLIENTE:</td>
-					<td style="width:350px;font-size:15px;padding:0;text-align:left;"><?php print $cliente->title;print " ".$node->field_el_salida['und'][0]['value']?></td>
+					<td style="width:350px;font-size:15px;padding:0;text-align:left;"><?php print $cliente->title;?></td>
 					<td style="width:150px;font-size:15px;font-weight:bold;padding:0;text-align:left;">FECHA:</td>
 					<td style="width:300px;font-size:15px;padding:0;text-align:left;"><?php print $fecha_ingreso;?></td>
 				</tr>
@@ -122,13 +122,12 @@
 					<td style="width:200px;font-size:15px;padding:0;text-align:center;border:1px solid;">FIRMA CLIENTE</td>
 				</tr>
 				<tr>
-					<td style="width:200px;font-size:15px;padding:0;text-align:left;border:1px solid;"><?php print $dpto;?></td>
+					<td style="width:200px;font-size:15px;padding:0;text-align:left;border:1px solid;vertical-align:top;"><?php print $dpto;?></td>
 					<td style="width:200px;height:115px;font-size:15px;padding:0;text-align:left;border:1px solid;"></td>
 				</tr>
 			</tbody>
 		</table>
 <?php
-	
 	if ($node->field_el_salida['und'][0]['value'] == '1'){
 		$fecha_salida = date_create($node->field_el_fecha_salida['und'][0]['value']);
 		$fecha_salida = date_format($fecha_ingreso,'Y-m-d');
@@ -204,7 +203,7 @@
 					<td style="width:200px;font-size:15px;padding:0;text-align:center;border:1px solid;">FIRMA CLIENTE</td>
 				</tr>
 				<tr>
-					<td style="width:200px;font-size:15px;padding:0;text-align:left;border:1px solid;"><?php print $dpto;?></td>
+					<td style="width:200px;font-size:15px;padding:0;text-align:left;border:1px solid;vertical-align:top;"><?php print $dpto;?></td>
 					<td style="width:200px;height:115px;font-size:15px;padding:0;text-align:left;border:1px solid;"></td>
 				</tr>
 			</tbody>
