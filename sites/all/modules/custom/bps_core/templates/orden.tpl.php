@@ -412,7 +412,7 @@
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">FECHA</td>
 								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;"><?php print $fecha?></td>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">NUMERO O.S.</td>
-								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;"><?php print $node->nid; ?></td>
+								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;"><?php print $numorden; ?></td>
 						</tr>
 					</thead>
 					<tbody>
