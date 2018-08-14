@@ -101,7 +101,7 @@
 
 	$voltaje = $node->field_ord_voltaje_bateria['und'][0]['value'];
 	$corriente = $node->field_ord_corriente_bateria['und'][0]['value'];
-	$marca = $node->field_ord_marca_bateria['und'][0]['value'];
+	$marca_bateria = $node->field_ord_marca_bateria['und'][0]['value'];
 	$cantidad = $node->field_ord_cantidad_bateria['und'][0]['value'];
 	$metf1n = $node->field_ord_met_f1_n['und'][0]['value'];
 	$metf2n = $node->field_ord_met_f2_n['und'][0]['value'];
@@ -265,7 +265,7 @@
 							<td style="width:180px;text-align:left;border:1px solid;font-size:13px;padding:0;" colspan="3">VOLTAJE BATERIA</td>
 							<td style="width:270px;text-align:left;border:1px solid;font-size:13px;padding:0;" colspan="3"><?php print $voltaje;?></td>
 							<td style="width:180px;text-align:left;border:1px solid;font-size:13px;padding:0;" colspan="3">MARCA BATERIA</td>
-							<td style="width:270px;text-align:left;border:1px solid;font-size:13px;padding:0;" colspan="3"><?php print $marca;?></td>
+							<td style="width:270px;text-align:left;border:1px solid;font-size:13px;padding:0;" colspan="3"><?php print $marca_bateria;?></td>
 						</tr>
 						<tr>
 							<td style="width:180px;text-align:left;border:1px solid;font-size:13px;padding:0;" colspan="3">CORRIENTE BATERIA</td>
