@@ -240,12 +240,12 @@
 							<td style="width:250px;text-align:center;border:1px solid;font-size:13px;padding:0;" colspan="2">SERVICIO REALIZADO EN</td>
 						</tr>
 						<tr>
-							<td style="width:150px;text-align:left;border:1px solid;font-size:13px;padding:0;"><?php print $labotatorio;?></td>
-							<td style="width:100px;text-align:left;border:1px solid;font-size:13px;padding:0;"><?php print $campo;?></td>
+							<td style="width:150px;text-align:left;border:1px solid;font-size:13px;padding:0;">LABORATORIO</td>
+							<td style="width:100px;text-align:left;border:1px solid;font-size:13px;padding:0;">CAMPO</td>
 						</tr>
 						<tr>
-							<td style="width:150px;text-align:left;border:1px solid;font-size:13px;padding:0;">X</td>
-							<td style="width:100px;text-align:left;border:1px solid;font-size:13px;padding:0;"></td>
+							<td style="width:150px;text-align:left;border:1px solid;font-size:13px;padding:0;"><?php print $laboratorio;?></td>
+							<td style="width:100px;text-align:left;border:1px solid;font-size:13px;padding:0;"><?php print $campo;?></td>
 						</tr>
 					</tbody>
 				</table>
