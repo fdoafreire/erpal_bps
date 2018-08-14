@@ -5,6 +5,7 @@
   $node = $variables['node'];
 
 
+  $numorden = $node->field_consecutivo_doc['und'][0]['value'];
   $fecha = format_date(time(),'long');
   if (isset($node->created)) {
   	$fecha = format_date($node->created,'custom','j').' de '.format_date($node->created,'custom','F').' del '.format_date($node->created,'custom','Y');
@@ -187,7 +188,7 @@
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">FECHA</td>
 								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;"><?php print $fecha?></td>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">NUMERO O.T.</td>
-								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;"><?php print $node->nid; ?></td>
+								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;"><?php print $numorden; ?></td>
 						</tr>
 					</thead>
 					<tbody>
