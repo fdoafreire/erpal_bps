@@ -236,7 +236,7 @@
 								<td style="width:100px;text-align:left;border:1px solid;font-size:13px;padding:0;"><?php print $capacidad;?></td>
 						</tr>
 						<tr>
-							<td style="width:650px;text-align:left;border:1px solid;padding:0;font-size:13px;vertical-align:top;" colspan="4" rowspan="3">DESCRIPCION DEL SERVICIO<br><?php print $descripcion?></td>
+							<td style="width:650px;text-align:left;border:1px solid;padding:0;font-size:13px;vertical-align:top;" colspan="4" rowspan="3">DESCRIPCION DEL SERVICIO<?php print " ".$descripcion?></td>
 							<td style="width:250px;text-align:center;border:1px solid;font-size:13px;padding:0;" colspan="2">SERVICIO REALIZADO EN</td>
 						</tr>
 						<tr>
