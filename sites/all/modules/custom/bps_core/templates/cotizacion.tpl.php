@@ -6,6 +6,11 @@
   $cotizacion = $node->field_consecutivo_doc['und'][0]['value'];
   $observaciones = $node->field_observaciones['und'][0]['value'];
   $solicitud = $node->field_solicitud['und'][0]['value'];
+  $cotizante = $node->field_cotizante['und'][0]['value'];
+  $area = $node->field_area_cotizante['und'][0]['value'];
+  $empresa = $node->field_empresa['und'][0]['value'];
+  $telefono = $node->field_telefono['und'][0]['value'];
+  $correo = $node->field_correo['und'][0]['value'];
   $cliente = node_load($node->field_cliente['und'][0]['target_id']);
   $city = '';
   $address = '';
@@ -237,19 +242,19 @@
 			<caption style="font-size:13px;font-weight:bold;text-align:left;">Cordialmente</caption>
 			<tbody>
 				<tr>
-						<td style="width:900px;text-align:left;font-size:13px;">FABIAN ANDRES GUERRERO</td>
+						<td style="width:900px;text-align:left;font-size:13px;"><?php print $cotizante;?></td>
 				</tr>
 				<tr>
-						<td style="width:900px;text-align:left;font-size:13px;">COMERCIAL</td>
+						<td style="width:900px;text-align:left;font-size:13px;"><?php print $area;?></td>
 				</tr>
 				<tr>
-						<th style="width:900px;text-align:left;font-size:13px;">BPS</th>
+						<th style="width:900px;text-align:left;font-size:13px;"><?php print $empresa;?></th>
 				</tr>
 				<tr>
-						<td style="width:900px;text-align:left;font-size:13px;">6681142 EXT 105</td>
+						<td style="width:900px;text-align:left;font-size:13px;"><?php print $telefono;?></td>
 				</tr>
 				<tr>
-						<td style="width:900px;text-align:left;font-size:13px;">almacen@ps.com.co</td>
+						<td style="width:900px;text-align:left;font-size:13px;"><?php print $correo;?></td>
 				</tr>
 		</table>
 	</body>
