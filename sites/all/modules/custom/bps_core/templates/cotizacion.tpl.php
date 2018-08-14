@@ -3,6 +3,9 @@
   $logo = $base_url . '/' . drupal_get_path('module', 'bps_core'). '/img/logo.png';
   $img_logo = '<img src="' . $logo . '" style="width: 120px;"/>';
   $node = $variables['node'];
+  $cotizacion = $node->field_consecutivo_doc['und'][0]['value'];
+  $observaciones = $node->field_observaciones['und'][0]['value'];
+  $solicitud = $node->field_solicitud['und'][0]['value'];
   $cliente = node_load($node->field_cliente['und'][0]['target_id']);
   $city = '';
   $address = '';
@@ -89,7 +92,7 @@
 				<tr>
 					<td style="width:300px;font-size:13px;padding:0;text-align:left;" rowspan="2"><?php print $fecha;?></td>
 					<td style="width:550px;font-size:13px;font-weight:bold;padding:0;text-align:right;">Cotizacion No:</td>
-					<td style="width:50px;font-size:13px;font-weight:bold;padding:0;text-align:right;"><?php print $node->nid; ?></td>
+					<td style="width:50px;font-size:13px;font-weight:bold;padding:0;text-align:right;"><?php print $cotizacion; ?></td>
 				</tr>
 				<tr>
 					<td style="width:550px;font-size:13px;font-weight:bold;padding:0;text-align:right;">Version</td>
@@ -140,7 +143,7 @@
 					<td style="width:900px;font-size:13px;font-weight:bold;padding:0;text-align:left;">Cordial saludo</td>
 				</tr>
 				<tr>
-					<td style="width:900px;font-size:13px;padding:0;text-align:left;">De acuerdo a su solicitud, a continuación se presenta oferta comercial para su estudio y aprobación</td>
+					<td style="width:900px;font-size:13px;padding:0;text-align:left;"><?php print $solicitud;?></td>
 				</tr>
 			</tbody>
 		</table>
@@ -182,7 +185,7 @@
 						<td style="width:100px;text-align:right;font-size:13px;"><?php print $neto;?></td>
 				</tr>
 				<tr>
-						<td style="width:700px;text-align:left;font-size:13px;vertical-align:top;" rowspan="4">Los mantenimientos seran bajo coordinación con el cliente y en horario 5x8</td>
+						<td style="width:700px;text-align:left;font-size:13px;vertical-align:top;" rowspan="4"><?php print $observaciones?></td>
 						<th style="width:100px;text-align:right;font-size:13px;">DESCUENTO</th>
 						<td style="width:100px;text-align:right;font-size:13px;"><?php print $descuento;?></td>
 				</tr>
