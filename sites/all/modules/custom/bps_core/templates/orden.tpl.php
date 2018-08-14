@@ -81,6 +81,7 @@
 	} else if ($node->field_ord_datos_tecnicos['und'][0]['value']=="3"){
 		$fueralinea = 'X';
 	}
+	
 
 	$voltaje = $node->field_ord_voltaje_bateria['und'][0]['value'];
 	$corriente = $node->field_ord_corriente_bateria['und'][0]['value'];
