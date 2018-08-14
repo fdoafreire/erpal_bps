@@ -12,7 +12,6 @@
   $cliente = node_load($node->field_el_cliente['und'][0]['target_id']);
   $fecha_ingreso = date_create($node->field_el_fecha_ingreso['und'][0]['value']);
   $fecha_ingreso = date_format($fecha_ingreso,'Y-m-d');
-  $fecha_ingreso = date_format($fecha_ingreso,'Y-m-d');
   $proveedor = $node->field_el_proveedor['und'][0]['value'];
   $proveedor = $node->field_el_proveedor['und'][0]['value'];
   $nit_cc = $node->field_el_nit_cc_proveedor['und'][0]['value'];
@@ -25,6 +24,30 @@
 	$orden_modelo = $item->field_ord_modelo['und'][0]['value'];
 	$orden_marca =  $item->field_ord_marca['und'][0]['value'];
 	$orden_serial = $item->field_ord_serial['und'][0]['value'];	
+  if (isset($item->field_ord_sucursal_id['und'][0]['value'])) {
+  	$item_sucursal = field_collection_item_load($node->field_ord_sucursal_id['und'][0]['value']);
+  	if (isset($item_sucursal->field_city['und'][0]['value'])) {
+  	  $city = $item_sucursal->field_city['und'][0]['value'];
+  	}
+  	if (isset($item_sucursal->field_addition_to_address['und'][0]['value'])) {
+  	  $address = $item_sucursal->field_addition_to_address['und'][0]['value'];
+  	}
+  	if (isset($item_sucursal->field_address_telefono['und'][0]['value'])) {
+  	  $phone = $item_sucursal->field_address_telefono['und'][0]['value'];
+  	}
+  	if (isset($item_sucursal->field_address_celular['und'][0]['value'])) {
+  	  $mobile = $item_sucursal->field_address_celular['und'][0]['value'];
+  	}
+  	if (isset($item_sucursal->field_address_name['und'][0]['value'])) {
+  	  $branch_office = $item_sucursal->field_address_name['und'][0]['value'];
+  	}
+  	if (isset($item_sucursal->field_address_contacto['und'][0]['value'])) {
+  	  $contact = $item_sucursal->field_address_contacto['und'][0]['value'];
+  	}
+  	if (isset($item_sucursal->field_address_correo['und'][0]['value'])) {
+  	  $email = $item_sucursal->field_address_correo['und'][0]['value'];
+  	}
+  }
 
 ?>
 <html>
@@ -51,25 +74,25 @@
 				</tr>
 				<tr>
 					<td style="width:100px;font-size:15px;font-weight:bold;padding:0;text-align:left;">SUCURSAL:</td>
-					<td style="width:450px;font-size:15px;padding:0;text-align:left;">LA FERCHO BOGOTA</td>
+					<td style="width:450px;font-size:15px;padding:0;text-align:left;"><?php print $city;?></td>
 					<td style="width:150px;font-size:15px;font-weight:bold;padding:0;text-align:left;">PROVEEDOR:</td>
 					<td style="width:200px;font-size:15px;padding:0;text-align:left;"><?php print $proveedor;?></td>
 				</tr>
 				<tr>
 					<td style="width:100px;font-size:15px;font-weight:bold;padding:0;text-align:left;">CONTACTO:</td>
-					<td style="width:450px;font-size:15px;padding:0;text-align:left;">SURICATO</td>
+					<td style="width:450px;font-size:15px;padding:0;text-align:left;"><?php print $contact;?></td>
 					<td style="width:150px;font-size:15px;font-weight:bold;padding:0;text-align:left;">NIT/CC</td>
 					<td style="width:200px;font-size:15px;padding:0;text-align:left;"><?php print $nit_cc;?></td>
 				</tr>
 				<tr>
 					<td style="width:100px;font-size:15px;font-weight:bold;padding:0;text-align:left;">DIRECCION:</td>
-					<td style="width:450px;font-size:15px;padding:0;text-align:left;">TABOGO</td>
+					<td style="width:450px;font-size:15px;padding:0;text-align:left;"><?php print $address;?></td>
 					<td style="width:150px;font-size:15px;font-weight:bold;padding:0;text-align:left;">CONCEPTO</td>
 					<td style="width:200px;font-size:15px;padding:0;text-align:left;"><?php print $concepto;?></td>
 				</tr>
 				<tr>
 					<td style="width:100px;font-size:15px;font-weight:bold;padding:0;text-align:left;">TELEFONO:</td>
-					<td style="width:500px;font-size:15px;padding:0;text-align:left;">51-5555555</td>
+					<td style="width:500px;font-size:15px;padding:0;text-align:left;"><?php print $phone;?></td>
 				</tr>
 			</tbody>
 		</table>
@@ -137,25 +160,25 @@
 						</tr>
 						<tr>
 							<td style="width:100px;font-size:15px;font-weight:bold;padding:0;text-align:left;">SUCURSAL:</td>
-							<td style="width:450px;font-size:15px;padding:0;text-align:left;">LA FERCHO BOGOTA</td>
+							<td style="width:450px;font-size:15px;padding:0;text-align:left;"><?php print $city;?></td>
 							<td style="width:150px;font-size:15px;font-weight:bold;padding:0;text-align:left;">PROVEEDOR:</td>
 							<td style="width:200px;font-size:15px;padding:0;text-align:left;"><?php print $proveedor;?></td>
 						</tr>
 						<tr>
 							<td style="width:100px;font-size:15px;font-weight:bold;padding:0;text-align:left;">CONTACTO:</td>
-							<td style="width:450px;font-size:15px;padding:0;text-align:left;">SURICATO</td>
+							<td style="width:450px;font-size:15px;padding:0;text-align:left;"><?php print $contact;?></td>
 							<td style="width:150px;font-size:15px;font-weight:bold;padding:0;text-align:left;">NIT/CC</td>
 							<td style="width:200px;font-size:15px;padding:0;text-align:left;"><?php print $nit_cc;?></td>
 						</tr>
 						<tr>
 							<td style="width:100px;font-size:15px;font-weight:bold;padding:0;text-align:left;">DIRECCION:</td>
-							<td style="width:450px;font-size:15px;padding:0;text-align:left;">TABOGO</td>
+							<td style="width:450px;font-size:15px;padding:0;text-align:left;"><?php print $city;?></td>
 							<td style="width:150px;font-size:15px;font-weight:bold;padding:0;text-align:left;">CONCEPTO</td>
 							<td style="width:200px;font-size:15px;padding:0;text-align:left;"><?php print $concepto;?></td>
 						</tr>
 						<tr>
 							<td style="width:100px;font-size:15px;font-weight:bold;padding:0;text-align:left;">TELEFONO:</td>
-							<td style="width:500px;font-size:15px;padding:0;text-align:left;">51-5555555</td>
+							<td style="width:500px;font-size:15px;padding:0;text-align:left;"><?php print $phone;?></td>
 						</tr>
 					</tbody>
 				</table>
