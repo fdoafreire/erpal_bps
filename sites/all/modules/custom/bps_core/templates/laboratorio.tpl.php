@@ -68,31 +68,31 @@
 			<tbody>
 				<tr>
 					<td style="width:100px;font-size:15px;font-weight:bold;padding:0;text-align:left;">CLIENTE:</td>
-					<td style="width:350px;font-size:15px;padding:0;text-align:left;"><?php print $cliente->title;?></td>
-					<td style="width:150px;font-size:15px;font-weight:bold;padding:0;text-align:left;">FECHA:</td>
+					<td style="width:360px;font-size:15px;padding:0;text-align:left;"><?php print $cliente->title;?></td>
+					<td style="width:140px;font-size:15px;font-weight:bold;padding:0;text-align:left;">FECHA:</td>
 					<td style="width:300px;font-size:15px;padding:0;text-align:left;"><?php print $fecha_ingreso;?></td>
 				</tr>
 				<tr>
 					<td style="width:100px;font-size:15px;font-weight:bold;padding:0;text-align:left;">SUCURSAL:</td>
-					<td style="width:350px;font-size:15px;padding:0;text-align:left;"><?php print $city;?></td>
-					<td style="width:150px;font-size:15px;font-weight:bold;padding:0;text-align:left;">PROVEEDOR:</td>
+					<td style="width:360px;font-size:15px;padding:0;text-align:left;"><?php print $city;?></td>
+					<td style="width:140px;font-size:15px;font-weight:bold;padding:0;text-align:left;">PROVEEDOR:</td>
 					<td style="width:300px;font-size:15px;padding:0;text-align:left;"><?php print $proveedor;?></td>
 				</tr>
 				<tr>
 					<td style="width:100px;font-size:15px;font-weight:bold;padding:0;text-align:left;">CONTACTO:</td>
-					<td style="width:350px;font-size:15px;padding:0;text-align:left;"><?php print $contact;?></td>
-					<td style="width:150px;font-size:15px;font-weight:bold;padding:0;text-align:left;">NIT/CC</td>
+					<td style="width:360px;font-size:15px;padding:0;text-align:left;"><?php print $contact;?></td>
+					<td style="width:140px;font-size:15px;font-weight:bold;padding:0;text-align:left;">NIT/CC</td>
 					<td style="width:300px;font-size:15px;padding:0;text-align:left;"><?php print $nit_cc;?></td>
 				</tr>
 				<tr>
 					<td style="width:100px;font-size:15px;font-weight:bold;padding:0;text-align:left;">DIRECCION:</td>
-					<td style="width:350px;font-size:15px;padding:0;text-align:left;"><?php print $address;?></td>
-					<td style="width:150px;font-size:15px;font-weight:bold;padding:0;text-align:left;">CONCEPTO</td>
+					<td style="width:360px;font-size:15px;padding:0;text-align:left;"><?php print $address;?></td>
+					<td style="width:140px;font-size:15px;font-weight:bold;padding:0;text-align:left;">CONCEPTO</td>
 					<td style="width:300px;font-size:15px;padding:0;text-align:left;"><?php print $concepto;?></td>
 				</tr>
 				<tr>
 					<td style="width:100px;font-size:15px;font-weight:bold;padding:0;text-align:left;">TELEFONO:</td>
-					<td style="width:350px;font-size:15px;padding:0;text-align:left;"><?php print $phone;?></td>
+					<td style="width:360px;font-size:15px;padding:0;text-align:left;"><?php print $phone;?></td>
 				</tr>
 			</tbody>
 		</table>
@@ -149,31 +149,31 @@
 			<tbody>
 				<tr>
 					<td style="width:100px;font-size:15px;font-weight:bold;padding:0;text-align:left;">CLIENTE:</td>
-					<td style="width:350px;font-size:15px;padding:0;text-align:left;"><?php print $cliente->title;?></td>
-					<td style="width:150px;font-size:15px;font-weight:bold;padding:0;text-align:left;">FECHA:</td>
+					<td style="width:360px;font-size:15px;padding:0;text-align:left;"><?php print $cliente->title;?></td>
+					<td style="width:140px;font-size:15px;font-weight:bold;padding:0;text-align:left;">FECHA:</td>
 					<td style="width:300px;font-size:15px;padding:0;text-align:left;"><?php print $fecha_ingreso;?></td>
 				</tr>
 				<tr>
 					<td style="width:100px;font-size:15px;font-weight:bold;padding:0;text-align:left;">SUCURSAL:</td>
-					<td style="width:350px;font-size:15px;padding:0;text-align:left;"><?php print $city;?></td>
-					<td style="width:150px;font-size:15px;font-weight:bold;padding:0;text-align:left;">PROVEEDOR:</td>
+					<td style="width:360px;font-size:15px;padding:0;text-align:left;"><?php print $city;?></td>
+					<td style="width:140px;font-size:15px;font-weight:bold;padding:0;text-align:left;">PROVEEDOR:</td>
 					<td style="width:300px;font-size:15px;padding:0;text-align:left;"><?php print $proveedor;?></td>
 				</tr>
 				<tr>
 					<td style="width:100px;font-size:15px;font-weight:bold;padding:0;text-align:left;">CONTACTO:</td>
-					<td style="width:350px;font-size:15px;padding:0;text-align:left;"><?php print $contact;?></td>
-					<td style="width:150px;font-size:15px;font-weight:bold;padding:0;text-align:left;">NIT/CC</td>
+					<td style="width:360px;font-size:15px;padding:0;text-align:left;"><?php print $contact;?></td>
+					<td style="width:140px;font-size:15px;font-weight:bold;padding:0;text-align:left;">NIT/CC</td>
 					<td style="width:300px;font-size:15px;padding:0;text-align:left;"><?php print $nit_cc;?></td>
 				</tr>
 				<tr>
 					<td style="width:100px;font-size:15px;font-weight:bold;padding:0;text-align:left;">DIRECCION:</td>
-					<td style="width:350px;font-size:15px;padding:0;text-align:left;"><?php print $address;?></td>
-					<td style="width:150px;font-size:15px;font-weight:bold;padding:0;text-align:left;">CONCEPTO</td>
+					<td style="width:360px;font-size:15px;padding:0;text-align:left;"><?php print $address;?></td>
+					<td style="width:140px;font-size:15px;font-weight:bold;padding:0;text-align:left;">CONCEPTO</td>
 					<td style="width:300px;font-size:15px;padding:0;text-align:left;"><?php print $concepto;?></td>
 				</tr>
 				<tr>
 					<td style="width:100px;font-size:15px;font-weight:bold;padding:0;text-align:left;">TELEFONO:</td>
-					<td style="width:350px;font-size:15px;padding:0;text-align:left;"><?php print $phone;?></td>
+					<td style="width:360px;font-size:15px;padding:0;text-align:left;"><?php print $phone;?></td>
 				</tr>
 			</tbody>
 		</table>
