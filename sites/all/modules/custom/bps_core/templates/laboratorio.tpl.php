@@ -156,6 +156,13 @@
 		<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
 			<tbody>
 				<tr>
+					<td style="width:900px;font-size:15px;font-weight:bold;padding:0;text-align:right;"><?php print "OT: ".$orden_consecutivo;?></td>
+				</tr>
+			</tbody>
+		</table>
+		<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
+			<tbody>
+				<tr>
 					<td style="width:110px;font-size:15px;font-weight:bold;padding:0;text-align:left;">CLIENTE:</td>
 					<td style="width:360px;font-size:15px;padding:0;text-align:left;"><?php print $cliente->title;?></td>
 					<td style="width:130px;font-size:15px;font-weight:bold;padding:0;text-align:left;">FECHA:</td>
