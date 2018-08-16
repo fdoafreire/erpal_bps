@@ -494,28 +494,28 @@
 							<td style="width:200px;height:20px;border:1px solid;font-size:13px;padding:0;"><?php print $cacableado;?></td>
 						</tr>
 						<tr>
-							<td style="width:250px;border:1px solid;font-size:13px;padding:0;">VOLTAJE NEUTRO - BASE</td>
-							<td style="width:200px;border:1px solid;font-size:13px;padding:0;"><?php print $vnb_condicion;?></td>
-							<td style="width:250px;border:1px solid;font-size:13px;padding:0;">MARCACION E IDENTIFICACION CABLEADO</td>
-							<td style="width:200px;border:1px solid;font-size:13px;padding:0;"><?php print $mrcableado;?></td>
+							<td style="width:250px;height:20px;border:1px solid;font-size:13px;padding:0;">VOLTAJE NEUTRO - BASE</td>
+							<td style="width:200px;height:20px;border:1px solid;font-size:13px;padding:0;"><?php print $vnb_condicion;?></td>
+							<td style="width:250px;height:20px;border:1px solid;font-size:13px;padding:0;">MARCACION E IDENTIFICACION CABLEADO</td>
+							<td style="width:200px;height:20px;border:1px solid;font-size:13px;padding:0;"><?php print $mrcableado;?></td>
 						</tr>
 						<tr>
-							<td style="width:250px;border:1px solid;font-size:13px;padding:0;">SEGURIDAD ELECTRICA</td>
-							<td style="width:200px;border:1px solid;font-size:13px;padding:0;"><?php print $sel_condicion;?></td>
-							<td style="width:250px;border:1px solid;font-size:13px;padding:0;">ESTADO CANALETAS</td>
-							<td style="width:200px;border:1px solid;font-size:13px;padding:0;"><?php print $esc_condicion;?></td>
+							<td style="width:250px;height:20px;border:1px solid;font-size:13px;padding:0;">SEGURIDAD ELECTRICA</td>
+							<td style="width:200px;height:20px;border:1px solid;font-size:13px;padding:0;"><?php print $sel_condicion;?></td>
+							<td style="width:250px;height:20px;border:1px solid;font-size:13px;padding:0;">ESTADO CANALETAS</td>
+							<td style="width:200px;height:20px;border:1px solid;font-size:13px;padding:0;"><?php print $esc_condicion;?></td>
 						</tr>
 						<tr>
-							<td style="width:250px;border:1px solid;font-size:13px;padding:0;">VENTILACION</td>
-							<td style="width:200px;border:1px solid;font-size:13px;padding:0;"><?php print $ven_condicion;?></td>
-							<td style="width:250px;border:1px solid;font-size:13px;padding:0;">CANTIDAD PUNTOS DATOS</td>
-							<td style="width:200px;border:1px solid;font-size:13px;padding:0;"><?php print $cnpuntosdatos;?></td>
+							<td style="width:250px;height:20px;border:1px solid;font-size:13px;padding:0;">VENTILACION</td>
+							<td style="width:200px;height:20px;border:1px solid;font-size:13px;padding:0;"><?php print $ven_condicion;?></td>
+							<td style="width:250px;height:20px;border:1px solid;font-size:13px;padding:0;">CANTIDAD PUNTOS DATOS</td>
+							<td style="width:200px;height:20px;border:1px solid;font-size:13px;padding:0;"><?php print $cnpuntosdatos;?></td>
 						</tr>
 						<tr>
-							<td style="width:250px;border:1px solid;font-size:13px;padding:0;">TEMPERATURA</td>
-							<td style="width:200px;border:1px solid;font-size:13px;padding:0;"><?php print $tem_condicion;?></td>
-							<td style="width:250px;border:1px solid;font-size:13px;padding:0;">CANTIDAD PUNTOS VOZ</td>
-							<td style="width:200px;border:1px solid;font-size:13px;padding:0;"><?php print $cnpuntosvoz;?></td>
+							<td style="width:250px;height:20px;border:1px solid;font-size:13px;padding:0;">TEMPERATURA</td>
+							<td style="width:200px;height:20px;border:1px solid;font-size:13px;padding:0;"><?php print $tem_condicion;?></td>
+							<td style="width:250px;height:20px;border:1px solid;font-size:13px;padding:0;">CANTIDAD PUNTOS VOZ</td>
+							<td style="width:200px;height:20px;border:1px solid;font-size:13px;padding:0;"><?php print $cnpuntosvoz;?></td>
 						</tr>
 					</tbody>
 				</table>
