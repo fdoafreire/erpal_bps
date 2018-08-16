@@ -20,7 +20,7 @@
   $dpto = $node->field_el_depto_tec['und'][0]['value'];
 
 	$item = node_load($node->field_orden['und'][0]['target_id']);
-	$orden_consecutivo = $item->field_ord_consecutivo['und'][0]['value'];
+	$orden_consecutivo = $item->field_consecutivo_doc['und'][0]['value'];
 	$orden_equipo = $item->field_ord_equipo['und'][0]['value'];
 	$orden_modelo = $item->field_ord_modelo['und'][0]['value'];
 	$orden_marca =  $item->field_ord_marca['und'][0]['value'];
