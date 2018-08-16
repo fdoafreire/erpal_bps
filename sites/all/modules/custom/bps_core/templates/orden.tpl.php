@@ -476,22 +476,22 @@
 				<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
 					<tbody>
 						<tr>
-							<td style="width:250px;border:1px solid;font-size:13px;padding:0;">CONDICIONES TABLEROS ELECTRICOS</td>
-							<td style="width:200px;border:1px solid;font-size:13px;padding:0;"><?php print $cte_condicion;?></td>
-							<td style="width:250px;border:1px solid;font-size:13px;padding:0;">CONDICIONES RACK, CABLEADO</td>
-							<td style="width:200px;border:1px solid;font-size:13px;padding:0;"><?php print $cra_condicion;?></td>
+							<td style="width:250px;height:20px;border:1px solid;font-size:13px;padding:0;">CONDICIONES TABLEROS ELECTRICOS</td>
+							<td style="width:200px;height:20px;border:1px solid;font-size:13px;padding:0;"><?php print $cte_condicion;?></td>
+							<td style="width:250px;height:20px;border:1px solid;font-size:13px;padding:0;">CONDICIONES RACK, CABLEADO</td>
+							<td style="width:200px;height:20px;border:1px solid;font-size:13px;padding:0;"><?php print $cra_condicion;?></td>
 						</tr>
 						<tr>
-							<td style="width:250px;border:1px solid;font-size:13px;padding:0;">CONDICIONES CIRCUITOS ELECTRICOS</td>
-							<td style="width:200px;border:1px solid;font-size:13px;padding:0;"><?php print $cce_condicion;?></td>
-							<td style="width:250px;border:1px solid;font-size:13px;padding:0;">MARCA CABLEADO</td>
-							<td style="width:200px;border:1px solid;font-size:13px;padding:0;"><?php print $mcc_condicion;?></td>
+							<td style="width:250px;height:20px;border:1px solid;font-size:13px;padding:0;">CONDICIONES CIRCUITOS ELECTRICOS</td>
+							<td style="width:200px;height:20px;border:1px solid;font-size:13px;padding:0;"><?php print $cce_condicion;?></td>
+							<td style="width:250px;height:20px;border:1px solid;font-size:13px;padding:0;">MARCA CABLEADO</td>
+							<td style="width:200px;height:20px;border:1px solid;font-size:13px;padding:0;"><?php print $mcc_condicion;?></td>
 						</tr>
 						<tr>
-							<td style="width:250px;border:1px solid;font-size:13px;padding:0;">VOLTAJE NEUTRO - TIERRA</td>
-							<td style="width:200px;border:1px solid;font-size:13px;padding:0;"><?php print $vnt_condicion;?></td>
-							<td style="width:250px;border:1px solid;font-size:13px;padding:0;">CATEGORIA CABLEADO</td>
-							<td style="width:200px;border:1px solid;font-size:13px;padding:0;"><?php print $cacableado;?></td>
+							<td style="width:250px;height:20px;border:1px solid;font-size:13px;padding:0;">VOLTAJE NEUTRO - TIERRA</td>
+							<td style="width:200px;height:20px;border:1px solid;font-size:13px;padding:0;"><?php print $vnt_condicion;?></td>
+							<td style="width:250px;height:20px;border:1px solid;font-size:13px;padding:0;">CATEGORIA CABLEADO</td>
+							<td style="width:200px;height:20px;border:1px solid;font-size:13px;padding:0;"><?php print $cacableado;?></td>
 						</tr>
 						<tr>
 							<td style="width:250px;border:1px solid;font-size:13px;padding:0;">VOLTAJE NEUTRO - BASE</td>
