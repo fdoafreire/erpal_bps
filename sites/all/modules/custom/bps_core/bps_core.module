@@ -591,17 +591,17 @@ function _bps_report_form($form, &$form_state) {
 
   $form['fecha_ini'] = array(
     '#type' => 'date_popup',
+    '#date_format' => 'Y-m-d',
     '#title' => t('Fecha Incial'),
-    '#attributes' => array('class' => array('datepicker')),
     '#required' => TRUE,
-    '#default_value' => format_date(time(), 'custom', 'd/m/Y'),
+    '#default_value' => format_date(time(), 'custom', 'Y-m-d'),
   );
   $form['fecha_fin'] = array(
     '#type' => 'date_popup',
+    '#date_format' => 'Y-m-d',
     '#title' => t('Fecha Final'),
-    '#attributes' => array('class' => array('datepicker')),
     '#required' => TRUE,
-    '#default_value' => format_date(time(), 'custom', 'd/m/Y'),
+    '#default_value' => format_date(time(), 'custom', 'Y-m-d'),
   );
 
   $form['submit'] = array(
