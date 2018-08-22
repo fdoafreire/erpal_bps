@@ -12,7 +12,6 @@
   $cliente = node_load($node->field_el_cliente['und'][0]['target_id']);
   $fecha_ingreso = date_create($node->field_el_fecha_ingreso['und'][0]['value']);
   $fecha_ingreso = date_format($fecha_ingreso,'Y-m-d');
-  $fecha_ingreso = date_format($fecha_ingreso,'Y-m-d');
   $proveedor = $node->field_el_proveedor['und'][0]['value'];
   $proveedor = $node->field_el_proveedor['und'][0]['value'];
   $nit_cc = $node->field_el_nit_cc_proveedor['und'][0]['value'];
@@ -21,10 +20,35 @@
   $dpto = $node->field_el_depto_tec['und'][0]['value'];
 
 	$item = node_load($node->field_orden['und'][0]['target_id']);
+	$orden_consecutivo = $item->field_consecutivo_doc['und'][0]['value'];
 	$orden_equipo = $item->field_ord_equipo['und'][0]['value'];
 	$orden_modelo = $item->field_ord_modelo['und'][0]['value'];
 	$orden_marca =  $item->field_ord_marca['und'][0]['value'];
 	$orden_serial = $item->field_ord_serial['und'][0]['value'];	
+  if (isset($item->field_ord_sucursal_id['und'][0]['value'])) {
+  	$item_sucursal = field_collection_item_load($item->field_ord_sucursal_id['und'][0]['value']);
+  	if (isset($item_sucursal->field_city['und'][0]['value'])) {
+  	  $city = $item_sucursal->field_city['und'][0]['value'];
+  	}
+  	if (isset($item_sucursal->field_addition_to_address['und'][0]['value'])) {
+  	  $address = $item_sucursal->field_addition_to_address['und'][0]['value'];
+  	}
+  	if (isset($item_sucursal->field_address_telefono['und'][0]['value'])) {
+  	  $phone = $item_sucursal->field_address_telefono['und'][0]['value'];
+  	}
+  	if (isset($item_sucursal->field_address_celular['und'][0]['value'])) {
+  	  $mobile = $item_sucursal->field_address_celular['und'][0]['value'];
+  	}
+  	if (isset($item_sucursal->field_address_name['und'][0]['value'])) {
+  	  $branch_office = $item_sucursal->field_address_name['und'][0]['value'];
+  	}
+  	if (isset($item_sucursal->field_address_contacto['und'][0]['value'])) {
+  	  $contact = $item_sucursal->field_address_contacto['und'][0]['value'];
+  	}
+  	if (isset($item_sucursal->field_address_correo['und'][0]['value'])) {
+  	  $email = $item_sucursal->field_address_correo['und'][0]['value'];
+  	}
+  }
 
 ?>
 <html>
@@ -44,32 +68,39 @@
 		<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
 			<tbody>
 				<tr>
-					<td style="width:100px;font-size:15px;font-weight:bold;padding:0;text-align:left;">CLIENTE:</td>
-					<td style="width:450px;font-size:15px;padding:0;text-align:left;"><?php print $cliente->title;?></td>
-					<td style="width:150px;font-size:15px;font-weight:bold;padding:0;text-align:left;">FECHA:</td>
-					<td style="width:200px;font-size:15px;padding:0;text-align:left;"><?php print $fecha_ingreso;?></td>
+					<td style="width:900px;font-size:15px;font-weight:bold;padding:0;text-align:right;"><?php print "OT: ".$orden_consecutivo;?></td>
+				</tr>
+			</tbody>
+		</table>
+		<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
+			<tbody>
+				<tr>
+					<td style="width:110px;font-size:15px;font-weight:bold;padding:0;text-align:left;">CLIENTE:</td>
+					<td style="width:360px;font-size:15px;padding:0;text-align:left;"><?php print $cliente->title;?></td>
+					<td style="width:130px;font-size:15px;font-weight:bold;padding:0;text-align:left;">FECHA:</td>
+					<td style="width:300px;font-size:15px;padding:0;text-align:left;"><?php print $fecha_ingreso;?></td>
 				</tr>
 				<tr>
-					<td style="width:100px;font-size:15px;font-weight:bold;padding:0;text-align:left;">SUCURSAL:</td>
-					<td style="width:450px;font-size:15px;padding:0;text-align:left;">LA FERCHO BOGOTA</td>
-					<td style="width:150px;font-size:15px;font-weight:bold;padding:0;text-align:left;">PROVEEDOR:</td>
-					<td style="width:200px;font-size:15px;padding:0;text-align:left;"><?php print $proveedor;?></td>
+					<td style="width:110px;font-size:15px;font-weight:bold;padding:0;text-align:left;">SUCURSAL:</td>
+					<td style="width:360px;font-size:15px;padding:0;text-align:left;"><?php print $city;?></td>
+					<td style="width:130px;font-size:15px;font-weight:bold;padding:0;text-align:left;">PROVEEDOR:</td>
+					<td style="width:300px;font-size:15px;padding:0;text-align:left;"><?php print $proveedor;?></td>
 				</tr>
 				<tr>
-					<td style="width:100px;font-size:15px;font-weight:bold;padding:0;text-align:left;">CONTACTO:</td>
-					<td style="width:450px;font-size:15px;padding:0;text-align:left;">SURICATO</td>
-					<td style="width:150px;font-size:15px;font-weight:bold;padding:0;text-align:left;">NIT/CC</td>
-					<td style="width:200px;font-size:15px;padding:0;text-align:left;"><?php print $nit_cc;?></td>
+					<td style="width:110px;font-size:15px;font-weight:bold;padding:0;text-align:left;">CONTACTO:</td>
+					<td style="width:360px;font-size:15px;padding:0;text-align:left;"><?php print $contact;?></td>
+					<td style="width:130px;font-size:15px;font-weight:bold;padding:0;text-align:left;">NIT/CC</td>
+					<td style="width:300px;font-size:15px;padding:0;text-align:left;"><?php print $nit_cc;?></td>
 				</tr>
 				<tr>
-					<td style="width:100px;font-size:15px;font-weight:bold;padding:0;text-align:left;">DIRECCION:</td>
-					<td style="width:450px;font-size:15px;padding:0;text-align:left;">TABOGO</td>
-					<td style="width:150px;font-size:15px;font-weight:bold;padding:0;text-align:left;">CONCEPTO</td>
-					<td style="width:200px;font-size:15px;padding:0;text-align:left;"><?php print $concepto;?></td>
+					<td style="width:110px;font-size:15px;font-weight:bold;padding:0;text-align:left;">DIRECCION:</td>
+					<td style="width:360px;font-size:15px;padding:0;text-align:left;"><?php print $address;?></td>
+					<td style="width:130px;font-size:15px;font-weight:bold;padding:0;text-align:left;">CONCEPTO</td>
+					<td style="width:300px;font-size:15px;padding:0;text-align:left;"><?php print $concepto;?></td>
 				</tr>
 				<tr>
-					<td style="width:100px;font-size:15px;font-weight:bold;padding:0;text-align:left;">TELEFONO:</td>
-					<td style="width:500px;font-size:15px;padding:0;text-align:left;">51-5555555</td>
+					<td style="width:110px;font-size:15px;font-weight:bold;padding:0;text-align:left;">TELEFONO:</td>
+					<td style="width:360px;font-size:15px;padding:0;text-align:left;"><?php print $phone;?></td>
 				</tr>
 			</tbody>
 		</table>
@@ -82,11 +113,11 @@
 					<th style="width:225px;font-size:15px;padding:0;text-align:center;border:1px solid;">MARCA</th>
 					<th style="width:225px;font-size:15px;padding:0;text-align:center;border:1px solid;">SERIAL</th>
 				</tr>
-				<tr style="height:130px;">
-					<td style="width:225px;font-size:15px;padding:0;text-align:left;border:1px solid;"><?php print $orden_equipo;?></td>
-					<td style="width:225px;font-size:15px;padding:0;text-align:left;border:1px solid;"><?php print $orden_modelo;?></td>
-					<td style="width:225px;font-size:15px;padding:0;text-align:left;border:1px solid;"><?php print $orden_marca;?></td>
-					<td style="width:225px;font-size:15px;padding:0;text-align:left;border:1px solid;"><?php print $orden_serial;?></td>
+				<tr style="height:115px;">
+					<td style="width:225px;height:115px;font-size:15px;padding:0;text-align:left;border:1px solid;vertical-align:top;"><?php print $orden_equipo;?></td>
+					<td style="width:225px;height:115px;font-size:15px;padding:0;text-align:left;border:1px solid;vertical-align:top;"><?php print $orden_modelo;?></td>
+					<td style="width:225px;height:115px;font-size:15px;padding:0;text-align:left;border:1px solid;vertical-align:top;"><?php print $orden_marca;?></td>
+					<td style="width:225px;height:115px;font-size:15px;padding:0;text-align:left;border:1px solid;vertical-align:top;"><?php print $orden_serial;?></td>
 				</tr>
 			</tbody>
 		</table>
@@ -94,104 +125,106 @@
 		<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
 			<tbody>
 				<tr>
-					<td style="width:500px;font-size:15px;padding:0;text-align:left;border:1px solid;vertical-align:top;" rowspan="2">OBSERVACIONES:<?php print $observaciones;?></th>
+					<td style="width:500px;font-size:15px;padding:0;text-align:left;border:1px solid;vertical-align:top;" rowspan="2">OBSERVACIONES:<br><?php print $observaciones;?></th>
 					<td style="width:200px;font-size:15px;padding:0;text-align:center;border:1px solid;">DPTO TECNICO</td>
 					<td style="width:200px;font-size:15px;padding:0;text-align:center;border:1px solid;">FIRMA CLIENTE</td>
 				</tr>
 				<tr>
-					<td style="width:200px;font-size:15px;padding:0;text-align:left;border:1px solid;"><?php print $dpto;?></td>
-					<td style="width:200px;height:130px;font-size:15px;padding:0;text-align:left;border:1px solid;"></td>
+					<td style="width:200px;font-size:15px;padding:0;text-align:left;border:1px solid;vertical-align:top;"><?php print $dpto;?></td>
+					<td style="width:200px;height:115px;font-size:15px;padding:0;text-align:left;border:1px solid;"></td>
 				</tr>
 			</tbody>
 		</table>
-	</body>
-</html>
 <?php
-	
 	if ($node->field_el_salida['und'][0]['value'] == '1'){
 		$fecha_salida = date_create($node->field_el_fecha_salida['und'][0]['value']);
 		$fecha_salida = date_format($fecha_ingreso,'Y-m-d');
 		$observaciones = $node->field_el_obs_sal['und'][0]['value'];
 ?>
-		<html>
-			<head></head>
-			<body>
-				<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
-					<tbody>
-						<tr>
-							<td style="width:200px;font-size:20px;padding:0;text-align:center;" rowspan="2"><?php print $img_logo;?></td>
-							<td style="width:600px;font-size:16px;font-weight:bold;padding:0;text-align:left;">SALIDA DE EQUIPOS DE LABORATORIO</td>
-						</tr>
-					</tbody>
-				</table>
-				<br>
-				<br>
-				<br>
-				<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
-					<tbody>
-						<tr>
-							<td style="width:100px;font-size:15px;font-weight:bold;padding:0;text-align:left;">CLIENTE:</td>
-							<td style="width:450px;font-size:15px;padding:0;text-align:left;"><?php print $cliente->title;?></td>
-							<td style="width:150px;font-size:15px;font-weight:bold;padding:0;text-align:left;">FECHA:</td>
-							<td style="width:200px;font-size:15px;padding:0;text-align:left;"><?php print $fecha_salida;?></td>
-						</tr>
-						<tr>
-							<td style="width:100px;font-size:15px;font-weight:bold;padding:0;text-align:left;">SUCURSAL:</td>
-							<td style="width:450px;font-size:15px;padding:0;text-align:left;">LA FERCHO BOGOTA</td>
-							<td style="width:150px;font-size:15px;font-weight:bold;padding:0;text-align:left;">PROVEEDOR:</td>
-							<td style="width:200px;font-size:15px;padding:0;text-align:left;"><?php print $proveedor;?></td>
-						</tr>
-						<tr>
-							<td style="width:100px;font-size:15px;font-weight:bold;padding:0;text-align:left;">CONTACTO:</td>
-							<td style="width:450px;font-size:15px;padding:0;text-align:left;">SURICATO</td>
-							<td style="width:150px;font-size:15px;font-weight:bold;padding:0;text-align:left;">NIT/CC</td>
-							<td style="width:200px;font-size:15px;padding:0;text-align:left;"><?php print $nit_cc;?></td>
-						</tr>
-						<tr>
-							<td style="width:100px;font-size:15px;font-weight:bold;padding:0;text-align:left;">DIRECCION:</td>
-							<td style="width:450px;font-size:15px;padding:0;text-align:left;">TABOGO</td>
-							<td style="width:150px;font-size:15px;font-weight:bold;padding:0;text-align:left;">CONCEPTO</td>
-							<td style="width:200px;font-size:15px;padding:0;text-align:left;"><?php print $concepto;?></td>
-						</tr>
-						<tr>
-							<td style="width:100px;font-size:15px;font-weight:bold;padding:0;text-align:left;">TELEFONO:</td>
-							<td style="width:500px;font-size:15px;padding:0;text-align:left;">51-5555555</td>
-						</tr>
-					</tbody>
-				</table>
-				<br>
-				<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
-					<tbody>
-						<tr>
-							<th style="width:225px;font-size:15px;padding:0;text-align:center;border:1px solid;">DESCRIPCION</th>
-							<th style="width:225px;font-size:15px;padding:0;text-align:center;border:1px solid;">REFERENCIA</th>
-							<th style="width:225px;font-size:15px;padding:0;text-align:center;border:1px solid;">MARCA</th>
-							<th style="width:225px;font-size:15px;padding:0;text-align:center;border:1px solid;">SERIAL</th>
-						</tr>
-						<tr style="height:130px;">
-							<td style="width:225px;font-size:15px;padding:0;text-align:left;border:1px solid;"><?php print $orden_equipo;?></td>
-							<td style="width:225px;font-size:15px;padding:0;text-align:left;border:1px solid;"><?php print $orden_modelo;?></td>
-							<td style="width:225px;font-size:15px;padding:0;text-align:left;border:1px solid;"><?php print $orden_marca;?></td>
-							<td style="width:225px;font-size:15px;padding:0;text-align:left;border:1px solid;"><?php print $orden_serial;?></td>
-						</tr>
-					</tbody>
-				</table>
+		<br><br><br>
+		<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
+			<tbody>
+				<tr>
+					<td style="width:200px;font-size:20px;padding:0;text-align:center;" rowspan="2"><?php print $img_logo;?></td>
+					<td style="width:600px;font-size:16px;font-weight:bold;padding:0;text-align:left;">SALIDA DE EQUIPOS DE LABORATORIO</td>
+				</tr>
+			</tbody>
+		</table>
+		<br>
+		<br>
+		<br>
+		<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
+			<tbody>
+				<tr>
+					<td style="width:900px;font-size:15px;font-weight:bold;padding:0;text-align:right;"><?php print "OT: ".$orden_consecutivo;?></td>
+				</tr>
+			</tbody>
+		</table>
+		<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
+			<tbody>
+				<tr>
+					<td style="width:110px;font-size:15px;font-weight:bold;padding:0;text-align:left;">CLIENTE:</td>
+					<td style="width:360px;font-size:15px;padding:0;text-align:left;"><?php print $cliente->title;?></td>
+					<td style="width:130px;font-size:15px;font-weight:bold;padding:0;text-align:left;">FECHA:</td>
+					<td style="width:300px;font-size:15px;padding:0;text-align:left;"><?php print $fecha_ingreso;?></td>
+				</tr>
+				<tr>
+					<td style="width:110px;font-size:15px;font-weight:bold;padding:0;text-align:left;">SUCURSAL:</td>
+					<td style="width:360px;font-size:15px;padding:0;text-align:left;"><?php print $city;?></td>
+					<td style="width:130px;font-size:15px;font-weight:bold;padding:0;text-align:left;">PROVEEDOR:</td>
+					<td style="width:300px;font-size:15px;padding:0;text-align:left;"><?php print $proveedor;?></td>
+				</tr>
+				<tr>
+					<td style="width:110px;font-size:15px;font-weight:bold;padding:0;text-align:left;">CONTACTO:</td>
+					<td style="width:360px;font-size:15px;padding:0;text-align:left;"><?php print $contact;?></td>
+					<td style="width:130px;font-size:15px;font-weight:bold;padding:0;text-align:left;">NIT/CC</td>
+					<td style="width:300px;font-size:15px;padding:0;text-align:left;"><?php print $nit_cc;?></td>
+				</tr>
+				<tr>
+					<td style="width:110px;font-size:15px;font-weight:bold;padding:0;text-align:left;">DIRECCION:</td>
+					<td style="width:360px;font-size:15px;padding:0;text-align:left;"><?php print $address;?></td>
+					<td style="width:130px;font-size:15px;font-weight:bold;padding:0;text-align:left;">CONCEPTO</td>
+					<td style="width:300px;font-size:15px;padding:0;text-align:left;"><?php print $concepto;?></td>
+				</tr>
+				<tr>
+					<td style="width:110px;font-size:15px;font-weight:bold;padding:0;text-align:left;">TELEFONO:</td>
+					<td style="width:360px;font-size:15px;padding:0;text-align:left;"><?php print $phone;?></td>
+				</tr>
+			</tbody>
+		</table>
+		<br>
+		<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
+			<tbody>
+				<tr>
+					<th style="width:225px;font-size:15px;padding:0;text-align:center;border:1px solid;">DESCRIPCION</th>
+					<th style="width:225px;font-size:15px;padding:0;text-align:center;border:1px solid;">REFERENCIA</th>
+					<th style="width:225px;font-size:15px;padding:0;text-align:center;border:1px solid;">MARCA</th>
+					<th style="width:225px;font-size:15px;padding:0;text-align:center;border:1px solid;">SERIAL</th>
+				</tr>
+				<tr style="height:115px;">
+					<td style="width:225px;height:115px;font-size:15px;padding:0;text-align:left;border:1px solid;vertical-align:top;"><?php print $orden_equipo;?></td>
+					<td style="width:225px;height:115px;font-size:15px;padding:0;text-align:left;border:1px solid;vertical-align:top;"><?php print $orden_modelo;?></td>
+					<td style="width:225px;height:115px;font-size:15px;padding:0;text-align:left;border:1px solid;vertical-align:top;"><?php print $orden_marca;?></td>
+					<td style="width:225px;height:115px;font-size:15px;padding:0;text-align:left;border:1px solid;vertical-align:top;"><?php print $orden_serial;?></td>
+				</tr>
+			</tbody>
+		</table>
 
-				<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
-					<tbody>
-						<tr>
-							<td style="width:500px;font-size:15px;padding:0;text-align:left;border:1px solid;vertical-align:top;" rowspan="2">OBSERVACIONES:<?php print $observaciones;?></th>
-							<td style="width:200px;font-size:15px;padding:0;text-align:center;border:1px solid;">DPTO TECNICO</td>
-							<td style="width:200px;font-size:15px;padding:0;text-align:center;border:1px solid;">FIRMA CLIENTE</td>
-						</tr>
-						<tr>
-							<td style="width:200px;font-size:15px;padding:0;text-align:left;border:1px solid;"><?php print $dpto;?></td>
-							<td style="width:200px;height:130px;font-size:15px;padding:0;text-align:left;border:1px solid;"></td>
-						</tr>
-					</tbody>
-				</table>
-			</body>
-		</html>		
+		<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
+			<tbody>
+				<tr>
+					<td style="width:500px;font-size:15px;padding:0;text-align:left;border:1px solid;vertical-align:top;" rowspan="2"><br>OBSERVACIONES:<?php print $observaciones;?></th>
+					<td style="width:200px;font-size:15px;padding:0;text-align:center;border:1px solid;">DPTO TECNICO</td>
+					<td style="width:200px;font-size:15px;padding:0;text-align:center;border:1px solid;">FIRMA CLIENTE</td>
+				</tr>
+				<tr>
+					<td style="width:200px;font-size:15px;padding:0;text-align:left;border:1px solid;vertical-align:top;"><?php print $dpto;?></td>
+					<td style="width:200px;height:115px;font-size:15px;padding:0;text-align:left;border:1px solid;"></td>
+				</tr>
+			</tbody>
+		</table>
 <?php
 	}
 ?>
+	</body>
+</html>

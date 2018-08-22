@@ -5,6 +5,7 @@
   $node = $variables['node'];
 
 
+  $numorden = $node->field_consecutivo_doc['und'][0]['value'];
   $fecha = format_date(time(),'long');
   if (isset($node->created)) {
   	$fecha = format_date($node->created,'custom','j').' de '.format_date($node->created,'custom','F').' del '.format_date($node->created,'custom','Y');
@@ -47,6 +48,22 @@
   if (isset($node->field_ord_equipo['und'][0]['value'])){
 		$equipment = $node->field_ord_equipo['und'][0]['value'];
 	}
+	$serial = '';
+  if (isset($node->field_ord_serial['und'][0]['value'])){
+		$serial = $node->field_ord_serial['und'][0]['value'];
+	}
+	$marca = '';
+  if (isset($node->field_ord_marca['und'][0]['value'])){
+		$marca = $node->field_ord_marca['und'][0]['value'];
+	}
+	$modelo = '';
+  if (isset($node->field_ord_modelo['und'][0]['value'])){
+		$modelo = $node->field_ord_modelo['und'][0]['value'];
+	}
+	$capacidad = '';
+  if (isset($node->field_ord_capacidad['und'][0]['value'])){
+		$capacidad = $node->field_ord_capacidad['und'][0]['value'];
+	}
   $descripcion = '';
   if (isset($node->field_ord_descripcion['und'][0]['value'])){
 		$descripcion = $node->field_ord_descripcion['und'][0]['value'];
@@ -81,10 +98,11 @@
 	} else if ($node->field_ord_datos_tecnicos['und'][0]['value']=="3"){
 		$fueralinea = 'X';
 	}
+	
 
 	$voltaje = $node->field_ord_voltaje_bateria['und'][0]['value'];
 	$corriente = $node->field_ord_corriente_bateria['und'][0]['value'];
-	$marca = $node->field_ord_marca_bateria['und'][0]['value'];
+	$marca_bateria = $node->field_ord_marca_bateria['und'][0]['value'];
 	$cantidad = $node->field_ord_cantidad_bateria['und'][0]['value'];
 	$metf1n = $node->field_ord_met_f1_n['und'][0]['value'];
 	$metf2n = $node->field_ord_met_f2_n['und'][0]['value'];
@@ -163,14 +181,14 @@
 						</tr>
 					</tbody>
 				</table>
-				<br><br>
+				<br>
 				<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
 					<thead>
 						<tr>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">FECHA</td>
 								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;"><?php print $fecha?></td>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">NUMERO O.T.</td>
-								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;"><?php print $node->nid; ?></td>
+								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;"><?php print $numorden; ?></td>
 						</tr>
 					</thead>
 					<tbody>
@@ -200,7 +218,7 @@
 						</tr>
 					</tbody>
 				</table>
-				<br><br>
+				<br>
 				<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
 					<caption style="border:1px solid;font-size:13px;font-weight:bold;">DATOS DEL EQUIPO</caption>
 					<tbody>
@@ -208,27 +226,27 @@
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;padding:0;">EQUIPO</td>
 								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;padding:0;" colspan="2"><?php print $equipment?></td>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;padding:0;">SERIAL</td>
-								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;padding:0;" colspan="2">1233GFD</td>
+								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;padding:0;" colspan="2"><?php print $serial;?></td>
 						</tr>
 						<tr>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;padding:0;">MARCA</td>
-								<td style="width:100px;text-align:left;border:1px solid;font-size:13px;padding:0;">MAC</td>
+								<td style="width:100px;text-align:left;border:1px solid;font-size:13px;padding:0;"><?php print $marca;?></td>
 								<td style="width:150px;text-align:left;border:1px solid;font-size:13px;padding:0;">MODELO</td>
-								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;padding:0;">2015-2016</td>
+								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;padding:0;"><?php print $modelo;?></td>
 								<td style="width:150px;text-align:left;border:1px solid;font-size:13px;padding:0;">CAPACIDAD</td>
-								<td style="width:100px;text-align:left;border:1px solid;font-size:13px;padding:0;">123</td>
+								<td style="width:100px;text-align:left;border:1px solid;font-size:13px;padding:0;"><?php print $capacidad;?></td>
 						</tr>
 						<tr>
-							<td style="width:650px;text-align:left;padding:0;font-size:13px;vertical-align:top;" colspan="4" rowspan="3">DESCRIPCION DEL SERVICIO<br><?php print $descripcion?></td>
+							<td style="width:650px;text-align:left;border:1px solid;padding:0;font-size:13px;vertical-align:top;" colspan="4" rowspan="3">DESCRIPCION DEL SERVICIO<?php print ": ".$descripcion?></td>
 							<td style="width:250px;text-align:center;border:1px solid;font-size:13px;padding:0;" colspan="2">SERVICIO REALIZADO EN</td>
 						</tr>
 						<tr>
-							<td style="width:150px;text-align:left;border:1px solid;font-size:13px;padding:0;"><?php print $labotatorio;?></td>
-							<td style="width:100px;text-align:left;border:1px solid;font-size:13px;padding:0;"><?php print $campo;?></td>
+							<td style="width:150px;text-align:left;border:1px solid;font-size:13px;padding:0;">LABORATORIO</td>
+							<td style="width:100px;text-align:left;border:1px solid;font-size:13px;padding:0;">CAMPO</td>
 						</tr>
 						<tr>
-							<td style="width:150px;text-align:left;border:1px solid;font-size:13px;padding:0;">X</td>
-							<td style="width:100px;text-align:left;border:1px solid;font-size:13px;padding:0;"></td>
+							<td style="width:150px;text-align:left;border:1px solid;font-size:13px;padding:0;"><?php print $laboratorio;?></td>
+							<td style="width:100px;text-align:left;border:1px solid;font-size:13px;padding:0;"><?php print $campo;?></td>
 						</tr>
 					</tbody>
 				</table>
@@ -237,90 +255,90 @@
 					<caption style="border:1px solid;font-size:13px;font-weight:bold;">DATOS TECNICOS</caption>
 					<tbody>
 						<tr>
-								<td style="width:180px;text-align:left;border:1px solid;font-size:13px;padding:0;" colspan="3">EN LINEA</td>
-								<td style="width:80px;text-align:left;border:1px solid;font-size:13px;padding:0;"><?php print $linea;?></td>
-								<td style="width:190px;text-align:left;border:1px solid;font-size:13px;padding:0;" colspan="2">EN BYPASS</td>
-								<td style="width:180px;text-align:left;border:1px solid;font-size:13px;padding:0;" colspan="3"><?php print $bypass;?></td>
-								<td style="width:120px;text-align:left;border:1px solid;font-size:13px;padding:0;">FUERA LINEA</td>
-								<td style="width:150px;text-align:left;border:1px solid;font-size:13px;padding:0;" colspan="2"><?php print $fueralinea;?></td>
+								<td style="width:180px;height:20px;text-align:left;border:1px solid;font-size:13px;padding:0;" colspan="3">EN LINEA</td>
+								<td style="width:80px;height:20px;text-align:left;border:1px solid;font-size:13px;padding:0;"><?php print $linea;?></td>
+								<td style="width:190px;height:20px;text-align:left;border:1px solid;font-size:13px;padding:0;" colspan="2">EN BYPASS</td>
+								<td style="width:180px;height:20px;text-align:left;border:1px solid;font-size:13px;padding:0;" colspan="3"><?php print $bypass;?></td>
+								<td style="width:120px;height:20px;text-align:left;border:1px solid;font-size:13px;padding:0;">FUERA LINEA</td>
+								<td style="width:150px;height:20px;text-align:left;border:1px solid;font-size:13px;padding:0;" colspan="2"><?php print $fueralinea;?></td>
 						</tr>
 						<tr>
-							<td style="width:180px;text-align:left;border:1px solid;font-size:13px;padding:0;" colspan="3">VOLTAJE BATERIA</td>
-							<td style="width:270px;text-align:left;border:1px solid;font-size:13px;padding:0;" colspan="3"><?php print $voltaje;?></td>
-							<td style="width:180px;text-align:left;border:1px solid;font-size:13px;padding:0;" colspan="3">MARCA BATERIA</td>
-							<td style="width:270px;text-align:left;border:1px solid;font-size:13px;padding:0;" colspan="3"><?php print $marca;?></td>
+							<td style="width:180px;height:20px;text-align:left;border:1px solid;font-size:13px;padding:0;" colspan="3">VOLTAJE BATERIA</td>
+							<td style="width:270px;height:20px;text-align:left;border:1px solid;font-size:13px;padding:0;" colspan="3"><?php print $voltaje;?></td>
+							<td style="width:180px;height:20px;text-align:left;border:1px solid;font-size:13px;padding:0;" colspan="3">MARCA BATERIA</td>
+							<td style="width:270px;height:20px;text-align:left;border:1px solid;font-size:13px;padding:0;" colspan="3"><?php print $marca_bateria;?></td>
 						</tr>
 						<tr>
-							<td style="width:180px;text-align:left;border:1px solid;font-size:13px;padding:0;" colspan="3">CORRIENTE BATERIA</td>
-							<td style="width:270px;text-align:left;border:1px solid;font-size:13px;padding:0;" colspan="3"><?php print $corriente;?></td>
-							<td style="width:180px;text-align:left;border:1px solid;font-size:13px;padding:0;" colspan="3">CANTIDAD BATERIAS</td>
-							<td style="width:270px;text-align:left;border:1px solid;font-size:13px;padding:0;" colspan="3"><?php print $cantidad;?></td>
+							<td style="width:180px;height:20px;text-align:left;border:1px solid;font-size:13px;padding:0;" colspan="3">CORRIENTE BATERIA</td>
+							<td style="width:270px;height:20px;text-align:left;border:1px solid;font-size:13px;padding:0;" colspan="3"><?php print $corriente;?></td>
+							<td style="width:180px;height:20px;text-align:left;border:1px solid;font-size:13px;padding:0;" colspan="3">CANTIDAD BATERIAS</td>
+							<td style="width:270px;height:20px;text-align:left;border:1px solid;font-size:13px;padding:0;" colspan="3"><?php print $cantidad;?></td>
 						</tr>
 						<tr>
-							<td style="width:450px;text-align:center;border:1px solid;font-size:13px;padding:0;font-weight:bold;" colspan="6">MEDICIONES A LA ENTRADA</td>
-							<td style="width:450px;text-align:center;border:1px solid;font-size:13px;padding:0;font-weight:bold;" colspan="6">MEDICONES A LA SALIDA</td>
+							<td style="width:450px;height:20px;text-align:center;border:1px solid;font-size:13px;padding:0;font-weight:bold;" colspan="6">MEDICIONES A LA ENTRADA</td>
+							<td style="width:450px;height:20px;text-align:center;border:1px solid;font-size:13px;padding:0;font-weight:bold;" colspan="6">MEDICONES A LA SALIDA</td>
 						</tr>
 						<tr>
-							<td style="width:260px;text-align:center;border:1px solid;font-size:13px;padding:0;" colspan="4">TENSION (V)</td>
-							<td style="width:190px;text-align:center;border:1px solid;font-size:13px;padding:0;" colspan="2">CORRIENTE (A)</td>
-							<td style="width:300px;text-align:center;border:1px solid;font-size:13px;padding:0;" colspan="4">TENSION (V)</td>
-							<td style="width:150px;text-align:center;border:1px solid;font-size:13px;padding:0;" colspan="2">CORRIENTE (A)</td>
+							<td style="width:260px;height:20px;text-align:center;border:1px solid;font-size:13px;padding:0;" colspan="4">TENSION (V)</td>
+							<td style="width:190px;height:20px;text-align:center;border:1px solid;font-size:13px;padding:0;" colspan="2">CORRIENTE (A)</td>
+							<td style="width:300px;height:20px;text-align:center;border:1px solid;font-size:13px;padding:0;" colspan="4">TENSION (V)</td>
+							<td style="width:150px;height:20px;text-align:center;border:1px solid;font-size:13px;padding:0;" colspan="2">CORRIENTE (A)</td>
 						</tr>
 						<tr>
-							<td style="width:30px;text-align:center;border:1px solid;font-size:13px;padding:0;">F1-N</td>
-							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $metf1n;?></td>
-							<td style="width:30px;text-align:center;border:1px solid;font-size:13px;padding:0;">F1-F2</td>
-							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $metf1f2;?></td>
-							<td style="width:30px;text-align:center;border:1px solid;font-size:13px;padding:0;">F1</td>
-							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $mecf1;?></td>
-							<td style="width:30px;text-align:center;border:1px solid;font-size:13px;padding:0;">F1-N</td>
-							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $mstf1n;?></td>
-							<td style="width:30px;text-align:center;border:1px solid;font-size:13px;padding:0;">F1-F2</td>
-							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $mstf1f2;?></td>
-							<td style="width:30px;text-align:center;border:1px solid;font-size:13px;padding:0;">F1</td>
-							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $mscf1;?></td>
+							<td style="width:30px;height:20px;text-align:center;border:1px solid;font-size:13px;padding:0;">F1-N</td>
+							<td style="width:45px;height:20px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $metf1n;?></td>
+							<td style="width:30px;height:20px;text-align:center;border:1px solid;font-size:13px;padding:0;">F1-F2</td>
+							<td style="width:45px;height:20px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $metf1f2;?></td>
+							<td style="width:30px;height:20px;text-align:center;border:1px solid;font-size:13px;padding:0;">F1</td>
+							<td style="width:45px;height:20px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $mecf1;?></td>
+							<td style="width:30px;height:20px;text-align:center;border:1px solid;font-size:13px;padding:0;">F1-N</td>
+							<td style="width:45px;height:20px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $mstf1n;?></td>
+							<td style="width:30px;height:20px;text-align:center;border:1px solid;font-size:13px;padding:0;">F1-F2</td>
+							<td style="width:45px;height:20px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $mstf1f2;?></td>
+							<td style="width:30px;height:20px;text-align:center;border:1px solid;font-size:13px;padding:0;">F1</td>
+							<td style="width:45px;height:20px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $mscf1;?></td>
 						</tr>
 						<tr>
-							<td style="width:30px;text-align:center;border:1px solid;font-size:13px;padding:0;">F2-N</td>
-							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $metf2n; ?></td>
-							<td style="width:30px;text-align:center;border:1px solid;font-size:13px;padding:0;">F1-F3</td>
-							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $metf1f3;?></td>
-							<td style="width:30px;text-align:center;border:1px solid;font-size:13px;padding:0;">F2</td>
-							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $mecf2;?></td>
-							<td style="width:30px;text-align:center;border:1px solid;font-size:13px;padding:0;">F2-N</td>
-							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $mstf2n;?></td>
-							<td style="width:30px;text-align:center;border:1px solid;font-size:13px;padding:0;">F1-F3</td>
-							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $mstf1f3;?></td>
-							<td style="width:30px;text-align:center;border:1px solid;font-size:13px;padding:0;">F2</td>
-							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $mscf2;?></td>
+							<td style="width:30px;height:20px;text-align:center;border:1px solid;font-size:13px;padding:0;">F2-N</td>
+							<td style="width:45px;height:20px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $metf2n; ?></td>
+							<td style="width:30px;height:20px;text-align:center;border:1px solid;font-size:13px;padding:0;">F1-F3</td>
+							<td style="width:45px;height:20px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $metf1f3;?></td>
+							<td style="width:30px;height:20px;text-align:center;border:1px solid;font-size:13px;padding:0;">F2</td>
+							<td style="width:45px;height:20px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $mecf2;?></td>
+							<td style="width:30px;height:20px;text-align:center;border:1px solid;font-size:13px;padding:0;">F2-N</td>
+							<td style="width:45px;height:20px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $mstf2n;?></td>
+							<td style="width:30px;height:20px;text-align:center;border:1px solid;font-size:13px;padding:0;">F1-F3</td>
+							<td style="width:45px;height:20px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $mstf1f3;?></td>
+							<td style="width:30px;height:20px;text-align:center;border:1px solid;font-size:13px;padding:0;">F2</td>
+							<td style="width:45px;height:20px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $mscf2;?></td>
 						</tr>
 						<tr>
-							<td style="width:30px;text-align:center;border:1px solid;font-size:13px;padding:0;">F3-N</td>
-							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $metf3n; ?></td>
-							<td style="width:30px;text-align:center;border:1px solid;font-size:13px;padding:0;">F2-F3</td>
-							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $metf2f3;?></td>
-							<td style="width:30px;text-align:center;border:1px solid;font-size:13px;padding:0;">F3</td>
-							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $mecf3;?></td>
-							<td style="width:30px;text-align:center;border:1px solid;font-size:13px;padding:0;">F3-N</td>
-							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $mstf3n;?></td>
-							<td style="width:30px;text-align:center;border:1px solid;font-size:13px;padding:0;">F2-F3</td>
-							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $mstf2f3;?></td>
-							<td style="width:30px;text-align:center;border:1px solid;font-size:13px;padding:0;">F3</td>
-							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $mscf3;?></td>
+							<td style="width:30px;height:20px;text-align:center;border:1px solid;font-size:13px;padding:0;">F3-N</td>
+							<td style="width:45px;height:20px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $metf3n; ?></td>
+							<td style="width:30px;height:20px;text-align:center;border:1px solid;font-size:13px;padding:0;">F2-F3</td>
+							<td style="width:45px;height:20px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $metf2f3;?></td>
+							<td style="width:30px;height:20px;text-align:center;border:1px solid;font-size:13px;padding:0;">F3</td>
+							<td style="width:45px;height:20px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $mecf3;?></td>
+							<td style="width:30px;height:20px;text-align:center;border:1px solid;font-size:13px;padding:0;">F3-N</td>
+							<td style="width:45px;height:20px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $mstf3n;?></td>
+							<td style="width:30px;height:20px;text-align:center;border:1px solid;font-size:13px;padding:0;">F2-F3</td>
+							<td style="width:45px;height:20px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $mstf2f3;?></td>
+							<td style="width:30px;height:20px;text-align:center;border:1px solid;font-size:13px;padding:0;">F3</td>
+							<td style="width:45px;height:20px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $mscf3;?></td>
 						</tr>
 						<tr>
-							<td style="width:30px;text-align:center;border:1px solid;font-size:13px;padding:0;">N-T</td>
-							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $metnt;?></td>
-							<td style="width:30px;text-align:center;border:1px solid;font-size:13px;padding:0;">FREC</td>
-							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $metfrec;?></td>
-							<td style="width:30px;text-align:center;border:1px solid;font-size:13px;padding:0;">N</td>
-							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $mecn;?></td>
-							<td style="width:30px;text-align:center;border:1px solid;font-size:13px;padding:0;">N-T</td>
-							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $mstnt;?></td>
-							<td style="width:30px;text-align:center;border:1px solid;font-size:13px;padding:0;">FREC</td>
-							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $mstfrec;?></td>
-							<td style="width:30px;text-align:center;border:1px solid;font-size:13px;padding:0;">N</td>
-							<td style="width:45px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $mscn;?></td>
+							<td style="width:30px;height:20px;text-align:center;border:1px solid;font-size:13px;padding:0;">N-T</td>
+							<td style="width:45px;height:20px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $metnt;?></td>
+							<td style="width:30px;height:20px;text-align:center;border:1px solid;font-size:13px;padding:0;">FREC</td>
+							<td style="width:45px;height:20px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $metfrec;?></td>
+							<td style="width:30px;height:20px;text-align:center;border:1px solid;font-size:13px;padding:0;">N</td>
+							<td style="width:45px;height:20px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $mecn;?></td>
+							<td style="width:30px;height:20px;text-align:center;border:1px solid;font-size:13px;padding:0;">N-T</td>
+							<td style="width:45px;height:20px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $mstnt;?></td>
+							<td style="width:30px;height:20px;text-align:center;border:1px solid;font-size:13px;padding:0;">FREC</td>
+							<td style="width:45px;height:20px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $mstfrec;?></td>
+							<td style="width:30px;height:20px;text-align:center;border:1px solid;font-size:13px;padding:0;">N</td>
+							<td style="width:45px;height:20px;text-align:center;border:1px solid;font-size:13px;padding:0;"><?php print $mscn;?></td>
 						</tr>
 					</tbody>
 				</table>
@@ -394,7 +412,7 @@
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">FECHA</td>
 								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;"><?php print $fecha?></td>
 								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;">NUMERO O.S.</td>
-								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;"><?php print $node->nid; ?></td>
+								<td style="width:250px;text-align:left;border:1px solid;font-size:13px;"><?php print $numorden; ?></td>
 						</tr>
 					</thead>
 					<tbody>
@@ -424,79 +442,80 @@
 						</tr>
 					</tbody>
 				</table>
-				<br><br>
+				<br>
 				<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
 					<caption style="border:1px solid;font-size:13px;font-weight:bold;">DESCRIPCION DEL SERVICIO</caption>
 					<tbody>
 						<tr>
-								<td style="width:600px;text-align:left;border:1px solid;font-size:13px;padding:0;vertical-align:top;" rowspan="3"><?php print $descripcion;?></td>
-								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;padding:0;">CONTRATO</td>
-								<td style="width:100px;text-align:left;border:1px solid;font-size:13px;padding:0;"><?php print $orden_servicio_contrato;?></td>
+								<td style="width:600px;height:20px;text-align:left;border:1px solid;font-size:13px;padding:0;vertical-align:top;" rowspan="3"><?php print $descripcion;?></td>
+								<td style="width:200px;height:20px;text-align:left;border:1px solid;font-size:13px;padding:0;">CONTRATO</td>
+								<td style="width:100px;height:20px;text-align:left;border:1px solid;font-size:13px;padding:0;"><?php print $orden_servicio_contrato;?></td>
 						</tr>
 						<tr>
-								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;padding:0;">GARANTIA</td>
-								<td style="width:100px;text-align:left;border:1px solid;font-size:13px;padding:0;"><?php print $orden_servicio_garantia;?></td>
+								<td style="width:200px;height:20px;text-align:left;border:1px solid;font-size:13px;padding:0;">GARANTIA</td>
+								<td style="width:100px;height:20px;text-align:left;border:1px solid;font-size:13px;padding:0;"><?php print $orden_servicio_garantia;?></td>
 						</tr>
 						<tr>
-								<td style="width:200px;text-align:left;border:1px solid;font-size:13px;padding:0;">FACTURABLE</td>
-								<td style="width:100px;text-align:left;border:1px solid;font-size:13px;padding:0;"><?php print $orden_servicio_facturable;?></td>
+								<td style="width:200px;height:20px;text-align:left;border:1px solid;font-size:13px;padding:0;">FACTURABLE</td>
+								<td style="width:100px;height:20px;text-align:left;border:1px solid;font-size:13px;padding:0;"><?php print $orden_servicio_facturable;?></td>
 						</tr>
 					</tbody>
 				</table>
-				<br><br>
+				<br>
 				<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
 					<caption style="border:1px solid;font-size:13px;font-weight:bold;text-align:center;">PARAMETROS DEL SERVICIO</caption>
 					<tbody>
 						<tr>
 							<td style="width:900px;text-aligng:center;border:1px solid;font-size:13px;padding:0;text-align:center;">SELECCIONE COMO BUENO(B) REGULAR(R) DEFICIENTE(D) CUANDO APLIQUE</td>
 						</tr>
+						<tr>
+							<td style="width:900px;height:10px;text-aligng:center;font-size:13px;padding:0;text-align:center;"></td>
+						</tr>
 					</tbody>
 				</table>
-				<br>
-				<br>
 				<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
 					<tbody>
 						<tr>
-							<td style="width:350px;border:1px solid;font-size:13px;padding:0;">CONDICIONES TABLEROS ELECTRICOS</td>
-							<td style="width:100px;border:1px solid;font-size:13px;padding:0;"><?php print $cte_condicion;?></td>
-							<td style="width:350px;border:1px solid;font-size:13px;padding:0;">CONDICIONES RACK, CABLEADO</td>
-							<td style="width:100px;border:1px solid;font-size:13px;padding:0;"><?php print $cra_condicion;?></td>
+							<td style="width:300px;height:20px;border:1px solid;font-size:12px;padding:0;">CONDICIONES TABLEROS ELECTRICOS</td>
+							<td style="width:150px;height:20px;border:1px solid;font-size:12px;padding:0;"><?php print $cte_condicion;?></td>
+							<td style="width:300px;height:20px;border:1px solid;font-size:12px;padding:0;">CONDICIONES RACK, CABLEADO</td>
+							<td style="width:150px;height:20px;border:1px solid;font-size:12px;padding:0;"><?php print $cra_condicion;?></td>
 						</tr>
 						<tr>
-							<td style="width:350px;border:1px solid;font-size:13px;padding:0;">CONDICIONES CIRCUITOS ELECTRICOS</td>
-							<td style="width:100px;border:1px solid;font-size:13px;padding:0;"><?php print $cce_condicion;?></td>
-							<td style="width:350px;border:1px solid;font-size:13px;padding:0;">MARCA CABLEADO</td>
-							<td style="width:100px;border:1px solid;font-size:13px;padding:0;"><?php print $mcc_condicion;?></td>
+							<td style="width:300px;height:20px;border:1px solid;font-size:12px;padding:0;">CONDICIONES CIRCUITOS ELECTRICOS</td>
+							<td style="width:150px;height:20px;border:1px solid;font-size:12px;padding:0;"><?php print $cce_condicion;?></td>
+							<td style="width:300px;height:20px;border:1px solid;font-size:12px;padding:0;">MARCA CABLEADO</td>
+							<td style="width:150px;height:20px;border:1px solid;font-size:12px;padding:0;"><?php print $mcc_condicion;?></td>
 						</tr>
 						<tr>
-							<td style="width:350px;border:1px solid;font-size:13px;padding:0;">VOLTAJE NEUTRO - TIERRA</td>
-							<td style="width:100px;border:1px solid;font-size:13px;padding:0;"><?php print $vnt_condicion;?></td>
-							<td style="width:350px;border:1px solid;font-size:13px;padding:0;">CATEGORIA CABLEADO</td>
-							<td style="width:100px;border:1px solid;font-size:13px;padding:0;"><?php print $cacableado;?></td>
+							<td style="width:300px;height:20px;border:1px solid;font-size:12px;padding:0;">VOLTAJE NEUTRO - TIERRA</td>
+							<td style="width:150px;height:20px;border:1px solid;font-size:12px;padding:0;"><?php print $vnt_condicion;?></td>
+							<td style="width:300px;height:20px;border:1px solid;font-size:12px;padding:0;">CATEGORIA CABLEADO</td>
+							<td style="width:150px;height:20px;border:1px solid;font-size:12px;padding:0;"><?php print $cacableado;?></td>
 						</tr>
 						<tr>
-							<td style="width:350px;border:1px solid;font-size:13px;padding:0;">VOLTAJE NEUTRO - BASE</td>
-							<td style="width:100px;border:1px solid;font-size:13px;padding:0;"><?php print $vnb_condicion;?></td>
-							<td style="width:350px;border:1px solid;font-size:13px;padding:0;">MARCACION E IDENTIFICACION CABLEADO</td>
-							<td style="width:100px;border:1px solid;font-size:13px;padding:0;"><?php print $mrcableado;?></td>
+							<td style="width:300px;height:20px;border:1px solid;font-size:12px;padding:0;">VOLTAJE NEUTRO - BASE</td>
+							<td style="width:150px;height:20px;border:1px solid;font-size:12px;padding:0;"><?php print $vnb_condicion;?></td>
+							<td style="width:300px;height:20px;border:1px solid;font-size:12px;padding:0;">MARCACION E IDENTIFICACION CABLEADO</td>
+							<td style="width:150px;height:20px;border:1px solid;font-size:12px;padding:0;"><?php print $mrcableado;?></td>
 						</tr>
 						<tr>
-							<td style="width:350px;border:1px solid;font-size:13px;padding:0;">SEGURIDAD ELECTRICA</td>
-							<td style="width:100px;border:1px solid;font-size:13px;padding:0;"><?php print $sel_condicion;?></td>
-							<td style="width:350px;border:1px solid;font-size:13px;padding:0;">ESTADO CANALETAS</td>
-							<td style="width:100px;border:1px solid;font-size:13px;padding:0;"><?php print $esc_condicion;?></td>
+							<td style="width:300px;height:20px;border:1px solid;font-size:12px;padding:0;">SEGURIDAD ELECTRICA</td>
+							<td style="width:150px;height:20px;border:1px solid;font-size:12px;padding:0;"><?php print $sel_condicion;?></td>
+							<td style="width:300px;height:20px;border:1px solid;font-size:12px;padding:0;">ESTADO CANALETAS</td>
+							<td style="width:150px;height:20px;border:1px solid;font-size:12px;padding:0;"><?php print $esc_condicion;?></td>
 						</tr>
 						<tr>
-							<td style="width:350px;border:1px solid;font-size:13px;padding:0;">VENTILACION</td>
-							<td style="width:100px;border:1px solid;font-size:13px;padding:0;"><?php print $ven_condicion;?></td>
-							<td style="width:350px;border:1px solid;font-size:13px;padding:0;">CANTIDAD PUNTOS DATOS</td>
-							<td style="width:100px;border:1px solid;font-size:13px;padding:0;"><?php print $cnpuntosdatos;?></td>
+							<td style="width:300px;height:20px;border:1px solid;font-size:12px;padding:0;">VENTILACION</td>
+							<td style="width:150px;height:20px;border:1px solid;font-size:12px;padding:0;"><?php print $ven_condicion;?></td>
+							<td style="width:300px;height:20px;border:1px solid;font-size:12px;padding:0;">CANTIDAD PUNTOS DATOS</td>
+							<td style="width:150px;height:20px;border:1px solid;font-size:12px;padding:0;"><?php print $cnpuntosdatos;?></td>
 						</tr>
 						<tr>
-							<td style="width:350px;border:1px solid;font-size:13px;padding:0;">TEMPERATURA</td>
-							<td style="width:100px;border:1px solid;font-size:13px;padding:0;"><?php print $tem_condicion;?></td>
-							<td style="width:350px;border:1px solid;font-size:13px;padding:0;">CANTIDAD PUNTOS VOZ</td>
-							<td style="width:100px;border:1px solid;font-size:13px;padding:0;"><?php print $cnpuntosvoz;?></td>
+							<td style="width:300px;height:20px;border:1px solid;font-size:12px;padding:0;">TEMPERATURA</td>
+							<td style="width:150px;height:20px;border:1px solid;font-size:12px;padding:0;"><?php print $tem_condicion;?></td>
+							<td style="width:300px;height:20px;border:1px solid;font-size:12px;padding:0;">CANTIDAD PUNTOS VOZ</td>
+							<td style="width:150px;height:20px;border:1px solid;font-size:12px;padding:0;"><?php print $cnpuntosvoz;?></td>
 						</tr>
 					</tbody>
 				</table>
