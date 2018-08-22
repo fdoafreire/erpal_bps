@@ -758,7 +758,8 @@ function _bps_report_form_submit($form, &$form_state) {
   $html .='</div></body></html>';
 
  // $msg = _ee_log_daily_save_file_admin_page($date_ini, $date_fin);
-  drupal_set_message($html);
+  pdf_using_mpdf_api($html);
+  //drupal_set_message($html);
 }
 
 function _ee_log_format_date($date = '') {
