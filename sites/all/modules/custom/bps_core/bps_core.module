@@ -356,6 +356,15 @@ function bps_core_menu() {
     'type' => MENU_DEFAULT_LOCAL_TASK,
   );
 
+  $items['bps/reporte/ot'] = array(
+    'title' => 'Reporte de OT',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('_bps_report_form'),
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+  );
+
+
    return $items;
 }
 /**
@@ -576,4 +585,196 @@ function bps_core_node_presave($node) {
    }
   }
 }
+
+function _bps_report_form($form, &$form_state) {
+  $form = array();
+
+  $form['fecha_ini'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Fecha Incial'),
+    '#label_attributes' => array('class' => array('col-xs-12')),
+    '#attributes' => array('class' => array('datepicker')),
+    '#required' => TRUE,
+    '#default_value' => format_date(time(), 'custom', 'd/m/Y'),
+  );
+  $form['fecha_fin'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Fecha Final'),
+    '#label_attributes' => array('class' => array('col-xs-12')),
+    '#attributes' => array('class' => array('datepicker')),
+    '#required' => TRUE,
+    '#default_value' => format_date(time(), 'custom', 'd/m/Y'),
+  );
+
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Generar'),
+    '#prefix' => '<div class="row"><div class="col-xs-12"><div class="col-md-3" style="padding-top:10px;">',
+    '#suffix' => '</div></div></div>',
+    '#attributes' => array('class' => array('btn btn-success')),
+  );
+
+  drupal_add_library('system', 'ui.autocomplete');
+  drupal_add_library('system', 'ui.datepicker');
+  return $form;
+}
+
+function _bps_report_form_submit($form, &$form_state) {
+  $date_ini = strtotime(_ee_log_format_date($form_state['values']['fecha_ini']));
+  $date_fin = strtotime(_ee_log_format_date($form_state['values']['fecha_fin']));
+  $query = db_select('node', 'n');
+  $query->fields('n', array('nid'));
+  $query->join('field_data_field_ord_tipo','t', 't.entity_id=n.nid');
+  $query->condition('n.created',$date_ini,'>=');
+  $query->condition('n.created',$date_fin,'<=');
+  $query->condition('n.type', 'ordenes');
+  $query->condition('t.field_ord_tipo_value', 2);
+  $result  = $query->execute()->fetchAll();
+  $options = array();
+  $head = '<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body>
+  
+  <div>
+    <table cellpadding="0" cellspacing="0">
+      <tbody>
+        <tr>
+          <td style="border:1px solid;width:300px;height:50px;font-size:20px;padding:0;text-align:center">LOGO</td>
+          <td style="border:1px solid;width:600px;height:50px;font-size:20px;font-weight:bold;padding:0;text-align:center">LISTADO DETALLADO DE OT</td>
+        </tr>
+      </tbody>
+    </table>
+    <div style="font-size:12px">
+      <span style="font-weight:bold">Fecha desde:</span>
+      <span>Colocar la fecha del input fechadesde</span>
+      <span style="font-weight:bold"> - Fecha hasta:</span>
+      <span>Colocar la fecha del input fechahasta</span>
+    </div>
+    <br>';
+    $html = $head;
+  foreach ($result as $row) {
+      $node = node_load($row->nid);
+      $consecutivo = '';
+      if (isset($node->field_consecutivo_doc['und'][0]['value'])) {
+        $consecutivo  = $node->field_consecutivo_doc['und'][0]['value'];
+      }
+      if (isset($node->created) {
+        $fecha = format_date($node->created,'small');
+      }
+      if (isset($node->created) {
+        $fecha = format_date($node->created,'small');
+      }
+      $equipo = '';
+      if (isset($node->field_ord_equipo['und'][0]['value'])) {
+        $equipo = $node->field_ord_equipo['und'][0]['value'];
+      }
+      $cliente = '';
+      if (isset($node->field_ord_cliente['und'][0]['target_id'])) {
+        $cliente = node_load($node->field_ord_cliente['und'][0]['target_id']);
+        $cliente = $cliente->title;
+      }
+      $city = $address = $phone = $branch_office = $type = $state = $description = $informe = $recomendacion = '' ;
+
+      if (isset($node->field_ord_sucursal_id['und'][0]['value'])) {
+        $item = field_collection_item_load($node->field_ord_sucursal_id['und'][0]['value']);
+        if (isset($item->field_city['und'][0]['value'])) {
+          $city = $item->field_city['und'][0]['value'];
+        }
+        if (isset($item->field_addition_to_address['und'][0]['value'])) {
+          $address = $item->field_addition_to_address['und'][0]['value'];
+        }
+        if (isset($item->field_address_name['und'][0]['value'])) {
+          $branch_office = $item->field_address_name['und'][0]['value'];
+        }
+      }
+      if (isset($node->field_ord_servicio['und'][0]['value'])) {
+        $type = $node->field_ord_servicio['und'][0]['value'];
+      }
+      if (isset($node->field_ord_estado['und'][0]['value'])){
+        $state = $node->field_ord_estado['und'][0]['value'];
+      }
+      if (isset($node->field_ord_descripcion['und'][0]['value'])){
+        $description = $node->field_ord_descripcion['und'][0]['value'];
+      }
+      if (isset($node->field_ord_informe_tecnico['und'][0]['value'])){
+        $informe = $node->field_ord_informe_tecnico['und'][0]['value'];
+      }
+      if (isset($node->field_ord_recomendaciones['und'][0]['value'])){
+        $recomendacion = $node->field_ord_recomendaciones['und'][0]['value'];
+      }
+
+ 
+
+      $html .= '
+    <table cellpadding="0" cellspacing="0">
+      <tbody>
+        <tr>
+          <td style="width:80px;font-size:12px;font-weight:bold;padding:0;text-align:left">NUMERO:</td>
+          <td style="width:80px;font-size:12px;padding:0;text-align:left">'.$consecutivo.'</td>
+          <td style="width:100px;font-size:12px;font-weight:bold;padding:0;text-align:left">FECHA:</td>
+          <td style="width:100px;font-size:12px;padding:0;text-align:left">2018-08-08</td>
+          <td style="width:540px;font-size:12px;font-weight:bold;padding:0;text-align:left" colspan="2"></td>
+        </tr>
+        <tr>
+          <td style="width:80px;font-size:12px;font-weight:bold;padding:0;text-align:left">EQUIPO:</td>
+          <td style="width:720px;font-size:12px;font-weight:bold;padding:0;text-align:left" colspan="5">'.$equipo.'</td>
+        </tr>
+        <tr>
+          <td style="width:80px;font-size:12px;padding:0;text-align:left;font-weight:bold">CLIENTE:</td>
+          <td style="width:280px;font-size:12px;padding:0;text-align:left" colspan="3">'.$cliente.'</td>
+          <td style="width:100px;font-size:12px;padding:0;text-align:left;font-weight:bold">SUCURSAL:</td>
+          <td style="width:440px;font-size:12px;padding:0;text-align:left">'.$branch_office.'</td>
+        </tr>
+        <tr>
+          <td style="width:80px;font-size:12px;padding:0;text-align:left;font-weight:bold">CIUDAD:</td>
+          <td style="width:280px;font-size:12px;padding:0;text-align:left" colspan="3">'.$city.'</td>
+          <td style="width:100px;font-size:12px;padding:0;text-align:left;font-weight:bold">DIRECCION:</td>
+          <td style="width:340px;font-size:12px;padding:0;text-align:left">'.$address.'</td>
+        </tr>
+        <tr>
+          <td style="width:160px;font-size:12px;padding:0;text-align:left;font-weight:bold" colspan="2">TIPO DE SERVICIO:</td>
+          <td style="width:200px;font-size:12px;padding:0;text-align:left" colspan="2">'.$type.'</td>
+          <td style="width:100px;font-size:12px;padding:0;text-align:left;font-weight:bold">ESTADO</td>
+          <td style="width:100px;font-size:12px;padding:0;text-align:left">'.$state.'</td>
+        </tr>
+        <tr>
+          <td style="width:900px;font-size:12px;padding:0;text-align:left;font-weight:bold" colspan="6">DESCRIPCION:</td>
+        </tr>
+        <tr>
+          <td style="width:900px;font-size:12px;padding:0;text-align:left" colspan="6">'.$description.'</td>
+        </tr>
+        <tr>
+          <td style="width:900px;font-size:12px;padding:0;text-align:left;font-weight:bold" colspan="6">INFORME TECNICO:</td>
+        </tr>
+        <tr>
+          <td style="width:900px;font-size:12px;padding:0;text-align:left" colspan="6">'.$informe.'</td>
+        </tr>
+        <tr>
+          <td style="width:900px;font-size:12px;padding:0;text-align:left;font-weight:bold" colspan="6">RECOMENDACIONES:</td>
+        </tr>
+        <tr>
+          <td style="width:900px;font-size:12px;padding:0;text-align:left" colspan="6">'.$recomendacion.'</td>
+        </tr>
+      </tbody>
+    </table>';
+      
+  }
+  $html .='</div></body></html>';
+
+ // $msg = _ee_log_daily_save_file_admin_page($date_ini, $date_fin);
+  drupal_set_message($html);
+}
+
+function _ee_log_format_date($date = '') {
+  if (!empty($date)) {
+    $date_array = explode("/", $date);
+    $size = count($date_array);
+    if (is_array($date_array) && $size == 3) {
+      $date = $date_array[2] . '-' . $date_array[1] . '-' . $date_array[0];
+      return $date;
+    }
+  }
+
+  return NULL;
+}
+
 
