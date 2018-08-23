@@ -14,6 +14,17 @@
   $cliente = node_load($node->field_cliente['und'][0]['target_id']);
   $city = '';
   $address = '';
+  $query = db_select('node_revision', 'v');
+  $query->condition('v.nid',$node->nid);
+  $query->fields('v', array('nid'));
+  $query->condition('v.status',1);
+  $result = $query->execute(); 
+  $version = $result->rowCount();
+  if ($version == 0) {
+  	$version = 1;
+  }
+  
+
   if (isset($cliente->field_addresses['und'][0]['value'])) {
   	$item = field_collection_item_load($item['value']);
   	if (isset($item->field_city['und'][0]['value'])) {
@@ -101,7 +112,7 @@
 				</tr>
 				<tr>
 					<td style="width:550px;font-size:13px;font-weight:bold;padding:0;text-align:right;">Version</td>
-					<td style="width:50px;font-size:13px;font-weight:bold;padding:0;text-align:right;">1</td>
+					<td style="width:50px;font-size:13px;font-weight:bold;padding:0;text-align:right;"><?php print $version; ?></td>
 				</tr>
 			</tbody>
 		</table>
