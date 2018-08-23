@@ -626,7 +626,7 @@ function _bps_report_form_submit($form, &$form_state) {
   $query->condition('n.created',strtotime($date_ini),'>=');
   $query->condition('n.created',strtotime($date_fin),'<=');
   $query->condition('n.type', 'ordenes');
-  $query->condition('t.field_ord_tipo_value', 2);
+ // $query->condition('t.field_ord_tipo_value', 2);
   $result  = $query->execute()->fetchAll();
   $options = array();
   global $base_url;
