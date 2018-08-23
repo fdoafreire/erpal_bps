@@ -609,9 +609,9 @@ function _bps_report_form($form, &$form_state) {
     '#value' => t('Generar'),
     '#prefix' => '<div class="row"><div class="col-xs-12"><div class="col-md-3" style="padding-top:10px;">',
     '#suffix' => '</div></div></div>',
-    '#attributes' => array('class' => array('btn btn-success')),
+    '#attributes' => array('class' => array('btn btn-success'),'onclick' => 'this.form.target="_blank";return true;'),
   );
-  $form['#attributes']['target'] = '_blank';
+  //$form['#attributes']['target'] = '_blank';
 
   drupal_add_library('system', 'ui.autocomplete');
   drupal_add_library('system', 'ui.datepicker');
