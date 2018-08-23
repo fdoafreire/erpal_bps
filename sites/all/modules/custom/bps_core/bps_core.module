@@ -611,6 +611,7 @@ function _bps_report_form($form, &$form_state) {
     '#suffix' => '</div></div></div>',
     '#attributes' => array('class' => array('btn btn-success')),
   );
+  $form['#attributes']['target'] = '_blank';
 
   drupal_add_library('system', 'ui.autocomplete');
   drupal_add_library('system', 'ui.datepicker');
