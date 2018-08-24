@@ -638,7 +638,7 @@ function _bps_report_form_submit($form, &$form_state) {
   $query->condition('n.type', 'ordenes');
   $query->condition('t.field_ord_tipo_value', 2);
   if (isset($form_state['values']['estado']) && !empty($form_state['values']['estado']) && $form_state['values']['estado'] != 0) {
-    $query->join('field_data_field_ord_estado','e','t.entity_id=n.nid');
+    $query->join('field_data_field_ord_estado','e','e.entity_id=n.nid');
     $query->condition('e.field_ord_estado_value',$form_state['values']['estado']);
   }
   $result  = $query->execute()->fetchAll();
