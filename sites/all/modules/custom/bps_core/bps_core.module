@@ -72,7 +72,7 @@ function bps_core_form_alter(&$form, &$form_state, $form_id) {
        }
      }
    }
-   
+
   $default_value = '';
   if (isset($form['#node']->field_orden_relacionada['und'][0]['target_id'])) {
     $default_value = $form['#node']->field_orden_relacionada['und'][0]['target_id'];      
@@ -82,7 +82,7 @@ function bps_core_form_alter(&$form, &$form_state, $form_id) {
     '#type' => 'select',
     '#title' => 'Orden relacionada',
     '#options' => $options,
-    '#weight' => 3,
+    '#weight' => 1,
     '#suffix' => '</div>',
     '#default_value' => $default_value,
     '#validated' => TRUE,

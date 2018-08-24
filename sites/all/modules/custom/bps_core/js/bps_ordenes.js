@@ -57,7 +57,7 @@
 		});
 	    $.getJSON('/bps/ajax/ordenes/' + id_selected, function(data){
 	      $.each(data, function(index,item) {
-	         $("#" + id_element).append("<option value=" + index + ">" + item + "</option>"); 
+	         $("#edit-field-orden-relacionada").append("<option value=" + index + ">" + item + "</option>"); 
 	      });
 	    });
 	};
