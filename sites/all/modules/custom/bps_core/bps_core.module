@@ -610,7 +610,6 @@ function _bps_report_form($form, &$form_state) {
     '#type' => 'select',
     "#options" => $options,
     '#title' => t('Estado'),
-    '#required' => TRUE,
   );
 
   $form['submit'] = array(
