@@ -604,6 +604,7 @@ function _bps_report_form($form, &$form_state) {
     '#default_value' => format_date(time(), 'custom', 'Y-m-d'),
   );
   $options = array();
+  $options[] '- Todos -';
   $my_field = field_info_field('field_ord_estado');
   $options += list_allowed_values($my_field);
   $form['estado'] = array(
