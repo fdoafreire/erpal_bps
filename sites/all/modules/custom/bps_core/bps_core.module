@@ -57,6 +57,37 @@ function bps_core_form_alter(&$form, &$form_state, $form_id) {
     '#suffix' => '</div>',
     '#validated' => TRUE,
    );
+
+   $options = array();
+   $options[] = '- Seleccionar -';
+   $default = '';
+   $nid = '';
+   if (isset($form['#node']->field_ord_cliente['und'][0]['target_id']) && !empty($form['#node']->field_ord_cliente['und'][0]['target_id'])) {
+     $cliente = bps_autocomplete('erpal_contact', '', $form['#node']->field_ord_cliente['und'][0]['target_id']);
+     if (isset($cliente['id']) && !empty($cliente['id'])) {
+       $nid = $cliente['id'];
+       $options_tmp = _get_ajax_ordenes($cliente['id'], FALSE);  
+       if (count($options_tmp) > 0) {
+         $options += $options_tmp;
+       }
+     }
+   }
+   
+  $default_value = '';
+  if (isset($form['#node']->field_orden_relacionada['und'][0]['target_id'])) {
+    $default_value = $form['#node']->field_orden_relacionada['und'][0]['target_id'];      
+  }
+
+   $form['field_orden_relacionada'] = array(
+    '#type' => 'select',
+    '#title' => 'Orden relacionada',
+    '#options' => $options,
+    '#weight' => 3,
+    '#suffix' => '</div>',
+    '#default_value' => $default_value,
+    '#validated' => TRUE,
+   );
+
    $form['#group_children']['field_ord_sucursal_item'] = 'group_info_general';
    $form['#validate'][] = '_validate_ordenes';
    $form['field_ord_tipo']['und']['#attributes'] = array('class'=>array('tipo_orden'));

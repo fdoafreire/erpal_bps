@@ -55,6 +55,11 @@
 			   $("#" + id_element).append("<option value=" + index + ">" + item + "</option>"); 
 			});
 		});
+	    $.getJSON('/bps/ajax/ordenes/' + id_selected, function(data){
+	      $.each(data, function(index,item) {
+	         $("#" + id_element).append("<option value=" + index + ">" + item + "</option>"); 
+	      });
+	    });
 	};
 
 })(jQuery);
