@@ -683,6 +683,8 @@ function _bps_report_form_submit($form, &$form_state) {
         $cliente = node_load($node->field_ord_cliente['und'][0]['target_id']);
         $cliente = $cliente->title;
       }
+
+
       $city = $address = $phone = $branch_office = $type = $state = $description = $informe = $recomendacion = '' ;
 
       if (isset($node->field_ord_sucursal_id['und'][0]['value'])) {
@@ -701,7 +703,9 @@ function _bps_report_form_submit($form, &$form_state) {
         $type = $node->field_ord_servicio['und'][0]['value'];
       }
       if (isset($node->field_ord_estado['und'][0]['value'])){
-        $state = $node->field_ord_estado['und'][0]['value'];
+        $my_field = field_info_field('field_ord_estado');
+        $options = list_allowed_values($my_field);
+        $state = $options[$node->field_ord_estado['und'][0]['value']];
       }
       if (isset($node->field_ord_descripcion['und'][0]['value'])){
         $description = $node->field_ord_descripcion['und'][0]['value'];
