@@ -82,13 +82,14 @@ function bps_core_form_alter(&$form, &$form_state, $form_id) {
     '#type' => 'select',
     '#title' => 'Orden relacionada',
     '#options' => $options,
-    '#weight' => 1,
+    '#weight' => 4,
     '#suffix' => '</div>',
     '#default_value' => $default_value,
     '#validated' => TRUE,
    );
 
    $form['#group_children']['field_ord_sucursal_item'] = 'group_info_general';
+   $form['#group_children']['field_orden_relacionada'] = 'group_info_general';
    $form['#validate'][] = '_validate_ordenes';
    $form['field_ord_tipo']['und']['#attributes'] = array('class'=>array('tipo_orden'));
    drupal_add_library('system', 'ui.autocomplete');
@@ -338,8 +339,6 @@ function bps_core_menu() {
     'page arguments' => array(3),
     'type' => MENU_CALLBACK,
   );
-
-   82b9741b3a4490ce6649be4d1c353642897a4d72
 
    $items['bps/pdf/%'] = array(
     'title' => 'pdf',
