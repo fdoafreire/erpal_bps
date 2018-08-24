@@ -77,12 +77,12 @@ function bps_core_form_alter(&$form, &$form_state, $form_id) {
   if (isset($form['#node']->field_orden_relacionada['und'][0]['target_id'])) {
     $default_value = $form['#node']->field_orden_relacionada['und'][0]['target_id'];      
   }
-
+  dpm($form['tipo_orden'],'form');
    $form['field_orden_relacionada'] = array(
     '#type' => 'select',
     '#title' => 'Orden relacionada',
     '#options' => $options,
-    '#weight' => 1,
+    '#weight' => 4,
     '#suffix' => '</div>',
     '#default_value' => $default_value,
     '#validated' => TRUE,
@@ -338,6 +338,8 @@ function bps_core_menu() {
     'page arguments' => array(3),
     'type' => MENU_CALLBACK,
   );
+
+   82b9741b3a4490ce6649be4d1c353642897a4d72
 
    $items['bps/pdf/%'] = array(
     'title' => 'pdf',
