@@ -82,7 +82,7 @@ function bps_core_form_alter(&$form, &$form_state, $form_id) {
     '#type' => 'select',
     '#title' => 'Orden relacionada',
     '#options' => $options,
-    '#weight' => 4,
+    '#weight' => 1,
     '#suffix' => '</div>',
     '#default_value' => $default_value,
     '#validated' => TRUE,
