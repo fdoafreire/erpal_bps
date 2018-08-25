@@ -652,8 +652,10 @@ function _bps_report_form($form, &$form_state) {
   $query->fields('t',array('tid','name'));
   $query->condition('t.vid',27);
   $result  = $query->execute()->fetchAll();
- // $result = $query->execute()->fetchAll();
-  dpm($result);
+  foreach ($result as $key => $value) {
+    $options[$value->tid] = $value->name;
+  }
+
   $form['tipo_equipo'] = array(
     '#type' => 'select',
     '#options' => $options,
