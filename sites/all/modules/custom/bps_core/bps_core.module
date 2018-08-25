@@ -641,9 +641,11 @@ function _bps_report_form($form, &$form_state) {
   $options += list_allowed_values($my_field);
   $form['estado'] = array(
     '#type' => 'select',
-    "#options" => $options,
+    '#options' => $options,
     '#title' => t('Estado'),
   );
+
+
   $options = array();
   $options[] = '- Todos -';
   $query = db_select('taxonomy_term_data', 't');
@@ -651,13 +653,10 @@ function _bps_report_form($form, &$form_state) {
   $query->condition('t.vid',27);
   $result  = $query->execute()->fetchAll();
  // $result = $query->execute()->fetchAll();
-  foreach ($result as $key => $value) {
-    $options[$key] = $value;
-  }
-
+  dpm($result);
   $form['tipo_equipo'] = array(
     '#type' => 'select',
-    "#options" => $options,
+    '#options' => $options,
     '#title' => t('Tipo equipo'),
   );
 
