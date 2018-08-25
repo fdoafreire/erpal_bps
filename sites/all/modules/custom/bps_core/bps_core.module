@@ -649,7 +649,7 @@ function _bps_report_form($form, &$form_state) {
   $query = db_select('taxonomy_term_data', 't');
   $query->fields('t',array('tid','name'));
   $query->condition('t.vid',27);
-  dpq($query);
+  $result  = $query->execute()->fetchAll();
  // $result = $query->execute()->fetchAll();
   foreach ($result as $key => $value) {
     $options[$key] = $value;
