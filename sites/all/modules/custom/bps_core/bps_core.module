@@ -644,6 +644,21 @@ function _bps_report_form($form, &$form_state) {
     "#options" => $options,
     '#title' => t('Estado'),
   );
+  $options = array();
+  $options[] = '- Todos -';
+  $query = db_select('taxonomy_term_data', 't');
+  $query->fields('t',array('tid','name'));
+  $query->condition('t.vid',27);
+  $result = $query->excute()->fetchAll();
+  foreach ($result as $key => $value) {
+    $options[$key] = $value;
+  }
+
+  $form['tipo_equipo'] = array(
+    '#type' => 'select',
+    "#options" => $options,
+    '#title' => t('Tipo equipo'),
+  );
 
   $form['submit'] = array(
     '#type' => 'submit',
@@ -672,6 +687,10 @@ function _bps_report_form_submit($form, &$form_state) {
   if (isset($form_state['values']['estado']) && !empty($form_state['values']['estado']) && $form_state['values']['estado'] != 0) {
     $query->join('field_data_field_ord_estado','e','e.entity_id=n.nid');
     $query->condition('e.field_ord_estado_value',$form_state['values']['estado']);
+  }
+  if (isset($form_state['values']['tipo_equipo']) && !empty($form_state['values']['tipo_equipo']) && $form_state['values']['tipo_equipo'] != 0) {
+    $query->join('field_data_field_or_tipo_equipo','te','te.entity_id=n.nid');
+    $query->condition('te.field_or_tipo_equipo_tid',$form_state['values']['tipo_equipo']);
   }
   $result  = $query->execute()->fetchAll();
   $options = array();
