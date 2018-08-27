@@ -1,7 +1,7 @@
 <?php 
   global $base_url;
   $logo = $base_url . '/' . drupal_get_path('module', 'bps_core'). '/img/logo.png';
-  $img_logo = '<img src="' . $logo . '" style="width: 120px;"/>';
+  $img_logo = '<img src="' . $logo . '" style="width: 200px;"/>';
   $node = $variables['node'];
   $cotizacion = $node->field_consecutivo_doc['und'][0]['value'];
   $observaciones = $node->field_observaciones['und'][0]['value'];

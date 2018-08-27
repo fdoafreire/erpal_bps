@@ -652,6 +652,7 @@ function _bps_report_form($form, &$form_state) {
   $query->fields('t',array('tid','name'));
   $query->condition('t.vid',27);
   $result  = $query->execute()->fetchAll();
+
   foreach ($result as $key => $value) {
     $options[$value->tid] = $value->name;
   }
@@ -698,7 +699,7 @@ function _bps_report_form_submit($form, &$form_state) {
   $options = array();
   global $base_url;
   $logo = $base_url . '/' . drupal_get_path('module', 'bps_core'). '/img/logo.png';
-  $img_logo = '<img src="' . $logo . '" style="width: 120px;"/>';
+  $img_logo = '<img src="' . $logo . '" style="width: 200px;"/>';
 
   $head = '<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body>
