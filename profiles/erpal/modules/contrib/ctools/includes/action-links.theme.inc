@@ -23,7 +23,7 @@ function ctools_action_links_theme(&$items) {
  *   An array of attributes to append to the wrapper.
  */
 function theme_ctools_menu_local_actions_wrapper($variables) {
-  dpm($variables['links'],'actions');
+  $variable['container'][0]['#link']['title'] = t($variable['container'][0]['#link']['title']);
   $links = drupal_render($variables['links']);
 
   if (empty($links)) {
