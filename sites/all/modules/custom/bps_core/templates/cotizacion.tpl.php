@@ -187,7 +187,7 @@
 								<td style="width:100px;text-align:right;border:1px solid;font-size:13px;"><?php print number_format($ref['v_subtotal'],0,".",",");?></td>
 								<td style="width:100px;text-align:right;border:1px solid;font-size:13px;"><?php print $ref['v_descuento'];?></td>
 								<td style="width:100px;text-align:right;border:1px solid;font-size:13px;"><?php print number_format($ref['v_iva'],0,".",",")."(".$ref['v_impuesto']."%)";?></td>
-								<td style="width:100px;text-align:right;border:1px solid;font-size:13px;"><?php print $ref['v_total'];?></td>
+								<td style="width:100px;text-align:right;border:1px solid;font-size:13px;"><?php print number_format($ref['v_total'],0,".",",");?></td>
 						</tr>
 				<?php endforeach; ?>
 			</tbody>
