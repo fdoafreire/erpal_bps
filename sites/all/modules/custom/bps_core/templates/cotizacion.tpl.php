@@ -182,11 +182,11 @@
 								<td style="width:20px;text-align:left;border:1px solid;font-size:13px;"><?php print $key + 1;?></td>
 								<td style="width:100px;text-align:left;border:1px solid;font-size:13px;"><?php print $ref['ref'];?></td>
 								<td style="width:180px;text-align:left;border:1px solid;font-size:13px;"><?php print $ref['description'];?></td>
-								<td style="width:100px;text-align:right;border:1px solid;font-size:13px;"><?php print $ref['cant'];?></td>
-								<td style="width:100px;text-align:right;border:1px solid;font-size:13px;"><?php print $ref['v_unitario'];?></td>
-								<td style="width:100px;text-align:right;border:1px solid;font-size:13px;"><?php print $ref['v_subtotal'];?></td>
+								<td style="width:100px;text-align:right;border:1px solid;font-size:13px;"><?php print number_format($ref['cant'],0,".",",");?></td>
+								<td style="width:100px;text-align:right;border:1px solid;font-size:13px;"><?php print number_format($ref['v_unitario'],0,".",",");?></td>
+								<td style="width:100px;text-align:right;border:1px solid;font-size:13px;"><?php print number_format($ref['v_subtotal'],0,".",",");?></td>
 								<td style="width:100px;text-align:right;border:1px solid;font-size:13px;"><?php print $ref['v_descuento'];?></td>
-								<td style="width:100px;text-align:right;border:1px solid;font-size:13px;"><?php print $ref['v_iva']."(".$ref['v_impuesto']."%)";?></td>
+								<td style="width:100px;text-align:right;border:1px solid;font-size:13px;"><?php print number_format($ref['v_iva'],0,".",",")."(".$ref['v_impuesto']."%)";?></td>
 								<td style="width:100px;text-align:right;border:1px solid;font-size:13px;"><?php print $ref['v_total'];?></td>
 						</tr>
 				<?php endforeach; ?>
@@ -198,24 +198,24 @@
 				<tr>
 						<th style="width:700px;text-align:left;font-size:13px;">OBSERVACIONES</th>
 						<th style="width:100px;text-align:right;font-size:13px;">NETO</th>
-						<td style="width:100px;text-align:right;font-size:13px;"><?php print $neto;?></td>
+						<td style="width:100px;text-align:right;font-size:13px;"><?php print number_format($neto,0,".",",");?></td>
 				</tr>
 				<tr>
-						<td style="width:700px;text-align:left;font-size:13px;vertical-align:top;" rowspan="4"><?php print $observaciones?></td>
+						<td style="width:700px;text-align:left;font-size:13px;vertical-align:top;" rowspan="4"><?php print number_format($observaciones?></td>
 						<th style="width:100px;text-align:right;font-size:13px;">DESCUENTO</th>
-						<td style="width:100px;text-align:right;font-size:13px;"><?php print $descuento;?></td>
+						<td style="width:100px;text-align:right;font-size:13px;"><?php print number_format($descuento,0,".",",");?></td>
 				</tr>
 				<tr>
 						<th style="width:100px;text-align:right;font-size:13px;">SUBTOTAL</th>
-						<td style="width:100px;text-align:right;font-size:13px;"><?php print $subtotal;?></td>
+						<td style="width:100px;text-align:right;font-size:13px;"><?php print number_format($subtotal,0,".",",");?></td>
 				</tr>
 				<tr>
 						<th style="width:100px;text-align:right;font-size:13px;">IVA</th>
-						<td style="width:100px;text-align:right;font-size:13px;"><?php print $iva;?></td>
+						<td style="width:100px;text-align:right;font-size:13px;"><?php print number_format($iva,0,".",",");?></td>
 				</tr>
 				<tr>
 						<th style="width:100px;text-align:right;font-size:13px;">TOTAL</th>
-						<td style="width:100px;text-align:right;font-size:13px;border-top:1px solid;"><?php print $total;?></td>
+						<td style="width:100px;text-align:right;font-size:13px;border-top:1px solid;"><?php print number_format($total,0,".",",");?></td>
 				</tr>
 			</tbody>
 		</table>
