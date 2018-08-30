@@ -25,7 +25,7 @@ function ctools_action_links_theme(&$items) {
 function theme_ctools_menu_local_actions_wrapper($variables) {
   dpm($variables,'vars');
   if (is_array($variables['links']['container'])) {
-    foreach ($variables['links']['container'] as $key => $link) 
+    foreach ($variables['links']['container'] as $key => $link){ 
       if (is_numeric($key)) {
         $variables['links']['container'][$key]['#link']['title'] = t($variables['links']['container'][$key]['#link']['title']);
       } 
