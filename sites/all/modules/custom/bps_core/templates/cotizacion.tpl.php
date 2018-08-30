@@ -60,7 +60,7 @@
     	$neto      += $item->field_ref_cantidad['und'][0]['value'] * $item->field_valor_unitario['und'][0]['value'];
     	$descuento += $item->field_descuento['und'][0]['value'];
   		$subtotal   = $neto - $descuento;
-    	$iva       += $item->field_porcentaje_impuesto['und'][0]['value'];
+    	$iva       += $item->field_valor_iva['und'][0]['value'];
     	$total     += $item->field_total['und'][0]['value'];
     }
   }
@@ -186,7 +186,7 @@
 								<td style="width:100px;text-align:right;border:1px solid;font-size:13px;"><?php print $ref['v_unitario'];?></td>
 								<td style="width:100px;text-align:right;border:1px solid;font-size:13px;"><?php print $ref['v_subtotal'];?></td>
 								<td style="width:100px;text-align:right;border:1px solid;font-size:13px;"><?php print $ref['v_descuento'];?></td>
-								<td style="width:100px;text-align:right;border:1px solid;font-size:13px;"><?php print $ref['v_impuesto'];?></td>
+								<td style="width:100px;text-align:right;border:1px solid;font-size:13px;"><?php print $ref['v_iva'];?></td>
 								<td style="width:100px;text-align:right;border:1px solid;font-size:13px;"><?php print $ref['v_total'];?></td>
 						</tr>
 				<?php endforeach; ?>
