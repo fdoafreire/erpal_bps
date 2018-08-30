@@ -18,7 +18,7 @@
 		  <?php if (!empty($content['sidebar_tabs_row'])): ?>
 		    <div class="erpal-region-tabs">
 
-		      <?php dpm($content['sidebar_tabs_row']); ?>
+		      <?php print_r($content['sidebar_tabs_row']); ?>
 		    </div>
 		  <?php endif; ?>
 		  <?php if (!empty($content['sidebar_content'])): ?>
