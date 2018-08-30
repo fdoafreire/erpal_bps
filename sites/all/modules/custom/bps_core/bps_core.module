@@ -458,7 +458,8 @@ function _get_ajax_ordenes($nid, $flag_json = TRUE) {
   $options = array();
   foreach ($result as $row) {
     $ord = node_load($row->nid);
-    $options[$row->nid] = $ord->title . '-' . $row->doc .' (' . $row->nid . ')';
+    //$options[$row->nid] = $ord->title . '-' . $row->doc .' (' . $row->nid . ')';
+    $options[$row->nid] = $ord->title . '-' . $row->doc;
   }
   if ($flag_json) {
     return  drupal_json_output($options);  
@@ -576,10 +577,12 @@ function bps_autocomplete($type, $text, $nid = NULL, $filters = NULL) {
   $options = array();
   foreach ($result as $row) {
     if ($type == 'erpal_contact') {
-      $options[] = array('description' => $row->title . ' (' . $row->nid . ')', 'id' => $row->nid);
+      //$options[] = array('description' => $row->title . ' (' . $row->nid . ')', 'id' => $row->nid);
+      $options[] = array('description' => $row->title, 'id' => $row->nid);
     }
     else {
-      $options[] = array('description' => $row->title . ' (' . $row->nid . ')', 'id' => $row->nid);
+      //$options[] = array('description' => $row->title . ' (' . $row->nid . ')', 'id' => $row->nid);
+      $options[] = array('description' => $row->title, 'id' => $row->nid);
     }
   }
   if (is_null($nid) || $nid == 'autocomplete') {
