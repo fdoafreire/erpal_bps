@@ -201,7 +201,7 @@
 						<td style="width:100px;text-align:right;font-size:13px;"><?php print number_format($neto,0,".",",");?></td>
 				</tr>
 				<tr>
-						<td style="width:700px;text-align:left;font-size:13px;vertical-align:top;" rowspan="4"><?php print number_format($observaciones?></td>
+						<td style="width:700px;text-align:left;font-size:13px;vertical-align:top;" rowspan="4"><?php print $observaciones?></td>
 						<th style="width:100px;text-align:right;font-size:13px;">DESCUENTO</th>
 						<td style="width:100px;text-align:right;font-size:13px;"><?php print number_format($descuento,0,".",",");?></td>
 				</tr>
