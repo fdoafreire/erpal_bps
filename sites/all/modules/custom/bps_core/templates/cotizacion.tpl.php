@@ -173,7 +173,7 @@
 						<th style="width:100px;text-align:left;border:1px solid;font-size:13px;">Cantidad</th>
 						<th style="width:100px;text-align:left;border:1px solid;font-size:13px;">Valor Unitario</th>
 						<th style="width:100px;text-align:left;border:1px solid;font-size:13px;">Subtotal</th>
-						<th style="width:100px;text-align:left;border:1px solid;font-size:13px;">Descuento</th>
+						<th style="width:100px;text-align:left;border:1px solid;font-size:13px;">Descuento(%)</th>
 						<th style="width:100px;text-align:left;border:1px solid;font-size:13px;">Iva</th>
 						<th style="width:100px;text-align:left;border:1px solid;font-size:13px;">Total</th>
 				</tr>
@@ -186,7 +186,7 @@
 								<td style="width:100px;text-align:right;border:1px solid;font-size:13px;"><?php print $ref['v_unitario'];?></td>
 								<td style="width:100px;text-align:right;border:1px solid;font-size:13px;"><?php print $ref['v_subtotal'];?></td>
 								<td style="width:100px;text-align:right;border:1px solid;font-size:13px;"><?php print $ref['v_descuento'];?></td>
-								<td style="width:100px;text-align:right;border:1px solid;font-size:13px;"><?php print $ref['v_iva'];?></td>
+								<td style="width:100px;text-align:right;border:1px solid;font-size:13px;"><?php print $ref['v_iva']." (".$ref['v_impuesto'].")";?></td>
 								<td style="width:100px;text-align:right;border:1px solid;font-size:13px;"><?php print $ref['v_total'];?></td>
 						</tr>
 				<?php endforeach; ?>
