@@ -85,7 +85,7 @@
   $fecha = format_date(time(),'long');
   if (isset($node->created)) {
   	$fecha = format_date($node->created,'long');
-  	$fecha = 'Cali,'.format_date($node->created,'custom','j').' de '.format_date($node->created,'custom','F').' del '.format_date($node->created,'custom','Y');
+  	$fecha = format_date($node->created,'custom','j').' de '.format_date($node->created,'custom','F').' del '.format_date($node->created,'custom','Y');
   }
 
 ?>
@@ -186,7 +186,7 @@
 								<td style="width:100px;text-align:right;border:1px solid;font-size:13px;"><?php print number_format($ref['v_unitario'],0,".",",");?></td>
 								<td style="width:100px;text-align:right;border:1px solid;font-size:13px;"><?php print number_format($ref['v_subtotal'],0,".",",");?></td>
 								<td style="width:100px;text-align:right;border:1px solid;font-size:13px;"><?php print $ref['v_descuento'];?></td>
-								<td style="width:100px;text-align:right;border:1px solid;font-size:13px;"><?php print number_format($ref['v_iva'],0,".",",")."(".$ref['v_impuesto']."%)";?></td>
+								<td style="width:100px;text-align:right;border:1px solid;font-size:13px;"><?php print number_format($ref['v_iva'],0,".",",");?></td>
 								<td style="width:100px;text-align:right;border:1px solid;font-size:13px;"><?php print number_format($ref['v_total'],0,".",",");?></td>
 						</tr>
 				<?php endforeach; ?>
