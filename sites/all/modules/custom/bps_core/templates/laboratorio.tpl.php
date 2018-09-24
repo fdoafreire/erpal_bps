@@ -62,9 +62,6 @@
 				</tr>
 			</tbody>
 		</table>
-		<br>
-		<br>
-		<br>
 		<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
 			<tbody>
 				<tr>
@@ -150,9 +147,6 @@
 				</tr>
 			</tbody>
 		</table>
-		<br>
-		<br>
-		<br>
 		<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
 			<tbody>
 				<tr>
