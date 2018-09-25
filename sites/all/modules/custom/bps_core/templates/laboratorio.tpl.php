@@ -136,7 +136,7 @@
 		<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
 			<tbody>
 				<tr>
-					<td>&nbpsc;</td>
+					<td>&nbsp;</td>
 				</tr>
 			</tbody>
 		</table>
