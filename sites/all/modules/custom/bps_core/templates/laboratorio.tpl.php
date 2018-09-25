@@ -54,7 +54,7 @@
 ?>
 <html>
 	<head></head>
-	<body style="font-size:15px;>
+	<body style="font-size:15px;">
 		<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
 			<tbody>
 				<tr>
@@ -139,7 +139,7 @@
 		$fecha_salida = date_format($fecha_ingreso,'Y-m-d');
 		$observaciones = $node->field_el_obs_sal['und'][0]['value'];
 ?>
-		<p style="page-break-after:always;">&nbsp
+		<p style="page-break-after:always;">
 		<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
 			<tbody>
 				<tr>
