@@ -54,7 +54,7 @@
 ?>
 <html>
 	<head></head>
-	<body>
+	<body style="font-size:15px;>
 		<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
 			<tbody>
 				<tr>
