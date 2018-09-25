@@ -54,7 +54,7 @@
 ?>
 <html>
 	<head></head>
-	<body style="font-size:15px;">
+	<body>
 		<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
 			<tbody>
 				<tr>
@@ -135,14 +135,12 @@
 		</table>
 <?php
 	if ($node->field_el_salida['und'][0]['value'] == '1'){
-
-		$logo = $base_url . '/' . drupal_get_path('module', 'bps_core'). '/img/logo.png';
-		$img_logo = '<img src="' . $logo . '" style="width: 200px;"/>';
+		$mpdf->AddPage();
 		$fecha_salida = date_create($node->field_el_fecha_salida['und'][0]['value']);
 		$fecha_salida = date_format($fecha_ingreso,'Y-m-d');
 		$observaciones = $node->field_el_obs_sal['und'][0]['value'];
 ?>
-		<p style="page-break-after:always;">
+		<br><br><br>
 		<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
 			<tbody>
 				<tr>
