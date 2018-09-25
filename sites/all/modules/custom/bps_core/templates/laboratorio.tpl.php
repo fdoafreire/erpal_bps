@@ -140,6 +140,7 @@
 		$observaciones = $node->field_el_obs_sal['und'][0]['value'];
 ?>
 		<br>
+		<div style="page-break-after:always;">&nbsp;</div>
 		<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
 			<tbody>
 				<tr>
