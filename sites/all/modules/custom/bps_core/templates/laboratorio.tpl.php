@@ -55,7 +55,6 @@
 <html>
 	<head></head>
 	<body>
-		<div style="page-break-after:always;"></div>
 		<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
 			<tbody>
 				<tr>
@@ -219,6 +218,7 @@
 				</tr>
 			</tbody>
 		</table>
+		<div style="page-break-before:always;"></div>
 <?php
 	}
 ?>
