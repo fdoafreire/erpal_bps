@@ -139,7 +139,7 @@
 		$fecha_salida = date_format($fecha_ingreso,'Y-m-d');
 		$observaciones = $node->field_el_obs_sal['und'][0]['value'];
 ?>
-		<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
+		<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;page-break-after:always;">
 			<tbody>
 				<tr>
 					<td style="width:200px;font-size:20px;padding:0;text-align:center;" rowspan="2"><?php print $img_logo;?></td>
