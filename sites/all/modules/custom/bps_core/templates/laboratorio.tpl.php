@@ -139,7 +139,6 @@
 		$fecha_salida = date_format($fecha_ingreso,'Y-m-d');
 		$observaciones = $node->field_el_obs_sal['und'][0]['value'];
 		$mpdf=new mPDF();
-		$mpdf->WriteHTML('Page 2');
 		$mpdf->AddPage();
 ?>
 		<br>
