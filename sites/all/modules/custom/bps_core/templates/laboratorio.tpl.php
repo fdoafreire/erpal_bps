@@ -119,8 +119,8 @@
 				</tr>
 			</tbody>
 		</table>
-
-		<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;page-break-before:always;">
+		<div style="page-break-before:always;">
+		<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
 			<tbody>
 				<tr>
 					<td style="width:500px;font-size:15px;padding:0;text-align:left;border:1px solid;vertical-align:top;" rowspan="2">OBSERVACIONES:<br><?php print $observaciones;?></th>
@@ -133,6 +133,7 @@
 				</tr>
 			</tbody>
 		</table>
+		</div>
 <?php
 	if ($node->field_el_salida['und'][0]['value'] == '1'){
 		$fecha_salida = date_create($node->field_el_fecha_salida['und'][0]['value']);
