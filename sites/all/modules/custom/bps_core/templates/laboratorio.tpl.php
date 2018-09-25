@@ -138,6 +138,9 @@
 		$fecha_salida = date_create($node->field_el_fecha_salida['und'][0]['value']);
 		$fecha_salida = date_format($fecha_ingreso,'Y-m-d');
 		$observaciones = $node->field_el_obs_sal['und'][0]['value'];
+		$mpdf=new mPDF();
+		$mpdf->WriteHTML('Page 2');
+		$mpdf->AddPage();
 ?>
 		<br>
 		<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
