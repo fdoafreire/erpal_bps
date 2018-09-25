@@ -119,7 +119,6 @@
 				</tr>
 			</tbody>
 		</table>
-		<div style="page-break-before:always;">
 		<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
 			<tbody>
 				<tr>
@@ -130,6 +129,14 @@
 				<tr>
 					<td style="width:200px;font-size:15px;padding:0;text-align:left;border:1px solid;vertical-align:top;"><?php print $dpto;?></td>
 					<td style="width:200px;height:115px;font-size:15px;padding:0;text-align:left;border:1px solid;"></td>
+				</tr>
+			</tbody>
+		</table>
+		<div style="page-break-before:always;">
+		<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
+			<tbody>
+				<tr>
+					<td>&nbpsc;</td>
 				</tr>
 			</tbody>
 		</table>
