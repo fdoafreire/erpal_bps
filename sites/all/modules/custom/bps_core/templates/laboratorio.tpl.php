@@ -135,6 +135,9 @@
 		</table>
 <?php
 	if ($node->field_el_salida['und'][0]['value'] == '1'){
+
+		$logo = $base_url . '/' . drupal_get_path('module', 'bps_core'). '/img/logo.png';
+		$img_logo = '<img src="' . $logo . '" style="width: 200px;"/>';
 		$fecha_salida = date_create($node->field_el_fecha_salida['und'][0]['value']);
 		$fecha_salida = date_format($fecha_ingreso,'Y-m-d');
 		$observaciones = $node->field_el_obs_sal['und'][0]['value'];
