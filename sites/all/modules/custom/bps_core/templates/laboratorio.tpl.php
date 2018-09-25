@@ -139,7 +139,7 @@
 		$fecha_salida = date_format($fecha_ingreso,'Y-m-d');
 		$observaciones = $node->field_el_obs_sal['und'][0]['value'];
 ?>
-		<div style="page-break-before:always;"></div>
+		<div style="page-break-after:always;"><span>Prueba salto de pagina</span></div>
 		<br>
 		<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
 			<tbody>
