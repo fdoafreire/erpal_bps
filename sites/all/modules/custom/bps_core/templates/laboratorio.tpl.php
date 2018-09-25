@@ -55,7 +55,7 @@
 <html>
 	<head></head>
 	<body>
-		<div style="page-break-after:always;">
+		<div style="page-break-after:always;"></div>
 		<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
 			<tbody>
 				<tr>
@@ -134,7 +134,6 @@
 				</tr>
 			</tbody>
 		</table>
-		</div>
 <?php
 	if ($node->field_el_salida['und'][0]['value'] == '1'){
 		$fecha_salida = date_create($node->field_el_fecha_salida['und'][0]['value']);
