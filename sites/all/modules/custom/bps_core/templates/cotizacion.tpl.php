@@ -90,7 +90,9 @@
   $descripcion_moneda = "";
   $descripcion_moneda_extranjera = "";
   if (isset($node->field_cotizaciones_moneda['und'][0]['tid'])) {
-  	$name_money = strtoupper(taxonomy_term_load($node->name));
+		$term = taxonomy_term_load($node->field_cotizaciones_moneda['und'][0]['tid']);
+		$name_money = isset($term->name)? $term->name: '';
+		$name_money = strtoupper($name_money);
   	if ($name_money=="PESOS"){
 			$term = taxonomy_term_load($node->field_cotizaciones_moneda['und'][0]['tid']);
 			$descripcion_moneda = isset($term->field_moneda_descripcion_corta['und'][0]['value'])? $term->field_moneda_descripcion_corta['und'][0]['value']: '';
