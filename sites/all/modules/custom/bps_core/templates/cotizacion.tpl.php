@@ -87,6 +87,8 @@
   	$fecha = format_date($node->created,'long');
   	$fecha = format_date($node->created,'custom','j').' de '.format_date($node->created,'custom','F').' del '.format_date($node->created,'custom','Y');
   }
+  $tax=taxonomy_term_load($node->field_cotizaciones_moneda[und][0][tid]);
+  $descripcion_moneda = $tax->field_descripcion_corta[und][0][value];
 
 ?>
 <html>
@@ -183,11 +185,11 @@
 								<td style="width:100px;text-align:left;border:1px solid;font-size:13px;"><?php print $ref['ref'];?></td>
 								<td style="width:180px;text-align:left;border:1px solid;font-size:13px;"><?php print $ref['description'];?></td>
 								<td style="width:100px;text-align:right;border:1px solid;font-size:13px;"><?php print number_format($ref['cant'],0,".",",");?></td>
-								<td style="width:100px;text-align:right;border:1px solid;font-size:13px;"><?php print number_format($ref['v_unitario'],0,".",",");?></td>
-								<td style="width:100px;text-align:right;border:1px solid;font-size:13px;"><?php print number_format($ref['v_subtotal'],0,".",",");?></td>
-								<td style="width:100px;text-align:right;border:1px solid;font-size:13px;"><?php print $ref['v_descuento'];?></td>
-								<td style="width:100px;text-align:right;border:1px solid;font-size:13px;"><?php print number_format($ref['v_iva'],0,".",",");?></td>
-								<td style="width:100px;text-align:right;border:1px solid;font-size:13px;"><?php print number_format($ref['v_total'],0,".",",");?></td>
+								<td style="width:100px;text-align:right;border:1px solid;font-size:13px;"><?php print number_format($ref['v_unitario'],0,".",",").$descripcion_moneda;?></td>
+								<td style="width:100px;text-align:right;border:1px solid;font-size:13px;"><?php print number_format($ref['v_subtotal'],0,".",",").$descripcion_moneda;?></td>
+								<td style="width:100px;text-align:right;border:1px solid;font-size:13px;"><?php print number_format($ref['v_descuento'],0,".",",").$descripcion_moneda;?></td>
+								<td style="width:100px;text-align:right;border:1px solid;font-size:13px;"><?php print number_format($ref['v_iva'],0,".",",").$descripcion_moneda;?></td>
+								<td style="width:100px;text-align:right;border:1px solid;font-size:13px;"><?php print number_format($ref['v_total'],0,".",",").$descripcion_moneda;?></td>
 						</tr>
 				<?php endforeach; ?>
 			</tbody>
