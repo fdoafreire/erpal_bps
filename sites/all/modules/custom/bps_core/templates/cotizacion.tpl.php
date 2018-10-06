@@ -90,8 +90,8 @@
   $descripcion_moneda = "";
   $descripcion_moneda_extranjera = "";
   if (isset($node->field_cotizaciones_moneda['und'][0]['tid'])) {
-  	$name = strtoupper(taxonomy_term_load($node->name));
-  	if ($name=="PESOS"){
+  	$name_money = strtoupper(taxonomy_term_load($node->name));
+  	if ($name_money=="PESOS"){
 			$term = taxonomy_term_load($node->field_cotizaciones_moneda['und'][0]['tid']);
 			$descripcion_moneda = isset($term->field_moneda_descripcion_corta['und'][0]['value'])? $term->field_moneda_descripcion_corta['und'][0]['value']: '';
 			$descripcion_moneda_extranjera = "";
@@ -109,7 +109,7 @@
 		<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
 			<tbody>
 				<tr>
-					<td style="width:230px;font-size:20px;padding:0;text-align:center;"><?php print $img_logo;?></td>
+					<td style="width:230px;font-size:20px;padding:0;text-align:center;"><?php print $img_logo." ".$name_money;?></td>
 					<td style="width:300px;font-size:20px;font-weight:bold;padding:0;text-align:center;">COTIZACION</td>
 				</tr>
 			</tbody>
