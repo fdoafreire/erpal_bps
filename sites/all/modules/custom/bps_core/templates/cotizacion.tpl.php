@@ -87,8 +87,8 @@
   	$fecha = format_date($node->created,'long');
   	$fecha = format_date($node->created,'custom','j').' de '.format_date($node->created,'custom','F').' del '.format_date($node->created,'custom','Y');
   }
-  $tax=taxonomy_term_load($node->field_cotizaciones_moneda[und][0][tid]);
-  $descripcion_moneda = $tax->field_descripcion_corta[und][0][value];
+  $tax=taxonomy_term_load($node->field_cotizaciones_moneda['und'][0]['tid']);
+  $descripcion_moneda = $tax->field_descripcion_corta['und'][0]['value'];
 
 ?>
 <html>
