@@ -90,7 +90,7 @@
   $descripcion_moneda = "";
   if (isset($node->field_cotizaciones_moneda['und'][0]['tid'])) {
   	$term = taxonomy_term_load($node->field_cotizaciones_moneda['und'][0]['tid']);
-  	$descripcion_moneda = isset($term->moneda_descripcion_corta)? $term->moneda_descripcion_corta: '';
+  	$descripcion_moneda = isset($term->field_moneda_descripcion_corta)? $term->field_moneda_descripcion_corta: '';
   } 
 
 ?>
