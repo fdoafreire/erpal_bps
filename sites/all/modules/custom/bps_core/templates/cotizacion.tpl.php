@@ -213,8 +213,8 @@
 		<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
 			<tbody>
 				<tr>
-						<th style="width:600px;text-align:left;font-size:13px;">OBSERVACIONES</th>
-						<th style="width:200px;text-align:right;font-size:13px;">NETO</th>
+						<th style="width:650px;text-align:left;font-size:13px;">OBSERVACIONES</th>
+						<th style="width:150px;text-align:right;font-size:13px;">NETO</th>
 						<td style="width:100px;text-align:right;font-size:13px;"><?php print $descripcion_moneda. number_format($neto,0,".",",")." ".$descripcion_moneda_extranjera;?></td>
 				</tr>
 				<tr>
