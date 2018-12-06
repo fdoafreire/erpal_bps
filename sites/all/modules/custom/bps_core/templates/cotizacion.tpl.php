@@ -5,6 +5,7 @@
   $node = $variables['node'];
   $cotizacion = $node->field_consecutivo_doc['und'][0]['value'];
   $observaciones = $node->field_observaciones['und'][0]['value'];
+  $observaciones = str_replace("\\n","<br>");
   $solicitud = $node->field_solicitud['und'][0]['value'];
   $cotizante = $node->field_cotizante['und'][0]['value'];
   $area = $node->field_area_cotizante['und'][0]['value'];
@@ -212,8 +213,8 @@
 		<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing=0;">
 			<tbody>
 				<tr>
-						<th style="width:700px;text-align:left;font-size:13px;">OBSERVACIONES</th>
-						<th style="width:100px;text-align:right;font-size:13px;">NETO</th>
+						<th style="width:600px;text-align:left;font-size:13px;">OBSERVACIONES</th>
+						<th style="width:200px;text-align:right;font-size:13px;">NETO</th>
 						<td style="width:100px;text-align:right;font-size:13px;"><?php print $descripcion_moneda. number_format($neto,0,".",",")." ".$descripcion_moneda_extranjera;?></td>
 				</tr>
 				<tr>
