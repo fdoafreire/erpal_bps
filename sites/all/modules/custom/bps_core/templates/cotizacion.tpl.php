@@ -218,20 +218,20 @@
 						<td style="width:100px;text-align:right;font-size:13px;"><?php print $descripcion_moneda. number_format($neto,0,".",",")." ".$descripcion_moneda_extranjera;?></td>
 				</tr>
 				<tr>
-						<td style="width:700px;text-align:left;font-size:13px;vertical-align:top;" rowspan="4"><?php print $observaciones?></td>
-						<th style="width:100px;text-align:right;font-size:13px;">DESCUENTO</th>
+						<td style="width:650px;text-align:left;font-size:13px;vertical-align:top;" rowspan="4"><?php print $observaciones?></td>
+						<th style="width:150px;text-align:right;font-size:13px;">DESCUENTO</th>
 						<td style="width:100px;text-align:right;font-size:13px;"><?php print $descripcion_moneda. number_format($descuento,0,".",",")." ".$descripcion_moneda_extranjera;?></td>
 				</tr>
 				<tr>
-						<th style="width:100px;text-align:right;font-size:13px;">SUBTOTAL</th>
+						<th style="width:150px;text-align:right;font-size:13px;">SUBTOTAL</th>
 						<td style="width:100px;text-align:right;font-size:13px;"><?php print $descripcion_moneda. number_format($subtotal,0,".",",")." ".$descripcion_moneda_extranjera;?></td>
 				</tr>
 				<tr>
-						<th style="width:100px;text-align:right;font-size:13px;">IVA</th>
+						<th style="width:150px;text-align:right;font-size:13px;">IVA</th>
 						<td style="width:100px;text-align:right;font-size:13px;"><?php print $descripcion_moneda. number_format($iva,0,".",",")." ".$descripcion_moneda_extranjera;?></td>
 				</tr>
 				<tr>
-						<th style="width:100px;text-align:right;font-size:13px;">TOTAL</th>
+						<th style="width:150px;text-align:right;font-size:13px;">TOTAL</th>
 						<td style="width:100px;text-align:right;font-size:13px;border-top:1px solid;"><?php print $descripcion_moneda. number_format($total,0,".",",")." ".$descripcion_moneda_extranjera;?></td>
 				</tr>
 			</tbody>
