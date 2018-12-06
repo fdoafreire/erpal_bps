@@ -5,7 +5,8 @@
   $node = $variables['node'];
   $cotizacion = $node->field_consecutivo_doc['und'][0]['value'];
   $observaciones = $node->field_observaciones['und'][0]['value'];
-  //$observaciones = str_replace("\n","<br>",$observaciones);
+  $observaciones = str_replace("\n","<br>",$observaciones);
+  $observaciones = str_replace("\r","<br>",$observaciones);
   $solicitud = $node->field_solicitud['und'][0]['value'];
   $cotizante = $node->field_cotizante['und'][0]['value'];
   $area = $node->field_area_cotizante['und'][0]['value'];
