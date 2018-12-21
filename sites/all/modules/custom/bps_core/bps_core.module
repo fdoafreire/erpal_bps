@@ -396,7 +396,13 @@ function bps_core_menu() {
     'type' => MENU_CALLBACK,
   );
 
-
+ $items['bps/reporte/telemercadeo'] = array(
+    'title' => 'Reporte de OT',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('_bps_report_form'),
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+  );
    return $items;
 }
 /**
@@ -623,7 +629,7 @@ function bps_core_node_presave($node) {
 
 function _bps_report_form($form, &$form_state) {
   $form = array();
-
+  $type = arg(2);
   $form['fecha_ini'] = array(
     '#type' => 'date_popup',
     '#date_format' => 'Y-m-d',
@@ -638,6 +644,7 @@ function _bps_report_form($form, &$form_state) {
     '#required' => TRUE,
     '#default_value' => format_date(time(), 'custom', 'Y-m-d'),
   );
+  if ( $type == 'ot') {
   $options = array();
   $options[] = '- Todos -';
   $my_field = field_info_field('field_ord_estado');
@@ -665,6 +672,13 @@ function _bps_report_form($form, &$form_state) {
     '#options' => $options,
     '#title' => t('Tipo equipo'),
   );
+}
+
+$form['type'] = array(
+ '#type' => 'hidden',
+ '#value' => $type,
+);
+
 
   $form['submit'] = array(
     '#type' => 'submit',
@@ -681,8 +695,9 @@ function _bps_report_form($form, &$form_state) {
 }
 
 function _bps_report_form_submit($form, &$form_state) {
-  $date_ini = $form_state['values']['fecha_ini'];
+ /*a$date_ini = $form_state['values']['fecha_ini'];
   $date_fin = $form_state['values']['fecha_fin'];
+  $type = $form_state['values']['type'];
   $query = db_select('node', 'n');
   $query->fields('n', array('nid'));
   $query->join('field_data_field_ord_tipo','t', 't.entity_id=n.nid');
@@ -697,20 +712,50 @@ function _bps_report_form_submit($form, &$form_state) {
   if (isset($form_state['values']['tipo_equipo']) && !empty($form_state['values']['tipo_equipo']) && $form_state['values']['tipo_equipo'] != 0) {
     $query->join('field_data_field_or_tipo_equipo','te','te.entity_id=n.nid');
     $query->condition('te.field_or_tipo_equipo_tid',$form_state['values']['tipo_equipo']);
+  }*/
+  $date_ini = $form_state['values']['fecha_ini'];
+  $date_fin = $form_state['values']['fecha_fin'];
+  $type = $form_state['values']['type'];
+  $query = db_select('node', 'n');
+  $query->fields('n', array('nid'));
+  if ($type == 'ot') {
+    $query->join('field_data_field_ord_tipo','t', 't.entity_id=n.nid');  
+  }
+  $query->condition('n.created',strtotime($date_ini),'>=');
+  $query->condition('n.created',strtotime($date_fin),'<=');
+  if ($type == 'ot') {
+    $query->condition('n.type', 'ordenes');  
+    $query->condition('t.field_ord_tipo_value', 2);
+    if (isset($form_state['values']['estado']) && !empty($form_state['values']['estado']) && $form_state['values']['estado'] != 0) {
+      $query->join('field_data_field_ord_estado','e','e.entity_id=n.nid');
+      $query->condition('e.field_ord_estado_value',$form_state['values']['estado']);
+    }
+    if (isset($form_state['values']['tipo_equipo']) && !empty($form_state['values']['tipo_equipo']) && $form_state['values']['tipo_equipo'] != 0) {
+      $query->join('field_data_field_or_tipo_equipo','te','te.entity_id=n.nid');
+      $query->condition('te.field_or_tipo_equipo_tid',$form_state['values']['tipo_equipo']);
+    }
+  }
+  else {
+   $query->condition('n.type', 'telemercadeo');  
   }
   $result  = $query->execute()->fetchAll();
   $options = array();
   global $base_url;
   $logo = $base_url . '/' . drupal_get_path('module', 'bps_core'). '/img/logo.png';
   $img_logo = '<img src="' . $logo . '" style="width: 200px;"/>';
-
+ if ($type == 'ot'){
+  $titulo_reporte = 'LISTADO DETALLADO DE OT';
+ }
+ else {
+  $titulo_reporte = 'LISTADO DETALLADO DE TELEMERCADEO';
+}
   $head = '<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body>
     <table cellpadding="0" cellspacing="0">
       <tbody>
         <tr>
           <td style="border:1px solid;width:300px;height:50px;font-size:20px;padding:0;text-align:center">'.$img_logo.'</td>
-          <td style="border:1px solid;width:600px;height:50px;font-size:20px;font-weight:bold;padding:0;text-align:center">LISTADO DETALLADO DE OT</td>
+          <td style="border:1px solid;width:600px;height:50px;font-size:20px;font-weight:bold;padding:0;text-align:center">'.$titulo_reporte.'</td>
         </tr>
       </tbody>
     </table>
@@ -756,8 +801,10 @@ function _bps_report_form_submit($form, &$form_state) {
           $branch_office = $item->field_address_name['und'][0]['value'];
         }
       }
-      if (isset($node->field_ord_servicio['und'][0]['value'])) {
-        $type = $node->field_ord_servicio['und'][0]['value'];
+      if (isset($node->field_or_tipo_equipo['und'][0]['tid'])) {
+        $type = $node->field_or_tipo_equipo['und'][0]['tid'];
+        $tax = taxonomy_term_load($type);
+        $type = $tax->name;
       }
       if (isset($node->field_ord_estado['und'][0]['value'])){
         $my_field = field_info_field('field_ord_estado');
@@ -772,7 +819,8 @@ function _bps_report_form_submit($form, &$form_state) {
       }
       if (isset($node->field_ord_recomendaciones['und'][0]['value'])){
         $recomendacion = $node->field_ord_recomendaciones['und'][0]['value'];
-      }  
+      }
+       
 
       $html .= '
     <table  cellpadding="0" cellspacing="0"  style="border:1px solid;border-spacing=0;">
@@ -801,7 +849,7 @@ function _bps_report_form_submit($form, &$form_state) {
           <td style="width:340px;font-size:12px;padding:0;text-align:left">'.$address.'</td>
         </tr>
         <tr>
-          <td style="width:160px;font-size:12px;padding:0;text-align:left;font-weight:bold" colspan="2">TIPO DE SERVICIO:</td>
+          <td style="width:160px;font-size:12px;padding:0;text-align:left;font-weight:bold" colspan="2">TIPO EQUIPO:</td>
           <td style="width:200px;font-size:12px;padding:0;text-align:left" colspan="2">'.$type.'</td>
           <td style="width:100px;font-size:12px;padding:0;text-align:left;font-weight:bold">ESTADO</td>
           <td style="width:100px;font-size:12px;padding:0;text-align:left">'.$state.'</td>
