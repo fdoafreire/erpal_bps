@@ -913,7 +913,7 @@ function _bps_report_form_submit($form, &$form_state) {
             </tr>
             <tr>
               <td style="width:80px;font-size:12px;font-weight:bold;padding:0;text-align:left">Empresa:</td>
-              <td style="width:720px;font-size:12px;font-weight:bold;padding:0;text-align:left" colspan="5">'.$node->title.'</td>
+              <td style="width:720px;font-size:12px;padding:0;text-align:left" colspan="5">'.$node->title.'</td>
             </tr>
             <tr>
               <td style="width:80px;font-size:12px;padding:0;text-align:left;font-weight:bold">Contacto:</td>
