@@ -911,22 +911,6 @@ function _bps_report_form_submit($form, &$form_state) {
               <td style="width:540px;font-size:12px;font-weight:bold;padding:0;text-align:left" colspan="2"></td>
             </tr>
             <tr>
-              <td style="width:80px;font-size:12px;font-weight:bold;padding:0;text-align:left">Empresa:</td>
-              <td style="width:720px;font-size:12px;font-weight:bold;padding:0;text-align:left" colspan="5">'.$node->title.'</td>
-            </tr>
-            <tr>
-              <td style="width:80px;font-size:12px;padding:0;text-align:left;font-weight:bold">Contacto:</td>
-              <td style="width:280px;font-size:12px;padding:0;text-align:left" colspan="3">'.$contacto.'</td>
-              <td style="width:100px;font-size:12px;padding:0;text-align:left;font-weight:bold">Área"</td>
-              <td style="width:440px;font-size:12px;padding:0;text-align:left">'.$area.'</td>
-            </tr>
-            <tr>
-              <td style="width:80px;font-size:12px;padding:0;text-align:left;font-weight:bold">Correo:</td>
-              <td style="width:280px;font-size:12px;padding:0;text-align:left" colspan="3">'.$correo.'</td>
-              <td style="width:100px;font-size:12px;padding:0;text-align:left;font-weight:bold">Teléfono:</td>
-              <td style="width:340px;font-size:12px;padding:0;text-align:left">'.$telefono.'</td>
-            </tr>
-            <tr>
               <td style="width:900px;font-size:12px;padding:0;text-align:left;font-weight:bold" colspan="6">Comentario:</td>
             </tr>
             <tr>
