@@ -736,9 +736,6 @@ function _bps_report_form_submit($form, &$form_state) {
   }
   else {
    $query->condition('n.type', 'telemercadeo');
-   if (isset($form_state['values']['user']) && !empty($form_state['values']['user']) && $form_state['values']['user'] !=0) {
-     $query->condition('n.uid', $form_state['values']['user']);   
-   }  
   }
   $result  = $query->execute()->fetchAll();
   $options = array();
