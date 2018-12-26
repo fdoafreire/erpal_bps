@@ -714,7 +714,7 @@ function _bps_report_form($form, &$form_state) {
 function _bps_report_form_submit($form, &$form_state) {
   $date_ini = $form_state['values']['fecha_ini'];
   $date_fin = $form_state['values']['fecha_fin'];
-  $type = $form_state['values']['type'];
+  $type_report = $form_state['values']['type'];
   $query = db_select('node', 'n');
   $query->fields('n', array('nid'));
   if ($type == 'ot') {
@@ -722,7 +722,7 @@ function _bps_report_form_submit($form, &$form_state) {
   }
   $query->condition('n.created',strtotime($date_ini),'>=');
   $query->condition('n.created',strtotime($date_fin),'<=');
-  if ($type == 'ot') {
+  if ($type_report == 'ot') {
     $query->condition('n.type', 'ordenes');  
     $query->condition('t.field_ord_tipo_value', 2);
     if (isset($form_state['values']['estado']) && !empty($form_state['values']['estado']) && $form_state['values']['estado'] != 0) {
@@ -746,7 +746,7 @@ function _bps_report_form_submit($form, &$form_state) {
   $logo = $base_url . '/' . drupal_get_path('module', 'bps_core'). '/img/logo.png';
   $img_logo = '<img src="' . $logo . '" style="width: 200px;"/>';
   $labels = array();
- if ($type == 'ot'){
+ if ($type_report == 'ot'){
   $titulo_reporte = 'LISTADO DETALLADO DE OT';
  }
  else {
@@ -778,7 +778,7 @@ function _bps_report_form_submit($form, &$form_state) {
       }
 
 
-/*      if ($type == 'ot') {
+      if ($type_report == 'ot') {
         $consecutivo = '';
         if (isset($node->field_consecutivo_doc['und'][0]['value'])) {
           $consecutivo  = $node->field_consecutivo_doc['und'][0]['value'];
@@ -935,7 +935,7 @@ function _bps_report_form_submit($form, &$form_state) {
           </tbody>
         </table>';
 
-      }*/
+      }
       
   }
   $html .='</body></html>';
