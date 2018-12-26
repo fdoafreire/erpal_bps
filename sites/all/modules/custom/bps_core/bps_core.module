@@ -908,7 +908,8 @@ function _bps_report_form_submit($form, &$form_state) {
               <td style="width:80px;font-size:12px;padding:0;text-align:left">'.$row->nid.'</td>
               <td style="width:100px;font-size:12px;font-weight:bold;padding:0;text-align:left">FECHA:</td>
               <td style="width:100px;font-size:12px;padding:0;text-align:left">'.$fecha.'</td>
-              <td style="width:540px;font-size:12px;font-weight:bold;padding:0;text-align:left" colspan="2"></td>
+              <td style="width:100px;font-size:12px;font-weight:bold;padding:0;text-align:left">usurio:</td>
+              <td style="width:440px;font-size:12px;font-weight:bold;padding:0;text-align:left">'.$usuario->name.'</td>
             </tr>
             <tr>
               <td style="width:80px;font-size:12px;font-weight:bold;padding:0;text-align:left">Empresa:</td>
