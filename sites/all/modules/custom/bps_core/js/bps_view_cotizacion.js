@@ -37,8 +37,9 @@
 		var contador = 0;
     $('.field_valor_iva .field-item').each(function(){
 			iva = iva + parseFloat($(this).text().replace(/ /g,''));
-			valoriva[contador] = parseFloat($(this).text().replace(/ /g,''));
-			$(this).text(parseFloat($(this).text().replace(/ /g,'')));
+			iva = parseFloat(iva.toFixed(2));
+			valoriva[contador] = parseFloat(($(this).text().replace(/ /g,'').toFixed(2)));
+			$(this).text(parseFloat(($(this).text().replace(/ /g,'')).toFixed(2)));
 			contador++;
     });
 
