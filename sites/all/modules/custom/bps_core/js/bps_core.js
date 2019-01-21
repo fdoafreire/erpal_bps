@@ -81,8 +81,8 @@
         iva = 0;
       }
       alert('cant'+cant+' valor'+valor+' dscto'+dscto+' iva'+iva);
-      var subtotal = cant * valor - ((cant * valor * dscto) / 100);
-      var valor_iva = (subtotal * iva) / 100;
+      var subtotal = parseFloat(cant * valor - ((cant * valor * dscto) / 100));
+      var valor_iva = parseFloat((subtotal * iva) / 100);
       var total = parseFloat(subtotal) + parseFloat(valor_iva);
       alert('subtotal'+subtotal+' valor iva'+valor_iva+' total'+ total);
     }
