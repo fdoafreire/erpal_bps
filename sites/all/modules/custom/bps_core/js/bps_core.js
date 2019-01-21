@@ -80,11 +80,11 @@
       if (iva == undefined || iva== '' || isNaN(dscto)){
         iva = 0;
       }
-      alert('cant'+cant+' valor'+valor+' dscto'+dscto+' iva'+iva);
+      alert('cant '+cant+' valor '+valor+' dscto '+dscto+' iva '+iva);
       var subtotal = parseFloat(cant * valor - ((cant * valor * dscto) / 100));
       var valor_iva = parseFloat((subtotal * iva) / 100);
       var total = parseFloat(subtotal) + parseFloat(valor_iva);
-      alert('subtotal'+subtotal+' valor iva'+valor_iva+' total'+ total);
+      alert('subtotal '+subtotal+' valor iva '+valor_iva+' total '+ total);
     }
     
     $('#' + id_vlriva).val(valor_iva); 
