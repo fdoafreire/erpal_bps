@@ -20,7 +20,9 @@
 			var subtotal = (cant * valor) - ((cant * valor * dscto) / 100);
 			var descuento = (cant * valor * dscto) / 100;
 			var valor_iva = (subtotal * iva) / 100;
+			valor_iva = parseFloat(valor_iva.toFixed(2));
 			var total = subtotal + valor_iva;
+			total = parseFloat(total.toFixed(2));
 			
 			if (subtotal >0){
 				total_cantidad = parseFloat(total_cantidad) + parseFloat(cant);
