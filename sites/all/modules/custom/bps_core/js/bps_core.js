@@ -83,7 +83,7 @@
       alert('cant'+cant+' valor'+valor+' dscto'+dscto+' iva'+iva);
       var subtotal = cant * valor - ((cant * valor * dscto) / 100);
       var valor_iva = (subtotal * iva) / 100;
-      var total = subtotal + valor_iva;
+      var total = parseFloat(subtotal) + parseFloat(valor_iva);
       alert('subtotal'+subtotal+' valor iva'+valor_iva+' total'+ total);
     }
     
