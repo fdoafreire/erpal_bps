@@ -74,6 +74,8 @@
     var total = '';
 
     if (cant > 0 && valor > 0){
+	  var valor_iva = 0;
+	  var total = 0;
       if (dscto == undefined || dscto== '' || isNaN(dscto)){
         dscto = 0;
       }
