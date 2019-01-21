@@ -84,7 +84,7 @@
       var subtotal = cant * valor - ((cant * valor * dscto) / 100);
       var valor_iva = (subtotal * iva) / 100;
       var total = subtotal + valor_iva;
-      alert('subtotal'+subtotal+' valor iva'+valor_iva+' total' total);
+      alert('subtotal'+subtotal+' valor iva'+valor_iva+' total'+ total);
     }
     
     $('#' + id_vlriva).val(valor_iva); 
