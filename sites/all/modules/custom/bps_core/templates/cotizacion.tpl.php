@@ -203,7 +203,7 @@
 								<td style="width:100px;text-align:right;border:1px solid;font-size:13px;"><?php print number_format($ref['cant'],2,".",",");?></td>
 								<td style="width:100px;text-align:right;border:1px solid;font-size:13px;"><?php print $descripcion_moneda. number_format($ref['v_unitario'],2,".",",")." ".$descripcion_moneda_extranjera;?></td>
 								<td style="width:100px;text-align:right;border:1px solid;font-size:13px;"><?php print $descripcion_moneda. number_format($ref['v_subtotal'],2,".",",")." ".$descripcion_moneda_extranjera;?></td>
-								<td style="width:100px;text-align:right;border:1px solid;font-size:13px;"><?php print $descripcion_moneda. number_format($ref['v_descuento']2,".",",")." ".$descripcion_moneda_extranjera;?></td>
+								<td style="width:100px;text-align:right;border:1px solid;font-size:13px;"><?php print $descripcion_moneda. number_format($ref['v_descuento'],2,".",",")." ".$descripcion_moneda_extranjera;?></td>
 								<td style="width:100px;text-align:right;border:1px solid;font-size:13px;"><?php print $descripcion_moneda. number_format($ref['v_iva'],2,".",",")." ".$descripcion_moneda_extranjera;?></td>
 								<td style="width:100px;text-align:right;border:1px solid;font-size:13px;"><?php print $descripcion_moneda. number_format($ref['v_total'],2,".",",")." ".$descripcion_moneda_extranjera;?></td>
 						</tr>
