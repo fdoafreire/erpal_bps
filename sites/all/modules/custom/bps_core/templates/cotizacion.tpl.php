@@ -48,7 +48,12 @@
   $total = 0;
   if (isset($node->field_referencias['und']) && count($node->field_referencias['und']) > 0){
     foreach ($node->field_referencias['und'] as $ref) {
-    	$item = field_collection_item_load($ref['value']);
+    	//$item = field_collection_item_load($ref['value']);
+	$item = field_collection_item_revision_load($ref['revision_id']);
+/*echo "<pre>";
+print_r($ref);
+print_r($item);
+echo "</pre>";*/
     	$references[] = array('ref' => $item->field_ref_referencia['und'][0]['value'],
     		                    'description' => $item->field_descripcion['und'][0]['value'],
     		                    'cant' => $item->field_ref_cantidad['und'][0]['value'],
@@ -66,6 +71,10 @@
     	$total     += $item->field_total['und'][0]['value'];
     }
   }
+/*echo "<pre>";
+print_r($references);
+echo "</pre>";
+exit();*/
   $type_payment = '';
   if (isset($node->field_forma_pago['und'][0]['tid'])) {
   	 $term = taxonomy_term_load($node->field_forma_pago['und'][0]['tid']);
